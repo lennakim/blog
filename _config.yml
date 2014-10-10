@@ -4,11 +4,11 @@
 
 # Site
 title: Blog
-subtitle: 禦風而行 世而譽之而不加勸 世而非之而不加沮
-description: 
-author: liuinigtw
-email: liuinigtw@163.com
-language: cn
+subtitle: I am hammer
+description: 禦風而行 世而譽之而不加勸 世而非之而不加沮
+author: hammer
+email:
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -79,12 +79,11 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: landscape
+theme: modernist
 exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-deploy: 
+deploy:
   type: github
 	repository: https://github.com/liuningtw/blog.git
-	
