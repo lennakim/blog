@@ -1,14 +1,13 @@
----
-layout: post
-title: "Ubuntu 12.04的安装和配置(二)"
+title: Ubuntu 12.04的安装和配置(二)
 date: 2012-08-27 20:12
 comments: true
-categories:  ubuntu ruby
+categories: [ubuntu, ruby]
 ---
+
 上一篇坑挖了一半，今天一定要把坑挖好。
 
-继续 [passenger](http://www.modrails.com/), [nginx](http://wiki.nginx.org/Main), 
- [mongodb](http://www.mongodb.org/), [redis](http://redis.io/), 
+继续 [passenger](http://www.modrails.com/), [nginx](http://wiki.nginx.org/Main),
+ [mongodb](http://www.mongodb.org/), [redis](http://redis.io/),
  [Node.js](http://nodejs.org/)  的安装。
 
 #### **安装Node.js**
@@ -22,13 +21,13 @@ $ rails s
 ```
 一般会提示这样的错误，```Could not find a JavaScript runtime ...```，
 具体请移步 [stackoverflow](http://stackoverflow.com/questions/8059332/could-not-find-a-javascript-runtime-see-https-github-com-sstephenson-execjs-f)
- 
+
 在ubuntu环境下，安装node.js即可
 
 ```
 $ sudo apt-get install nodejs
 ```
-完成后再次运行项目 
+完成后再次运行项目
 
 #### **安装passenger和nginx**
 
@@ -36,16 +35,16 @@ $ sudo apt-get install nodejs
 
 ```
 $ gem install passenger
-``` 
+```
 安装passenger的nginx模块，nginx一并安装，需要root，我们可以用rvmsudo
 
-``` 
+```
 rvmsudo passenger-install-nginx-module
 # 提示哪种安装模式
 
 1. Yes: download, compile and install Nginx for me. (recommended)
  # 完全安装
- 
+
 2. No: I want to customize my Nginx installation. (for advanced users)
  # 自定义安装
 ```
@@ -107,8 +106,8 @@ connecting to: test
 ```
 wget http://redis.googlecode.com/files/redis-2.4.16.tar.gz
 tar -zxf redis-2.4.16.tar.gz
-cd redis-2.4.16 
-make 
+cd redis-2.4.16
+make
 sudo make install
 ```
 #### **安装mysql**

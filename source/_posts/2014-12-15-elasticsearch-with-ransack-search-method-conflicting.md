@@ -1,6 +1,6 @@
 title: Elasticsearch 与 Ransack 的 search 方法冲突
 date: 2014-12-15 14:36:28
-tags: rails elasticsearch ransack
+tags: [rails, elasticsearch, ransack]
 ---
 
 最近在项目中用 [Elasticsearch](http://www.elasticsearch.org/) 做全文搜索,

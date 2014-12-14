@@ -1,10 +1,9 @@
----
-layout: post
 title: "ruby的yield和闭包"
 date: 2012-09-15 02:06
 comments: true
-categories:  ruby rails
+tags: [ruby, rails]
 ---
+
 **First Blood**  来些血腥凶残暴力的！
 这些经常在面试中被提问，内容很多。
 从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。
@@ -21,19 +20,19 @@ block 是最常用到的，有两种形式,{}和do ... end。
 ``` ruby demo.rb
 def test_yield
   yield
-end  
-     
+end
+
 test_yield{ puts "this is first block." } # yield可以调用block 即{...}
 
 test_yield do
-  puts "this is second block." 
+  puts "this is second block."
 end
 
-def test2_yield  
-  yield("shooter")  
-end  
+def test2_yield
+  yield("shooter")
+end
 
-test2_yield{ |var| puts "This args is #{var}." } 
+test2_yield{ |var| puts "This args is #{var}." }
 #传给yield的参数(此处为shooter)即对应了block中的参数(||中的部分)
 ```
 
@@ -56,14 +55,14 @@ puts plus.call(2) # =>3
 
 subtract = proc { |x| x - 1 }
 puts subtract.call(4) # =>3
-``` 
+```
 这被称为**延迟执行**(Defferred Evaluation)。
 
 通过**&操作符**，block 与 Proc对象可以相互转化。
 
 ```
 def math_one(a, b, &oper)
-  puts yield(a,b) 
+  puts yield(a,b)
 end
 
 def math_two(a, b, &oper)
@@ -104,7 +103,7 @@ lambda跟Proc有两个最明显的区别: <br/>
 1. lambda检查参数的个数，Proc不会。<br/>
 &nbsp;在Proc中，多余的参数被设为nil。但lambda中，Ruby会抛出一个ArgumentError错误。<br/>
 2. return不同。<br/>
-&nbsp;lambda的return是返回值给方法，方法会继续执行。Proc的return会终止方法并返回得到的值。 
+&nbsp;lambda的return是返回值给方法，方法会继续执行。Proc的return会终止方法并返回得到的值。
 ```
 def proc_return
   Proc.new { return "Proc.new"}.call

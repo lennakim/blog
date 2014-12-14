@@ -1,9 +1,7 @@
----
-layout: post
-title: "写出好的 commit message"
+title: 写出好的 commit message
 date: 2013-11-22 16:39:16 +0800
 comments: true
-categories: git
+tags: git
 ---
 
 ##为什幺要关注提交信息

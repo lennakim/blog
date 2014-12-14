@@ -1,11 +1,8 @@
----
-layout: post
-title: "rails使用队列resque"
-date: 2013-11-08 12:13:40 +0800
+title: rails使用队列resque
+date: 2013-11-08 12:13:40
 comments: true
-categories: rails resque
+tags: [rails, resque]
 ---
-
 
 ### 准备
 

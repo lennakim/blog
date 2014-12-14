@@ -1,9 +1,7 @@
----
-layout: post
-title: "翻越GFW 走向世界"
+title: 翻越GFW 走向世界
 date: 2012-08-31 05:02
 comments: true
-categories: chrome GAE
+categories: [chrome, gae]
 ---
 
 "Across the Great Wall we can reach every corner in the world."
@@ -19,7 +17,7 @@ categories: chrome GAE
 ```
 $ sudo dpkg -i  google-chrome-stable_current_i386.deb
   # 提示没有安装所需要的依赖包
-$ sudo apt-get -f install 
+$ sudo apt-get -f install
   # 安装依赖包
 $ sudo dpkg -i  google-chrome-stable_current_i386.deb
 ```
@@ -44,7 +42,7 @@ $ sudo dpkg -i  google-chrome-stable_current_i386.deb
 下载对应的localproxy和fetchserver的linux版本。
 **解压fetchserver文件夹至Google App Engine SDK目录**。
 
-3.打开fetchserver文件夹内的app.yaml文件，修改第一行 
+3.打开fetchserver文件夹内的app.yaml文件，修改第一行
 ```
 application: your_application_name
 ```

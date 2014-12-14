@@ -1,18 +1,16 @@
----
-layout: post
-title: "我用到的 Sublime Text 2 插件"
+title: 我用到的 Sublime Text 2 插件
 date: 2012-08-08 20:24
 comments: true
-categories:  sublime
+tags: sublime
 ---
 
  [Sublime Text 2](http://www.sublimetext.com/) 是在俺剛學習**Ruby**時大大們極力推薦的，真的超贊。
- Sublime Text是用[python语言](http://zh.wikipedia.org/zh/Python)编写。如果熟悉[python](http://www.python.org/)，你也可以编写插件實現自己想要的功能。目前插件集中在github上，需要在线安装。安装插件前需要 **安装包控制(Package Control)** 
+ Sublime Text是用[python语言](http://zh.wikipedia.org/zh/Python)编写。如果熟悉[python](http://www.python.org/)，你也可以编写插件實現自己想要的功能。目前插件集中在github上，需要在线安装。安装插件前需要 **安装包控制(Package Control)**
 
 ### 安装包控制(Package Control)
  * 打开Sublime Text 2，按下  ``` Ctrl+` ``` 调出 Console。
  * 将以下代码粘贴进命令行中并回车:
-```  
+```
 import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
 ```
 * 重启 Sublime Text 2，如果在 ``` Preferences -> Package Settings ```中见到
@@ -27,14 +25,14 @@ import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_pac
 
 * 大功告成，有时特殊情况，需要在第二步前，先通过输入repository 添加插件的url，重复第二步，然后真正的ok。
  **MarkdownEditing** 是这样滴情况。
- 
+
 
 ### 我的插件集
 
 俗话就说嘛 好记性不如烂笔头 ^_^
 
 * [Gist](https://github.com/condemil/Gist)  gist代码分享
- 
+
 * [SublimeREPL](https://github.com/wuub/SublimeREPL)
  将 Ruby Shell (即 IRB)整合到 Sublime Text 中,而且集成了 node coffeescript lua 等，不过需要配置好环境，
  偶的只有irb，其他都是提示错误。

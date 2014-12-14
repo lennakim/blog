@@ -1,6 +1,6 @@
 title: 分割rails中的routes文件
 date: 2014-12-14 11:08:09
-tags: rails routes
+tags: [rails, routes]
 ---
 
 在rails项目中有一个非常重要的文件 `routes.rb`, 管理rails的请求路径.

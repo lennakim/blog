@@ -1,9 +1,7 @@
----
-layout: post
-title: "rails 页面最佳实践"
+title: rails 页面最佳实践
 date: 2014-01-15 22:18:18 +0800
 comments: true
-categories: rails best_practices
+tags: [rails, best_practices]
 ---
 
 ## 什么是好的 view
