@@ -1,4 +1,6 @@
 title: 使用 Hexo
+date: 2014-10-10 14:36:28
+tags: left
 ---
 今天开始用 [Hexo](http://hexo.io/)写blog, 感兴趣的小伙伴, 可以查看一下[文档](http://hexo.io/docs/).
 之前用 [octopress v2](http://octopress.org/), 慢慢感觉 octopress是个重量级框架, 配置也很繁琐.
