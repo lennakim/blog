@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Shooter gl
+title: Shooter
 subtitle: I am shooter
 description: 禦風而行 世而譽之而不加勸 世而非之而不加沮
 author: shooter
@@ -12,7 +12,7 @@ language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://shooter.gl
+url: http://shooter.gl/
 root: '/'
 permalink: :title/
 tag_dir: tags
@@ -66,7 +66,7 @@ logger_format: dev
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
-time_format: H:mm:ss
+time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -74,7 +74,7 @@ per_page: 10
 pagination_dir: page
 
 # Disqus
-disqus_shortname: 3410231
+disqus_shortname: shooterme
 
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
@@ -82,13 +82,19 @@ disqus_shortname: 3410231
 theme: modernist_new
 exclude_generator:
 
-# plugins:
-# - hexo-generator-feed
+sitemap:
+  path: sitemap.xml
+
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 
 feed:
   type: atom
   path: atom.xml
   limit: 20
+
+google_analytics: UA-33680426-2
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
