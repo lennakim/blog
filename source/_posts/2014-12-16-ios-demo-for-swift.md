@@ -11,7 +11,7 @@ tags: [ios, swift]
 
 核心是一个 **CounterViewController.swift** 文件
 
-```ruby
+```object-c
 
 import UIKit
 
@@ -231,10 +231,13 @@ class CounterViewController: UIViewController {
 
 }
 ```
-
 ---
 
-谈一下 对swift 感触
+从 simulator上测试, 到真机上运行, 花了很多时间, 要申请开发者, 要 **bundle id**, 下载开发者证书 ...
+各种东西,步骤已经忘了, 现在没时间折腾了.
 
-...
+效果如下:
+
+![](http://7sbqv9.com1.z0.glb.clouddn.com/ios-demo-for-swift-001.PNG)
+![](http://7sbqv9.com1.z0.glb.clouddn.com/ios-demo-for-swift-002.PNG)
 
