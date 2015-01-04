@@ -3,11 +3,10 @@ date: 2014-12-16 13:06:55
 tags: [ios, swift]
 ---
 
-10-1假期, 闲来无事, 写了个[计时器](https://github.com/liuningtw/timerDemo).
-之前没有 **object-c**, **swift** 经验, 纯粹是依葫芦画瓢.
+10-1假期, 闲来无事, 写了个[计时器](http://github.com/liuningtw/timerDemo).
+之前没有 **object-c**, **swift** 经验, 基本是依葫芦画瓢.
 
-[教程](https://swiftist.org/topics/96) 是 swiftist.org 的 [Jason](https://swiftist.org/~lifedim)编写的,
-很详细,另外有几处错误, 还有一个bug, Jason希望大家能发现, 并帮他修复. 这种发现问题的方式感觉很不错丫.
+[教程](http://swiftist.org/topics/96)是[Jason](http://swiftist.org/~lifedim)编写的, 很详细,另外有一个bug, Jason希望大家能发现, 并帮他修复. 感觉这种发现问题的方式很不错丫.
 
 核心是一个 **CounterViewController.swift** 文件
 
