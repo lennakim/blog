@@ -1,4 +1,4 @@
-blog
+Shooter Blog
 ====
 
-my blog
+www.shooter.gl
