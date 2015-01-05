@@ -9,13 +9,13 @@ shell 有 **editing-mode**, 默认是 emacs-mode, 所以emacs快捷键在shell�
 
 ```
 ctrl+a 到行首
-ctrl+e 到行尾 #在zsh环境下失效, 解决方法已补充
+ctrl+e 到行尾
 
 ```
 
 ```
-ctrl+u 删除到行首
-ctrl+k 删除到行尾
+ctrl+u 从光标处删除到行首 #在zsh环境下失效, 解决方法已补充
+ctrl+k 从光标处删除到行尾
 ```
 
 ```
@@ -47,7 +47,7 @@ ctrl+l 清理屏幕, 类似clear
 
 补充: 2015-01-05
 
-### 解决 ctrl+e 在[zsh](http://www.zsh.org/)环境下失效的问题
+### 解决 ctrl+u 在[zsh](http://www.zsh.org/)环境下失效的问题
 
 按照[which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash](http://stackoverflow.com/questions/3483604/which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash),
 在`.zshrc` 文件写入 `bindkey \^U backward-kill-line` 即可.
