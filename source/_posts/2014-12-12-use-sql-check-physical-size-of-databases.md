@@ -1,6 +1,6 @@
-title: sql查询某个数据库个个表占用的空间大小
+title: sql查询某个数据库每个表占用的空间大小
 date: 2014-12-12 17:57:25
-tags: [sql, database]
+tags: [sql, mysql, database]
 ---
 
 如图
