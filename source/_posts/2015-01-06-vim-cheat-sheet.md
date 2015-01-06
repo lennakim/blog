@@ -1,4 +1,4 @@
-title: vim 速查卡
+title: vim 速查表
 date: 2015-01-06 11:00:16
 tags: [vim]
 ---
