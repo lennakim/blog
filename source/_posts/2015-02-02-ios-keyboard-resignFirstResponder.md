@@ -1,6 +1,6 @@
 title: ios 如何关闭键盘输入
 date: 2015-02-02 17:18:55
-tags: [ios, keyboard]
+tags: [ios, swift, keyboard]
 ---
 
 ios应用在很多时候需要关闭键盘, 记录2种方式.
