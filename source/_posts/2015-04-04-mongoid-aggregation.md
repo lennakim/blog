@@ -1,5 +1,5 @@
 title: mongoid 聚合功能
-date: 2015-04-05 18:32:21
+date: 2015-04-04 18:32:21
 tags: [mongoid, aggregation, mapreduce]
 ---
 
