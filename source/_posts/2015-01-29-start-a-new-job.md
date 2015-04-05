@@ -1,6 +1,6 @@
 title: 开始新的工作
 date: 2015-01-29 23:13:38
-categories: life
+categories: live
 ---
 
 自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.

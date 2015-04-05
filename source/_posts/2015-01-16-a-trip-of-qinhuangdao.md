@@ -1,6 +1,6 @@
 title: 秦皇岛之行
 date: 2015-01-16 10:38:33
-categories: life
+categories: live
 ---
 
 01-11我从北京去了秦皇岛, 找[peter](https://github.com/happypeter)散心. peter住在[燕大](http://zh.wikipedia.org/wiki/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6), 到了燕大的第一感觉, 这里好大啊, 比清华大多了.

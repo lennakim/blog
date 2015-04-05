@@ -1,6 +1,6 @@
 title: rails中禁掉某些生成器
 date: 2015-03-25 20:13:45
-tags: [rails generators]
+tags: [rails, generators]
 ---
 
 在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件

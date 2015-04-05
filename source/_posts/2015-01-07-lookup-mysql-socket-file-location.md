@@ -4,7 +4,7 @@ tags: [mysql, Mac]
 ---
 
 Mac os 运行一个rails项目, 经常有找不到 mysql socket文件的问题, 在stackoverflow上
-找到了解决办法 -- [cannot-find-mysql-sock](http://stackoverflow.com/questions/748478/cannot-find-mysql-sock).
+找到了解决办法 -- [cannot-find-mysql-sock](http://stackoverflow.com/questions/748478/cannot-find-mysql-sock) .
 
 于是发现一个灰常简单的的命令 **mysql_config --socket**
 

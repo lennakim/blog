@@ -1,4 +1,4 @@
-title: "ruby的yield和闭包"
+title: ruby的yield和闭包
 date: 2012-09-15 02:06
 comments: true
 tags: [ruby, rails]

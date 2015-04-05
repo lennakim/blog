@@ -1,6 +1,6 @@
 title: 青岛之行
 date: 2014-12-21 10:00:33
-categories: life
+categories: live
 ---
 
 今天坐高铁, 从北京到青岛,跟CTO 丹政委做一些工作上的交接.
