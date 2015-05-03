@@ -99,5 +99,5 @@ google_analytics: UA-33680426-2
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
-	repository: https://github.com/liuningtw/blog.git
+  type: git
+  repository: https://github.com/liuningtw/blog.git
