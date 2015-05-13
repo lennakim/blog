@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>ios 如何关闭键盘输入 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="ios应用在很多时候需要关闭键盘, 记录2种方式.
+1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder
+@IBAction func okTapped(sender: AnyObject) &amp;#123;&amp;#10;  nameTxt.resignFirstResponder() //&amp;#35302;&amp;#21457;okTapped">
+  
+  <meta name="description" content="ios应用在很多时候需要关闭键盘, 记录2种方式.
+1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder
+@IBAction func okTapped(sender: AnyObject) &amp;#123;&amp;#10;  nameTxt.resignFirstResponder() //&amp;#35302;&amp;#21457;okTapped">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios 如何关闭键盘输入">
+<meta property="og:url" content="http://shooter.gl/ios-keyboard-resignFirstResponder/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="ios应用在很多时候需要关闭键盘, 记录2种方式.
+1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder
+@IBAction func okTapped(sender: AnyObject) &amp;#123;&amp;#10;  nameTxt.resignFirstResponder() //&amp;#35302;&amp;#21457;okTapped">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ios 如何关闭键盘输入">
+<meta name="twitter:description" content="ios应用在很多时候需要关闭键盘, 记录2种方式.
+1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder
+@IBAction func okTapped(sender: AnyObject) &amp;#123;&amp;#10;  nameTxt.resignFirstResponder() //&amp;#35302;&amp;#21457;okTapped">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/ios-keyboard-resignFirstResponder/">
+  <time datetime="2015-02-02T09:18:55.000Z">
+    2015-02-02
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">ios 如何关闭键盘输入</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
+<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>2 当手指离开屏幕的时候 关闭键盘, 需要重写touchesEnded</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;  nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>源码地址 <a href="https://github.com/liuningtw/keyboard-resignFirstResponder/blob/master/keyboard-resignFirstResponder/ViewController.swift" target="_blank" rel="external">ViewController.swift</a></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">import UIKit&#10;&#10;class ViewController: UIViewController &#123;&#10;&#10;  @IBOutlet weak var nameTxt: UITextField! //&#23450;&#20041;&#36755;&#20837;&#26694;&#10;  @IBOutlet weak var resultLab: UILabel! //&#23450;&#20041;&#26174;&#31034;&#26694;&#10;&#10;  override func viewDidLoad() &#123;&#10;    super.viewDidLoad()&#10;    nameTxt.placeholder = &#34;&#37049;&#20521;&#38639;&#34;&#10;  &#125;&#10;&#10;  override func didReceiveMemoryWarning() &#123;&#10;    super.didReceiveMemoryWarning()&#10;  &#125;&#10;&#10;  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;    nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;  &#125;&#10;&#10;  @IBAction func okTapped(sender: AnyObject) &#123;&#10;    nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#10;    resultLab.text = &#34;hi, \(nameTxt.text)&#34;&#10;  &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/ios/">ios</a>, <a class="tags-link" href="/tags/keyboard/">keyboard</a>, <a class="tags-link" href="/tags/swift/">swift</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>rails使用队列resque | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="准备Resque 依赖 Redis，请先安装reids数据库。
+
+安装Resquegem &quot;resque&quot;, &quot;~&amp;gt; 1.25.1&quot;
+运行 resque-web 会打开 http://0.0.0.0:5678/overview
+创建Rakelib/tasks/resque.rake
+require &#39;resque/tasks&#39;task &quot;resque:setup&quot; =&amp;gt; :enviro">
+  
+  <meta name="description" content="准备Resque 依赖 Redis，请先安装reids数据库。
+
+安装Resquegem &quot;resque&quot;, &quot;~&amp;gt; 1.25.1&quot;
+运行 resque-web 会打开 http://0.0.0.0:5678/overview
+创建Rakelib/tasks/resque.rake
+require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rails使用队列resque">
+<meta property="og:url" content="http://shooter.gl/resque-for-rails/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="准备Resque 依赖 Redis，请先安装reids数据库。
+
+安装Resquegem &quot;resque&quot;, &quot;~&amp;gt; 1.25.1&quot;
+运行 resque-web 会打开 http://0.0.0.0:5678/overview
+创建Rakelib/tasks/resque.rake
+require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rails使用队列resque">
+<meta name="twitter:description" content="准备Resque 依赖 Redis，请先安装reids数据库。
+
+安装Resquegem &quot;resque&quot;, &quot;~&amp;gt; 1.25.1&quot;
+运行 resque-web 会打开 http://0.0.0.0:5678/overview
+创建Rakelib/tasks/resque.rake
+require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/resque-for-rails/">
+  <time datetime="2013-11-08T04:13:40.000Z">
+    2013-11-08
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">rails使用队列resque</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="准备">准备</h3><p><a href="https://github.com/resque/resque" target="_blank" rel="external">Resque</a> 依赖 <a href="http://redis.io/" target="_blank" rel="external">Redis</a>，<br>请先安装reids数据库。</p>
+<hr>
+<h3 id="安装Resque">安装Resque</h3><pre><code><span class="title">gem</span> <span class="string">"resque"</span>, <span class="string">"~&gt; 1.25.1"</span>
+</code></pre><p>运行 resque-web 会打开 <a href="http://0.0.0.0:5678/overview" target="_blank" rel="external">http://0.0.0.0:5678/overview</a></p>
+<h5 id="创建Rake">创建Rake</h5><p>lib/tasks/resque.rake</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'resque/tasks'</span></span><br><span class="line"></span><br><span class="line">task <span class="string">"resque:setup"</span> =&gt; <span class="symbol">:environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># task "resque:setup" =&gt; :environment do</span></span><br><span class="line"><span class="comment">#   ENV['QUEUE'] = "*"</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"><span class="comment"># 执行 rake resque:work 会启动所有队列</span></span><br></pre></td></tr></table></figure>
+<h5 id="创建任务">创建任务</h5><p>app/workers/resque_job.rb</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResqueJob</span></span></span><br><span class="line">  <span class="variable">@queue</span> = <span class="symbol">:resque_job</span> <span class="comment">#定义队列名称</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.perform(u_name) <span class="comment">#必须定义 执行方法体</span></span><br><span class="line">    puts <span class="string">"hello <span class="subst">#&#123;u_name&#125;</span>"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h5 id="启动_queue">启动 queue</h5><p>rake resque:work QUEUE=’*’ #启动所有队列</p>
+<p>rake resque:work QUEUE=’resque_job’ #启动队列名称为resque_job的单个队列</p>
+<h5 id="调用_queue">调用 queue</h5><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="constant">Resque</span>.enqueue(<span class="constant">ResqueJob</span>,<span class="string">"everyone"</span>) <span class="comment">#调用队列</span></span><br></pre></td></tr></table></figure>
+<h4 id="项目中查看resque任务">项目中查看resque任务</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">gem <span class="string">"resque"</span>, <span class="string">"~&gt; 1.25.1"</span>, <span class="symbol">:require</span> =&gt; <span class="string">"resque/server"</span></span><br><span class="line">mount <span class="constant">Resque::Server</span>, <span class="symbol">:at</span> =&gt; <span class="string">"/resque"</span> <span class="comment"># routes.rb</span></span><br></pre></td></tr></table></figure>
+<p>访问 <a href="http://0.0.0.0:3000/resque/overview" target="_blank" rel="external">http://0.0.0.0:3000/resque/overview</a></p>
+<h4 id="限制访问">限制访问</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># config/initializers/resque_auth.rb</span></span><br><span class="line"><span class="constant">Resque::Server</span>.use(<span class="constant">Rack::Auth::Basic</span>) <span class="keyword">do</span> |user, password|</span><br><span class="line">  password == <span class="string">"password"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Redis_命令行">Redis 命令行</h3><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">redis-server <span class="preprocessor">#Redis服务器的daemon启动程序</span></span><br><span class="line"></span><br><span class="line">redis-<span class="keyword">cli</span> <span class="preprocessor">#Redis命令行操作工具。当然，你也可以用telnet根据其纯文本协议来操作</span></span><br><span class="line"></span><br><span class="line">redis-benchmark <span class="preprocessor">#Redis性能测试工具，测试Redis在你的系统及你的配置下的读写性能</span></span><br><span class="line"></span><br><span class="line">redis-stat <span class="preprocessor">#Redis状态检测工具，可以检测Redis当前状态参数及延迟状况</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="定时队列">定时队列</h3><pre><code>gem <span class="string">"resque-scheduler"</span>, <span class="string">"~&gt; 2.0.1"</span>  :<span class="keyword">require</span> =&gt; <span class="string">"resque_scheduler"</span>
+</code></pre>
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/rails/">rails</a>, <a class="tags-link" href="/tags/resque/">resque</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

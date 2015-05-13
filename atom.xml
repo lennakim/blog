@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Shooter]]></title>
+  <subtitle><![CDATA[I am shooter]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://shooter.gl/"/>
+  <updated>2015-05-13T18:48:53.000Z</updated>
+  <id>http://shooter.gl/</id>
+  
+  <author>
+    <name><![CDATA[shooter]]></name>
+    <email><![CDATA[liuningtw163.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[禁用chrome默认的书签管理器]]></title>
+    <link href="http://shooter.gl/how-to-disable-chromes-new-bookmark-manager/"/>
+    <id>http://shooter.gl/how-to-disable-chromes-new-bookmark-manager/</id>
+    <published>2015-05-09T06:56:25.000Z</published>
+    <updated>2015-05-13T18:48:53.000Z</updated>
+    <content type="html"><![CDATA[<p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
+<p>在chrome的url输入框 输入以下内容, 在下拉菜单选择 停用(disabled) 就ok了.</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="label">chrome:</span>//flags/<span class="preprocessor">#enhanced-bookmarks-experiment</span></span><br></pre></td></tr></table></figure>
+<p>世界变得跟之前一样安静了.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
+<p>在chrome的url输入框 输入以下内容, 在下]]>
+    </summary>
+    
+      <category term="chrome" scheme="http://shooter.gl/tags/chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[升级hexo]]></title>
+    <link href="http://shooter.gl/upgrade-hexo/"/>
+    <id>http://shooter.gl/upgrade-hexo/</id>
+    <published>2015-05-03T13:25:55.000Z</published>
+    <updated>2015-05-13T19:03:47.000Z</updated>
+    <content type="html"><![CDATA[<p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0</a>, 从题目上看, 作者也是蛮狠的.</p>
+<p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
+<p>在这里纪下我的升级步骤</p>
+<h4 id="First">First</h4><p>修改 ./package.json</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">hexo</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">version</span>": <span class="value"><span class="string">""</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Second">Second</h4><p>安装hexo组件</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-cli -g</span><br><span class="line">npm <span class="keyword">install</span> hexo <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>安装生成器</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-archive <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-category <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>安装server</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="Third">Third</h4><p>安装部署工具, 由于我用github page, 只用安装hexo-deployer-git</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>升级各种插件</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>最后不要忘了这个</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<p>不装 ejs 会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">hexo-issues-632</a>描述的问题</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wi]]>
+    </summary>
+    
+      <category term="hexo" scheme="http://shooter.gl/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[世界依旧这么大]]></title>
+    <link href="http://shooter.gl/as-it-is-the-world-is-big/"/>
+    <id>http://shooter.gl/as-it-is-the-world-is-big/</id>
+    <published>2015-04-27T03:49:16.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
+<p>peatio 确实是个 全明星技术团队, 阵容超豪华, 随便拿出一个人都能当CTO, <strong>偶除外</strong>.<br>我属于板凳球员, 要想了解板凳深度, 看我就行了, 所见即所得.<br><strong>即使都是全明星球员, 也不一定能拿总冠军.</strong></p>
+<p>xiaolai 玩法很邪门, 既当投资人, 又是pm, 想法超多, 对产品的热情不持久.<br>学习能力很强, 但感觉是体验生活, 而不是在投资领域卖力气. 对于btc大亨来说, 可能就是要任性吧.</p>
+<p>我在14年底离开, 绝不是提前嗅到btc不景气,原因很多吧.<br>一个比较大的原因: 我自己在那段时间, 心态比较失衡, 感觉不开心了, 所以选择离开了.</p>
+<p>又靠倒了一家公司(虽公司实体还在, 但在我心里已倒下), 我迫切希望入党, 希望组织收留我.</p>
+<p><strong>世界这么大, 祝他们找到新的征程.</strong></p>
+<p>留照以兹纪念<br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/peatio-team.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
+<p>peatio 确实是个 全明星技术团队, 阵容超豪华]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用 vimdiff 作为git diff 工具]]></title>
+    <link href="http://shooter.gl/using-vimdiff-as-git-diff-tool/"/>
+    <id>http://shooter.gl/using-vimdiff-as-git-diff-tool/</id>
+    <published>2015-04-21T10:38:58.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">git config --global diff.tool vimdiff # &#35774;&#32622;diff&#24037;&#20855;&#20026; vimdiff&#10;&#10;git config --global difftool.prompt false&#10;&#10;git config --global alias.d difftool # &#35774;&#32622;&#21035;&#21517;</span><br></pre></td></tr></table></figure>
+<p>只要输入  <code>git d</code>, 感觉是不是更直观了呢?</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/vimdiff.png" alt=""></p>
+<h3 id="资料">资料</h3><p><a href="http://ccvita.com/445.html" target="_blank" rel="external">更换svn diff为vimdiff</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-vimdiff/" target="_blank" rel="external">Vimdiff 使用</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
+<figure class="highlight"><table><tr><td class="c]]>
+    </summary>
+    
+      <category term="git" scheme="http://shooter.gl/tags/git/"/>
+    
+      <category term="vimdiff" scheme="http://shooter.gl/tags/vimdiff/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用 charles 抓取网络包]]></title>
+    <link href="http://shooter.gl/use-charles-sniffer-network-packet/"/>
+    <id>http://shooter.gl/use-charles-sniffer-network-packet/</id>
+    <published>2015-04-18T11:40:44.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>最近一直在做 api server, 有时候也需要分析手机App的网络请求, 之前在win环境下一直用 fiddler<br>做这样的工作, 然后在 mac下发现了<a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a>, 样子是个花瓶, 不过功能很强大哦.</p>
+<p>说下步骤</p>
+<p>1 确保手机和mac在同一个局域网</p>
+<p>2 设置Charles代理, Proxy -&gt; Proxy Settings, 保持默认即可, 记住端口 8888</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/charles-proxy-settings.png" alt=""></p>
+<p>3 查看mac 本地ip</p>
+  <figure class="highlight"><table><tr><td class="code"><pre><span class="line">ifconfig |grep inet&#10;&#10;  inet6 ::1 prefixlen 128&#10;  inet 127.0.0.1 netmask 0xff000000&#10;  inet6 fe07::1%lo0 prefixlen 64 scopeid 0x1&#10;  inet6 fe07::9e40:8ff:fe9d:2136%en0 prefixlen 64 scopeid 0x4&#10;  inet 192.168.1.109 netmask 0xffffff00 broadcast 192.168.1.205</span><br></pre></td></tr></table></figure>
+<p>  本地 ip地址是  192.168.1.109</p>
+<p>4 设置手机</p>
+<p>设置 -&gt; 无线局域网 -&gt; 点蓝色的info图标, 找到 http 代理</p>
+<p>服务器 输入mac本地ip <code>192.168.1.109</code>, 端口输入 <code>8888</code></p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/ios-proxy.jpg" alt=""></p>
+<p>5 charles 会提示弹窗 , allow 即可.</p>
+<p>在左侧栏, 就可以看到请求的连接了.</p>
+<hr>
+<p>另外 charles 可以模拟网络速度, 很贴心, 通过 Proxy-&gt; Throtting Settings</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/charles-throtting-settings.png" alt=""></p>
+<p>PS 免费版 charles 会有些限制.</p>
+<h3 id="资料">资料</h3><p><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">fiddler</a><br><a href="https://www.wireshark.org/" target="_blank" rel="external">wireshark</a><br><a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles来抓取手机App的网络包</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近一直在做 api server, 有时候也需要分析手机App的网络请求, 之前在win环境下一直用 fiddler<br>做这样的工作, 然后在 mac下发现了<a href="http://www.charlesproxy.com/" target="_blank" ]]>
+    </summary>
+    
+      <category term="charles" scheme="http://shooter.gl/tags/charles/"/>
+    
+      <category term="sniffer" scheme="http://shooter.gl/tags/sniffer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[怀念母亲]]></title>
+    <link href="http://shooter.gl/miss-my-mother/"/>
+    <id>http://shooter.gl/miss-my-mother/</id>
+    <published>2015-04-05T14:21:57.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽明忽暗, 没了期盼. 现在我想说: 麻麻, 我很好, 我一直很乖.</p>
+<p>斯人已逝, 言犹在耳, 谢谢母亲.</p>
+<p>附上李志的『<a href="http://music.163.com/#/song?id=5246946" target="_blank" rel="external">妈妈</a>』</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26523123&auto=0&height=66"></iframe>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[mongoid 聚合功能]]></title>
+    <link href="http://shooter.gl/mongoid-aggregation/"/>
+    <id>http://shooter.gl/mongoid-aggregation/</id>
+    <published>2015-04-04T10:32:21.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">class <span class="constant">User</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Timestamps</span></span><br><span class="line"></span><br><span class="line">  field <span class="symbol">:name</span>,   <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:email</span>,  <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:gender</span>, <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>, <span class="symbol">:gender</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>, <span class="symbol">:email</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="aggregation_聚合">aggregation 聚合</h3><h4 id="group">group</h4><p>我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,<br>这样可以使用 mongoDB的 <a href="http://docs.mongodb.org/manual/reference/method/db.collection.group/" target="_blank" rel="external">$group</a> 函数了.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Timestamps</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.added_fans(day_num)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.collection.aggregate(</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$match"</span> =&gt; &#123;</span><br><span class="line">          <span class="string">"followable_type"</span> =&gt; <span class="string">"User"</span>,</span><br><span class="line">           <span class="string">"created_at"</span> =&gt; &#123;</span><br><span class="line">              <span class="string">"$gte"</span> =&gt; yesterday.to_i.days.ago.beginning_of_day, <span class="comment"># 大于等于 昨天的开始时间</span></span><br><span class="line">              <span class="string">"$lte"</span> =&gt; <span class="constant">Date</span>.yesterday.end_of_day <span class="comment"># 小于等于 昨天的结束的时间</span></span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="comment"># 查询条件</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$group"</span> =&gt; &#123;</span><br><span class="line">          <span class="symbol">_id:</span> <span class="string">"$follow_id"</span>, <span class="comment"># 根据 follow_id 分组统计</span></span><br><span class="line">          <span class="symbol">matches:</span> &#123; <span class="string">"$sum"</span> =&gt; <span class="number">1</span> &#125; <span class="comment"># 统计数量</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$sort"</span> =&gt; &#123; <span class="symbol">matches:</span> -<span class="number">1</span> &#125; <span class="comment">#倒序</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$limit"</span> =&gt; <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="map_reduce"><a href="http://mongoid.org/en/mongoid/docs/querying.html#map_reduce" target="_blank" rel="external">map_reduce</a></h4><p>map_reduce</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Band</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.likes_count</span><br><span class="line">    map = <span class="string">%Q&#123;</span><br><span class="line">      function() &#123;</span><br><span class="line">        emit(this.name, &#123; likes: this.likes &#125;</span>); <span class="comment"># 发送 name 与 likes</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reduce = <span class="string">%Q&#123;</span><br><span class="line">      function(key, values) &#123;</span><br><span class="line">        var result = &#123; likes: 0 &#125;</span>;</span><br><span class="line"></span><br><span class="line">        values.forEach(function(value) &#123;</span><br><span class="line"></span><br><span class="line">          result.likes += value.likes; <span class="comment"># 获得value.likes 并 累加</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result; <span class="comment">#输出结果</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    map_reduce(map, reduce).out(<span class="symbol">inline:</span> <span class="keyword">true</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Band</span>.likes_count</span><br></pre></td></tr></table></figure>
+<p>MapReduce概念可以查看<a href="http://zh.wikipedia.org/zh/MapReduce" target="_blank" rel="external">wiki</a><br>或者<a href="http://www.zhihu.com/question/23345991" target="_blank" rel="external">知乎</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
+<figure class="highlight elixir">]]>
+    </summary>
+    
+      <category term="aggregation" scheme="http://shooter.gl/tags/aggregation/"/>
+    
+      <category term="mapreduce" scheme="http://shooter.gl/tags/mapreduce/"/>
+    
+      <category term="mongoid" scheme="http://shooter.gl/tags/mongoid/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[rails中禁掉某些生成器]]></title>
+    <link href="http://shooter.gl/disable-unit-testing-generators-in-rails/"/>
+    <id>http://shooter.gl/disable-unit-testing-generators-in-rails/</id>
+    <published>2015-03-25T12:13:45.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/application.rb</span></span><br><span class="line"></span><br><span class="line">config.generators <span class="keyword">do</span> |g|</span><br><span class="line">  g.test_framework  <span class="symbol">:rspec</span>, <span class="symbol">fixture:</span> <span class="keyword">false</span></span><br><span class="line">  g.view_specs      <span class="keyword">false</span></span><br><span class="line">  g.helper_specs    <span class="keyword">false</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
+<figure class=]]>
+    </summary>
+    
+      <category term="generators" scheme="http://shooter.gl/tags/generators/"/>
+    
+      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[inherit_resources 添加分页功能]]></title>
+    <link href="http://shooter.gl/inherit-resources-pagination/"/>
+    <id>http://shooter.gl/inherit-resources-pagination/</id>
+    <published>2015-03-10T05:16:44.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  scope <span class="symbol">:recent</span>, -&gt; &#123;order(<span class="symbol">created_at:</span> <span class="symbol">:desc</span>)&#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line"></span><br><span class="line">  inherit_resources</span><br><span class="line"></span><br><span class="line">  protected</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>collection</span><br><span class="line">    end_of_association_chain.recent.page(params[<span class="symbol">:page</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/questions/21258436/does-kaminari-work-with-inherited-resources" target="_blank" rel="external">Kaminari work with Inherited Resources</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 acti]]>
+    </summary>
+    
+      <category term="gem" scheme="http://shooter.gl/tags/gem/"/>
+    
+      <category term="pagination" scheme="http://shooter.gl/tags/pagination/"/>
+    
+      <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git 用法]]></title>
+    <link href="http://shooter.gl/git-guide/"/>
+    <id>http://shooter.gl/git-guide/</id>
+    <published>2015-02-07T17:19:59.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
+<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git remote add &#60;shortname&#62; &#60;url&#62; #&#26032;&#24314;&#36828;&#31243;&#20179;&#24211;&#10;git remote set-url origin &#60;url&#62;&#10;git remote set-branches [--add] &#60;name&#62; &#60;branch&#62;&#10;git remote set-url [--push] &#60;name&#62; &#60;newurl&#62; [&#60;oldurl&#62;]&#10;git remote set-url --add &#60;name&#62; &#60;newurl&#62;&#10;git remote set-url --delete &#60;name&#62; &#60;url&#62;</span><br></pre></td></tr></table></figure>
+<h4 id="Git-Tag">Git-Tag</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git tag #&#21015;&#20986;&#26631;&#31614;&#10;&#10;git tag v0.1.2-light &#21019;&#24314;&#36731;&#37327;&#26631;&#31614;&#10;&#10;git tag -a v0.1.2 -m &#34;0.1.2 Version&#34; #&#21019;&#24314;&#38468;&#27880;&#26631;&#31614;&#10;&#10;git push origin v0.1.2 # &#23558;v0.1.2&#26631;&#31614;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git push origin &#8211;tags # &#23558;&#26412;&#22320;&#25152;&#26377;&#26631;&#31614;&#19968;&#27425;&#24615;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git tag -d v0.1.2 # &#21024;&#38500;&#26631;&#31614;&#10;&#10;git show v0.1.2  # &#29992;git show&#21629;&#20196;&#21487;&#20197;&#26597;&#30475;&#26631;&#31614;&#30340;&#29256;&#26412;&#20449;&#24687;&#10;&#10;git tag -a v0.1.1 9fbc3d0 # &#32473;&#25351;&#23450;&#30340;commit&#25171;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Update_2015-03-10">Update 2015-03-10</h3><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移动分支到某个 commit</span></span><br><span class="line">git branch -f <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;commit&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># github reset br remote head</span></span><br><span class="line">git reset --hard origin/<span class="variable">&lt;br-name&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#rename git  branch</span></span><br><span class="line">git branch -m <span class="variable">&lt;oldname&gt;</span> <span class="variable">&lt;newname&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改当前分支</span></span><br><span class="line">git branch -m <span class="variable">&lt;newname&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2><p><a href="http://blog.csdn.net/wangjia55/article/details/8793577" target="_blank" rel="external">http://blog.csdn.net/wangjia55/article/details/8793577</a><br><a href="http://www.cnblogs.com/wang_yb/p/3867221.html" target="_blank" rel="external">http://www.cnblogs.com/wang_yb/p/3867221.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
+<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><spa]]>
+    </summary>
+    
+      <category term="git" scheme="http://shooter.gl/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[swift扩展-extension]]></title>
+    <link href="http://shooter.gl/swift-extension/"/>
+    <id>http://shooter.gl/swift-extension/</id>
+    <published>2015-02-07T16:44:58.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>swift 有一个特别的关键字 — <strong>extension</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
+<p>马上想到的是 ruby monkey-patch</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>seconds</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>minutes</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>days</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">############</span></span><br><span class="line"><span class="number">5</span>.seconds</span><br><span class="line"><span class="number">2</span>.minutes</span><br><span class="line"><span class="number">1</span>.days</span><br></pre></td></tr></table></figure>
+<hr>
+<p>在ios的例子中 <a href="https://github.com/liuningtw/ruby-china_ios/blob/master/ruby-china_ios/ViewControllerExtension.swift" target="_blank" rel="external">ViewControllerExtensions</a> 扩展ViewController, 继承 <strong>UITableViewDataSource</strong> , 并实现 <strong>protocol</strong> ,</p>
+<p>类似ruby中用 module 扩展class.</p>
+<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/tonny_guan/article/details/36198911" target="_blank" rel="external">Swift扩展-Extension</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>swift 有一个特别的关键字 — <strong>extension</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension ]]>
+    </summary>
+    
+      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
+    
+      <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
+    
+      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[swift 定义各种函数汇总]]></title>
+    <link href="http://shooter.gl/swift-func-parameter/"/>
+    <id>http://shooter.gl/swift-func-parameter/</id>
+    <published>2015-02-04T16:22:20.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
+<h3 id="参考">参考</h3><p><a href="http://www.swiftmi.com/topic/50.html" target="_blank" rel="external">C#与Swift的函数比较</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#2608]]>
+    </summary>
+    
+      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
+    
+      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ios 如何关闭键盘输入]]></title>
+    <link href="http://shooter.gl/ios-keyboard-resignFirstResponder/"/>
+    <id>http://shooter.gl/ios-keyboard-resignFirstResponder/</id>
+    <published>2015-02-02T09:18:55.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
+<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>2 当手指离开屏幕的时候 关闭键盘, 需要重写touchesEnded</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;  nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>源码地址 <a href="https://github.com/liuningtw/keyboard-resignFirstResponder/blob/master/keyboard-resignFirstResponder/ViewController.swift" target="_blank" rel="external">ViewController.swift</a></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">import UIKit&#10;&#10;class ViewController: UIViewController &#123;&#10;&#10;  @IBOutlet weak var nameTxt: UITextField! //&#23450;&#20041;&#36755;&#20837;&#26694;&#10;  @IBOutlet weak var resultLab: UILabel! //&#23450;&#20041;&#26174;&#31034;&#26694;&#10;&#10;  override func viewDidLoad() &#123;&#10;    super.viewDidLoad()&#10;    nameTxt.placeholder = &#34;&#37049;&#20521;&#38639;&#34;&#10;  &#125;&#10;&#10;  override func didReceiveMemoryWarning() &#123;&#10;    super.didReceiveMemoryWarning()&#10;  &#125;&#10;&#10;  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;    nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;  &#125;&#10;&#10;  @IBAction func okTapped(sender: AnyObject) &#123;&#10;    nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#10;    resultLab.text = &#34;hi, \(nameTxt.text)&#34;&#10;  &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
+<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
+<figure class="highlight"><table><tr><t]]>
+    </summary>
+    
+      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
+    
+      <category term="keyboard" scheme="http://shooter.gl/tags/keyboard/"/>
+    
+      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[开始新的工作]]></title>
+    <link href="http://shooter.gl/start-a-new-job/"/>
+    <id>http://shooter.gl/start-a-new-job/</id>
+    <published>2015-01-29T15:13:38.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
+<p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt; 北京, 溜达一圈, 每到一个地方,<br>就跟很多年没见的同学 朋友聚了一次, 最久的从06年就没再见过, 最短的从09年也没怎么联系了.</p>
+<p>回归的另一个意思是, 在工作上重新开始, 跨界从零开始学ios,<br>像11年那样, 放弃java, 一头扎进rails, 从一个陌生的领域重新起步.</p>
+<p>中间有个小插曲: 在石家庄的时候, 我看完电影, 钱包被偷了, 身份证 银行卡 信用卡 通通没了.<br>以为本命年的晦气过去了, 结果年来了个神补刀.<br>不得已回老家, 呆了几天, 本打算想去杭州, 结果钱包这事儿一搅和, 不去了.<br>在老家的这几天, 终于下定决心, 去朋友呆的公司工作, 跟他一起从零开始学习ios.</p>
+<hr>
+<h4 id="Update_2015-03-15">Update 2015-03-15</h4><p>在14年除夕这天, 我曾丢钱包的那家影院的老板娘告诉我: 钱包找到了, 钱包卡在了椅子的缝隙里.<br>估计是我不小心, 钱包从口袋里掉了出来, 卡在了这里, 当时在地上找了半天, 徒劳无功, 还以为被人偷走了。<br><strong>太感谢那位老板娘了</strong>.</p>
+<p>回归又多了层含义: 是不是运气开始好转呢?</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
+<p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt;]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[秦皇岛之行]]></title>
+    <link href="http://shooter.gl/a-trip-of-qinhuangdao/"/>
+    <id>http://shooter.gl/a-trip-of-qinhuangdao/</id>
+    <published>2015-01-16T02:38:33.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.org/wiki/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6" target="_blank" rel="external">燕大</a>, 到了燕大的第一感觉, 这里好大啊, 比清华大多了.<br>peter说: 燕大有5000多亩, 要是夏天来这里, 在校园里骑着自行车, 可劲的骑吧, 骑不出去,<br>而且夏天秦皇岛比北京凉快的多, 很适合骑行. 来的不是时候啊.</p>
+<p>peter家里养了一只猫, 还有一只狗, 猫特别的漂亮, 很傲娇的. 看喵高歌一曲</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_1.jpg" alt=""><br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_2.jpg" alt=""></p>
+<p>狗呢, 真的是人模狗样, 会打呼噜, 咂巴嘴, 会委屈. 有时候吃饭的时候, 它在饭桌地下, 小呼噜就打起来了,<br>把它弄醒, 眼神懒懒的, 眼皮还泛着一点儿粉红, <strong>这厮投胎前一定是个人.</strong><br>跟我是特别亲, 老是在我脚边晃悠, 咬我的裤子. 早上我还没起来, 它就跑到我跟前,<br>“汪汪” 的叫唤. <strong>可能我上辈子是个狗</strong>, 狗缘不错.<br>听peter说, 这狗是他捡来的, 觉得这狗特别, 就把它养家里了.</p>
+<p>然后, 跟在秦皇岛的童鞋见了一面, 他从09年到秦皇岛上大学, 一直呆到现在.<br>我在北京也呆了这么长的时间, 呆的有些腻了. 我们在星巴克得瑟了一下午, 心情相当不错啊.<br>晚上, 自己看了场电影『博物馆奇妙夜』, 好吧, 以后不看这系列的电影了.<br>这叫<strong>择一座城市, 看一场电影</strong>, 嘿嘿.</p>
+<p>前几天, 朋友们说,北京下雪, 晚上就梦到了北京, <strong>日久他乡是故乡, 梦到了久居的他乡</strong>.<br>这个生活了5年的城市, 当我离开了, 还真有点不习惯.</p>
+<p>01-16从秦皇岛去石家庄看老叔, 好久没看他了. 走之前, 秦皇岛下雪了,<br>薄薄的一层, 踩在雪上, 咯吱咯吱响, 这个冬天终于看到雪了.</p>
+<p>非常感谢 peter跟bill的盛情款待 ^_^</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[001-心理学]]></title>
+    <link href="http://shooter.gl/001-psychology/"/>
+    <id>http://shooter.gl/001-psychology/</id>
+    <published>2015-01-10T08:27:23.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
+<h3 id="小学到高中只顾着学习了,_进了大学以后会怎么样?">小学到高中只顾着学习了, 进了大学以后会怎么样?</h3><p>美国心理学家 埃里克-埃里克森(Erik Erikson) 创造了一套名叫<br>人格的社会心理发展理论(Psychosocial development across the life span),<br>把人这一生的心理发展分为八个阶段，其中每一个阶段都有自己的矛盾和对峙状态,<br>只有矛盾顺利解决, 人的心理才能向下一阶段健康发展.</p>
+<p><strong>题目中问道, 如果小孩从 6 岁至 18 岁,即小学到高中期间,如果除了学业没有思考过其他的问题会在大学面临哪些思想问题.</strong><br>在埃里克森的理论中, 这一段 12 年的时间被划分成了两个心里阶段:<br>其中 <strong>6至12岁, 是勤奋对自卑阶段(Industry vs Inferiority)</strong>;<br><strong>从12岁到18岁, 是同一性对混乱阶段(Identity vs Role Confusion)</strong>.</p>
+<p>这两个阶段, 对于人的心理发展是至关重要的.</p>
+<p>在勤奋对自卑阶段中, 儿童学习各种必要的谋生技能,以及能使他们成为社会生产者所具备的专业技巧.<br>实际上, 一般人6至12岁的时间都是在小学中读过的.<br>如埃里克森所说,<br><figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">儿童在这一阶段所学的最重要的课程是“体验以稳定的注意和孜孜不倦的勤奋来完成工作的乐趣”.</span><br><span class="line">即努力的学习课本上的知识和尝试着开始人际交往.如果在这一阶段只注意学习却不关注其他, 会发生什么事呢?</span><br></pre></td></tr></table></figure></p>
+<p>首先, 如果孩子尝试努力,却在成绩和社交上仍然不尽人意,<br>那么他们就会产生一种面对成功人士的自卑感,这种消极情绪会伴随终生;<br>但如果孩子 通过勤奋获得了巨大的成功, 那他们还会面临一种危险, 即过分重视他们的工作能力<br>所带来的地位, 成为工作至上的工作狂, 对这样的人说来,工作就是生活.<br>他们高看工作所能带来的成就,因而会忽视人类生存的其它重要方面, 比如停下来<br>思考生活里细微的小事, 以及给予身边的人爱与温暖.</p>
+<p>用埃里克森的话来说,<br>如果他把工作作为他唯一的义务, 把某种工作作为唯一有价值的标准, 那么他也许<br>会成为一位因循守旧的人, 成为他自己的技术和可能利用他的技术的那些人的毫无思想的奴仆.<br>如果孩子在这一阶段获得的勤奋感胜过自卑感, 他们就会带着获得的能力离开这个阶段.<br><strong>与此同时, 埃里克森还说, 使孩子获得能力的是关爱和温暖, 使孩子获得自卑的是人生中重要人物的冷漠嘲笑.</strong><br>如果如题主所说的喂辣椒让孩子醒来写作业, 明显就是后者的体现啊.</p>
+<p>接下来就是12-18岁的同一性对混乱阶段. 所谓的“同一性”,根据埃里克森的定义,<br><strong>即一种对自身熟悉的感觉,  一种知道个人未来目标的感觉, 一种从他信赖的人们中获得所期待的认可的内在自信.</strong></p>
+<p>简而言之, “同一性”其实就是对自我的一个统一认知, 即完整的 self-indentity.<br>这个认知的来源来自外部环境, 来自周围的人, 来自自己能力的评价,<br>来自对未来的预期, 更重要的是来自自我的内心.<br>有一个答案提到了所谓“中国保安门卫哲学家经典三问”,因为关乎同一性阶段的<br>自我认知 无非就三个问题: “我是谁”“我是什么样的人” “我未来要做什么”</p>
+<p>埃里克森说,这是这一阶段年轻人们主要思考的问题:<br>拥有同一性的自我认知,实际上就是外部对自己的认识和自己对自我的认识相符合;<br>如果不相符,或者对这些问题没有一个清醒的认识,那么青年人很容易就会无法从这一阶段走出,<br>反而陷入一种角色混乱, 也就是很多青年人步入大学之后陷入迷茫期的事实.</p>
+<p>埃里克森接着建议到, 如果青年人在这一阶段陷入了角色混乱,那么他最终很可能选择消极同一性, 借此来抵抗自身的角色混乱.<br>所谓的“消极同一性”, 即一些极端的恶劣行为, 比如正常的学生突然开始翘课,<br>开始抽烟酗酒, 赌博打架, 让人生彻底沉沦.</p>
+<p>对于这种“不成仙便成魔”的心态, 埃里克森的解释是:</p>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">宁可成为一个无名小卒, 或者成为臭名昭著的大人物, 或者成为某个的确已经死了的人——总之,它们是经过自由选择的角色——而不愿意成为一个不太象样的人.</span><br></pre></td></tr></table></figure>
+<p>很明显,诸多年轻人进入大学阶段突然开始迷茫,找不准生活方向的原因,就是因为对自己没有一个<br>清醒且积极的自我认知,或者理想自我和他人审视的自我出现了偏差,并且陷入了角色混乱.</p>
+<p>如果不给 12-18 岁的年轻人时间让他们好好思考这些问题,他们就不会走出这一阶段, 从而进入了无限延长了的心理的合法延续期,这对于他们的人生是致命的.<br>因为他们轻则在往后的生活里会轻易放弃责任, 重则出现一些极端性的行为.</p>
+<!--
+### PS
+在16岁开始爆发 "我是谁" "我以后要做什么" 的想法, 不知道为什么来的如此激烈, 感觉自己是那么的不可理喻.
+我心有戚戚焉啊.
+-->]]></content>
+    <summary type="html">
+    <![CDATA[<p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
+<h3 id="小学到高中只顾着学习了,_进了大学以后会怎么样?">小学到高中只顾着学]]>
+    </summary>
+    
+      <category term="psychology" scheme="http://shooter.gl/tags/psychology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[查找 mysql socket 文件位置]]></title>
+    <link href="http://shooter.gl/lookup-mysql-socket-file-location/"/>
+    <id>http://shooter.gl/lookup-mysql-socket-file-location/</id>
+    <published>2015-01-07T02:44:54.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>Mac os 运行一个rails项目, 经常有找不到 mysql socket文件的问题, 在stackoverflow上<br>找到了解决办法 — <a href="http://stackoverflow.com/questions/748478/cannot-find-mysql-sock" target="_blank" rel="external">cannot-find-mysql-sock</a> .</p>
+<p>于是发现一个灰常简单的的命令 <strong>mysql_config —socket</strong></p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">mysql_config --socket</span><br><span class="line"><span class="status"></span><br><span class="line">=&gt;</span> /tmp/mysql.sock</span><br></pre></td></tr></table></figure>
+<p>迎刃而解, 只是感觉这个命令太偏门了.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Mac os 运行一个rails项目, 经常有找不到 mysql socket文件的问题, 在stackoverflow上<br>找到了解决办法 — <a href="http://stackoverflow.com/questions/748478/cannot-find]]>
+    </summary>
+    
+      <category term="Mac" scheme="http://shooter.gl/tags/Mac/"/>
+    
+      <category term="mysql" scheme="http://shooter.gl/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[vim 速查表]]></title>
+    <link href="http://shooter.gl/vim-cheat-sheet/"/>
+    <id>http://shooter.gl/vim-cheat-sheet/</id>
+    <published>2015-01-06T03:00:16.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.vim.org/" target="_blank" rel="external">vim</a> 作为骨灰级神器, 就算虐我千百遍, 也要待vim如初恋,  常温才能不被常虐.</p>
+<p><strong>本文修改自陈皓的 <a href="http://coolshell.cn/articles/5479.html" target="_blank" rel="external">给程序员的VIM速查卡</a></strong>, 方便自查, 谢谢 @耗子蜀黍.</p>
+<p>其用颜色标注了级别:</p>
+<ul><br><li><span style="background-color: #008000;"><span style="color: #ffffff;">&nbsp; Green &nbsp;</span></span> = 存活级</li><br><li><span style="background-color: #ffff00;">&nbsp; Yellow &nbsp;</span> = 感觉良好</li><br><li><span style="background-color: #ff8000;">&nbsp; Orange &nbsp;</span> / <span style="background-color: #0000ff;"><span style="color: #ffffff;">Blue</span></span> = 高级</li><br><li><span style="background-color: #ff0000;">&nbsp; Red &nbsp;</span> = 专家级</li><br></ul>
+
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/vim_cheat_sheet_for_programmers_print.png" alt=""></p>
+<p>如果你是色盲的话, 还有<a href="http://michael.peopleofhonoronly.com/vim/vim_cheat_sheet_for_programmers_colorblind.pdf" target="_blank" rel="external">蓝色PDF版</a>, 太贴心了.</p>
+<p>资料:</p>
+<p><a href="http://coolshell.cn/articles/5426.html" target="_blank" rel="external">简明Vim练级攻略</a> 是极好的.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://www.vim.org/" target="_blank" rel="external">vim</a> 作为骨灰级神器, 就算虐我千百遍, 也要待vim如初恋,  常温才能不被常虐.</p>
+<p><strong>本文修改自陈皓的 <a h]]>
+    </summary>
+    
+      <category term="vim" scheme="http://shooter.gl/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[如何使用 ActiveSupport::Concern]]></title>
+    <link href="http://shooter.gl/how-to-use-activesupport-concern/"/>
+    <id>http://shooter.gl/how-to-use-activesupport-concern/</id>
+    <published>2015-01-02T15:38:11.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>在使用<a href="https://github.com/elasticsearch/elasticsearch-rails/" target="_blank" rel="external">es-model</a>的时候, include Elasticsearch::Model, model 就有了search方法, 代码如下:</p>
+<figure class="highlight ruby"><figcaption><span>/models/article.rb</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Elasticsearch::Model</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Article</span>.search <span class="comment"># is worked</span></span><br></pre></td></tr></table></figure>
+<p>如何通过ActiveSupport::Concern, 实现类似的功能呢?</p>
+<figure class="highlight ruby"><figcaption><span>test.rb</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'active_support'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Foo</span></span></span><br><span class="line">  extend <span class="constant">ActiveSupport::Concern</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>instance_method</span><br><span class="line">    puts <span class="string">"this is a instance_method"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  included <span class="keyword">do</span></span><br><span class="line">   <span class="comment">## 定义类方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.class_method</span><br><span class="line">      puts <span class="string">"this is a class_method"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Foo</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Test</span>.new.instance_method</span><br><span class="line"><span class="constant">Test</span>.class_method</span><br></pre></td></tr></table></figure>
+<p>campo有<a href="https://github.com/chloerei/campo/blob/master/app/models/concerns/likeable.rb" target="_blank" rel="external">相似代码</a></p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Likeable</span></span></span><br><span class="line">  extend <span class="constant">ActiveSupport::Concern</span></span><br><span class="line"></span><br><span class="line">  included <span class="keyword">do</span></span><br><span class="line">    has_many <span class="symbol">:likes</span>, <span class="symbol">as:</span> <span class="string">'likeable'</span>, <span class="symbol">dependent:</span> <span class="symbol">:delete_all</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>liked_by?(user)</span><br><span class="line">    likes.where(<span class="symbol">user:</span> user).exists?</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这样的好处是: <strong>1. 代码复用</strong>  <strong>2. 分拆代码, 使结构更清晰</strong>.</p>
+<p>AS::Concern的另一个作用: 解决modules之间的dependencies, 可以参考 ihower的<a href="https://ihower.tw/blog/archives/3949" target="_blank" rel="external">文章</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在使用<a href="https://github.com/elasticsearch/elasticsearch-rails/" target="_blank" rel="external">es-model</a>的时候, include Elasticsearch:]]>
+    </summary>
+    
+      <category term="active_support" scheme="http://shooter.gl/tags/active-support/"/>
+    
+      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2014年, 再见]]></title>
+    <link href="http://shooter.gl/2014-end/"/>
+    <id>http://shooter.gl/2014-end/</id>
+    <published>2014-12-30T16:39:56.000Z</published>
+    <updated>2015-05-09T06:49:40.000Z</updated>
+    <content type="html"><![CDATA[<p>莽莽幢幢走过2014, 走过本命年, 波折不断, 惊喜交加, 生命的年轮又多了一圈.</p>
+<p>2014-01-01, 我在隆隆的火车上跨了年, 早上到了九江, 短暂的3天是生命里最闪光的时刻.</p>
+<p>2014-01-11, 第一次参加rails girl, 走出封闭的小圈子, 认识了很多有趣的人.</p>
+<p>2014-01-xx, 公司资金链断裂, 由于在rails girl刷脸的缘故, 应聘<a href="https://yunbi.com/" target="_blank" rel="external">云币</a>成功.</p>
+<p>2014-02-07, 正月初八, 在<a href="https://yunbi.com/" target="_blank" rel="external">云币</a> 第一天工作.</p>
+<p>2014-03-26, 跟她吵架了.</p>
+<p>2014-04-20, <a href="http://knewcoin.com/" target="_blank" rel="external">knewcoin</a> 功能完成, 上线.</p>
+<p>2014-05-10, 去了南昌, 看到了她, 然后没了然后.</p>
+<p>2014-05-27, 开始 <a href="http://www.meimiaoapp.com/" target="_blank" rel="external">美喵</a>的工作.</p>
+<p>2014-06-28, 参加<a href="http://sf.gg/" target="_blank" rel="external">segmentfault</a>举办的黑客马拉松, 天时地利人和, <a href="http://segmentfault.com/blog/news/1190000000593834" target="_blank" rel="external">获奖了</a>.</p>
+<p>2014-07-18, 美喵 第一版完成.</p>
+<p>2014-09-26, macbook pro 在公司被盗, 买了不到3周时间.</p>
+<p>2014-10-15, 美喵 第二版完成, 终告一段落.</p>
+<p>2014-10-26, 开始 <a href="http://www.doubao.io/" target="_blank" rel="external">豆包</a>.</p>
+<p>2014-11-27, 向<a href="https://github.com/peatio/peatio" target="_blank" rel="external">peatio</a>提交<a href="https://github.com/peatio/peatio/pull/360" target="_blank" rel="external">Deposits api</a>.</p>
+<p>2014-12-10, 开始<a href="http://yunaigou.com/" target="_blank" rel="external">云爱购</a>的工作.</p>
+<p>2014-12-12, <a href="http://yunaigou.com/" target="_blank" rel="external">云爱购</a> 1212活动, 分水岭.</p>
+<p>2014-12-20, 提出休假.</p>
+<p>2014-12-21, 到青岛,与CTO谈心, 正式辞职.</p>
+<p>2014-12-23, 生日, 从青岛回到北京.</p>
+<p>2014-12-24, 交接工作, 不甘, 不舍.</p>
+<p>2014-12-31, <strong>\u90b9\u5029\u96ef, I have lost you!</strong>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>莽莽幢幢走过2014, 走过本命年, 波折不断, 惊喜交加, 生命的年轮又多了一圈.</p>
+<p>2014-01-01, 我在隆隆的火车上跨了年, 早上到了九江, 短暂的3天是生命里最闪光的时刻.</p>
+<p>2014-01-11, 第一次参加rails girl, 走]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+</feed>

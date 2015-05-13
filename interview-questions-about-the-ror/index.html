@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>RoR的一些面试经验(一) | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="那些天我不是在面试，就是在面试的路上，搞得很懈怠，主要还是精神上的。 有的中规中矩;有的问题很琐碎;有的很BT,概念性的东西一股闹的全抛出来了…… 我记性不太好，对概念不感冒，倒不是从小这样，记得当年还背过视力表， 可能三聚氰胺喝多了吧。
+Symbol与String在rails中经常看到Symbol，像 :email params[:user]```，&amp;#36825;&amp;#31181;&amp;#24050">
+  
+  <meta name="description" content="那些天我不是在面试，就是在面试的路上，搞得很懈怠，主要还是精神上的。 有的中规中矩;有的问题很琐碎;有的很BT,概念性的东西一股闹的全抛出来了…… 我记性不太好，对概念不感冒，倒不是从小这样，记得当年还背过视力表， 可能三聚氰胺喝多了吧。
+Symbol与String在rails中经常看到Symbol，像 :email params[:user]```，&amp;#36825;&amp;#31181;&amp;#24050">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RoR的一些面试经验(一)">
+<meta property="og:url" content="http://shooter.gl/interview-questions-about-the-ror/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="那些天我不是在面试，就是在面试的路上，搞得很懈怠，主要还是精神上的。 有的中规中矩;有的问题很琐碎;有的很BT,概念性的东西一股闹的全抛出来了…… 我记性不太好，对概念不感冒，倒不是从小这样，记得当年还背过视力表， 可能三聚氰胺喝多了吧。
+Symbol与String在rails中经常看到Symbol，像 :email params[:user]```，&amp;#36825;&amp;#31181;&amp;#24050">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RoR的一些面试经验(一)">
+<meta name="twitter:description" content="那些天我不是在面试，就是在面试的路上，搞得很懈怠，主要还是精神上的。 有的中规中矩;有的问题很琐碎;有的很BT,概念性的东西一股闹的全抛出来了…… 我记性不太好，对概念不感冒，倒不是从小这样，记得当年还背过视力表， 可能三聚氰胺喝多了吧。
+Symbol与String在rails中经常看到Symbol，像 :email params[:user]```，&amp;#36825;&amp;#31181;&amp;#24050">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/interview-questions-about-the-ror/">
+  <time datetime="2012-09-04T17:30:00.000Z">
+    2012-09-05
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">RoR的一些面试经验(一)</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p> 那些天我不是在面试，就是在面试的路上，搞得很懈怠，主要还是精神上的。<br> 有的中规中矩;有的问题很琐碎;有的很BT,概念性的东西一股闹的全抛出来了……<br> 我记性不太好，对概念不感冒，倒不是从小这样，记得当年还背过视力表，<br> 可能三聚氰胺喝多了吧。</p>
+<h3 id="Symbol与String">Symbol与String</h3><p>在rails中经常看到Symbol，像 <figure class="highlight"><figcaption><span>:email params[:user]```，</span></figcaption><table><tr><td class="code"><pre><span class="line">&#36825;&#31181;&#24050;:&#24320;&#22836;&#30340;&#21464;&#37327;&#23601;&#26159;Symbol&#23545;&#35937;&#12290;&#35980;&#20284;&#25105;&#32463;&#24120;&#25226;&#20004;&#32773;&#28151;&#29992;&#65292;&#36824;&#26377;&#20123;&#19981;&#21516;&#30340;&#12290;&#10;&#10;**&#21019;&#24314; symbol &#23545;&#35937;**</span><br></pre></td></tr></table></figure></p>
+<p> :foo<br> :”shooter”<br><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">在 Ruby 中每一个对象都有唯一的对象标识符（<span class="built_in">Object</span> Identifier），可以通过 object_id 方法来得到一个对象的标识符。</span><br></pre></td></tr></table></figure></p>
+<p>1.9.3p194 :001 &gt; 3.times{ puts :foo.object_id }<br>230808<br>230808<br>230808<br> =&gt; 3<br>1.9.3p194 :002 &gt; 3.times{ puts “foo”.object_id }<br>85823400<br>85823380<br>85823350<br> =&gt; 3<br><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">一个字符串每出现一次 Ruby 就会创建一个 <span class="built_in">String</span>对象，即便他们包含了相同的字符串内容；</span><br><span class="line">而对于 <span class="built_in">Symbol</span> 对象，一个名字（字符串内容）唯一确定一个 <span class="built_in">Symbol</span> 对象。</span><br><span class="line"><span class="built_in">Symbol</span> 对象一旦定义将一直存在，你不能对symbol赋值，</span><br><span class="line">而且在运行环境中symbol的值也不会改变，直到程序执行退出。</span><br><span class="line"></span><br><span class="line">**相互转化**</span><br></pre></td></tr></table></figure></p>
+<h1 id="Symbol到String">Symbol到String</h1><p>1.9.3p194 :001 &gt; :foo.id2name<br> =&gt; “foo”<br>1.9.3p194 :002 &gt; :foo.to_s<br> =&gt; “foo”<br>1.9.3p194 :003 &gt; :”I am a rubyist”<br> =&gt; :”I am a rubyist”</p>
+<h1 id="String到Symbol">String到Symbol</h1><p>1.9.3p194 :004 &gt; “rubyist”.to_sym<br> =&gt; :rubyist<br>1.9.3p194 :005 &gt; “rubyist”.intern<br> =&gt; :rubyist<br>```</p>
+<p>从实用角度看，在一些场景下Symbol好过String只有两点：<strong>节省内存，表达简洁</strong> <br><br>通常来讲，当你面临 String 还是 Symbol 的选择时，可以参考以下标准：<br><br>&nbsp;&nbsp;如果使用字符串的内容，这个内容可能会变化，使用 String <br><br>&nbsp;&nbsp;如果使用固定的名字或者说是标识符，使用 Symbol。</p>
+<p>这是第一篇，没想到一个内容就这么多，再写东西就有些多了，果断阉割了。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/ruby/">ruby</a>, <a class="categories-link" href="/categories/ruby/rails/">rails</a>
+  </div>
+
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>
