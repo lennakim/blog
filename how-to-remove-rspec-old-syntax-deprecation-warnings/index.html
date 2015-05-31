@@ -7,21 +7,27 @@
   <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
   <!-- google-site-verification -->
   
-  <title>归档 | Shooter</title>
+  <title>去除rspec should/expect警告 | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="shooter">
   
   
-  <meta name="description" content="禦風而行 世而譽之而不加勸 世而非之而不加沮">
+    <meta name="description" content="# /spec/spec_helpber.rbRSpec.configure do |config|  config.mock_with :rspec do |c|    c.syntax = [:should, :expect]  end  config.expect_with :rspec do |c|    c.syntax = [:should, :expect]  endend
+资料Ho">
+  
+  <meta name="description" content="# /spec/spec_helpber.rbRSpec.configure do |config|  config.mock_with :rspec do |c|    c.syntax = [:should, :expect]  end  config.expect_with :rspec do |c|    c.syntax = [:should, :expect]  endend
+资料Ho">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shooter">
-<meta property="og:url" content="http://shooter.gl/archives/page/5/index.html">
+<meta property="og:title" content="去除rspec should/expect警告">
+<meta property="og:url" content="http://shooter.gl/how-to-remove-rspec-old-syntax-deprecation-warnings/index.html">
 <meta property="og:site_name" content="Shooter">
-<meta property="og:description" content="禦風而行 世而譽之而不加勸 世而非之而不加沮">
+<meta property="og:description" content="# /spec/spec_helpber.rbRSpec.configure do |config|  config.mock_with :rspec do |c|    c.syntax = [:should, :expect]  end  config.expect_with :rspec do |c|    c.syntax = [:should, :expect]  endend
+资料Ho">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shooter">
-<meta name="twitter:description" content="禦風而行 世而譽之而不加勸 世而非之而不加沮">
+<meta name="twitter:title" content="去除rspec should/expect警告">
+<meta name="twitter:description" content="# /spec/spec_helpber.rbRSpec.configure do |config|  config.mock_with :rspec do |c|    c.syntax = [:should, :expect]  end  config.expect_with :rspec do |c|    c.syntax = [:should, :expect]  endend
+资料Ho">
   
     <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
   
@@ -70,105 +76,50 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content">
-
-
-
-
-  
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
     
       <div class="icon"></div>
-      <a href="/ubuntu-12-dot-04-installation-and-configuration/">
-  <time datetime="2012-08-27T12:12:00.000Z">
-    2012-08-27
+      <a href="/how-to-remove-rspec-old-syntax-deprecation-warnings/">
+  <time datetime="2015-05-27T07:00:44.000Z">
+    2015-05-27
   </time>
 </a>
     
     
   
-    <h1 class="title"><a href="/ubuntu-12-dot-04-installation-and-configuration/">Ubuntu 12.04的安装和配置(二)</a></h1>
+    <h1 class="title">去除rspec should/expect警告</h1>
   
 
   </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /spec/spec_helpber.rb</span></span><br><span class="line"><span class="constant">RSpec</span>.configure <span class="keyword">do</span> |config|</span><br><span class="line">  config.mock_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  config.expect_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="资料">资料</h2><p><a href="http://makandracards.com/makandra/25409-how-to-remove-rspec-old-syntax-deprecation-warnings" target="_blank" rel="external">How to remove RSpec old syntax deprecation warnings</a></p>
 
-  <footer class="end-sep">
+    
+  </div>
+  <footer>
     
       
       
+  <div class="tags">
+    <a class="tags-link" href="/tags/rails/">rails</a>, <a class="tags-link" href="/tags/rspec/">rspec</a>
+  </div>
+
     
     <div class="clearfix"></div>
   </footer>
 </article>
 
 
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/ubuntu-12-dot-04-installation-and-configuration/">
-  <time datetime="2012-08-26T09:26:00.000Z">
-    2012-08-26
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/ubuntu-12-dot-04-installation-and-configuration/">Ubuntu 12.04的安装和配置(一)</a></h1>
-  
-
-  </header>
-
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/my-sublime-text-2-plugin-summary/">
-  <time datetime="2012-08-08T12:24:00.000Z">
-    2012-08-08
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/my-sublime-text-2-plugin-summary/">我用到的 Sublime Text 2 插件</a></h1>
-  
-
-  </header>
-
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-    <a href="/archives/page/4/" class="prev">上一页</a>
-  
-  
-  <div class="clearfix"></div>
-</nav>
-
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </div>
   </div>
   <footer id="footer">
@@ -196,7 +147,7 @@
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   }());
 </script>
