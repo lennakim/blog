@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>git 用法 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="remote tag的用法总是记不住, 2015-03-10 有更新
+Git-Remotegit remote add &amp;#60;shortname&amp;#62; &amp;#60;url&amp;#62; #&amp;#26032;&amp;#24314;&amp;#36828;&amp;#31243;&amp;#20179;&amp;#24211;&amp;#10;git remote set-url origin &amp;#60;url&amp;#62;&amp;#10;git remo">
+  
+  <meta name="description" content="remote tag的用法总是记不住, 2015-03-10 有更新
+Git-Remotegit remote add &amp;#60;shortname&amp;#62; &amp;#60;url&amp;#62; #&amp;#26032;&amp;#24314;&amp;#36828;&amp;#31243;&amp;#20179;&amp;#24211;&amp;#10;git remote set-url origin &amp;#60;url&amp;#62;&amp;#10;git remo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 用法">
+<meta property="og:url" content="http://shooter.gl/2015/02/08/tech-2015-02-09-git-guide/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="remote tag的用法总是记不住, 2015-03-10 有更新
+Git-Remotegit remote add &amp;#60;shortname&amp;#62; &amp;#60;url&amp;#62; #&amp;#26032;&amp;#24314;&amp;#36828;&amp;#31243;&amp;#20179;&amp;#24211;&amp;#10;git remote set-url origin &amp;#60;url&amp;#62;&amp;#10;git remo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git 用法">
+<meta name="twitter:description" content="remote tag的用法总是记不住, 2015-03-10 有更新
+Git-Remotegit remote add &amp;#60;shortname&amp;#62; &amp;#60;url&amp;#62; #&amp;#26032;&amp;#24314;&amp;#36828;&amp;#31243;&amp;#20179;&amp;#24211;&amp;#10;git remote set-url origin &amp;#60;url&amp;#62;&amp;#10;git remo">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/02/08/tech-2015-02-09-git-guide/">
+  <time datetime="2015-02-07T17:19:59.000Z">
+    2015-02-08
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">git 用法</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
+<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git remote add &#60;shortname&#62; &#60;url&#62; #&#26032;&#24314;&#36828;&#31243;&#20179;&#24211;&#10;git remote set-url origin &#60;url&#62;&#10;git remote set-branches [--add] &#60;name&#62; &#60;branch&#62;&#10;git remote set-url [--push] &#60;name&#62; &#60;newurl&#62; [&#60;oldurl&#62;]&#10;git remote set-url --add &#60;name&#62; &#60;newurl&#62;&#10;git remote set-url --delete &#60;name&#62; &#60;url&#62;</span><br></pre></td></tr></table></figure>
+<h4 id="Git-Tag">Git-Tag</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git tag #&#21015;&#20986;&#26631;&#31614;&#10;&#10;git tag v0.1.2-light &#21019;&#24314;&#36731;&#37327;&#26631;&#31614;&#10;&#10;git tag -a v0.1.2 -m &#34;0.1.2 Version&#34; #&#21019;&#24314;&#38468;&#27880;&#26631;&#31614;&#10;&#10;git push origin v0.1.2 # &#23558;v0.1.2&#26631;&#31614;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git push origin &#8211;tags # &#23558;&#26412;&#22320;&#25152;&#26377;&#26631;&#31614;&#19968;&#27425;&#24615;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git tag -d v0.1.2 # &#21024;&#38500;&#26631;&#31614;&#10;&#10;git show v0.1.2  # &#29992;git show&#21629;&#20196;&#21487;&#20197;&#26597;&#30475;&#26631;&#31614;&#30340;&#29256;&#26412;&#20449;&#24687;&#10;&#10;git tag -a v0.1.1 9fbc3d0 # &#32473;&#25351;&#23450;&#30340;commit&#25171;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Update_2015-03-10">Update 2015-03-10</h3><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移动分支到某个 commit</span></span><br><span class="line">git branch -f <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;commit&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># github reset br remote head</span></span><br><span class="line">git reset --hard origin/<span class="variable">&lt;br-name&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#rename git  branch</span></span><br><span class="line">git branch -m <span class="variable">&lt;oldname&gt;</span> <span class="variable">&lt;newname&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改当前分支</span></span><br><span class="line">git branch -m <span class="variable">&lt;newname&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2><p><a href="http://blog.csdn.net/wangjia55/article/details/8793577" target="_blank" rel="external">http://blog.csdn.net/wangjia55/article/details/8793577</a><br><a href="http://www.cnblogs.com/wang_yb/p/3867221.html" target="_blank" rel="external">http://www.cnblogs.com/wang_yb/p/3867221.html</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/git/">git</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>
