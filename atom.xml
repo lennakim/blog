@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-06-07T03:35:23.000Z</updated>
+  <updated>2015-07-23T10:24:03.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -15,11 +15,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[centOS7 配置 rails 环境]]></title>
+    <link href="http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/"/>
+    <id>http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/</id>
+    <published>2015-07-23T08:35:48.000Z</published>
+    <updated>2015-07-23T10:24:03.000Z</updated>
+    <content type="html"><![CDATA[<p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"># centOS</span><br><span class="line">LSB <span class="string">Version:</span>  :core-<span class="number">4.1</span>-<span class="string">amd64:</span>core-<span class="number">4.1</span>-noarch</span><br><span class="line">Distributor <span class="string">ID:</span> CentOS</span><br><span class="line"><span class="string">Description:</span>  CentOS Linux release <span class="number">7.1</span>.1503 (Core)</span><br><span class="line"><span class="string">Release:</span>  <span class="number">7.1</span>.1503</span><br><span class="line"><span class="string">Codename:</span> Core</span><br><span class="line"></span><br><span class="line"># ubuntu</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor <span class="string">ID:</span> Ubuntu</span><br><span class="line"><span class="string">Description:</span>  Ubuntu <span class="number">14.04</span>.1 LTS</span><br><span class="line"><span class="string">Release:</span>  <span class="number">14.04</span></span><br><span class="line"><span class="string">Codename:</span> trusty</span><br></pre></td></tr></table></figure>
+<p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
+<hr>
+<h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
+<p>  在 <strong>ubuntu</strong> 下是交互命令, 会一步步提示你 输入密码, 电话 地址等, 还会创建 home directory, 系统 Shell</p>
+<p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
+<h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
+<h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
+<p>  <strong>centOS</strong><br>  <figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers</span><br><span class="line"># -r<span class="comment">--r-----</span></span><br><span class="line"></span><br><span class="line"># /etc/sudoers 在 root用户下 没有写权限</span><br><span class="line"></span><br><span class="line">chmod +w /etc/sudoers # 添加写权限</span><br><span class="line"></span><br><span class="line">sudo vim /etc/sudoers # 修改文件</span><br><span class="line"></span><br><span class="line"># 找到 root <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span>, 在下一行加上</span><br><span class="line">&lt;username&gt; <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure></p>
+<p>  OK, 普通用户也可以之行 sudo 命令了</p>
+<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">mkdir</span>  ~/.ssh</span><br><span class="line"></span><br><span class="line">vim ~/.ssh/authorized_keys</span><br><span class="line"><span class="comment"># 把公钥加入到 authorized_keys 中即可</span></span><br></pre></td></tr></table></figure>
+<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">vim</span> /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span> <span class="comment"># 去掉注释</span></span><br><span class="line">PasswordAuthentication <span class="built_in">no</span> <span class="comment"># 去掉注释, yes 改成 no</span></span><br><span class="line">ChallengeResponseAuthentication <span class="built_in">no</span> <span class="comment">#  去掉注释, yes 改成 no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 sshd 服务</span></span><br><span class="line">sudo service ssh  restart <span class="comment"># ubuntu</span></span><br><span class="line">sudo service sshd restart <span class="comment"># centOS</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight puppet"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 rvm</span></span><br><span class="line">curl -<span class="constant">L</span> get.rvm.io | bash -s stable</span><br><span class="line"><span class="literal">source</span> ~/.bashrc</span><br><span class="line"><span class="literal">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 ruby</span></span><br><span class="line">rvm list known          <span class="comment"># 列出已知的 ruby 版本</span></span><br><span class="line">rvm install <span class="number">2.2</span>.<span class="number">2</span>       <span class="comment"># 安装 ruby 版本</span></span><br><span class="line">rvm <span class="literal">use</span> <span class="number">2.2</span>.<span class="number">0</span> --<span class="keyword">default</span> <span class="comment"># 切换并设置默认ruby 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 bundler rails</span></span><br><span class="line">gem install -<span class="constant">V</span> bundler rails</span><br></pre></td></tr></table></figure>
+<h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
+<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">sudo yum install <span class="symbol">http:</span>/<span class="regexp">/nginx.org/packages</span><span class="regexp">/centos/</span><span class="number">7</span>/noarch/<span class="constant">RPMS/</span>nginx-release-centos-<span class="number">7</span>-<span class="number">0</span>.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> mysql <span class="comment"># 只安装 mysql-client</span></span><br><span class="line"></span><br><span class="line">sudo yum <span class="keyword">install</span> mysql mysql-server <span class="comment"># 安装 mysql-client  mysql-server</span></span><br><span class="line"></span><br><span class="line">sudo  yum <span class="keyword">install</span> mysql-devel <span class="comment"># 不安装, gem mysql2 本地编译出问题</span></span><br></pre></td></tr></table></figure>
+<p>PS: 在杭州好闷好热啊</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
+<figure class="hig]]>
+    </summary>
+    
+      <category term="centOS" scheme="http://shooter.gl/tags/centOS/"/>
+    
+      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[选择离开]]></title>
+    <link href="http://shooter.gl/live-2015-06-09-leave/"/>
+    <id>http://shooter.gl/live-2015-06-09-leave/</id>
+    <published>2015-06-09T04:02:38.000Z</published>
+    <updated>2015-07-02T10:44:10.000Z</updated>
+    <content type="html"><![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
+<p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
+<p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
+]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[寻找]]></title>
-    <link href="http://shooter.gl/2015/06/07/live-2015-06-07-xun-zhao/"/>
-    <id>http://shooter.gl/2015/06/07/live-2015-06-07-xun-zhao/</id>
+    <link href="http://shooter.gl/live-2015-06-07-xun-zhao/"/>
+    <id>http://shooter.gl/live-2015-06-07-xun-zhao/</id>
     <published>2015-06-07T02:49:33.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26508228&auto=0&height=66"></iframe>
 
@@ -45,10 +102,10 @@
   
   <entry>
     <title><![CDATA[去除rspec should/expect警告]]></title>
-    <link href="http://shooter.gl/2015/05/27/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/"/>
-    <id>http://shooter.gl/2015/05/27/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</id>
+    <link href="http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/"/>
+    <id>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</id>
     <published>2015-05-27T07:00:44.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /spec/spec_helpber.rb</span></span><br><span class="line"><span class="constant">RSpec</span>.configure <span class="keyword">do</span> |config|</span><br><span class="line">  config.mock_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  config.expect_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h2 id="资料">资料</h2><p><a href="http://makandracards.com/makandra/25409-how-to-remove-rspec-old-syntax-deprecation-warnings" target="_blank" rel="external">How to remove RSpec old syntax deprecation warnings</a></p>
 ]]></content>
@@ -64,10 +121,10 @@
   
   <entry>
     <title><![CDATA[好久不见]]></title>
-    <link href="http://shooter.gl/2015/05/20/live-2015-05-16-it-is-been-a-long-time/"/>
-    <id>http://shooter.gl/2015/05/20/live-2015-05-16-it-is-been-a-long-time/</id>
+    <link href="http://shooter.gl/live-2015-05-16-it-is-been-a-long-time/"/>
+    <id>http://shooter.gl/live-2015-05-16-it-is-been-a-long-time/</id>
     <published>2015-05-20T09:01:10.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>好久不见, 此刻让我想起了海桑的诗</p>
 <h3 id="我是你流浪过的一个地方">我是你流浪过的一个地方</h3><p>— 海桑</p>
 <p>爱情扶我上路 然后走开<br>让我一生怀念<br>怀念那一扶的久长<br>和一生的短暂</p>
@@ -87,10 +144,10 @@
   
   <entry>
     <title><![CDATA[在scss中使用变量]]></title>
-    <link href="http://shooter.gl/2015/05/14/tech-2015-05-14-scss-use-variable/"/>
-    <id>http://shooter.gl/2015/05/14/tech-2015-05-14-scss-use-variable/</id>
+    <link href="http://shooter.gl/tech-2015-05-14-scss-use-variable/"/>
+    <id>http://shooter.gl/tech-2015-05-14-scss-use-variable/</id>
     <published>2015-05-14T07:33:48.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>生成的css 如下:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">5</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -108,10 +165,10 @@
   
   <entry>
     <title><![CDATA[禁用chrome默认的书签管理器]]></title>
-    <link href="http://shooter.gl/2015/05/09/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/"/>
-    <id>http://shooter.gl/2015/05/09/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</id>
+    <link href="http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/"/>
+    <id>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</id>
     <published>2015-05-09T06:56:25.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
 <p>在chrome的url输入框 输入以下内容, 在下拉菜单选择 停用(disabled) 就ok了.</p>
 <figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="label">chrome:</span>//flags/<span class="preprocessor">#enhanced-bookmarks-experiment</span></span><br></pre></td></tr></table></figure>
@@ -128,10 +185,10 @@
   
   <entry>
     <title><![CDATA[升级hexo]]></title>
-    <link href="http://shooter.gl/2015/05/03/tech-2015-05-03-upgrade-hexo/"/>
-    <id>http://shooter.gl/2015/05/03/tech-2015-05-03-upgrade-hexo/</id>
+    <link href="http://shooter.gl/tech-2015-05-03-upgrade-hexo/"/>
+    <id>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</id>
     <published>2015-05-03T13:25:55.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0</a>, 从题目上看, 作者也是蛮狠的.</p>
 <p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
 <p>在这里纪下我的升级步骤</p>
@@ -161,10 +218,10 @@
   
   <entry>
     <title><![CDATA[世界依旧这么大]]></title>
-    <link href="http://shooter.gl/2015/04/27/live-2015-04-27-as-it-is-the-world-is-big/"/>
-    <id>http://shooter.gl/2015/04/27/live-2015-04-27-as-it-is-the-world-is-big/</id>
+    <link href="http://shooter.gl/live-2015-04-27-as-it-is-the-world-is-big/"/>
+    <id>http://shooter.gl/live-2015-04-27-as-it-is-the-world-is-big/</id>
     <published>2015-04-27T03:49:16.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
 <p>peatio 确实是个 全明星技术团队, 阵容超豪华, 随便拿出一个人都能当CTO, <strong>偶除外</strong>.<br>我属于板凳球员, 要想了解板凳深度, 看我就行了, 所见即所得.<br><strong>即使都是全明星球员, 也不一定能拿总冠军.</strong></p>
 <p>xiaolai 玩法很邪门, 既当投资人, 又是pm, 想法超多, 对产品的热情不持久.<br>学习能力很强, 但感觉是体验生活, 而不是在投资领域卖力气. 对于btc大亨来说, 可能就是要任性吧.</p>
@@ -184,10 +241,10 @@
   
   <entry>
     <title><![CDATA[使用 vimdiff 作为git diff 工具]]></title>
-    <link href="http://shooter.gl/2015/04/21/tech-2015-04-21-using-vimdiff-as-git-diff-tool/"/>
-    <id>http://shooter.gl/2015/04/21/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</id>
+    <link href="http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/"/>
+    <id>http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</id>
     <published>2015-04-21T10:38:58.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">git config --global diff.tool vimdiff # &#35774;&#32622;diff&#24037;&#20855;&#20026; vimdiff&#10;&#10;git config --global difftool.prompt false&#10;&#10;git config --global alias.d difftool # &#35774;&#32622;&#21035;&#21517;</span><br></pre></td></tr></table></figure>
 <p>只要输入  <code>git d</code>, 感觉是不是更直观了呢?</p>
@@ -207,10 +264,10 @@
   
   <entry>
     <title><![CDATA[使用 charles 抓取网络包]]></title>
-    <link href="http://shooter.gl/2015/04/18/tech-2015-04-18-use-charles-sniffer-network-packet/"/>
-    <id>http://shooter.gl/2015/04/18/tech-2015-04-18-use-charles-sniffer-network-packet/</id>
+    <link href="http://shooter.gl/tech-2015-04-18-use-charles-sniffer-network-packet/"/>
+    <id>http://shooter.gl/tech-2015-04-18-use-charles-sniffer-network-packet/</id>
     <published>2015-04-18T11:40:44.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>最近一直在做 api server, 有时候也需要分析手机App的网络请求, 之前在win环境下一直用 fiddler<br>做这样的工作, 然后在 mac下发现了<a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a>, 样子是个花瓶, 不过功能很强大哦.</p>
 <p>说下步骤</p>
 <p>1 确保手机和mac在同一个局域网</p>
@@ -243,10 +300,10 @@
   
   <entry>
     <title><![CDATA[怀念母亲]]></title>
-    <link href="http://shooter.gl/2015/04/05/live-2015-04-05-miss-my-mother/"/>
-    <id>http://shooter.gl/2015/04/05/live-2015-04-05-miss-my-mother/</id>
+    <link href="http://shooter.gl/live-2015-04-05-miss-my-mother/"/>
+    <id>http://shooter.gl/live-2015-04-05-miss-my-mother/</id>
     <published>2015-04-05T14:21:57.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽明忽暗, 没了期盼. 现在我想说: 麻麻, 我很好, 我一直很乖.</p>
 <p>斯人已逝, 言犹在耳, 谢谢母亲.</p>
 <p>附上李志的『<a href="http://music.163.com/#/song?id=5246946" target="_blank" rel="external">妈妈</a>』</p>
@@ -262,10 +319,10 @@
   
   <entry>
     <title><![CDATA[mongoid 聚合功能]]></title>
-    <link href="http://shooter.gl/2015/04/04/tech-2015-04-04-mongoid-aggregation/"/>
-    <id>http://shooter.gl/2015/04/04/tech-2015-04-04-mongoid-aggregation/</id>
+    <link href="http://shooter.gl/tech-2015-04-04-mongoid-aggregation/"/>
+    <id>http://shooter.gl/tech-2015-04-04-mongoid-aggregation/</id>
     <published>2015-04-04T10:32:21.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">class <span class="constant">User</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Timestamps</span></span><br><span class="line"></span><br><span class="line">  field <span class="symbol">:name</span>,   <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:email</span>,  <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:gender</span>, <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>, <span class="symbol">:gender</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>, <span class="symbol">:email</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="aggregation_聚合">aggregation 聚合</h3><h4 id="group">group</h4><p>我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,<br>这样可以使用 mongoDB的 <a href="http://docs.mongodb.org/manual/reference/method/db.collection.group/" target="_blank" rel="external">$group</a> 函数了.</p>
@@ -289,10 +346,10 @@
   
   <entry>
     <title><![CDATA[rails中禁掉某些生成器]]></title>
-    <link href="http://shooter.gl/2015/03/25/tech-2015-03-25-disable-unit-testing-generators-in-rails/"/>
-    <id>http://shooter.gl/2015/03/25/tech-2015-03-25-disable-unit-testing-generators-in-rails/</id>
+    <link href="http://shooter.gl/tech-2015-03-25-disable-unit-testing-generators-in-rails/"/>
+    <id>http://shooter.gl/tech-2015-03-25-disable-unit-testing-generators-in-rails/</id>
     <published>2015-03-25T12:13:45.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/application.rb</span></span><br><span class="line"></span><br><span class="line">config.generators <span class="keyword">do</span> |g|</span><br><span class="line">  g.test_framework  <span class="symbol">:rspec</span>, <span class="symbol">fixture:</span> <span class="keyword">false</span></span><br><span class="line">  g.view_specs      <span class="keyword">false</span></span><br><span class="line">  g.helper_specs    <span class="keyword">false</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
@@ -308,10 +365,10 @@
   
   <entry>
     <title><![CDATA[inherit_resources 添加分页功能]]></title>
-    <link href="http://shooter.gl/2015/03/10/tech-2015-03-10-inherit-resources-pagination/"/>
-    <id>http://shooter.gl/2015/03/10/tech-2015-03-10-inherit-resources-pagination/</id>
+    <link href="http://shooter.gl/tech-2015-03-10-inherit-resources-pagination/"/>
+    <id>http://shooter.gl/tech-2015-03-10-inherit-resources-pagination/</id>
     <published>2015-03-10T05:16:44.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  scope <span class="symbol">:recent</span>, -&gt; &#123;order(<span class="symbol">created_at:</span> <span class="symbol">:desc</span>)&#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line"></span><br><span class="line">  inherit_resources</span><br><span class="line"></span><br><span class="line">  protected</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>collection</span><br><span class="line">    end_of_association_chain.recent.page(params[<span class="symbol">:page</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
@@ -331,10 +388,10 @@
   
   <entry>
     <title><![CDATA[git 用法]]></title>
-    <link href="http://shooter.gl/2015/02/08/tech-2015-02-09-git-guide/"/>
-    <id>http://shooter.gl/2015/02/08/tech-2015-02-09-git-guide/</id>
+    <link href="http://shooter.gl/tech-2015-02-09-git-guide/"/>
+    <id>http://shooter.gl/tech-2015-02-09-git-guide/</id>
     <published>2015-02-07T17:19:59.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
 <h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git remote add &#60;shortname&#62; &#60;url&#62; #&#26032;&#24314;&#36828;&#31243;&#20179;&#24211;&#10;git remote set-url origin &#60;url&#62;&#10;git remote set-branches [--add] &#60;name&#62; &#60;branch&#62;&#10;git remote set-url [--push] &#60;name&#62; &#60;newurl&#62; [&#60;oldurl&#62;]&#10;git remote set-url --add &#60;name&#62; &#60;newurl&#62;&#10;git remote set-url --delete &#60;name&#62; &#60;url&#62;</span><br></pre></td></tr></table></figure>
 <h4 id="Git-Tag">Git-Tag</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git tag #&#21015;&#20986;&#26631;&#31614;&#10;&#10;git tag v0.1.2-light &#21019;&#24314;&#36731;&#37327;&#26631;&#31614;&#10;&#10;git tag -a v0.1.2 -m &#34;0.1.2 Version&#34; #&#21019;&#24314;&#38468;&#27880;&#26631;&#31614;&#10;&#10;git push origin v0.1.2 # &#23558;v0.1.2&#26631;&#31614;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git push origin &#8211;tags # &#23558;&#26412;&#22320;&#25152;&#26377;&#26631;&#31614;&#19968;&#27425;&#24615;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git tag -d v0.1.2 # &#21024;&#38500;&#26631;&#31614;&#10;&#10;git show v0.1.2  # &#29992;git show&#21629;&#20196;&#21487;&#20197;&#26597;&#30475;&#26631;&#31614;&#30340;&#29256;&#26412;&#20449;&#24687;&#10;&#10;git tag -a v0.1.1 9fbc3d0 # &#32473;&#25351;&#23450;&#30340;commit&#25171;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
@@ -353,10 +410,10 @@
   
   <entry>
     <title><![CDATA[swift扩展-extension]]></title>
-    <link href="http://shooter.gl/2015/02/08/tech-2015-02-08-swift-extension/"/>
-    <id>http://shooter.gl/2015/02/08/tech-2015-02-08-swift-extension/</id>
+    <link href="http://shooter.gl/tech-2015-02-08-swift-extension/"/>
+    <id>http://shooter.gl/tech-2015-02-08-swift-extension/</id>
     <published>2015-02-07T16:44:58.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>swift 有一个特别的关键字 — <strong>extension</strong></p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
 <p>马上想到的是 ruby monkey-patch</p>
@@ -381,10 +438,10 @@
   
   <entry>
     <title><![CDATA[swift 定义各种函数汇总]]></title>
-    <link href="http://shooter.gl/2015/02/05/tech-2015-02-05-swift-func-parameter/"/>
-    <id>http://shooter.gl/2015/02/05/tech-2015-02-05-swift-func-parameter/</id>
+    <link href="http://shooter.gl/tech-2015-02-05-swift-func-parameter/"/>
+    <id>http://shooter.gl/tech-2015-02-05-swift-func-parameter/</id>
     <published>2015-02-04T16:22:20.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
 <h3 id="参考">参考</h3><p><a href="http://www.swiftmi.com/topic/50.html" target="_blank" rel="external">C#与Swift的函数比较</a></p>
 ]]></content>
@@ -400,10 +457,10 @@
   
   <entry>
     <title><![CDATA[ios 如何关闭键盘输入]]></title>
-    <link href="http://shooter.gl/2015/02/02/tech-2015-02-02-ios-keyboard-resignFirstResponder/"/>
-    <id>http://shooter.gl/2015/02/02/tech-2015-02-02-ios-keyboard-resignFirstResponder/</id>
+    <link href="http://shooter.gl/tech-2015-02-02-ios-keyboard-resignFirstResponder/"/>
+    <id>http://shooter.gl/tech-2015-02-02-ios-keyboard-resignFirstResponder/</id>
     <published>2015-02-02T09:18:55.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
 <p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
@@ -429,10 +486,10 @@
   
   <entry>
     <title><![CDATA[开始新的工作]]></title>
-    <link href="http://shooter.gl/2015/01/29/live-2015-01-29-start-a-new-job/"/>
-    <id>http://shooter.gl/2015/01/29/live-2015-01-29-start-a-new-job/</id>
+    <link href="http://shooter.gl/live-2015-01-29-start-a-new-job/"/>
+    <id>http://shooter.gl/live-2015-01-29-start-a-new-job/</id>
     <published>2015-01-29T15:13:38.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
+    <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
 <p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt; 北京, 溜达一圈, 每到一个地方,<br>就跟很多年没见的同学 朋友聚了一次, 最久的从06年就没再见过, 最短的从09年也没怎么联系了.</p>
 <p>回归的另一个意思是, 在工作上重新开始, 跨界从零开始学ios,<br>像11年那样, 放弃java, 一头扎进rails, 从一个陌生的领域重新起步.</p>
@@ -447,64 +504,6 @@
     </summary>
     
       <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[秦皇岛之行]]></title>
-    <link href="http://shooter.gl/2015/01/16/live-2015-01-16-a-trip-of-qinhuangdao/"/>
-    <id>http://shooter.gl/2015/01/16/live-2015-01-16-a-trip-of-qinhuangdao/</id>
-    <published>2015-01-16T02:38:33.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
-    <content type="html"><![CDATA[<p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.org/wiki/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6" target="_blank" rel="external">燕大</a>, 到了燕大的第一感觉, 这里好大啊, 比清华大多了.<br>peter说: 燕大有5000多亩, 要是夏天来这里, 在校园里骑着自行车, 可劲的骑吧, 骑不出去,<br>而且夏天秦皇岛比北京凉快的多, 很适合骑行. 来的不是时候啊.</p>
-<p>peter家里养了一只猫, 还有一只狗, 猫特别的漂亮, 很傲娇的. 看喵高歌一曲</p>
-<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_1.jpg" alt=""><br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_2.jpg" alt=""></p>
-<p>狗呢, 真的是人模狗样, 会打呼噜, 咂巴嘴, 会委屈. 有时候吃饭的时候, 它在饭桌地下, 小呼噜就打起来了,<br>把它弄醒, 眼神懒懒的, 眼皮还泛着一点儿粉红, <strong>这厮投胎前一定是个人.</strong><br>跟我是特别亲, 老是在我脚边晃悠, 咬我的裤子. 早上我还没起来, 它就跑到我跟前,<br>“汪汪” 的叫唤. <strong>可能我上辈子是个狗</strong>, 狗缘不错.<br>听peter说, 这狗是他捡来的, 觉得这狗特别, 就把它养家里了.</p>
-<p>然后, 跟在秦皇岛的童鞋见了一面, 他从09年到秦皇岛上大学, 一直呆到现在.<br>我在北京也呆了这么长的时间, 呆的有些腻了. 我们在星巴克得瑟了一下午, 心情相当不错啊.<br>晚上, 自己看了场电影『博物馆奇妙夜』, 好吧, 以后不看这系列的电影了.<br>这叫<strong>择一座城市, 看一场电影</strong>, 嘿嘿.</p>
-<p>前几天, 朋友们说,北京下雪, 晚上就梦到了北京, <strong>日久他乡是故乡, 梦到了久居的他乡</strong>.<br>这个生活了5年的城市, 当我离开了, 还真有点不习惯.</p>
-<p>01-16从秦皇岛去石家庄看老叔, 好久没看他了. 走之前, 秦皇岛下雪了,<br>薄薄的一层, 踩在雪上, 咯吱咯吱响, 这个冬天终于看到雪了.</p>
-<p>非常感谢 peter跟bill的盛情款待 ^_^</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[001-心理学]]></title>
-    <link href="http://shooter.gl/2015/01/10/live-2015-01-10-001-psychology/"/>
-    <id>http://shooter.gl/2015/01/10/live-2015-01-10-001-psychology/</id>
-    <published>2015-01-10T08:27:23.000Z</published>
-    <updated>2015-06-07T03:35:23.000Z</updated>
-    <content type="html"><![CDATA[<p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
-<h3 id="小学到高中只顾着学习了,_进了大学以后会怎么样?">小学到高中只顾着学习了, 进了大学以后会怎么样?</h3><p>美国心理学家 埃里克-埃里克森(Erik Erikson) 创造了一套名叫<br>人格的社会心理发展理论(Psychosocial development across the life span),<br>把人这一生的心理发展分为八个阶段，其中每一个阶段都有自己的矛盾和对峙状态,<br>只有矛盾顺利解决, 人的心理才能向下一阶段健康发展.</p>
-<p><strong>题目中问道, 如果小孩从 6 岁至 18 岁,即小学到高中期间,如果除了学业没有思考过其他的问题会在大学面临哪些思想问题.</strong><br>在埃里克森的理论中, 这一段 12 年的时间被划分成了两个心里阶段:<br>其中 <strong>6至12岁, 是勤奋对自卑阶段(Industry vs Inferiority)</strong>;<br><strong>从12岁到18岁, 是同一性对混乱阶段(Identity vs Role Confusion)</strong>.</p>
-<p>这两个阶段, 对于人的心理发展是至关重要的.</p>
-<p>在勤奋对自卑阶段中, 儿童学习各种必要的谋生技能,以及能使他们成为社会生产者所具备的专业技巧.<br>实际上, 一般人6至12岁的时间都是在小学中读过的.<br>如埃里克森所说,<br><figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">儿童在这一阶段所学的最重要的课程是“体验以稳定的注意和孜孜不倦的勤奋来完成工作的乐趣”.</span><br><span class="line">即努力的学习课本上的知识和尝试着开始人际交往.如果在这一阶段只注意学习却不关注其他, 会发生什么事呢?</span><br></pre></td></tr></table></figure></p>
-<p>首先, 如果孩子尝试努力,却在成绩和社交上仍然不尽人意,<br>那么他们就会产生一种面对成功人士的自卑感,这种消极情绪会伴随终生;<br>但如果孩子 通过勤奋获得了巨大的成功, 那他们还会面临一种危险, 即过分重视他们的工作能力<br>所带来的地位, 成为工作至上的工作狂, 对这样的人说来,工作就是生活.<br>他们高看工作所能带来的成就,因而会忽视人类生存的其它重要方面, 比如停下来<br>思考生活里细微的小事, 以及给予身边的人爱与温暖.</p>
-<p>用埃里克森的话来说,<br>如果他把工作作为他唯一的义务, 把某种工作作为唯一有价值的标准, 那么他也许<br>会成为一位因循守旧的人, 成为他自己的技术和可能利用他的技术的那些人的毫无思想的奴仆.<br>如果孩子在这一阶段获得的勤奋感胜过自卑感, 他们就会带着获得的能力离开这个阶段.<br><strong>与此同时, 埃里克森还说, 使孩子获得能力的是关爱和温暖, 使孩子获得自卑的是人生中重要人物的冷漠嘲笑.</strong><br>如果如题主所说的喂辣椒让孩子醒来写作业, 明显就是后者的体现啊.</p>
-<p>接下来就是12-18岁的同一性对混乱阶段. 所谓的“同一性”,根据埃里克森的定义,<br><strong>即一种对自身熟悉的感觉,  一种知道个人未来目标的感觉, 一种从他信赖的人们中获得所期待的认可的内在自信.</strong></p>
-<p>简而言之, “同一性”其实就是对自我的一个统一认知, 即完整的 self-indentity.<br>这个认知的来源来自外部环境, 来自周围的人, 来自自己能力的评价,<br>来自对未来的预期, 更重要的是来自自我的内心.<br>有一个答案提到了所谓“中国保安门卫哲学家经典三问”,因为关乎同一性阶段的<br>自我认知 无非就三个问题: “我是谁”“我是什么样的人” “我未来要做什么”</p>
-<p>埃里克森说,这是这一阶段年轻人们主要思考的问题:<br>拥有同一性的自我认知,实际上就是外部对自己的认识和自己对自我的认识相符合;<br>如果不相符,或者对这些问题没有一个清醒的认识,那么青年人很容易就会无法从这一阶段走出,<br>反而陷入一种角色混乱, 也就是很多青年人步入大学之后陷入迷茫期的事实.</p>
-<p>埃里克森接着建议到, 如果青年人在这一阶段陷入了角色混乱,那么他最终很可能选择消极同一性, 借此来抵抗自身的角色混乱.<br>所谓的“消极同一性”, 即一些极端的恶劣行为, 比如正常的学生突然开始翘课,<br>开始抽烟酗酒, 赌博打架, 让人生彻底沉沦.</p>
-<p>对于这种“不成仙便成魔”的心态, 埃里克森的解释是:</p>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">宁可成为一个无名小卒, 或者成为臭名昭著的大人物, 或者成为某个的确已经死了的人——总之,它们是经过自由选择的角色——而不愿意成为一个不太象样的人.</span><br></pre></td></tr></table></figure>
-<p>很明显,诸多年轻人进入大学阶段突然开始迷茫,找不准生活方向的原因,就是因为对自己没有一个<br>清醒且积极的自我认知,或者理想自我和他人审视的自我出现了偏差,并且陷入了角色混乱.</p>
-<p>如果不给 12-18 岁的年轻人时间让他们好好思考这些问题,他们就不会走出这一阶段, 从而进入了无限延长了的心理的合法延续期,这对于他们的人生是致命的.<br>因为他们轻则在往后的生活里会轻易放弃责任, 重则出现一些极端性的行为.</p>
-<!--
-### PS
-在16岁开始爆发 "我是谁" "我以后要做什么" 的想法, 不知道为什么来的如此激烈, 感觉自己是那么的不可理喻.
-我心有戚戚焉啊.
--->]]></content>
-    <summary type="html">
-    <![CDATA[<p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
-<h3 id="小学到高中只顾着学习了,_进了大学以后会怎么样?">小学到高中只顾着学]]>
-    </summary>
-    
-      <category term="psychology" scheme="http://shooter.gl/tags/psychology/"/>
     
   </entry>
   

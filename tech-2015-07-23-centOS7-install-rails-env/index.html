@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>centOS7 配置 rails 环境 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.
+基本命令lsb_release -a 显示系统的详细信息
+# centOSLSB Version:  :core-4.1-amd64:core-4.1-noarchDistributor ID: CentOSDescription:  CentOS Linux release 7.1.1503 (Core">
+  
+  <meta name="description" content="最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.
+基本命令lsb_release -a 显示系统的详细信息
+# centOSLSB Version:  :core-4.1-amd64:core-4.1-noarchDistributor ID: CentOSDescription:  CentOS Linux release 7.1.1503 (Core">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centOS7 配置 rails 环境">
+<meta property="og:url" content="http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.
+基本命令lsb_release -a 显示系统的详细信息
+# centOSLSB Version:  :core-4.1-amd64:core-4.1-noarchDistributor ID: CentOSDescription:  CentOS Linux release 7.1.1503 (Core">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centOS7 配置 rails 环境">
+<meta name="twitter:description" content="最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.
+基本命令lsb_release -a 显示系统的详细信息
+# centOSLSB Version:  :core-4.1-amd64:core-4.1-noarchDistributor ID: CentOSDescription:  CentOS Linux release 7.1.1503 (Core">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2015-07-23-centOS7-install-rails-env/">
+  <time datetime="2015-07-23T08:35:48.000Z">
+    2015-07-23
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">centOS7 配置 rails 环境</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"># centOS</span><br><span class="line">LSB <span class="string">Version:</span>  :core-<span class="number">4.1</span>-<span class="string">amd64:</span>core-<span class="number">4.1</span>-noarch</span><br><span class="line">Distributor <span class="string">ID:</span> CentOS</span><br><span class="line"><span class="string">Description:</span>  CentOS Linux release <span class="number">7.1</span>.1503 (Core)</span><br><span class="line"><span class="string">Release:</span>  <span class="number">7.1</span>.1503</span><br><span class="line"><span class="string">Codename:</span> Core</span><br><span class="line"></span><br><span class="line"># ubuntu</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor <span class="string">ID:</span> Ubuntu</span><br><span class="line"><span class="string">Description:</span>  Ubuntu <span class="number">14.04</span>.1 LTS</span><br><span class="line"><span class="string">Release:</span>  <span class="number">14.04</span></span><br><span class="line"><span class="string">Codename:</span> trusty</span><br></pre></td></tr></table></figure>
+<p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
+<hr>
+<h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
+<p>  在 <strong>ubuntu</strong> 下是交互命令, 会一步步提示你 输入密码, 电话 地址等, 还会创建 home directory, 系统 Shell</p>
+<p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
+<h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
+<h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
+<p>  <strong>centOS</strong><br>  <figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers</span><br><span class="line"># -r<span class="comment">--r-----</span></span><br><span class="line"></span><br><span class="line"># /etc/sudoers 在 root用户下 没有写权限</span><br><span class="line"></span><br><span class="line">chmod +w /etc/sudoers # 添加写权限</span><br><span class="line"></span><br><span class="line">sudo vim /etc/sudoers # 修改文件</span><br><span class="line"></span><br><span class="line"># 找到 root <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span>, 在下一行加上</span><br><span class="line">&lt;username&gt; <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure></p>
+<p>  OK, 普通用户也可以之行 sudo 命令了</p>
+<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">mkdir</span>  ~/.ssh</span><br><span class="line"></span><br><span class="line">vim ~/.ssh/authorized_keys</span><br><span class="line"><span class="comment"># 把公钥加入到 authorized_keys 中即可</span></span><br></pre></td></tr></table></figure>
+<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">vim</span> /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span> <span class="comment"># 去掉注释</span></span><br><span class="line">PasswordAuthentication <span class="built_in">no</span> <span class="comment"># 去掉注释, yes 改成 no</span></span><br><span class="line">ChallengeResponseAuthentication <span class="built_in">no</span> <span class="comment">#  去掉注释, yes 改成 no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 sshd 服务</span></span><br><span class="line">sudo service ssh  restart <span class="comment"># ubuntu</span></span><br><span class="line">sudo service sshd restart <span class="comment"># centOS</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight puppet"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 rvm</span></span><br><span class="line">curl -<span class="constant">L</span> get.rvm.io | bash -s stable</span><br><span class="line"><span class="literal">source</span> ~/.bashrc</span><br><span class="line"><span class="literal">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 ruby</span></span><br><span class="line">rvm list known          <span class="comment"># 列出已知的 ruby 版本</span></span><br><span class="line">rvm install <span class="number">2.2</span>.<span class="number">2</span>       <span class="comment"># 安装 ruby 版本</span></span><br><span class="line">rvm <span class="literal">use</span> <span class="number">2.2</span>.<span class="number">0</span> --<span class="keyword">default</span> <span class="comment"># 切换并设置默认ruby 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 bundler rails</span></span><br><span class="line">gem install -<span class="constant">V</span> bundler rails</span><br></pre></td></tr></table></figure>
+<h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
+<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">sudo yum install <span class="symbol">http:</span>/<span class="regexp">/nginx.org/packages</span><span class="regexp">/centos/</span><span class="number">7</span>/noarch/<span class="constant">RPMS/</span>nginx-release-centos-<span class="number">7</span>-<span class="number">0</span>.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> mysql <span class="comment"># 只安装 mysql-client</span></span><br><span class="line"></span><br><span class="line">sudo yum <span class="keyword">install</span> mysql mysql-server <span class="comment"># 安装 mysql-client  mysql-server</span></span><br><span class="line"></span><br><span class="line">sudo  yum <span class="keyword">install</span> mysql-devel <span class="comment"># 不安装, gem mysql2 本地编译出问题</span></span><br></pre></td></tr></table></figure>
+<p>PS: 在杭州好闷好热啊</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/centOS/">centOS</a>, <a class="tags-link" href="/tags/rails/">rails</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

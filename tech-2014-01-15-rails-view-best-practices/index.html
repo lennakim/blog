@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>rails 页面最佳实践 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="什么是好的 view为什么需要最佳实践？
+项目太大，难懂
+团队编程风格不同
+
+你的 View 可能正面临的问题
+Complex UI with logic UI 和代码逻辑纠缠在一起
+Too long to maintain 代码太长难以维护
+Low performance 性能不好
+Security issues 容易产生安全问题
+
+什么是好的代码
+Readability 易读，容易了解
+Fle">
+  
+  <meta name="description" content="什么是好的 view为什么需要最佳实践？
+项目太大，难懂
+团队编程风格不同
+
+你的 View 可能正面临的问题
+Complex UI with logic UI 和代码逻辑纠缠在一起
+Too long to maintain 代码太长难以维护
+Low performance 性能不好
+Security issues 容易产生安全问题
+
+什么是好的代码
+Readability 易读，容易了解
+Fle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rails 页面最佳实践">
+<meta property="og:url" content="http://shooter.gl/tech-2014-01-15-rails-view-best-practices/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="什么是好的 view为什么需要最佳实践？
+项目太大，难懂
+团队编程风格不同
+
+你的 View 可能正面临的问题
+Complex UI with logic UI 和代码逻辑纠缠在一起
+Too long to maintain 代码太长难以维护
+Low performance 性能不好
+Security issues 容易产生安全问题
+
+什么是好的代码
+Readability 易读，容易了解
+Fle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rails 页面最佳实践">
+<meta name="twitter:description" content="什么是好的 view为什么需要最佳实践？
+项目太大，难懂
+团队编程风格不同
+
+你的 View 可能正面临的问题
+Complex UI with logic UI 和代码逻辑纠缠在一起
+Too long to maintain 代码太长难以维护
+Low performance 性能不好
+Security issues 容易产生安全问题
+
+什么是好的代码
+Readability 易读，容易了解
+Fle">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2014-01-15-rails-view-best-practices/">
+  <time datetime="2014-01-15T14:18:18.000Z">
+    2014-01-15
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">rails 页面最佳实践</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="什么是好的_view">什么是好的 view</h2><h3 id="为什么需要最佳实践？">为什么需要最佳实践？</h3><ul>
+<li>项目太大，难懂</li>
+<li>团队编程风格不同</li>
+</ul>
+<h3 id="你的_View_可能正面临的问题">你的 View 可能正面临的问题</h3><ul>
+<li>Complex UI with logic UI 和代码逻辑纠缠在一起</li>
+<li>Too long to maintain 代码太长难以维护</li>
+<li>Low performance 性能不好</li>
+<li>Security issues 容易产生安全问题</li>
+</ul>
+<h3 id="什么是好的代码">什么是好的代码</h3><ul>
+<li>Readability 易读，容易了解</li>
+<li>Flexibility 弹性，容易扩充</li>
+<li>Effective 效率，写码快速</li>
+<li>Maintainability 维护性，容易找到问题</li>
+<li>Consistency 一致性，遵循管理无须死背</li>
+<li>Testability 可测行，容易编写测试</li>
+</ul>
+<h2 id="18招技巧">18招技巧</h2><h3 id="No-1_Move_logic_to_helper">No.1 Move logic to helper</h3><p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> current_user &amp;&amp; current_user == post.user </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%=<span class="ruby"> link_to(<span class="string">"Edit"</span>, edit_post_path(post))</span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> editable?(post) </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%=<span class="ruby"> link_to(<span class="string">"Edit"</span>, edit_post_path(post))</span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<h3 id="No-2_Pre-decorate_with_Helper">No.2 Pre-decorate with Helper</h3><p>经常用的地方先用 helper 整理</p>
+<p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> <span class="variable">@topic</span>.content </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> auto_link(truncate(simple_format(topic.content)), <span class="symbol">:length</span> =&gt; <span class="number">100</span>) </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> render_post_content(<span class="variable">@topic</span>.content) </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>Common Case</p>
+<ul>
+<li>render_post_author</li>
+<li>render_post_published_date</li>
+<li>render_post_title</li>
+<li>render_post_content</li>
+</ul>
+<h3 id="No-3_Use_Ruby_in_Helper_ALL_THE_TIME">No.3 Use Ruby in Helper ALL THE TIME</h3><p>在 Helper 中只使用 Ruby 代码，而不要混杂 HTML。因为如果在 Helper 中最后调用 <strong>raw</strong> 或者 <strong>html_safe</strong> 会让代码有被 javascript 攻击的危险</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_taglist(post, opts = &#123;&#125;)</span><br><span class="line">  <span class="comment"># ....</span></span><br><span class="line">   raw tags.collect &#123; |tag|  <span class="string">"&lt;a href=\"<span class="subst">#&#123;posts_path(<span class="symbol">:tag</span> =&gt; tag)&#125;</span>\" class=\"tag\"&gt;<span class="subst">#&#123;tag&#125;</span>&lt;/a&gt;"</span> &#125;.join(<span class="string">", "</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_taglist(post, opts = &#123;&#125;)</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">  raw tags.collect &#123; |tag| link_to(tag,posts_path(<span class="symbol">:tag</span> =&gt; tag)) &#125;.join(<span class="string">", "</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="No-4_mix_Helper_&amp;_Partial">No.4 mix Helper &amp; Partial</h3><p>在 Helper 中可以混合使用 Partial</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_title(post)</span><br><span class="line">  str = <span class="string">""</span></span><br><span class="line">  str += <span class="string">"&lt;li&gt;"</span></span><br><span class="line">  str += link_to(post.title, post_path(post))</span><br><span class="line">  str += <span class="string">"&lt;/li&gt;"</span></span><br><span class="line">  <span class="keyword">return</span> raw(str)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_title(post)</span><br><span class="line">  render <span class="symbol">:partial</span> =&gt; <span class="string">"posts/title_for_helper"</span>, <span class="symbol">:locals</span> =&gt;</span><br><span class="line">&#123; <span class="symbol">:title</span> =&gt; post.title &#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="No-5_Tell,_Don’t_ask">No.5 Tell, Don’t ask</h3><p>先 Query 再传入 Helper。这样可以避免效能低下的问题。</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_taglist(post, opts = &#123;&#125;)</span><br><span class="line">  tags = post.tags</span><br><span class="line">  tags.collect &#123; |tag| link_to(tag, posts_path(<span class="symbol">tag:</span> tag)) &#125;.join(<span class="string">", "</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="variable">@posts</span>.each <span class="keyword">do</span> |post| </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%=<span class="ruby"> render_post_taglist(post) </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_taglist(tags, opts = &#123;&#125;)</span><br><span class="line">  tags.collect &#123; |tag| link_to(tag, posts_path(<span class="symbol">tag:</span> tag)) &#125;.join(<span class="string">", "</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="variable">@posts</span>.each <span class="keyword">do</span> |post| </span>%&gt;<span class="xml"></span><br><span class="line">    </span>&lt;%=<span class="ruby"> render_post_taglist(post.tags) </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span><br><span class="line">def index</span><br><span class="line">  @posts = Post.recent.includes(:tags)</span><br><span class="line">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="No-6_Wrap_into_a_method">No.6 Wrap into a method</h3><p>属性尽量包装成 method 而不是放在 helper 中</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_comment_author(comment)</span><br><span class="line">  <span class="keyword">if</span> comment.user.present?</span><br><span class="line">    comment.user.name</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    comment.custom_name</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_comment_author(comment)</span><br><span class="line">  comment.author_name</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comment</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>author_name</span><br><span class="line">    <span class="keyword">if</span> user.present?</span><br><span class="line">      user.name</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      custom_name</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="No-7_Move_code_to_Partial">No.7 Move code to Partial</h3><p>view code 超过两页请注意</p>
+<ul>
+<li>highly duplicated 内容高度重复</li>
+<li>independent blocks 可以独立作为功能区块</li>
+</ul>
+<p>Common Case</p>
+<ul>
+<li>nav/user_info</li>
+<li>nav/admin_menu</li>
+<li>vendor_js/google_analytics</li>
+<li>vendor_js/disqus_js</li>
+<li>global/footer</li>
+</ul>
+<h3 id="No-8_Use_presenter_to_clean_the_view">No.8 Use presenter to clean the view</h3><p>使⽤ Presenter 解決 login in view 问题</p>
+<p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> <span class="keyword">if</span> user_rofile.has_experience? &amp;&amp; user_rofile.experience_public? </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>Experience:<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> </span>&lt;%=<span class="ruby"> user_profile.experience </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> user_profile.with_experience <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>Experience:<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> </span>&lt;%=<span class="ruby"> user_profile.experience </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> user_profile.with_hobbies <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>Hobbies:<span class="tag">&lt;<span class="title">strong</span>&gt;</span> </span>&lt;%=<span class="ruby"> user_profile.hobbies </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProfilePresenter</span> <span class="inheritance">&lt; </span>::<span class="title">Presenter</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>with_experience(&amp;block)</span><br><span class="line">    <span class="keyword">if</span> profile.has_experience? &amp;&amp; profile.experience_public?</span><br><span class="line">      block.call(view)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>关于 presenter 的延伸阅读</strong></p>
+<ul>
+<li><a href="http://mikepackdev.com/blog_posts/31-exhibit-vs-presenter" target="_blank" rel="external">Exhibit vs Presenter</a></li>
+<li><a href="http://stackoverflow.com/questions/15212637/using-presenters-in-rails" target="_blank" rel="external">Using Presenters in rails</a></li>
+<li><a href="http://railscasts.com/episodes/287-presenters-from-scratch" target="_blank" rel="external">Presenters from Scratch</a></li>
+<li><a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html" target="_blank" rel="external">Rails: Presenter Pattern</a></li>
+<li><a href="http://new-bamboo.co.uk/blog/2013/04/17/rails-presenters-skinny-everything" target="_blank" rel="external">Rails Presenters – Skinny Everything</a></li>
+</ul>
+<h3 id="No-9_Cache_Digest">No.9 Cache Digest</h3><p>过去的页面缓存，我们需要自己管理版本，很难维护。新的 digest 缓存策略会自动失效。</p>
+<p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> cache [v15,<span class="variable">@project</span>] <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  aaa</span><br><span class="line">  </span>&lt;%<span class="ruby"> cache [v1<span class="number">0</span>,<span class="variable">@todo</span>] <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">    bbb</span><br><span class="line">    </span>&lt;%<span class="ruby"> cache [v45,<span class="variable">@todolist</span>] <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">      zzz</span><br><span class="line">    </span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> % </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> cache <span class="variable">@project</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  aaa</span><br><span class="line">  </span>&lt;%<span class="ruby"> cache <span class="variable">@todo</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">    bbb</span><br><span class="line">    </span>&lt;%<span class="ruby"> cache <span class="variable">@todolist</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">      ccc</span><br><span class="line">    </span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p><strong>关于 Cache Digest 的延伸阅读</strong></p>
+<ul>
+<li><a href="https://github.com/rails/cache_digests" target="_blank" rel="external">cache_digests on github</a></li>
+<li><a href="http://railscasts.com/episodes/387-cache-digests" target="_blank" rel="external">Cache Digests</a></li>
+</ul>
+<h3 id="No-10_Cells">No.10 Cells</h3><p>当同一个页面含有多个 Tab ，它会造成如下问题：</p>
+<ul>
+<li>Controller code 特别长，因为需要取出很多不同数据存入的变量</li>
+<li>在 controller &amp; view 有性能问题不好找到</li>
+<li>很难设置 action 级别的缓存</li>
+</ul>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UsersController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>show</span><br><span class="line">    <span class="variable">@user</span> = <span class="constant">User</span>.find(params[<span class="symbol">:id</span>])</span><br><span class="line">    <span class="variable">@recent_posts</span> = <span class="variable">@user</span>.recent_posts.limit(<span class="number">5</span>)</span><br><span class="line">    <span class="variable">@favorite_posts</span> = <span class="variable">@user</span>.favorite_posts.limit(<span class="number">5</span>)</span><br><span class="line">    <span class="variable">@recent_comments</span> = <span class="variable">@user</span>.comments.limit(<span class="number">5</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> render <span class="symbol">:partial</span> =&gt; <span class="string">"users/recent_post"</span>, <span class="symbol">:collection</span> =&gt; <span class="variable">@recent_posts</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render <span class="symbol">:partial</span> =&gt; <span class="string">"users/favorite_post"</span>, <span class="symbol">:collection</span> =&gt; <span class="variable">@favorite_posts</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render <span class="symbol">:partial</span> =&gt; <span class="string">"users/recent_comment"</span>, <span class="symbol">:collection</span> =&gt; <span class="variable">@recent_comments</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> render_cell <span class="symbol">:user</span>, <span class="symbol">:rencent_posts</span>, <span class="symbol">:user</span> =&gt; <span class="variable">@user</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render_cell <span class="symbol">:user</span>, <span class="symbol">:favorite_posts</span>, <span class="symbol">:user</span> =&gt; <span class="variable">@user</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render_cell <span class="symbol">:user</span>, <span class="symbol">:recent_comments</span>, <span class="symbol">:user</span> =&gt; <span class="variable">@user</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UsersController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>show</span><br><span class="line">    <span class="variable">@user</span> = <span class="constant">User</span>.find(params[<span class="symbol">:id</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserCell</span> <span class="inheritance">&lt; <span class="parent">Cell::Rails</span></span></span></span><br><span class="line">  cache <span class="symbol">:recent_posts</span>, <span class="symbol">:expires_in</span> =&gt; <span class="number">1</span>.hours</span><br><span class="line">  cache <span class="symbol">:favorite_posts</span>, <span class="symbol">:expires_in</span> =&gt; <span class="number">3</span>.hours</span><br><span class="line">  cache <span class="symbol">:recent_comments</span>, <span class="symbol">:expires_in</span> =&gt; <span class="number">5</span>.hours</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>recent_posts(args)</span><br><span class="line">   <span class="comment">#...</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>favorite_posts(args)</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>recent_comments(args)</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>关于 Cells 的延伸阅读</strong></p>
+<ul>
+<li><a href="https://github.com/apotonick/cells" target="_blank" rel="external">cells on github</a></li>
+</ul>
+<h3 id="No-11_content_for_/_yield">No.11 content_for / yield</h3><p>根据 Yahoo 大神的建议，应该把 javascript 和 css 代码放在页面的最下面。以便加快加载，但是会造成一些问题。比如你自定义的 js 代码比 jquery 库更早加载，以至于无法运行你的代码。</p>
+<p>例子1:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- application.html.erb --&gt;</span></span><br><span class="line"></span>&lt;%=<span class="ruby"> stylesheet_link_tag <span class="string">"application"</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> <span class="keyword">yield</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> javascript_include_tag <span class="string">"application"</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> <span class="keyword">yield</span> <span class="symbol">:page_specific_javascript</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- main.html.erb --&gt;</span></span><br><span class="line"></span>&lt;%=<span class="ruby"> content_for <span class="symbol">:page_specific_javascript</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>= "<span class="attribute">text</span>/<span class="attribute">javascript</span>"&gt;</span><span class="1c"></span><br><span class="line">    <span class="comment">// your script here</span></span><br><span class="line">  </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>例子2:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- application.html.erb --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">  </span>&lt;%=<span class="ruby"> <span class="keyword">yield</span> </span>%&gt;<span class="xml"></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"sidebar"</span>&gt;</span></span><br><span class="line">  </span>&lt;%=<span class="ruby"> <span class="keyword">yield</span> <span class="symbol">:sidebar</span> </span>%&gt;<span class="xml"></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- main.html.erb --&gt;</span></span><br><span class="line"></span>&lt;%=<span class="ruby"> content_for <span class="symbol">:sidebar</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  </span>&lt;%=<span class="ruby"> render <span class="string">"ad/foo"</span></span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<h3 id="No-12_Decoration_in_Controller">No.12 Decoration in Controller</h3><p>有个别情况，可以把一些代码放在 controller 中</p>
+<p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> content_for <span class="symbol">:meta</span> <span class="keyword">do</span> </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">content</span>=<span class="value">"xdite's blog"</span> <span class="attribute">name</span>=<span class="value">"description"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">content</span>=<span class="value">"Blog.XDite.net"</span> <span class="attribute">property</span>=<span class="value">"og:title"</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>show</span><br><span class="line">  <span class="variable">@blog</span> = current_blog</span><br><span class="line">  drop_blog_title <span class="variable">@blog</span>.name</span><br><span class="line">  drop_blog_descption <span class="variable">@blog</span>.description</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> stylesheet_tag <span class="string">"application"</span> </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render_page_title </span>%&gt;<span class="xml"></span><br><span class="line"></span>&lt;%=<span class="ruby"> render_page_descrption </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<h3 id="No-13_Decoration_using_I18n">No.13 Decoration using I18n</h3><p>善用 I18n 也可以帮你减少一部分 View 代码</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_user_geneder(user)</span><br><span class="line">  <span class="keyword">if</span> user.gender == <span class="string">"male"</span></span><br><span class="line">    <span class="string">"男 (Male)"</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="string">"⼥女 (Female)"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_user_gender(user)</span><br><span class="line">  <span class="constant">I18n</span>.t(<span class="string">"users.gender_desc.<span class="subst">#&#123;user.geneder&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="No-14_Decoration_using_Decorator">No.14 Decoration using Decorator</h3><p>不要把所有代码都往 Model 中扔，下面的代码演示了一种情况，你需要格式化一种显示发布时间的方法</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># first helper</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> </span>render_article_publish_status(article)</span><br><span class="line">  <span class="keyword">if</span> article.published?</span><br><span class="line">    <span class="string">"Published at <span class="subst">#&#123;article.published_at.strftime(<span class="string">'%A, %B %e'</span>)&#125;</span>"</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="string">"Unpublished"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># then model method</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>human_publish_status</span><br><span class="line">    <span class="keyword">if</span> published?</span><br><span class="line">      <span class="string">"Published at <span class="subst">#&#123;article.published_at.strftime(<span class="string">'%A, %B %e'</span>)&#125;</span>"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="string">"Unpublished"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># then ...</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>human_publish_status</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>human_publish_time</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>human_author_name</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="comment">#........</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># at last</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">HumanArticleAttributes</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>下面的代码演示使用 <a href="https://github.com/drapergem/draper" target="_blank" rel="external">https://github.com/drapergem/draper</a> 之后</p>
+<p>GOOD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%=<span class="ruby"> <span class="variable">@article</span>.publication_status </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticleDecorator</span> <span class="inheritance">&lt; <span class="parent">Draper::Decorator</span></span></span></span><br><span class="line">  delegate_all</span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>publication_status</span><br><span class="line">    <span class="keyword">if</span> published?</span><br><span class="line">      <span class="string">"Published at <span class="subst">#&#123;published_at&#125;</span>"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="string">"Unpublished"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>published_at</span><br><span class="line">    object.published_at.strftime(<span class="string">"%A, %B %e"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> </span>show</span><br><span class="line">  <span class="variable">@article</span> = <span class="constant">Article</span>.find(params[<span class="symbol">:id</span>]).decorate</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>关于 draper 的延伸阅读</strong></p>
+<ul>
+<li><a href="https://github.com/drapergem/draper" target="_blank" rel="external">draper on github</a></li>
+<li><a href="https://www.ruby-toolbox.com/categories/rails_presenters" target="_blank" rel="external">rails_presenters gems</a></li>
+</ul>
+<h3 id="No-15_Decoration_using_View_Object">No.15 Decoration using View Object</h3><p>有时候，我们希望在用户中，不列出我自己</p>
+<p>BAD:</p>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">dl</span> <span class="attribute">class</span>=<span class="value">"event-detail"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Event Host<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dd</span>&gt;</span></span><br><span class="line">    </span>&lt;%<span class="ruby"> <span class="keyword">if</span> <span class="variable">@event</span>.host == current_user </span>%&gt;<span class="xml"></span><br><span class="line">      You</span><br><span class="line">    </span>&lt;%<span class="ruby"> <span class="keyword">else</span> </span>%&gt;<span class="xml"></span><br><span class="line">      </span>&lt;%=<span class="ruby"> <span class="variable">@event</span>.host.name </span>%&gt;<span class="xml"></span><br><span class="line">    </span>&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Participants<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dd</span>&gt;</span></span><br><span class="line">    </span>&lt;%=<span class="ruby"> <span class="variable">@event</span>.participants.reject &#123; |p| p == current_user &#125;.map(&amp;<span class="symbol">:name</span>).join(<span class="string">", "</span>) </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dl</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>GOOD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EventDetailView</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>initialize(template, event, current_user)</span><br><span class="line">    <span class="variable">@template</span> = template</span><br><span class="line">    <span class="variable">@event</span> = event</span><br><span class="line">    <span class="variable">@current_user</span> = current_user</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>host</span><br><span class="line">    <span class="keyword">if</span> <span class="variable">@event</span>.host == <span class="variable">@current_user</span></span><br><span class="line">      <span class="string">"You"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="variable">@event</span>.host.name</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>participant_names</span><br><span class="line">    participants.map(&amp;<span class="symbol">:name</span>).join(<span class="string">", "</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  private</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>participants</span><br><span class="line">    <span class="variable">@event</span>.participants.reject &#123; |p| p == <span class="variable">@current_user</span> &#125;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">dl</span> <span class="attribute">class</span>=<span class="value">"event-detail"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Host<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dd</span>&gt;</span></span>&lt;%=<span class="ruby"> event_detail.host </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Participants<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">dd</span>&gt;</span></span>&lt;%=<span class="ruby"> event_detail.participant_names </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dl</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="No-16_Form_builder">No.16 Form builder</h3><ul>
+<li>simple_form</li>
+<li>bootstrap_form</li>
+</ul>
+<h3 id="No-17_Form_Object">No.17 Form Object</h3><p>在 FORM 中包装逻辑，而不是 model 或 controller。比如我们经常遇到的一个情况，只有同意某某条款才能继续注册表单。</p>
+<p><strong>Reform</strong> Decouples your models from form validation, presentation and workflows.</p>
+<p><a href="https://github.com/apotonick/reform" target="_blank" rel="external">https://github.com/apotonick/reform</a></p>
+<h3 id="No-18_Policy_Object_/_Rule_Engine">No.18 Policy Object / Rule Engine</h3><p>权限控制</p>
+<p>BAD:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>render_post_edit_option(post)</span><br><span class="line">  <span class="keyword">if</span> post.user == current_user || current_user.admin?</span><br><span class="line">    render <span class="symbol">:partial</span> =&gt; <span class="string">"post/edit_bar"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>针对于这种情况建议使用权限控制系统，另外近来似乎大家都从 Cancan 转移到 Pundit 去了</p>
+<p><strong>Pundit</strong> Minimal authorization through OO design and pure Ruby classes</p>
+<p><a href="https://github.com/elabs/pundit" target="_blank" rel="external">https://github.com/elabs/pundit</a></p>
+<p><strong>Cancan</strong> Authorization Gem for Ruby on Rails</p>
+<p><a href="https://github.com/ryanb/cancan" target="_blank" rel="external">https://github.com/ryanb/cancan</a></p>
+<h2 id="总结">总结</h2><ul>
+<li>总是假设这块正在实现的功能代码需要 decorated（修饰）</li>
+<li>把逻辑移到 methods/classes</li>
+<li>避免在 View/Helper 中做数据库查询</li>
+<li>当代码很难懂的时候，把它抽取到一个新的控制中心比如：form object, Policy Object 之类的</li>
+</ul>
+<h2 id="延伸阅读">延伸阅读</h2><ul>
+<li><a href="http://blog.xdite.net" target="_blank" rel="external">http://blog.xdite.net</a></li>
+<li><a href="https://github.com/bloudermilk/maintainable_templates" target="_blank" rel="external">https://github.com/bloudermilk/maintainable_templates</a> <a href="http://pivotallabs.com/form-backing-objects-for-fun-and-profit/" target="_blank" rel="external">http://pivotallabs.com/form-backing-objects-for-fun-and-profit/</a></li>
+<li><a href="http://saturnflyer.com/blog/jim/2013/10/21/how-to-make-your-code-imply-responsibilities/" target="_blank" rel="external">http://saturnflyer.com/blog/jim/2013/10/21/how-to-make-your-code-imply-responsibilities/</a></li>
+<li><a href="http://objectsonrails.com/" target="_blank" rel="external">http://objectsonrails.com/</a></li>
+</ul>
+<h2 id="出处">出处</h2><p>以上内容由 <strong>Victor</strong> 整理，本人只是记录在blog中。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/best-practices/">best_practices</a>, <a class="tags-link" href="/tags/rails/">rails</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

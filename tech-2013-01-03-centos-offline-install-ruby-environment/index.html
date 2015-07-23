@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>CentOS 5.6 离线安装Ruby环境及配置项目 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，ruby 环境也没有安装。一番捣鼓，步骤如下:
+没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6
+下载源文件ruby-1.9.3-p327
+yaml-0.1.4.tar.gz
+bundler-1.2.3
+本地服务器打包 rails app$ bundle package#若提示没有,安">
+  
+  <meta name="description" content="遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，ruby 环境也没有安装。一番捣鼓，步骤如下:
+没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6
+下载源文件ruby-1.9.3-p327
+yaml-0.1.4.tar.gz
+bundler-1.2.3
+本地服务器打包 rails app$ bundle package#若提示没有,安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 5.6 离线安装Ruby环境及配置项目">
+<meta property="og:url" content="http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，ruby 环境也没有安装。一番捣鼓，步骤如下:
+没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6
+下载源文件ruby-1.9.3-p327
+yaml-0.1.4.tar.gz
+bundler-1.2.3
+本地服务器打包 rails app$ bundle package#若提示没有,安">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS 5.6 离线安装Ruby环境及配置项目">
+<meta name="twitter:description" content="遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，ruby 环境也没有安装。一番捣鼓，步骤如下:
+没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6
+下载源文件ruby-1.9.3-p327
+yaml-0.1.4.tar.gz
+bundler-1.2.3
+本地服务器打包 rails app$ bundle package#若提示没有,安">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2013-01-03-centos-offline-install-ruby-environment/">
+  <time datetime="2013-01-03T07:43:00.000Z">
+    2013-01-03
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">CentOS 5.6 离线安装Ruby环境及配置项目</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，<br>ruby 环境也没有安装。一番捣鼓，步骤如下:</p>
+<p><strong>没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6</strong></p>
+<h3 id="下载源文件">下载源文件</h3><p><a href="http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz" target="_blank" rel="external">ruby-1.9.3-p327</a></p>
+<p><a href="http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz" target="_blank" rel="external">yaml-0.1.4.tar.gz</a></p>
+<p><a href="http://rubygems.org/downloads/bundler-1.2.3.gem" target="_blank" rel="external">bundler-1.2.3</a></p>
+<h3 id="本地服务器">本地服务器</h3><h4 id="打包_rails_app">打包 rails app</h4><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>bundle package</span><br><span class="line"><span class="comment">#若提示没有,安装bundler并重复以上步骤</span></span><br><span class="line"><span class="variable">$ </span>gem install bundler</span><br><span class="line"><span class="variable">$ </span>bundle package <span class="comment"># 将项目所需要的gem复制到 vendor/cache</span></span><br><span class="line"><span class="variable">$ </span>tar -czf   railsApp.tar.gz   railsApp <span class="comment">#压缩打包</span></span><br></pre></td></tr></table></figure>
+<h3 id="远程服务器">远程服务器</h3><h4 id="首先安装_yaml-0-1-4-tar-gz，再安装ruby"><strong>首先安装 yaml-0.1.4.tar.gz，再安装ruby</strong></h4><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>tar –xzvf  yaml-<span class="number">0</span>.<span class="number">1.4</span>.tar.gz</span><br><span class="line"><span class="variable">$ </span>./configure</span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line"><span class="variable">$ </span>make install</span><br></pre></td></tr></table></figure>
+<h4 id="安装ruby">安装ruby</h4><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>tar  -xzvf  ruby-<span class="number">1.9</span>.<span class="number">3</span>-p327.tar.gz</span><br><span class="line"><span class="variable">$ </span>cd ruby-<span class="number">1.9</span>.<span class="number">3</span>-p327</span><br><span class="line"><span class="variable">$ </span>./configure</span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line"><span class="variable">$ </span>make install</span><br><span class="line"><span class="variable">$ </span>ruby -v   <span class="comment">#提示即安装成功</span></span><br><span class="line"><span class="variable">$ </span>gem -v    <span class="comment">#gem已经安装</span></span><br></pre></td></tr></table></figure>
+<h4 id="本地安装bundler">本地安装bundler</h4><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>gem install  bundler-<span class="number">1.2</span>.<span class="number">3</span>.gem</span><br><span class="line"><span class="variable">$ </span>bundle -v  <span class="comment">#提示即安装成功</span></span><br></pre></td></tr></table></figure>
+<h4 id="部署_rails_app">部署 rails app</h4><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>tar  -xzvf  railsApp.tar.gz</span><br><span class="line"><span class="variable">$ </span>cd railsApp</span><br><span class="line"><span class="variable">$ </span>bundle install --local  <span class="comment">#本地安装gem</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意修改配置文件</strong></p>
+<pre><code><span class="variable">$ </span>rails s  <span class="comment">#测试运行</span>
+</code></pre><p> <a href="https://gist.github.com/4274057" target="_blank" rel="external">分享在gist上</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/centOS/">centOS</a>, <a class="tags-link" href="/tags/ruby/">ruby</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

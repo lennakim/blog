@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>分割rails中的routes文件 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="在rails项目中有一个非常重要的文件 routes.rb, 管理rails的请求路径.在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.
+
+1 先在 config 下新建 routes 文件夹,2 然后将routes.rb 拆分放到不同的文件夹内,3 再然后加载拆分后的文件, 有两种方式:
+第一种在 config/routes.rb 中定义 draw M">
+  
+  <meta name="description" content="在rails项目中有一个非常重要的文件 routes.rb, 管理rails的请求路径.在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.
+
+1 先在 config 下新建 routes 文件夹,2 然后将routes.rb 拆分放到不同的文件夹内,3 再然后加载拆分后的文件, 有两种方式:
+第一种在 config/routes.rb 中定义 draw M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分割rails中的routes文件">
+<meta property="og:url" content="http://shooter.gl/tech-2014-12-14-segmentation-routes/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="在rails项目中有一个非常重要的文件 routes.rb, 管理rails的请求路径.在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.
+
+1 先在 config 下新建 routes 文件夹,2 然后将routes.rb 拆分放到不同的文件夹内,3 再然后加载拆分后的文件, 有两种方式:
+第一种在 config/routes.rb 中定义 draw M">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分割rails中的routes文件">
+<meta name="twitter:description" content="在rails项目中有一个非常重要的文件 routes.rb, 管理rails的请求路径.在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.
+
+1 先在 config 下新建 routes 文件夹,2 然后将routes.rb 拆分放到不同的文件夹内,3 再然后加载拆分后的文件, 有两种方式:
+第一种在 config/routes.rb 中定义 draw M">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2014-12-14-segmentation-routes/">
+  <time datetime="2014-12-14T03:08:09.000Z">
+    2014-12-14
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">分割rails中的routes文件</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>在rails项目中有一个非常重要的文件 <code>routes.rb</code>, 管理rails的请求路径.<br>在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.</p>
+<hr>
+<p>1 先在 config 下新建 routes 文件夹,<br>2 然后将routes.rb 拆分放到不同的文件夹内,<br>3 再然后加载拆分后的文件, 有两种方式:</p>
+<h4 id="第一种">第一种</h4><p>在 <code>config/routes.rb</code> 中定义 <code>draw</code> Method:</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ActionDispatch::Routing::Mapper</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>draw(routes_name)</span><br><span class="line">  instance_eval(<span class="constant">File</span>.read(<span class="constant">Rails</span>.root.join(<span class="string">"config/routes/<span class="subst">#&#123;routes_name&#125;</span>.rb"</span>)))</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">draw <span class="symbol">:admin</span></span><br></pre></td></tr></table></figure>
+<h4 id="第二种">第二种</h4><p>更改 <code>application.rb</code> 的 <code>load path</code></p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">config.paths[<span class="string">"config/routes"</span>] += <span class="constant">Dir</span>[<span class="constant">Rails</span>.root.join(<span class="string">"config/routes/*.rb"</span>)]</span><br></pre></td></tr></table></figure>
+<p>如果你的 routes 非常依赖顺序, 需要逐步加载文件</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 逐个加载</span></span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_01.rb"</span>)</span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_02.rb"</span>)</span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_03.rb"</span>)</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/rails/">rails</a>, <a class="tags-link" href="/tags/routes/">routes</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

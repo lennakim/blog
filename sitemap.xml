@@ -2,238 +2,248 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://shooter.gl/2014/01/15/tech-2014-01-15-rails-view-best-practices/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/05/27/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/05/09/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/05/03/tech-2015-05-03-upgrade-hexo/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/04/21/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/04/18/tech-2015-04-18-use-charles-sniffer-network-packet/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/04/04/tech-2015-04-04-mongoid-aggregation/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/03/25/tech-2015-03-25-disable-unit-testing-generators-in-rails/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/03/10/tech-2015-03-10-inherit-resources-pagination/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/02/08/tech-2015-02-09-git-guide/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/02/08/tech-2015-02-08-swift-extension/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/02/05/tech-2015-02-05-swift-func-parameter/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/02/02/tech-2015-02-02-ios-keyboard-resignFirstResponder/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/07/tech-2015-01-07-lookup-mysql-socket-file-location/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/06/tech-2015-01-06-vim-cheat-sheet/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/02/tech-2015-01-02-how-to-use-activesupport-concern/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/16/tech-2014-12-16-ios-demo-for-swift/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/15/tech-2014-12-15-elasticsearch-with-ransack-search-method-conflicting/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/14/tech-2014-12-14-segmentation-routes/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/12/tech-2014-12-12-use-sql-check-physical-size-of-databases/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/10/10/tech-2014-10-10-good-luck-shooter/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/07/18/tech-2014-07-18-grape-header/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/05/07/tech-2014-05-07-emacs-shortcuts/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/05/14/tech-2015-05-14-scss-use-variable/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2013/11/22/tech-2013-11-22-5-useful-tips-for-a-better-commit-message/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2013/11/08/tech-2013-11-08-resque-for-rails/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2013/11/06/tech-2013-11-06-whenever/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2013/01/03/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2013/01/01/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/09/15/tech-2012-09-15-the-ruby-syntax-yield-and-closure/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/09/05/tech-2012-09-05-interview-questions-about-the-ror/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/08/31/tech-2012-08-31-across-the-great-wall/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/08/27/tech-2012-08-27-ubuntu-12-dot-04-installation-and-configuration/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/08/26/tech-2012-08-26-ubuntu-12-dot-04-installation-and-configuration/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2012/08/08/tech-2012-08-08-my-sublime-text-2-plugin-summary/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/06/07/live-2015-06-07-xun-zhao/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/05/20/live-2015-05-16-it-is-been-a-long-time/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/04/27/live-2015-04-27-as-it-is-the-world-is-big/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/04/05/live-2015-04-05-miss-my-mother/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/29/live-2015-01-29-start-a-new-job/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/16/live-2015-01-16-a-trip-of-qinhuangdao/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2015/01/10/live-2015-01-10-001-psychology/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/31/live-2014-12-31-2014-end/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/12/21/live-2014-12-21-a-trip-to-qingdao/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/2014/01/12/live-2014-01-12-2013-summary/</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/link/index.html</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
+    <loc>http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/</loc>
+    <lastmod>2015-07-23T10:24:03.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://shooter.gl/about/index.html</loc>
-    <lastmod>2015-06-07T03:35:23.000Z</lastmod>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-14-scss-use-variable/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-04-18-use-charles-sniffer-network-packet/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-04-04-mongoid-aggregation/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-03-25-disable-unit-testing-generators-in-rails/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-03-10-inherit-resources-pagination/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-02-09-git-guide/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-02-08-swift-extension/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-02-05-swift-func-parameter/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-02-02-ios-keyboard-resignFirstResponder/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-01-07-lookup-mysql-socket-file-location/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-01-06-vim-cheat-sheet/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-01-02-how-to-use-activesupport-concern/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-12-16-ios-demo-for-swift/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-12-15-elasticsearch-with-ransack-search-method-conflicting/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-12-14-segmentation-routes/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-12-12-use-sql-check-physical-size-of-databases/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-10-10-good-luck-shooter/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-07-18-grape-header/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-05-07-emacs-shortcuts/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2013-11-22-5-useful-tips-for-a-better-commit-message/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2013-11-08-resque-for-rails/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2013-11-06-whenever/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-09-15-the-ruby-syntax-yield-and-closure/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-09-05-interview-questions-about-the-ror/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-08-31-across-the-great-wall/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-08-27-ubuntu-12-dot-04-installation-and-configuration/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-08-26-ubuntu-12-dot-04-installation-and-configuration/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2012-08-08-my-sublime-text-2-plugin-summary/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-06-09-leave/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-06-07-xun-zhao/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-05-16-it-is-been-a-long-time/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-04-27-as-it-is-the-world-is-big/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-04-05-miss-my-mother/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-01-29-start-a-new-job/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-01-16-a-trip-of-qinhuangdao/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-01-10-001-psychology/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2014-12-31-2014-end/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2014-12-21-a-trip-to-qingdao/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2014-01-12-2013-summary/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/link/index.html</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2014-01-15-rails-view-best-practices/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
 </urlset>

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>ruby的yield和闭包 | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="First Blood  来些血腥凶残暴力的！这些经常在面试中被提问，内容很多。从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。
+yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。
+ ruby 闭包   block，Proc，lambdablock">
+  
+  <meta name="description" content="First Blood  来些血腥凶残暴力的！这些经常在面试中被提问，内容很多。从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。
+yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。
+ ruby 闭包   block，Proc，lambdablock">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ruby的yield和闭包">
+<meta property="og:url" content="http://shooter.gl/tech-2012-09-15-the-ruby-syntax-yield-and-closure/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="First Blood  来些血腥凶残暴力的！这些经常在面试中被提问，内容很多。从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。
+yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。
+ ruby 闭包   block，Proc，lambdablock">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ruby的yield和闭包">
+<meta name="twitter:description" content="First Blood  来些血腥凶残暴力的！这些经常在面试中被提问，内容很多。从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。
+yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。
+ ruby 闭包   block，Proc，lambdablock">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2012-09-15-the-ruby-syntax-yield-and-closure/">
+  <time datetime="2012-09-14T18:06:00.000Z">
+    2012-09-15
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">ruby的yield和闭包</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p><strong>First Blood</strong>  来些血腥凶残暴力的！<br>这些经常在面试中被提问，内容很多。<br>从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。</p>
+<p>yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，<br>故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。</p>
+<h3 id="ruby_闭包_block，Proc，lambda"><strong> ruby 闭包</strong>   block，Proc，lambda</h3><p><strong>block 与 yield</strong><br>block 是最常用到的，有两种形式,{}和do … end。<br>一般单行习惯用{}，多行用do … end，当然这只是习惯。</p>
+<figure class="highlight ruby"><figcaption><span>demo.rb</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>test_yield</span><br><span class="line">  <span class="keyword">yield</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test_yield&#123; puts <span class="string">"this is first block."</span> &#125; <span class="comment"># yield可以调用block 即&#123;...&#125;</span></span><br><span class="line"></span><br><span class="line">test_yield <span class="keyword">do</span></span><br><span class="line">  puts <span class="string">"this is second block."</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> </span>test2_yield</span><br><span class="line">  <span class="keyword">yield</span>(<span class="string">"shooter"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test2_yield&#123; |var| puts <span class="string">"This args is <span class="subst">#&#123;var&#125;</span>."</span> &#125;</span><br><span class="line"><span class="comment">#传给yield的参数(此处为shooter)即对应了block中的参数(||中的部分)</span></span><br></pre></td></tr></table></figure>
+<p>还可以通过 Kernel#block_given? 方法询问当前的方法调用是否包含块。<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>test</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">yield</span> <span class="keyword">if</span> block_given?</span><br><span class="line">  puts <span class="string">'no block'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test <span class="comment"># =&gt; no block</span></span><br><span class="line">test&#123; puts <span class="string">"Here's a block"</span> &#125; <span class="comment"># =&gt; Here's a block</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Proc对象</strong></p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">plus = <span class="constant">Proc</span>.new &#123; |x| x + <span class="number">1</span> &#125;</span><br><span class="line">puts plus.call(<span class="number">2</span>) <span class="comment"># =&gt;3</span></span><br><span class="line"></span><br><span class="line">subtract = proc &#123; |x| x - <span class="number">1</span> &#125;</span><br><span class="line">puts subtract.call(<span class="number">4</span>) <span class="comment"># =&gt;3</span></span><br></pre></td></tr></table></figure>
+<p>这被称为<strong>延迟执行</strong>(Defferred Evaluation)。</p>
+<p>通过<strong>&amp;操作符</strong>，block 与 Proc对象可以相互转化。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">def math_one(<span class="operator">a</span>, b, &amp;oper)</span><br><span class="line">  puts yield(<span class="operator">a</span>,b)</span><br><span class="line"><span class="function"><span class="keyword">end</span></span></span><br><span class="line"></span><br><span class="line">def math_two(<span class="operator">a</span>, b, &amp;oper)</span><br><span class="line">  puts oper.call(<span class="operator">a</span>,b)</span><br><span class="line"><span class="function"><span class="keyword">end</span></span></span><br><span class="line"></span><br><span class="line">math_one(<span class="number">2</span>,<span class="number">3</span>) &#123; |x,y| x + y&#125; <span class="comment"># =&gt; 2 + 3 = 5</span></span><br><span class="line">math_two(<span class="number">2</span>,<span class="number">3</span>) &#123; |x,y| x * y&#125; <span class="comment"># =&gt; 2 * 3 = 6</span></span><br></pre></td></tr></table></figure>
+<p>那么这个&amp;起了什么作用？<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>my_method(&amp;code)</span><br><span class="line">  code</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">p = my_method&#123; |name| <span class="string">"Hello,<span class="subst">#&#123;name&#125;</span>!"</span>&#125;</span><br><span class="line">puts p.<span class="keyword">class</span> <span class="comment"># =&gt; Proc</span></span><br><span class="line">puts p.call(<span class="string">"shooter"</span>) <span class="comment"># =&gt; Hello,shooter!</span></span><br></pre></td></tr></table></figure></p>
+<p>&amp;操作符的真正含义：Proc对象和块之间的切换符号。&amp;code是一个块，code是一个Proc对象。<br>简单的去掉&amp;操作符，我们就能再次得到一个Proc对象。<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> </span>proc_to_block(greeting)</span><br><span class="line">  puts <span class="string">"<span class="subst">#&#123;greeting&#125;</span>,<span class="subst">#&#123;<span class="keyword">yield</span>&#125;</span>"</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">my_proc = <span class="constant">Proc</span>.new &#123;<span class="string">"shooter!"</span>&#125;</span><br><span class="line">puts my_proc.<span class="keyword">class</span></span><br><span class="line">proc_to_block(<span class="string">"Hello"</span>, &amp;my_proc)</span><br></pre></td></tr></table></figure></p>
+<p><strong>lambda函数</strong><br>lambda跟Proc就像两个双胞胎<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">plus</span> = lambda &#123; |x| x + <span class="number">1</span> &#125;</span><br><span class="line">puts <span class="keyword">plus</span>.<span class="keyword">call</span>(<span class="number">2</span>) # =&gt;<span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>lambda跟Proc有两个最明显的区别: <br></p>
+<ol>
+<li>lambda检查参数的个数，Proc不会。<br><br>&nbsp;在Proc中，多余的参数被设为nil。但lambda中，Ruby会抛出一个ArgumentError错误。<br></li>
+<li>return不同。<br><br>&nbsp;lambda的return是返回值给方法，方法会继续执行。Proc的return会终止方法并返回得到的值。<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">proc_return</span></span></span><br><span class="line">  <span class="constant">Proc.</span>new &#123; <span class="keyword">return</span> <span class="string">"Proc.new"</span>&#125;.call</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"proc_return method finished"</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lambda_return</span></span></span><br><span class="line">  lambda &#123; <span class="keyword">return</span> <span class="string">"lambda"</span> &#125;.call</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"lambda_return method finished"</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">puts proc_return    <span class="comment"># =&gt; Proc.new</span></span><br><span class="line">puts lambda_return <span class="comment"># =&gt; lambda_return method finished</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>看了代码会一目了然。参考了不少资料，就是拼凑的起来的。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/rails/">rails</a>, <a class="tags-link" href="/tags/ruby/">ruby</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>
