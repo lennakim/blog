@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>rails启动时绑定ip | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
+解决1 在启动 rails 的时候 绑定ip
+  rails s -b 0.0.0.0">
+  
+  <meta name="description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
+解决1 在启动 rails 的时候 绑定ip
+  rails s -b 0.0.0.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rails启动时绑定ip">
+<meta property="og:url" content="http://shooter.gl/tech-2015-08-16-rails-start-bind-ip/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
+解决1 在启动 rails 的时候 绑定ip
+  rails s -b 0.0.0.0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rails启动时绑定ip">
+<meta name="twitter:description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
+解决1 在启动 rails 的时候 绑定ip
+  rails s -b 0.0.0.0">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2015-08-16-rails-start-bind-ip/">
+  <time datetime="2015-07-25T17:25:48.000Z">
+    2015-07-26
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">rails启动时绑定ip</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
+<h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
+<p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
+<p>2 修改 default_options</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/boot.rb</span></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Rails</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Server</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>default_options</span><br><span class="line">      <span class="keyword">super</span>.merge(<span class="constant">Host</span><span class="symbol">:</span> <span class="string">'0.0.0.0'</span>, <span class="constant">Port</span><span class="symbol">:</span> <span class="number">3000</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
+<p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/rails/">rails</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

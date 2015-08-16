@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-07-23T10:24:03.000Z</updated>
+  <updated>2015-08-16T04:09:10.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[rails启动时绑定ip]]></title>
+    <link href="http://shooter.gl/tech-2015-08-16-rails-start-bind-ip/"/>
+    <id>http://shooter.gl/tech-2015-08-16-rails-start-bind-ip/</id>
+    <published>2015-07-25T17:25:48.000Z</published>
+    <updated>2015-08-16T04:09:10.000Z</updated>
+    <content type="html"><![CDATA[<p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
+<h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
+<p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
+<p>2 修改 default_options</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/boot.rb</span></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Rails</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Server</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>default_options</span><br><span class="line">      <span class="keyword">super</span>.merge(<span class="constant">Host</span><span class="symbol">:</span> <span class="string">'0.0.0.0'</span>, <span class="constant">Port</span><span class="symbol">:</span> <span class="number">3000</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
+<p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http]]>
+    </summary>
+    
+      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[centOS7 配置 rails 环境]]></title>
@@ -49,6 +71,25 @@
       <category term="centOS" scheme="http://shooter.gl/tags/centOS/"/>
     
       <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杭州, 我来了]]></title>
+    <link href="http://shooter.gl/live-2015-07-18-Hangzhou-I-come/"/>
+    <id>http://shooter.gl/live-2015-07-18-Hangzhou-I-come/</id>
+    <published>2015-07-18T01:28:27.000Z</published>
+    <updated>2015-08-15T17:33:09.000Z</updated>
+    <content type="html"><![CDATA[<p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
+<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
+<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
+]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
     
   </entry>
   
@@ -452,58 +493,6 @@
       <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
     
       <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ios 如何关闭键盘输入]]></title>
-    <link href="http://shooter.gl/tech-2015-02-02-ios-keyboard-resignFirstResponder/"/>
-    <id>http://shooter.gl/tech-2015-02-02-ios-keyboard-resignFirstResponder/</id>
-    <published>2015-02-02T09:18:55.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
-<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>2 当手指离开屏幕的时候 关闭键盘, 需要重写touchesEnded</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;  nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>源码地址 <a href="https://github.com/liuningtw/keyboard-resignFirstResponder/blob/master/keyboard-resignFirstResponder/ViewController.swift" target="_blank" rel="external">ViewController.swift</a></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">import UIKit&#10;&#10;class ViewController: UIViewController &#123;&#10;&#10;  @IBOutlet weak var nameTxt: UITextField! //&#23450;&#20041;&#36755;&#20837;&#26694;&#10;  @IBOutlet weak var resultLab: UILabel! //&#23450;&#20041;&#26174;&#31034;&#26694;&#10;&#10;  override func viewDidLoad() &#123;&#10;    super.viewDidLoad()&#10;    nameTxt.placeholder = &#34;&#37049;&#20521;&#38639;&#34;&#10;  &#125;&#10;&#10;  override func didReceiveMemoryWarning() &#123;&#10;    super.didReceiveMemoryWarning()&#10;  &#125;&#10;&#10;  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;    nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;  &#125;&#10;&#10;  @IBAction func okTapped(sender: AnyObject) &#123;&#10;    nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#10;    resultLab.text = &#34;hi, \(nameTxt.text)&#34;&#10;  &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
-<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
-<figure class="highlight"><table><tr><t]]>
-    </summary>
-    
-      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
-    
-      <category term="keyboard" scheme="http://shooter.gl/tags/keyboard/"/>
-    
-      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[开始新的工作]]></title>
-    <link href="http://shooter.gl/live-2015-01-29-start-a-new-job/"/>
-    <id>http://shooter.gl/live-2015-01-29-start-a-new-job/</id>
-    <published>2015-01-29T15:13:38.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
-<p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt; 北京, 溜达一圈, 每到一个地方,<br>就跟很多年没见的同学 朋友聚了一次, 最久的从06年就没再见过, 最短的从09年也没怎么联系了.</p>
-<p>回归的另一个意思是, 在工作上重新开始, 跨界从零开始学ios,<br>像11年那样, 放弃java, 一头扎进rails, 从一个陌生的领域重新起步.</p>
-<p>中间有个小插曲: 在石家庄的时候, 我看完电影, 钱包被偷了, 身份证 银行卡 信用卡 通通没了.<br>以为本命年的晦气过去了, 结果年来了个神补刀.<br>不得已回老家, 呆了几天, 本打算想去杭州, 结果钱包这事儿一搅和, 不去了.<br>在老家的这几天, 终于下定决心, 去朋友呆的公司工作, 跟他一起从零开始学习ios.</p>
-<hr>
-<h4 id="Update_2015-03-15">Update 2015-03-15</h4><p>在14年除夕这天, 我曾丢钱包的那家影院的老板娘告诉我: 钱包找到了, 钱包卡在了椅子的缝隙里.<br>估计是我不小心, 钱包从口袋里掉了出来, 卡在了这里, 当时在地上找了半天, 徒劳无功, 还以为被人偷走了。<br><strong>太感谢那位老板娘了</strong>.</p>
-<p>回归又多了层含义: 是不是运气开始好转呢?</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
-<p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt;]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
     
   </entry>
   
