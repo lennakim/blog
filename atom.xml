@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-08-16T04:09:10.000Z</updated>
+  <updated>2015-08-17T15:58:16.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -15,9 +15,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[rails alias_method_chain 的用法]]></title>
+    <link href="http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/"/>
+    <id>http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/</id>
+    <published>2015-08-16T05:06:07.000Z</published>
+    <updated>2015-08-17T15:58:16.000Z</updated>
+    <content type="html"><![CDATA[<p>其实 alias alias_method 已经把我弄晕了.</p>
+<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.add_alias</span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
+<p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
+<p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
+<p>This is because alias is a keyword and it is lexically scoped. It means it treats self as the value of self at the time the source code was read . In contrast alias_method treats self as the value determined at the run time.</p>
+<h3 id="alias_method_chain">alias_method_chain</h3><p>alias_method_chain 是 <strong>ActiveSupport</strong> 的一个公有实例方法,<br>同样接受两个参数, 可以是符号, 也可以是字符串, 但第1个参数是原始方法,<br>alias_method的第2个参数是原始方法, 晕~.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>find_with_args(*args)</span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
+<p>其实 alias_method_chain 只是做了个 dsl</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>其实 alias alias_method 已经把我弄晕了.</p>
+<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td]]>
+    </summary>
+    
+      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
+    
+      <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[rails启动时绑定ip]]></title>
-    <link href="http://shooter.gl/tech-2015-08-16-rails-start-bind-ip/"/>
-    <id>http://shooter.gl/tech-2015-08-16-rails-start-bind-ip/</id>
+    <link href="http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/"/>
+    <id>http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/</id>
     <published>2015-07-25T17:25:48.000Z</published>
     <updated>2015-08-16T04:09:10.000Z</updated>
     <content type="html"><![CDATA[<p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
@@ -472,25 +500,6 @@
       <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
     
       <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
-    
-      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[swift 定义各种函数汇总]]></title>
-    <link href="http://shooter.gl/tech-2015-02-05-swift-func-parameter/"/>
-    <id>http://shooter.gl/tech-2015-02-05-swift-func-parameter/</id>
-    <published>2015-02-04T16:22:20.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
-<h3 id="参考">参考</h3><p><a href="http://www.swiftmi.com/topic/50.html" target="_blank" rel="external">C#与Swift的函数比较</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#2608]]>
-    </summary>
-    
-      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
     
       <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
     
