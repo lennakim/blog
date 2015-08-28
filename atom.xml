@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-08-28T15:59:31.000Z</updated>
+  <updated>2015-08-28T16:05:40.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://shooter.gl/tech-2015-08-28-customize-nginx-header/"/>
     <id>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</id>
     <published>2015-08-28T09:16:11.000Z</published>
-    <updated>2015-08-28T15:59:31.000Z</updated>
+    <updated>2015-08-28T16:05:40.000Z</updated>
     <content type="html"><![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="status">HTTP/1.1 <span class="number">200</span> OK</span></span><br><span class="line"><span class="attribute">Cache-Control</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Pragma</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Content-Length</span>: <span class="string">1314</span></span><br><span class="line"><span class="attribute">Content-Type</span>: <span class="string">text/html; charset=utf-8</span></span><br><span class="line"><span class="attribute">Expires</span>: <span class="string">-1</span></span><br><span class="line"><span class="attribute">Server</span>: <span class="string">Microsoft-IIS/7.5</span></span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: <span class="string">4.0.30319</span></span><br><span class="line"><span class="attribute">p3p</span>: <span class="string">CP="CAO PSA OUR"</span></span><br><span class="line"><span class="attribute">X-Powered-By</span>: <span class="string">ASP.NET</span></span><br><span class="line"><span class="attribute">Date</span>: <span class="string">Fri, 28 Aug 2015 15:42:00 GMT</span></span><br></pre></td></tr></table></figure>
 <p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
@@ -29,6 +29,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'Server: Microsoft-IIS/7.5'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-AspNet-Version: 4.0.30319'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-Powered-By: ASP.NET'</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
 <h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
+<h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
 <h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
 ]]></content>
     <summary type="html">

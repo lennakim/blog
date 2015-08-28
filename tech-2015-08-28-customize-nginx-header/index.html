@@ -104,6 +104,7 @@ HTTP/1.1 200 OKCache-Control: no-cachePragma: no-cacheContent-Length: 1314Conten
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'Server: Microsoft-IIS/7.5'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-AspNet-Version: 4.0.30319'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-Powered-By: ASP.NET'</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
 <h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
+<h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
 <h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
 
     
