@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-08-17T15:58:16.000Z</updated>
+  <updated>2015-08-28T15:59:31.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -15,11 +15,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[自定义 nginx 的 header]]></title>
+    <link href="http://shooter.gl/tech-2015-08-28-customize-nginx-header/"/>
+    <id>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</id>
+    <published>2015-08-28T09:16:11.000Z</published>
+    <updated>2015-08-28T15:59:31.000Z</updated>
+    <content type="html"><![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="status">HTTP/1.1 <span class="number">200</span> OK</span></span><br><span class="line"><span class="attribute">Cache-Control</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Pragma</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Content-Length</span>: <span class="string">1314</span></span><br><span class="line"><span class="attribute">Content-Type</span>: <span class="string">text/html; charset=utf-8</span></span><br><span class="line"><span class="attribute">Expires</span>: <span class="string">-1</span></span><br><span class="line"><span class="attribute">Server</span>: <span class="string">Microsoft-IIS/7.5</span></span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: <span class="string">4.0.30319</span></span><br><span class="line"><span class="attribute">p3p</span>: <span class="string">CP="CAO PSA OUR"</span></span><br><span class="line"><span class="attribute">X-Powered-By</span>: <span class="string">ASP.NET</span></span><br><span class="line"><span class="attribute">Date</span>: <span class="string">Fri, 28 Aug 2015 15:42:00 GMT</span></span><br></pre></td></tr></table></figure>
+<p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
+<p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
+<h3 id="安装_more_set_headers_module">安装 more_set_headers module</h3><p>  <code>sudo apt-get install -y nginx-extras</code>,<br>  会安装 <a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="external">more_set_headers</a> module</p>
+<h3 id="设置_nginx-conf_文件">设置 nginx.conf 文件</h3><p>  <code>sudo vim /etc/nginx/nginx.conf</code>, 打开 nginx.conf<br>  在http 结构体中, 加入以下内容:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'Server: Microsoft-IIS/7.5'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-AspNet-Version: 4.0.30319'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-Powered-By: ASP.NET'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
+<h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
+<h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><s]]>
+    </summary>
+    
+      <category term="nginx" scheme="http://shooter.gl/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[rails alias_method_chain 的用法]]></title>
     <link href="http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/"/>
     <id>http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/</id>
     <published>2015-08-16T05:06:07.000Z</published>
-    <updated>2015-08-17T15:58:16.000Z</updated>
+    <updated>2015-08-19T05:16:54.000Z</updated>
     <content type="html"><![CDATA[<p>其实 alias alias_method 已经把我弄晕了.</p>
 <h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.add_alias</span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
 <p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
@@ -474,34 +500,6 @@
     </summary>
     
       <category term="git" scheme="http://shooter.gl/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[swift扩展-extension]]></title>
-    <link href="http://shooter.gl/tech-2015-02-08-swift-extension/"/>
-    <id>http://shooter.gl/tech-2015-02-08-swift-extension/</id>
-    <published>2015-02-07T16:44:58.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>swift 有一个特别的关键字 — <strong>extension</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
-<p>马上想到的是 ruby monkey-patch</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>seconds</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>minutes</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>days</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">############</span></span><br><span class="line"><span class="number">5</span>.seconds</span><br><span class="line"><span class="number">2</span>.minutes</span><br><span class="line"><span class="number">1</span>.days</span><br></pre></td></tr></table></figure>
-<hr>
-<p>在ios的例子中 <a href="https://github.com/liuningtw/ruby-china_ios/blob/master/ruby-china_ios/ViewControllerExtension.swift" target="_blank" rel="external">ViewControllerExtensions</a> 扩展ViewController, 继承 <strong>UITableViewDataSource</strong> , 并实现 <strong>protocol</strong> ,</p>
-<p>类似ruby中用 module 扩展class.</p>
-<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/tonny_guan/article/details/36198911" target="_blank" rel="external">Swift扩展-Extension</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>swift 有一个特别的关键字 — <strong>extension</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension ]]>
-    </summary>
-    
-      <category term="ios" scheme="http://shooter.gl/tags/ios/"/>
-    
-      <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
-    
-      <category term="swift" scheme="http://shooter.gl/tags/swift/"/>
     
   </entry>
   

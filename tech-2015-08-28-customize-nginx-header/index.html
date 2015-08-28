@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!-- google-site-verification -->
+  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
+  <!-- google-site-verification -->
+  
+  <title>自定义 nginx 的 header | Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="shooter">
+  
+  
+    <meta name="description" content="当你运行 curl -I ruby-china.com 查看返回结果
+HTTP/1.1 200 OKCache-Control: no-cachePragma: no-cacheContent-Length: 1314Content-Type: text/html; charset=utf-8Expires: -1Server: Microsoft-IIS/7.5X-AspNet-Version:">
+  
+  <meta name="description" content="当你运行 curl -I ruby-china.com 查看返回结果
+HTTP/1.1 200 OKCache-Control: no-cachePragma: no-cacheContent-Length: 1314Content-Type: text/html; charset=utf-8Expires: -1Server: Microsoft-IIS/7.5X-AspNet-Version:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义 nginx 的 header">
+<meta property="og:url" content="http://shooter.gl/tech-2015-08-28-customize-nginx-header/index.html">
+<meta property="og:site_name" content="Shooter">
+<meta property="og:description" content="当你运行 curl -I ruby-china.com 查看返回结果
+HTTP/1.1 200 OKCache-Control: no-cachePragma: no-cacheContent-Length: 1314Content-Type: text/html; charset=utf-8Expires: -1Server: Microsoft-IIS/7.5X-AspNet-Version:">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义 nginx 的 header">
+<meta name="twitter:description" content="当你运行 curl -I ruby-china.com 查看返回结果
+HTTP/1.1 200 OKCache-Control: no-cachePragma: no-cacheContent-Length: 1314Content-Type: text/html; charset=utf-8Expires: -1Server: Microsoft-IIS/7.5X-AspNet-Version:">
+  
+    <link rel="alternate" href="/atom.xml" title="Shooter" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33680426-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Shooter</a></h1>
+    <p><a href="/">I am shooter</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/link">Link</a></li>
+      
+        <li><a href="http://ta.shooter.gl/">Live</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/tech-2015-08-28-customize-nginx-header/">
+  <time datetime="2015-08-28T09:16:11.000Z">
+    2015-08-28
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">自定义 nginx 的 header</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="status">HTTP/1.1 <span class="number">200</span> OK</span></span><br><span class="line"><span class="attribute">Cache-Control</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Pragma</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Content-Length</span>: <span class="string">1314</span></span><br><span class="line"><span class="attribute">Content-Type</span>: <span class="string">text/html; charset=utf-8</span></span><br><span class="line"><span class="attribute">Expires</span>: <span class="string">-1</span></span><br><span class="line"><span class="attribute">Server</span>: <span class="string">Microsoft-IIS/7.5</span></span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: <span class="string">4.0.30319</span></span><br><span class="line"><span class="attribute">p3p</span>: <span class="string">CP="CAO PSA OUR"</span></span><br><span class="line"><span class="attribute">X-Powered-By</span>: <span class="string">ASP.NET</span></span><br><span class="line"><span class="attribute">Date</span>: <span class="string">Fri, 28 Aug 2015 15:42:00 GMT</span></span><br></pre></td></tr></table></figure>
+<p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
+<p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
+<h3 id="安装_more_set_headers_module">安装 more_set_headers module</h3><p>  <code>sudo apt-get install -y nginx-extras</code>,<br>  会安装 <a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="external">more_set_headers</a> module</p>
+<h3 id="设置_nginx-conf_文件">设置 nginx.conf 文件</h3><p>  <code>sudo vim /etc/nginx/nginx.conf</code>, 打开 nginx.conf<br>  在http 结构体中, 加入以下内容:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'Server: Microsoft-IIS/7.5'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-AspNet-Version: 4.0.30319'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-Powered-By: ASP.NET'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
+<h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
+<h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/nginx/">nginx</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+    <div class="copyright">
+  
+  &copy; 2015 <a href="/">shooter</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div>
+    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'shooterme';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+<script type="text/javascript">
+  (function(){
+    var infos = new Object()
+
+    infos['qq'] ='1458643975';
+    infos['mobile'] ='18612621540';
+    infos['extend'] ='\\u90b9\\u5029\\u96ef';
+
+    console.log(infos);
+  })();
+</script>
+
+  </footer>
+</body>
+</html>

@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
+    <lastmod>2015-08-28T15:59:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/</loc>
-    <lastmod>2015-08-17T15:58:16.000Z</lastmod>
+    <lastmod>2015-08-19T05:16:54.000Z</lastmod>
   </url>
   
   <url>
@@ -127,12 +132,12 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2014-05-07-emacs-shortcuts/</loc>
+    <loc>http://shooter.gl/about/index.html</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shooter.gl/about/index.html</loc>
+    <loc>http://shooter.gl/tech-2014-01-15-rails-view-best-practices/</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
@@ -257,7 +262,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2014-01-15-rails-view-best-practices/</loc>
+    <loc>http://shooter.gl/tech-2014-05-07-emacs-shortcuts/</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
