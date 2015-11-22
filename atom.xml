@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-08-28T16:05:40.000Z</updated>
+  <updated>2015-11-22T15:53:46.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -15,18 +15,117 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[北京大雪纷飞]]></title>
+    <link href="http://shooter.gl/live-2015-11-22-bj-snow/"/>
+    <id>http://shooter.gl/live-2015-11-22-bj-snow/</id>
+    <published>2015-11-22T15:24:34.000Z</published>
+    <updated>2015-11-22T15:53:46.000Z</updated>
+    <content type="html"><![CDATA[<p>今天北京飘飘扬扬的下起了大雪, 而我宅在家里, 盖着厚被子, 想赶快退烧.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天北京飘飘扬扬的下起了大雪, 而我宅在家里, 盖着厚被子, 想赶快退烧.</p>
+]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我决定加入haobtc]]></title>
+    <link href="http://shooter.gl/live-2015-11-05-I-decided-to-join-the-haobtc/"/>
+    <id>http://shooter.gl/live-2015-11-05-I-decided-to-join-the-haobtc/</id>
+    <published>2015-11-05T15:12:20.000Z</published>
+    <updated>2015-11-22T15:24:00.000Z</updated>
+    <content type="html"><![CDATA[<p>在大熊的鼓动下, 决定加入 <a href="https://haobtc.com/" target="_blank" rel="external">https://haobtc.com/</a>, 从去年12月份离开btc圈子, 到现在又加入haobtc,<br>差不多过了一年时间.</p>
+<p>这一年币价跌宕起伏, 感情也是风雨飘摇, 当我又回到起点, 你在哪里呢?</p>
+<p><strong>纵情向前, 既往不恋</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在大熊的鼓动下, 决定加入 <a href="https://haobtc.com/" target="_blank" rel="external">https://haobtc.com/</a>, 从去年12月份离开btc圈子, 到现在又加入haobtc,<br>差不多过]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[参加2015年的 rubyconf]]></title>
+    <link href="http://shooter.gl/live-2015-10-12-this-year-rubyconf/"/>
+    <id>http://shooter.gl/live-2015-10-12-this-year-rubyconf/</id>
+    <published>2015-10-12T15:09:34.000Z</published>
+    <updated>2015-11-22T15:21:22.000Z</updated>
+    <content type="html"><![CDATA[<p>千里迢迢从北京到深圳参加2015年的rubyconf, 见到了 rei, 华顺.</p>
+<p>三大版主终于都认识了,</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>千里迢迢从北京到深圳参加2015年的rubyconf, 见到了 rei, 华顺.</p>
+<p>三大版主终于都认识了,</p>
+]]>
+    </summary>
+    
+      <category term="rubyconf" scheme="http://shooter.gl/tags/rubyconf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[领养了一只猫咪]]></title>
+    <link href="http://shooter.gl/live-2015-10-07-have-a-cat/"/>
+    <id>http://shooter.gl/live-2015-10-07-have-a-cat/</id>
+    <published>2015-10-07T15:03:50.000Z</published>
+    <updated>2015-11-22T15:48:17.000Z</updated>
+    <content type="html"><![CDATA[<p>从朋友那里领养了一只猫咪, 他嫌猫咪太闹腾, 搅和的他严重的睡眠不足, 哈哈.</p>
+<p>给它取名叫做卢比, 之前想了很多名: 弯弯 弯仔 铁锤妹妹 雪碧 十一 Tom .</p>
+<p>之所以取名叫卢比, 因为隔壁的狗狗叫钢蛋, 如果你看过 <a href="http://movie.douban.com/subject/1303815/" target="_blank" rel="external">你丫闭嘴</a><br>就会明白这里面的梗了.</p>
+<p>其实我挺喜欢喊他雪碧, 还给它想了一个别称 [碧池], 不知道可乐可还好么?</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>从朋友那里领养了一只猫咪, 他嫌猫咪太闹腾, 搅和的他严重的睡眠不足, 哈哈.</p>
+<p>给它取名叫做卢比, 之前想了很多名: 弯弯 弯仔 铁锤妹妹 雪碧 十一 Tom .</p>
+<p>之所以取名叫卢比, 因为隔壁的狗狗叫钢蛋, 如果你看过 <a href="http]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linux下查找并批量修改文件扩展名]]></title>
+    <link href="http://shooter.gl/tech-2015-09-20-batch-rename-file-suffix/"/>
+    <id>http://shooter.gl/tech-2015-09-20-batch-rename-file-suffix/</id>
+    <published>2015-09-20T02:23:04.000Z</published>
+    <updated>2015-11-22T15:14:17.000Z</updated>
+    <content type="html"><![CDATA[<p>Linux下查找并批量修改文件扩展名</p>
+<p><a href="http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html" target="_blank" rel="external">http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html</a></p>
+<p><a href="http://www.ahlinux.com/start/cmd/498.html" target="_blank" rel="external">http://www.ahlinux.com/start/cmd/498.html</a></p>
+<p>find ./ -type f -name “*.less” | xargs  rename “s/less/scss/“</p>
+<p>find ./ -type f -name “*.po”  | xargs  -I {} cp {} <new_path> #复制</new_path></p>
+<p><a href="http://bbs.chinaunix.net/thread-525576-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-525576-1-1.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Linux下查找并批量修改文件扩展名</p>
+<p><a href="http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html" target="_blank" rel="external">http://ww]]>
+    </summary>
+    
+      <category term="linux" scheme="http://shooter.gl/tags/linux/"/>
+    
+      <category term="shell" scheme="http://shooter.gl/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[自定义 nginx 的 header]]></title>
     <link href="http://shooter.gl/tech-2015-08-28-customize-nginx-header/"/>
     <id>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</id>
     <published>2015-08-28T09:16:11.000Z</published>
     <updated>2015-08-28T16:05:40.000Z</updated>
     <content type="html"><![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="status">HTTP/1.1 <span class="number">200</span> OK</span></span><br><span class="line"><span class="attribute">Cache-Control</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Pragma</span>: <span class="string">no-cache</span></span><br><span class="line"><span class="attribute">Content-Length</span>: <span class="string">1314</span></span><br><span class="line"><span class="attribute">Content-Type</span>: <span class="string">text/html; charset=utf-8</span></span><br><span class="line"><span class="attribute">Expires</span>: <span class="string">-1</span></span><br><span class="line"><span class="attribute">Server</span>: <span class="string">Microsoft-IIS/7.5</span></span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: <span class="string">4.0.30319</span></span><br><span class="line"><span class="attribute">p3p</span>: <span class="string">CP="CAO PSA OUR"</span></span><br><span class="line"><span class="attribute">X-Powered-By</span>: <span class="string">ASP.NET</span></span><br><span class="line"><span class="attribute">Date</span>: <span class="string">Fri, 28 Aug 2015 15:42:00 GMT</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK&#10;Cache-Control: no-cache&#10;Pragma: no-cache&#10;Content-Length: 1314&#10;Content-Type: text/html; charset=utf-8&#10;Expires: -1&#10;Server: Microsoft-IIS/7.5&#10;X-AspNet-Version: 4.0.30319&#10;p3p: CP=&#34;CAO PSA OUR&#34;&#10;X-Powered-By: ASP.NET&#10;Date: Fri, 28 Aug 2015 15:42:00 GMT</span><br></pre></td></tr></table></figure>
 <p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
 <p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
 <h3 id="安装_more_set_headers_module">安装 more_set_headers module</h3><p>  <code>sudo apt-get install -y nginx-extras</code>,<br>  会安装 <a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="external">more_set_headers</a> module</p>
 <h3 id="设置_nginx-conf_文件">设置 nginx.conf 文件</h3><p>  <code>sudo vim /etc/nginx/nginx.conf</code>, 打开 nginx.conf<br>  在http 结构体中, 加入以下内容:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'Server: Microsoft-IIS/7.5'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-AspNet-Version: 4.0.30319'</span>;</span><br><span class="line">more_<span class="built_in">set</span>_headers <span class="string">'X-Powered-By: ASP.NET'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">more_set_headers &#39;Server: Microsoft-IIS/7.5&#39;;&#10;more_set_headers &#39;X-AspNet-Version: 4.0.30319&#39;;&#10;more_set_headers &#39;X-Powered-By: ASP.NET&#39;;</span><br></pre></td></tr></table></figure>
 <h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
 <h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
 <h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
@@ -34,7 +133,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><s]]>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">H]]>
     </summary>
     
       <category term="nginx" scheme="http://shooter.gl/tags/nginx/"/>
@@ -48,12 +147,12 @@
     <published>2015-08-16T05:06:07.000Z</published>
     <updated>2015-08-19T05:16:54.000Z</updated>
     <content type="html"><![CDATA[<p>其实 alias alias_method 已经把我弄晕了.</p>
-<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.add_alias</span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>name</span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>mobile</span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
+<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
 <p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
 <p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
 <p>This is because alias is a keyword and it is lexically scoped. It means it treats self as the value of self at the time the source code was read . In contrast alias_method treats self as the value determined at the run time.</p>
 <h3 id="alias_method_chain">alias_method_chain</h3><p>alias_method_chain 是 <strong>ActiveSupport</strong> 的一个公有实例方法,<br>同样接受两个参数, 可以是符号, 也可以是字符串, 但第1个参数是原始方法,<br>alias_method的第2个参数是原始方法, 晕~.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>find_with_args(*args)</span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_with_args</span><span class="params">(*args)</span></span></span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
 <p>其实 alias_method_chain 只是做了个 dsl</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
@@ -79,7 +178,7 @@
 <h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
 <p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
 <p>2 修改 default_options</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/boot.rb</span></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Rails</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Server</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>default_options</span><br><span class="line">      <span class="keyword">super</span>.merge(<span class="constant">Host</span><span class="symbol">:</span> <span class="string">'0.0.0.0'</span>, <span class="constant">Port</span><span class="symbol">:</span> <span class="number">3000</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># /config/boot.rb&#10;module Rails&#10;  class Server&#10;    def default_options&#10;      super.merge(Host: &#39;0.0.0.0&#39;, Port: 3000)&#10;    end&#10;  end&#10;end</span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
 <p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
 ]]></content>
@@ -99,7 +198,7 @@
     <updated>2015-07-23T10:24:03.000Z</updated>
     <content type="html"><![CDATA[<p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
 <h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"># centOS</span><br><span class="line">LSB <span class="string">Version:</span>  :core-<span class="number">4.1</span>-<span class="string">amd64:</span>core-<span class="number">4.1</span>-noarch</span><br><span class="line">Distributor <span class="string">ID:</span> CentOS</span><br><span class="line"><span class="string">Description:</span>  CentOS Linux release <span class="number">7.1</span>.1503 (Core)</span><br><span class="line"><span class="string">Release:</span>  <span class="number">7.1</span>.1503</span><br><span class="line"><span class="string">Codename:</span> Core</span><br><span class="line"></span><br><span class="line"># ubuntu</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor <span class="string">ID:</span> Ubuntu</span><br><span class="line"><span class="string">Description:</span>  Ubuntu <span class="number">14.04</span>.1 LTS</span><br><span class="line"><span class="string">Release:</span>  <span class="number">14.04</span></span><br><span class="line"><span class="string">Codename:</span> trusty</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># centOS&#10;LSB Version:  :core-4.1-amd64:core-4.1-noarch&#10;Distributor ID: CentOS&#10;Description:  CentOS Linux release 7.1.1503 (Core)&#10;Release:  7.1.1503&#10;Codename: Core&#10;&#10;# ubuntu&#10;No LSB modules are available.&#10;Distributor ID: Ubuntu&#10;Description:  Ubuntu 14.04.1 LTS&#10;Release:  14.04&#10;Codename: trusty</span><br></pre></td></tr></table></figure>
 <p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
 <hr>
 <h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
@@ -107,14 +206,14 @@
 <p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
 <h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
 <h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
-<p>  <strong>centOS</strong><br>  <figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers</span><br><span class="line"># -r<span class="comment">--r-----</span></span><br><span class="line"></span><br><span class="line"># /etc/sudoers 在 root用户下 没有写权限</span><br><span class="line"></span><br><span class="line">chmod +w /etc/sudoers # 添加写权限</span><br><span class="line"></span><br><span class="line">sudo vim /etc/sudoers # 修改文件</span><br><span class="line"></span><br><span class="line"># 找到 root <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span>, 在下一行加上</span><br><span class="line">&lt;username&gt; <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure></p>
+<p>  <strong>centOS</strong><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers&#10;# -r--r-----&#10;&#10;# /etc/sudoers &#22312; root&#29992;&#25143;&#19979; &#27809;&#26377;&#20889;&#26435;&#38480;&#10;&#10;chmod +w /etc/sudoers # &#28155;&#21152;&#20889;&#26435;&#38480;&#10;&#10;sudo vim /etc/sudoers # &#20462;&#25913;&#25991;&#20214;&#10;&#10;# &#25214;&#21040; root ALL=(ALL) ALL, &#22312;&#19979;&#19968;&#34892;&#21152;&#19978;&#10;&#60;username&#62; ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
 <p>  OK, 普通用户也可以之行 sudo 命令了</p>
-<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">mkdir</span>  ~/.ssh</span><br><span class="line"></span><br><span class="line">vim ~/.ssh/authorized_keys</span><br><span class="line"><span class="comment"># 把公钥加入到 authorized_keys 中即可</span></span><br></pre></td></tr></table></figure>
-<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">vim</span> /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span> <span class="comment"># 去掉注释</span></span><br><span class="line">PasswordAuthentication <span class="built_in">no</span> <span class="comment"># 去掉注释, yes 改成 no</span></span><br><span class="line">ChallengeResponseAuthentication <span class="built_in">no</span> <span class="comment">#  去掉注释, yes 改成 no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 sshd 服务</span></span><br><span class="line">sudo service ssh  restart <span class="comment"># ubuntu</span></span><br><span class="line">sudo service sshd restart <span class="comment"># centOS</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight puppet"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 rvm</span></span><br><span class="line">curl -<span class="constant">L</span> get.rvm.io | bash -s stable</span><br><span class="line"><span class="literal">source</span> ~/.bashrc</span><br><span class="line"><span class="literal">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 ruby</span></span><br><span class="line">rvm list known          <span class="comment"># 列出已知的 ruby 版本</span></span><br><span class="line">rvm install <span class="number">2.2</span>.<span class="number">2</span>       <span class="comment"># 安装 ruby 版本</span></span><br><span class="line">rvm <span class="literal">use</span> <span class="number">2.2</span>.<span class="number">0</span> --<span class="keyword">default</span> <span class="comment"># 切换并设置默认ruby 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 bundler rails</span></span><br><span class="line">gem install -<span class="constant">V</span> bundler rails</span><br></pre></td></tr></table></figure>
+<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  ~/.ssh&#10;&#10;vim ~/.ssh/authorized_keys&#10;# &#25226;&#20844;&#38053;&#21152;&#20837;&#21040; authorized_keys &#20013;&#21363;&#21487;</span><br></pre></td></tr></table></figure>
+<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config&#10;&#10;PubkeyAuthentication yes # &#21435;&#25481;&#27880;&#37322;&#10;PasswordAuthentication no # &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;ChallengeResponseAuthentication no #  &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;&#10;# &#37325;&#21551; sshd &#26381;&#21153;&#10;sudo service ssh  restart # ubuntu&#10;sudo service sshd restart # centOS</span><br></pre></td></tr></table></figure>
+<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#23433;&#35013;&#20381;&#36182;&#10;sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel&#10;&#10;# &#23433;&#35013; rvm&#10;curl -L get.rvm.io | bash -s stable&#10;source ~/.bashrc&#10;source ~/.bash_profile&#10;&#10;# &#23433;&#35013; ruby&#10;rvm list known          # &#21015;&#20986;&#24050;&#30693;&#30340; ruby &#29256;&#26412;&#10;rvm install 2.2.2       # &#23433;&#35013; ruby &#29256;&#26412;&#10;rvm use 2.2.0 --default # &#20999;&#25442;&#24182;&#35774;&#32622;&#40664;&#35748;ruby &#29256;&#26412;&#10;&#10;# &#23433;&#35013; bundler rails&#10;gem install -V bundler rails</span><br></pre></td></tr></table></figure>
 <h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
-<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">sudo yum install <span class="symbol">http:</span>/<span class="regexp">/nginx.org/packages</span><span class="regexp">/centos/</span><span class="number">7</span>/noarch/<span class="constant">RPMS/</span>nginx-release-centos-<span class="number">7</span>-<span class="number">0</span>.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> mysql <span class="comment"># 只安装 mysql-client</span></span><br><span class="line"></span><br><span class="line">sudo yum <span class="keyword">install</span> mysql mysql-server <span class="comment"># 安装 mysql-client  mysql-server</span></span><br><span class="line"></span><br><span class="line">sudo  yum <span class="keyword">install</span> mysql-devel <span class="comment"># 不安装, gem mysql2 本地编译出问题</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install mysql # &#21482;&#23433;&#35013; mysql-client&#10;&#10;sudo yum install mysql mysql-server # &#23433;&#35013; mysql-client  mysql-server&#10;&#10;sudo  yum install mysql-devel # &#19981;&#23433;&#35013;, gem mysql2 &#26412;&#22320;&#32534;&#35793;&#20986;&#38382;&#39064;</span><br></pre></td></tr></table></figure>
 <p>PS: 在杭州好闷好热啊</p>
 ]]></content>
     <summary type="html">
@@ -246,7 +345,7 @@
     <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>生成的css 如下:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="rule"><span class="attribute">div</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">5</span>) &#123;</span><br><span class="line">  animation-delay: <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(1)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(3)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(5)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/20121376/1240067" target="_blank" rel="external">use-nth-child-value-as-a-sass-variable</a></p>
 <p><a href="http://stackoverflow.com/a/3462301/1240067" target="_blank" rel="external">select-every-nth-element-in-css</a></p>
 <p><a href="http://sassmeister.com/" target="_blank" rel="external">sass-meister</a></p>
@@ -267,7 +366,7 @@
     <updated>2015-07-02T10:44:10.000Z</updated>
     <content type="html"><![CDATA[<p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
 <p>在chrome的url输入框 输入以下内容, 在下拉菜单选择 停用(disabled) 就ok了.</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="label">chrome:</span>//flags/<span class="preprocessor">#enhanced-bookmarks-experiment</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chrome://flags/#enhanced-bookmarks-experiment</span><br></pre></td></tr></table></figure>
 <p>世界变得跟之前一样安静了.</p>
 ]]></content>
     <summary type="html">
@@ -289,19 +388,19 @@
 <p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
 <p>在这里纪下我的升级步骤</p>
 <h4 id="First">First</h4><p>修改 ./package.json</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">hexo</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">version</span>": <span class="value"><span class="string">""</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#10;  &#34;hexo&#34;: &#123;&#10;    &#34;version&#34;: &#34;&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Second">Second</h4><p>安装hexo组件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-cli -g</span><br><span class="line">npm <span class="keyword">install</span> hexo <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g&#10;npm install hexo --save</span><br></pre></td></tr></table></figure>
 <p>安装生成器</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-archive <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-category <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-index --save&#10;npm install hexo-generator-archive --save&#10;npm install hexo-generator-category --save&#10;npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
 <p>安装server</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
 <h4 id="Third">Third</h4><p>安装部署工具, 由于我用github page, 只用安装hexo-deployer-git</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>升级各种插件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked@0.2 --save&#10;npm install hexo-renderer-stylus@0.2 --save&#10;npm install hexo-generator-feed@1 --save&#10;npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure>
 <p>最后不要忘了这个</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
 <p>不装 ejs 会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">hexo-issues-632</a>描述的问题</p>
 ]]></content>
     <summary type="html">
@@ -391,116 +490,6 @@
       <category term="charles" scheme="http://shooter.gl/tags/charles/"/>
     
       <category term="sniffer" scheme="http://shooter.gl/tags/sniffer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[怀念母亲]]></title>
-    <link href="http://shooter.gl/live-2015-04-05-miss-my-mother/"/>
-    <id>http://shooter.gl/live-2015-04-05-miss-my-mother/</id>
-    <published>2015-04-05T14:21:57.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽明忽暗, 没了期盼. 现在我想说: 麻麻, 我很好, 我一直很乖.</p>
-<p>斯人已逝, 言犹在耳, 谢谢母亲.</p>
-<p>附上李志的『<a href="http://music.163.com/#/song?id=5246946" target="_blank" rel="external">妈妈</a>』</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26523123&auto=0&height=66"></iframe>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[mongoid 聚合功能]]></title>
-    <link href="http://shooter.gl/tech-2015-04-04-mongoid-aggregation/"/>
-    <id>http://shooter.gl/tech-2015-04-04-mongoid-aggregation/</id>
-    <published>2015-04-04T10:32:21.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">class <span class="constant">User</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid:</span><span class="symbol">:Timestamps</span></span><br><span class="line"></span><br><span class="line">  field <span class="symbol">:name</span>,   <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:email</span>,  <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line">  field <span class="symbol">:gender</span>, <span class="symbol">type:</span> <span class="constant">String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>without(<span class="symbol">:name</span>, <span class="symbol">:gender</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>)</span><br><span class="line"><span class="constant">User.</span>only(<span class="symbol">:name</span>, <span class="symbol">:email</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="aggregation_聚合">aggregation 聚合</h3><h4 id="group">group</h4><p>我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,<br>这样可以使用 mongoDB的 <a href="http://docs.mongodb.org/manual/reference/method/db.collection.group/" target="_blank" rel="external">$group</a> 函数了.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Timestamps</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.added_fans(day_num)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.collection.aggregate(</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$match"</span> =&gt; &#123;</span><br><span class="line">          <span class="string">"followable_type"</span> =&gt; <span class="string">"User"</span>,</span><br><span class="line">           <span class="string">"created_at"</span> =&gt; &#123;</span><br><span class="line">              <span class="string">"$gte"</span> =&gt; yesterday.to_i.days.ago.beginning_of_day, <span class="comment"># 大于等于 昨天的开始时间</span></span><br><span class="line">              <span class="string">"$lte"</span> =&gt; <span class="constant">Date</span>.yesterday.end_of_day <span class="comment"># 小于等于 昨天的结束的时间</span></span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="comment"># 查询条件</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$group"</span> =&gt; &#123;</span><br><span class="line">          <span class="symbol">_id:</span> <span class="string">"$follow_id"</span>, <span class="comment"># 根据 follow_id 分组统计</span></span><br><span class="line">          <span class="symbol">matches:</span> &#123; <span class="string">"$sum"</span> =&gt; <span class="number">1</span> &#125; <span class="comment"># 统计数量</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$sort"</span> =&gt; &#123; <span class="symbol">matches:</span> -<span class="number">1</span> &#125; <span class="comment">#倒序</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$limit"</span> =&gt; <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h4 id="map_reduce"><a href="http://mongoid.org/en/mongoid/docs/querying.html#map_reduce" target="_blank" rel="external">map_reduce</a></h4><p>map_reduce</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Band</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.likes_count</span><br><span class="line">    map = <span class="string">%Q&#123;</span><br><span class="line">      function() &#123;</span><br><span class="line">        emit(this.name, &#123; likes: this.likes &#125;</span>); <span class="comment"># 发送 name 与 likes</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reduce = <span class="string">%Q&#123;</span><br><span class="line">      function(key, values) &#123;</span><br><span class="line">        var result = &#123; likes: 0 &#125;</span>;</span><br><span class="line"></span><br><span class="line">        values.forEach(function(value) &#123;</span><br><span class="line"></span><br><span class="line">          result.likes += value.likes; <span class="comment"># 获得value.likes 并 累加</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result; <span class="comment">#输出结果</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    map_reduce(map, reduce).out(<span class="symbol">inline:</span> <span class="keyword">true</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Band</span>.likes_count</span><br></pre></td></tr></table></figure>
-<p>MapReduce概念可以查看<a href="http://zh.wikipedia.org/zh/MapReduce" target="_blank" rel="external">wiki</a><br>或者<a href="http://www.zhihu.com/question/23345991" target="_blank" rel="external">知乎</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
-<figure class="highlight elixir">]]>
-    </summary>
-    
-      <category term="aggregation" scheme="http://shooter.gl/tags/aggregation/"/>
-    
-      <category term="mapreduce" scheme="http://shooter.gl/tags/mapreduce/"/>
-    
-      <category term="mongoid" scheme="http://shooter.gl/tags/mongoid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[rails中禁掉某些生成器]]></title>
-    <link href="http://shooter.gl/tech-2015-03-25-disable-unit-testing-generators-in-rails/"/>
-    <id>http://shooter.gl/tech-2015-03-25-disable-unit-testing-generators-in-rails/</id>
-    <published>2015-03-25T12:13:45.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/application.rb</span></span><br><span class="line"></span><br><span class="line">config.generators <span class="keyword">do</span> |g|</span><br><span class="line">  g.test_framework  <span class="symbol">:rspec</span>, <span class="symbol">fixture:</span> <span class="keyword">false</span></span><br><span class="line">  g.view_specs      <span class="keyword">false</span></span><br><span class="line">  g.helper_specs    <span class="keyword">false</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
-<figure class=]]>
-    </summary>
-    
-      <category term="generators" scheme="http://shooter.gl/tags/generators/"/>
-    
-      <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[inherit_resources 添加分页功能]]></title>
-    <link href="http://shooter.gl/tech-2015-03-10-inherit-resources-pagination/"/>
-    <id>http://shooter.gl/tech-2015-03-10-inherit-resources-pagination/</id>
-    <published>2015-03-10T05:16:44.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  scope <span class="symbol">:recent</span>, -&gt; &#123;order(<span class="symbol">created_at:</span> <span class="symbol">:desc</span>)&#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line"></span><br><span class="line">  inherit_resources</span><br><span class="line"></span><br><span class="line">  protected</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> </span>collection</span><br><span class="line">    end_of_association_chain.recent.page(params[<span class="symbol">:page</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/questions/21258436/does-kaminari-work-with-inherited-resources" target="_blank" rel="external">Kaminari work with Inherited Resources</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 acti]]>
-    </summary>
-    
-      <category term="gem" scheme="http://shooter.gl/tags/gem/"/>
-    
-      <category term="pagination" scheme="http://shooter.gl/tags/pagination/"/>
-    
-      <category term="ruby" scheme="http://shooter.gl/tags/ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[git 用法]]></title>
-    <link href="http://shooter.gl/tech-2015-02-09-git-guide/"/>
-    <id>http://shooter.gl/tech-2015-02-09-git-guide/</id>
-    <published>2015-02-07T17:19:59.000Z</published>
-    <updated>2015-07-02T10:44:10.000Z</updated>
-    <content type="html"><![CDATA[<p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
-<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git remote add &#60;shortname&#62; &#60;url&#62; #&#26032;&#24314;&#36828;&#31243;&#20179;&#24211;&#10;git remote set-url origin &#60;url&#62;&#10;git remote set-branches [--add] &#60;name&#62; &#60;branch&#62;&#10;git remote set-url [--push] &#60;name&#62; &#60;newurl&#62; [&#60;oldurl&#62;]&#10;git remote set-url --add &#60;name&#62; &#60;newurl&#62;&#10;git remote set-url --delete &#60;name&#62; &#60;url&#62;</span><br></pre></td></tr></table></figure>
-<h4 id="Git-Tag">Git-Tag</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git tag #&#21015;&#20986;&#26631;&#31614;&#10;&#10;git tag v0.1.2-light &#21019;&#24314;&#36731;&#37327;&#26631;&#31614;&#10;&#10;git tag -a v0.1.2 -m &#34;0.1.2 Version&#34; #&#21019;&#24314;&#38468;&#27880;&#26631;&#31614;&#10;&#10;git push origin v0.1.2 # &#23558;v0.1.2&#26631;&#31614;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git push origin &#8211;tags # &#23558;&#26412;&#22320;&#25152;&#26377;&#26631;&#31614;&#19968;&#27425;&#24615;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git tag -d v0.1.2 # &#21024;&#38500;&#26631;&#31614;&#10;&#10;git show v0.1.2  # &#29992;git show&#21629;&#20196;&#21487;&#20197;&#26597;&#30475;&#26631;&#31614;&#30340;&#29256;&#26412;&#20449;&#24687;&#10;&#10;git tag -a v0.1.1 9fbc3d0 # &#32473;&#25351;&#23450;&#30340;commit&#25171;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Update_2015-03-10">Update 2015-03-10</h3><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移动分支到某个 commit</span></span><br><span class="line">git branch -f <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;commit&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># github reset br remote head</span></span><br><span class="line">git reset --hard origin/<span class="variable">&lt;br-name&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#rename git  branch</span></span><br><span class="line">git branch -m <span class="variable">&lt;oldname&gt;</span> <span class="variable">&lt;newname&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改当前分支</span></span><br><span class="line">git branch -m <span class="variable">&lt;newname&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2><p><a href="http://blog.csdn.net/wangjia55/article/details/8793577" target="_blank" rel="external">http://blog.csdn.net/wangjia55/article/details/8793577</a><br><a href="http://www.cnblogs.com/wang_yb/p/3867221.html" target="_blank" rel="external">http://www.cnblogs.com/wang_yb/p/3867221.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
-<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><spa]]>
-    </summary>
-    
-      <category term="git" scheme="http://shooter.gl/tags/git/"/>
     
   </entry>
   

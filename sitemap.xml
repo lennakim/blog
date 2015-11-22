@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/live-2015-11-22-bj-snow/</loc>
+    <lastmod>2015-11-22T15:53:46.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-10-07-have-a-cat/</loc>
+    <lastmod>2015-11-22T15:48:17.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-11-05-I-decided-to-join-the-haobtc/</loc>
+    <lastmod>2015-11-22T15:24:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/live-2015-10-12-this-year-rubyconf/</loc>
+    <lastmod>2015-11-22T15:21:22.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-09-20-batch-rename-file-suffix/</loc>
+    <lastmod>2015-11-22T15:14:17.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
     <lastmod>2015-08-28T16:05:40.000Z</lastmod>
   </url>
@@ -24,26 +49,6 @@
   <url>
     <loc>http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/</loc>
     <lastmod>2015-07-23T10:24:03.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-14-scss-use-variable/</loc>
-    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
-    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</loc>
-    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</loc>
-    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
   <url>
@@ -132,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/about/index.html</loc>
+    <loc>http://shooter.gl/tech-2014-05-07-emacs-shortcuts/</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
@@ -142,7 +147,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-11-22-5-useful-tips-for-a-better-commit-message/</loc>
+    <loc>http://shooter.gl/about/index.html</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
@@ -198,6 +203,26 @@
   
   <url>
     <loc>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-14-scss-use-variable/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</loc>
+    <lastmod>2015-07-02T10:44:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   
@@ -262,7 +287,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2014-05-07-emacs-shortcuts/</loc>
+    <loc>http://shooter.gl/tech-2013-11-22-5-useful-tips-for-a-better-commit-message/</loc>
     <lastmod>2015-07-02T10:44:10.000Z</lastmod>
   </url>
   

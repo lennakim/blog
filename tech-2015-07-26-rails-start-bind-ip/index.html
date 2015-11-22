@@ -27,6 +27,7 @@
 <meta property="og:description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
 解决1 在启动 rails 的时候 绑定ip
   rails s -b 0.0.0.0">
+<meta property="og:updated_time" content="2015-08-16T04:09:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rails启动时绑定ip">
 <meta name="twitter:description" content="Rails 在升级到4.2后, 使用 rails s 运行程序后, 不再监听 0.0.0.0 端口.导致 http://localhost:3000, http://127.0.0.1:3000 可以正常访问,当使用 http://192.168.1.xx:3000/ 的时候, 访问不到 rails 程序.
@@ -103,7 +104,7 @@
 <h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
 <p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
 <p>2 修改 default_options</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/boot.rb</span></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Rails</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Server</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> </span>default_options</span><br><span class="line">      <span class="keyword">super</span>.merge(<span class="constant">Host</span><span class="symbol">:</span> <span class="string">'0.0.0.0'</span>, <span class="constant">Port</span><span class="symbol">:</span> <span class="number">3000</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># /config/boot.rb&#10;module Rails&#10;  class Server&#10;    def default_options&#10;      super.merge(Host: &#39;0.0.0.0&#39;, Port: 3000)&#10;    end&#10;  end&#10;end</span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
 <p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
 

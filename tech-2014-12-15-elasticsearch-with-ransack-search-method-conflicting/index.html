@@ -33,6 +33,7 @@ gem &quot;ransack&quot;gem &quot;elasticsearch-model&quot;gem &quot;elasticsearc
 1 引入gem
 gem &quot;ransack&quot;gem &quot;elasticsearch-model&quot;gem &quot;elasticsearch-rails&quot;
 2 includ">
+<meta property="og:updated_time" content="2015-07-02T10:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch 与 Ransack 的 search 方法冲突">
 <meta name="twitter:description" content="最近在项目中用 Elasticsearch 做全文搜索,由于在之前用到 Ransack 做模糊搜索,这2个gem都在model中添加了 search 方法,一起使用会造成冲突.
@@ -115,7 +116,7 @@ gem &quot;ransack&quot;gem &quot;elasticsearch-model&quot;gem &quot;elasticsearc
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /models/article.rb</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Elasticsearch::Model</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p><code>Article.search</code>可以使用了, 由于上边说到的原因,  Elasticsearch search 方法会被 Ransack覆盖.</p>
 <p>3 解决办法</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /models/article.rb</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> </span><span class="keyword">self</span>.search_with_es(*args)</span><br><span class="line">  __elasticsearch_<span class="number">_</span>.search(*args)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /models/article.rb</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">search_with_es</span><span class="params">(*args)</span></span></span><br><span class="line">  __elasticsearch_<span class="number">_</span>.search(*args)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>使用 <code>Article.search_with_es</code> 即可.</p>
 
     

@@ -33,6 +33,7 @@
 帮助我们写好 release note
 5年后帮你快速想起来某个分支，tag 或者 commit 增加了什么功能，改变了哪些代码
 让其他的开发者在运行 blame``` 的时候想跪谢* &amp;#24635;&amp;#20043;&amp;#19968;&amp;#20010;&amp;#22909;&amp;#30340;&amp;#25552;&amp;#20132;&amp;#20449;&amp;#">
+<meta property="og:updated_time" content="2015-07-02T10:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写出好的 commit message">
 <meta name="twitter:description" content="为什幺要关注提交信息
@@ -116,12 +117,12 @@
 <li><p>喜欢用 vim 的哥们把下面这行代码加入 <em>.vimrc</em> 文件中，来检查拼写和自动折行</p>
 </li>
 </ul>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">autocmd</span> Filetype gitcommit <span class="keyword">setlocal</span> spell textwidth=<span class="number">72</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autocmd Filetype gitcommit setlocal spell textwidth=72</span><br></pre></td></tr></table></figure>
 <ul>
 <li>永远不在 <figure class="highlight"><figcaption><span>commit``` 上增加 ```-m <msg>``` 或 ```--message=<msg>``` 参数，而单独写提交信息</msg></msg></span></figcaption><table><tr><td class="code"><pre><span class="line">&#10;&#19968;&#20010;&#19981;&#22909;&#30340;&#20363;&#23376; ```git commit -m &#34;Fix login bug&#34;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>一个推荐的 commit message 应该是这样：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Redirect user <span class="built_in">to</span> <span class="operator">the</span> requested page <span class="keyword">after</span> login</span><br><span class="line"></span><br><span class="line"><span class="keyword">https</span>://trello.com/path/<span class="built_in">to</span>/relevant/card</span><br><span class="line"></span><br><span class="line">Users were being redirected <span class="built_in">to</span> <span class="operator">the</span> home page <span class="keyword">after</span> login, which is less</span><br><span class="line">useful than redirecting <span class="built_in">to</span> <span class="operator">the</span> page they had originally requested <span class="keyword">before</span></span><br><span class="line">being redirected <span class="built_in">to</span> <span class="operator">the</span> login form.</span><br><span class="line"></span><br><span class="line">* Store requested path <span class="operator">in</span> <span class="operator">a</span> session <span class="built_in">variable</span></span><br><span class="line">* Redirect <span class="built_in">to</span> <span class="operator">the</span> stored location <span class="keyword">after</span> successfully logging <span class="operator">in</span> <span class="operator">the</span> user</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Redirect user to the requested page after login&#10;&#10;https://trello.com/path/to/relevant/card&#10;&#10;Users were being redirected to the home page after login, which is less&#10;useful than redirecting to the page they had originally requested before&#10;being redirected to the login form.&#10;&#10;* Store requested path in a session variable&#10;* Redirect to the stored location after successfully logging in the user</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注释最好包含一个连接指向你们项目的 issue/story/card。一个完整的连接比一个 issue numbers 更好</li>
 <li>提交信息中包含一个简短的故事，能让别人更容易理解你的项目</li>

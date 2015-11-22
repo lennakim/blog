@@ -30,6 +30,7 @@ First修改 ./package.">
 升级hexo, 请戳 Migrating from 2.x to 3.0
 在这里纪下我的升级步骤
 First修改 ./package.">
+<meta property="og:updated_time" content="2015-07-02T10:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="升级hexo">
 <meta name="twitter:description" content="最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.Breaking Changes in Hexo 3.0, 从题目上看, 作者也是蛮狠的.
@@ -107,19 +108,19 @@ First修改 ./package.">
 <p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
 <p>在这里纪下我的升级步骤</p>
 <h4 id="First">First</h4><p>修改 ./package.json</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">hexo</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">version</span>": <span class="value"><span class="string">""</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#10;  &#34;hexo&#34;: &#123;&#10;    &#34;version&#34;: &#34;&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Second">Second</h4><p>安装hexo组件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-cli -g</span><br><span class="line">npm <span class="keyword">install</span> hexo <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g&#10;npm install hexo --save</span><br></pre></td></tr></table></figure>
 <p>安装生成器</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-archive <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-category <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-index --save&#10;npm install hexo-generator-archive --save&#10;npm install hexo-generator-category --save&#10;npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
 <p>安装server</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
 <h4 id="Third">Third</h4><p>安装部署工具, 由于我用github page, 只用安装hexo-deployer-git</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>升级各种插件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked@0.2 --save&#10;npm install hexo-renderer-stylus@0.2 --save&#10;npm install hexo-generator-feed@1 --save&#10;npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure>
 <p>最后不要忘了这个</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
 <p>不装 ejs 会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">hexo-issues-632</a>描述的问题</p>
 
     
