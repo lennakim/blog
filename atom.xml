@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2015-12-31T16:02:16.000Z</updated>
+  <updated>2016-01-03T06:17:58.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[天下第一雄关]]></title>
+    <link href="http://shooter.gl/ju-yong-guan-great-wall/"/>
+    <id>http://shooter.gl/ju-yong-guan-great-wall/</id>
+    <published>2016-01-03T05:11:00.000Z</published>
+    <updated>2016-01-03T06:17:58.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/ju-yong-guan.jpg" alt="居庸关"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/ju-yong-guan.jpg" alt="居庸关"></p>
+]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2015年再见]]></title>
@@ -464,29 +481,6 @@
     </summary>
     
       <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用 vimdiff 作为git diff 工具]]></title>
-    <link href="http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/"/>
-    <id>http://shooter.gl/tech-2015-04-21-using-vimdiff-as-git-diff-tool/</id>
-    <published>2015-04-21T10:38:58.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
-    <content type="html"><![CDATA[<p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">git config --global diff.tool vimdiff # &#35774;&#32622;diff&#24037;&#20855;&#20026; vimdiff&#10;&#10;git config --global difftool.prompt false&#10;&#10;git config --global alias.d difftool # &#35774;&#32622;&#21035;&#21517;</span><br></pre></td></tr></table></figure>
-<p>只要输入  <code>git d</code>, 感觉是不是更直观了呢?</p>
-<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/vimdiff.png" alt=""></p>
-<h3 id="资料">资料</h3><p><a href="http://ccvita.com/445.html" target="_blank" rel="external">更换svn diff为vimdiff</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-vimdiff/" target="_blank" rel="external">Vimdiff 使用</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
-<figure class="highlight"><table><tr><td class="c]]>
-    </summary>
-    
-      <category term="git" scheme="http://shooter.gl/tags/git/"/>
-    
-      <category term="vimdiff" scheme="http://shooter.gl/tags/vimdiff/"/>
     
   </entry>
   
