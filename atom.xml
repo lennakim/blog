@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2016-01-03T06:17:58.000Z</updated>
+  <updated>2016-03-22T09:19:54.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cloud9 运行 Telegram Bot]]></title>
+    <link href="http://shooter.gl/cloud9-run-telegram-bot/"/>
+    <id>http://shooter.gl/cloud9-run-telegram-bot/</id>
+    <published>2016-03-22T07:38:36.000Z</published>
+    <updated>2016-03-22T09:19:54.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 是俄罗斯人开发的一款即时聊天工具, 详细的介绍请看 Rei 的 <a href="http://chloerei.com/2015/02/05/telegram/" target="_blank" rel="external">介绍Telegram</a>.</p>
+<p><a href="https://c9.io/" target="_blank" rel="external">Cloud9</a> 是什么呢?<br>Cloud9 provides a development environment in the cloud that allows developers to get started with coding immediately and collaborate with their peers.</p>
+<h3 id="申请_Telegram_Bot">申请 Telegram Bot</h3><p>添加 机器老爹-<a href="https://telegram.me/BotFather" target="_blank" rel="external">BotFather</a><br>输入指令 <code>/newbot</code>, 选好 <code>name</code> 和 <code>username</code> 之后, 老爹会返回一串 Token:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use this token to access the HTTP API:&#10;161xxxx:xxxx_xxxx-xxxxxx&#10;&#10;For a description of the Bot API, see this page: https://core.telegram.org/bots/api</span><br></pre></td></tr></table></figure>
+<h3 id="Flask_运行_server">Flask 运行 server</h3><p>1 安装 Flask, <code>pip install Flask</code>, pip 类似于 gem</p>
+<p>2 来个 hello world</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route("/")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello World!"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>运行 <code>python hello.py</code>, 访问 <a href="http://localhost:5000/" target="_blank" rel="external">http://localhost:5000/</a>, 修改端口 <code>app.run(port=&#39;xxxx&#39;)</code></p>
+<h3 id="使用_telegram_python_sdk">使用 telegram python sdk</h3><p>用<a href="https://github.com/python-telegram-bot/python-telegram-bot" target="_blank" rel="external">python-telegram-bot</a> 简化开发.</p>
+<p>代码如下, 适用于py 2.7</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> telegram</span><br><span class="line"><span class="keyword">import</span> urlparse</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">"&lt;Host&gt;"</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">logging.basicConfig(level=logging.DEBUG,</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">global</span> bot</span><br><span class="line">bot = telegram.Bot(token = <span class="string">"&lt;Token&gt;"</span>)</span><br><span class="line"></span><br><span class="line">botName = <span class="string">"@MustangBot"</span></span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route("/", methods=["POST", "GET"])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setWebhook</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        logging.info(<span class="string">"Hello, Telegram!"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"OK, Telegram Bot!"</span></span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route("/set_webhook", methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setWebHook</span><span class="params">()</span>:</span></span><br><span class="line">    result = bot.setWebhook(<span class="string">"&#123;&#125;/bot_talk"</span>.format(HOST))</span><br><span class="line">    <span class="keyword">if</span> result:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;&#125; WebHook Setup OK!"</span>.format(botName)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&#123;&#125; WebHook Setup Failed!"</span>.format(botName)</span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route("/bot_talk", methods=["POST"])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bot_talk</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        update = telegram.Update.de_json(request.get_json(force=<span class="keyword">True</span>))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> update <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Show me your TOKEN please!"</span></span><br><span class="line">        logging.info(<span class="string">"Calling &#123;&#125;"</span>.format(update.message))</span><br><span class="line">        handdle_message(update.message)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ok"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handdle_message</span><span class="params">(msg)</span>:</span></span><br><span class="line">    text = msg.text</span><br><span class="line">    <span class="keyword">if</span> <span class="string">"/echo"</span> <span class="keyword">in</span> text:</span><br><span class="line">      bot.sendMessage(chat_id=msg.chat.id, text=<span class="string">"Hello, I am a nerd"</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">"/photo"</span> <span class="keyword">in</span> text:</span><br><span class="line">        bot.sendPhoto(chat_id=msg.chat.id, photo=<span class="string">"&lt;photo-url&gt;"</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">"/help"</span> <span class="keyword">in</span> text:</span><br><span class="line">        helpInfo(msg)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        helpInfo(msg)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helpInfo</span><span class="params">(msg)</span>:</span></span><br><span class="line">    text =<span class="string">"""</span><br><span class="line">/echo  - echo</span><br><span class="line">/photo - photo</span><br><span class="line">/help  - Help Info</span><br><span class="line"></span><br><span class="line">--------------------------</span><br><span class="line">在cloud9上跑了个telegram_bot</span><br><span class="line">"""</span></span><br><span class="line">    sendTxtMsg(msg, text)</span><br><span class="line"></span><br><span class="line"><span class="comment">########</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendTxtMsg</span><span class="params">(msg, text)</span>:</span></span><br><span class="line">    bot.sendMessage(chat_id=msg.chat.id, text=text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  app.run(host=os.getenv(<span class="string">'IP'</span>),port=int(os.getenv(<span class="string">'PORT'</span>)))</span><br></pre></td></tr></table></figure>
+<h4 id="NOTICE">NOTICE</h4><p>必须把应用设为 public, 获取cloud9的 IP 和 Port</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.getenv(<span class="string">'IP'</span>)</span><br><span class="line">os.getenv(<span class="string">'PORT'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改Flask</span></span><br><span class="line">app.run(host=os.getenv(<span class="string">'IP'</span>), port=int(os.getenv(<span class="string">'PORT'</span>)))</span><br></pre></td></tr></table></figure>
+<h3 id="享用_Robot">享用 Robot</h3><p>访问 <code>&lt;cloud9-url&gt;/set_webhook</code>, 初始化bot, 添加机器人为好友, 发送 <code>/echo /help /photo</code> 试试哦.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 是俄罗斯人开发的一款即时聊天工具, 详细的介绍请看 Rei 的 <a href="http://chloerei.com/]]>
+    </summary>
+    
+      <category term="py" scheme="http://shooter.gl/tags/py/"/>
+    
+      <category term="python" scheme="http://shooter.gl/tags/python/"/>
+    
+      <category term="telegram" scheme="http://shooter.gl/tags/telegram/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[天下第一雄关]]></title>
@@ -458,29 +491,6 @@
     </summary>
     
       <category term="hexo" scheme="http://shooter.gl/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[世界依旧这么大]]></title>
-    <link href="http://shooter.gl/live-2015-04-27-as-it-is-the-world-is-big/"/>
-    <id>http://shooter.gl/live-2015-04-27-as-it-is-the-world-is-big/</id>
-    <published>2015-04-27T03:49:16.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
-    <content type="html"><![CDATA[<p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
-<p>peatio 确实是个 全明星技术团队, 阵容超豪华, 随便拿出一个人都能当CTO, <strong>偶除外</strong>.<br>我属于板凳球员, 要想了解板凳深度, 看我就行了, 所见即所得.<br><strong>即使都是全明星球员, 也不一定能拿总冠军.</strong></p>
-<p>xiaolai 玩法很邪门, 既当投资人, 又是pm, 想法超多, 对产品的热情不持久.<br>学习能力很强, 但感觉是体验生活, 而不是在投资领域卖力气. 对于btc大亨来说, 可能就是要任性吧.</p>
-<p>我在14年底离开, 绝不是提前嗅到btc不景气,原因很多吧.<br>一个比较大的原因: 我自己在那段时间, 心态比较失衡, 感觉不开心了, 所以选择离开了.</p>
-<p>又靠倒了一家公司(虽公司实体还在, 但在我心里已倒下), 我迫切希望入党, 希望组织收留我.</p>
-<p><strong>世界这么大, 祝他们找到新的征程.</strong></p>
-<p>留照以兹纪念<br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/peatio-team.jpg" alt=""></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
-<p>peatio 确实是个 全明星技术团队, 阵容超豪华]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
     
   </entry>
   
