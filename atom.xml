@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2016-03-22T09:19:54.000Z</updated>
+  <updated>2016-06-20T13:54:18.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -15,11 +15,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[最好的告别]]></title>
+    <link href="http://shooter.gl/the-best-farewell/"/>
+    <id>http://shooter.gl/the-best-farewell/</id>
+    <published>2016-06-20T13:53:07.000Z</published>
+    <updated>2016-06-20T13:54:18.000Z</updated>
+    <content type="html"><![CDATA[<p>​<br>介绍一本书 <a href="https://book.douban.com/subject/26576861/" target="_blank" rel="external">「最好的告别」</a>,<br>作者是 <a href="https://en.wikipedia.org/wiki/Atul_Gawande" target="_blank" rel="external">阿图•葛文德(Atul Gawande)</a>,<br>他是麻省总医院外科医生, 哈佛医学院教授, 白宫健康政策顾问.</p>
+<p>这是一套系列丛书, 包括:</p>
+<p>「医生的修炼: 在不完美中探索行医的真相」</p>
+<p>「温暖消逝: 关于临终、死亡与丧亲关怀」</p>
+<p>「医生的精进: 从仁心仁术到追求卓越」</p>
+<p>「最好的告别: 关于衰老与死亡,你必须知道的常识」</p>
+<hr>
+<p>为啥谈这个问题呢, 缘于一些曾经经历的以及正在经历的一些事情, 想谈谈这个话题.</p>
+<p>孔子曰: 「未知生, 焉知死」, 不道是不是孔老夫子的谦辞.<br>以前觉得这个事情离我很远, 而且自己也没资格谈这些东西.<br>等我经历了作为癌症家属的无助, 亲人的离世, 老年人的衰老/赡养问题, 早已不知不觉的卷入其中.</p>
+<p>人都是害怕死亡的, 谁都不能代替谁, 不管是多么的豁达通透之人.<br>尤其死亡之前的衰老, 慢慢消耗人的意志,你不在能掌控自己的生活, 不能上街买菜, 不能开车,<br>为了生活, 你要一点儿一点儿的放弃隐私, 你的自尊, 你的要强却告诉你不要这么做.</p>
+<p>貌似医学一直是进步的,</p>
+<ul>
+<li>你可以方便的检查自己的基因序列,</li>
+<li>有了比较完善的公共医疗体系,</li>
+<li>美国很多大学成立伊始, 就设立了医学院,校之根本.</li>
+<li>有顶级的期刊杂志 如<a href="http://www.thelancet.com/" target="_blank" rel="external">柳叶刀</a>,<br>大陆有<a href="http://dxy.com/" target="_blank" rel="external">丁香园</a></li>
+</ul>
+<p>医学已经深入人心了, 还有这么一款游戏<a href="https://itunes.apple.com/cn/app/id525818839?mt=8" target="_blank" rel="external">瘟疫公司</a>.</p>
+<p>但是很简单的感冒并不是靠药物治愈的, 药物只是缓解症状, 还是靠自身的免疫力扛过去.</p>
+<p>不知为什么, 大陆对医疗不重视, 对医生也很轻视, 医患问题也相当严重, 一言不合就动枪动炮,<br>还有最近的 ‘莆度众生’ 事件.</p>
+<p>在台湾, 日本, 美国, 医生绝对要算精英阶层了, 当然收入也是精英了阶层.</p>
+<p>很多人推荐去印度医疗旅游, 就是边旅游边治疗, 印度有相当不错医疗水平, 合理的价格, 大量仿制药(仿制药跟假冒药是两码事).</p>
+<p>当医学已经不能拯救你或亲人的时候, 你要怎们做, 告诉自己或亲人接受现实, 安然离去抑或央求医生再试试?</p>
+<p>我没有答案, 亦也没提出什么问题, 希望我今后可以平静的面对这个终极问题.</p>
+<hr>
+<p>最好的告别, 写给最想念的人.</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=347720&auto=0&height=32"><br></iframe>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>​<br>介绍一本书 <a href="https://book.douban.com/subject/26576861/" target="_blank" rel="external">「最好的告别」</a>,<br>作者是 <a href="https://en.wik]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Cloud9 运行 Telegram Bot]]></title>
     <link href="http://shooter.gl/cloud9-run-telegram-bot/"/>
     <id>http://shooter.gl/cloud9-run-telegram-bot/</id>
     <published>2016-03-22T07:38:36.000Z</published>
-    <updated>2016-03-22T09:19:54.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 是俄罗斯人开发的一款即时聊天工具, 详细的介绍请看 Rei 的 <a href="http://chloerei.com/2015/02/05/telegram/" target="_blank" rel="external">介绍Telegram</a>.</p>
 <p><a href="https://c9.io/" target="_blank" rel="external">Cloud9</a> 是什么呢?<br>Cloud9 provides a development environment in the cloud that allows developers to get started with coding immediately and collaborate with their peers.</p>
 <h3 id="申请_Telegram_Bot">申请 Telegram Bot</h3><p>添加 机器老爹-<a href="https://telegram.me/BotFather" target="_blank" rel="external">BotFather</a><br>输入指令 <code>/newbot</code>, 选好 <code>name</code> 和 <code>username</code> 之后, 老爹会返回一串 Token:</p>
@@ -52,7 +94,7 @@
     <link href="http://shooter.gl/ju-yong-guan-great-wall/"/>
     <id>http://shooter.gl/ju-yong-guan-great-wall/</id>
     <published>2016-01-03T05:11:00.000Z</published>
-    <updated>2016-01-03T06:17:58.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/ju-yong-guan.jpg" alt="居庸关"></p>
 ]]></content>
     <summary type="html">
@@ -69,7 +111,7 @@
     <link href="http://shooter.gl/live-2015-12-31-2015-year-end/"/>
     <id>http://shooter.gl/live-2015-12-31-2015-year-end/</id>
     <published>2015-12-31T14:03:01.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>2015年剩下不到几个小时了, 风尘仆仆的一年又要过去了.</p>
 <p>今年的状态是比较自由, 比较闲散, 或者说不务正业, 在外面浪荡.<br>有一份工作,1月份入职, 6月份离开, 这又是一段可歌可泣的故事啊.</p>
 <p>由于股票被套牢, 在朋友公司兼职了1个多月. 恰好前同事去杭州出差,我想正好成行啊,<br>现在没有正式工作,而且年前就想去杭州了.想想那是7月份,在杭州有个6年没见的老朋友,<br>归去来兮,老友将芜.杭州的印象一直在课本里, 什么清风水软, 才子佳人,西湖美腿的.<br>我作为一个纯北方人,上学也没能去成南方, 所以杭州纵使红粉窟, 吾往矣. 不抒情了, 继续往下编.</p>
@@ -102,7 +144,7 @@
     <link href="http://shooter.gl/live-2015-11-22-bj-snow/"/>
     <id>http://shooter.gl/live-2015-11-22-bj-snow/</id>
     <published>2015-11-22T15:24:34.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>今天北京飘飘扬扬的下起了大雪, 而我宅在家里, 盖着厚被子, 想赶快退烧.</p>
 ]]></content>
     <summary type="html">
@@ -119,7 +161,7 @@
     <link href="http://shooter.gl/live-2015-11-05-I-decided-to-join-the-haobtc/"/>
     <id>http://shooter.gl/live-2015-11-05-I-decided-to-join-the-haobtc/</id>
     <published>2015-11-05T15:12:20.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>在大熊的鼓动下, 决定加入 <a href="https://haobtc.com/" target="_blank" rel="external">https://haobtc.com/</a>, 从去年12月份离开btc圈子, 到现在又加入haobtc,<br>差不多过了一年时间.</p>
 <p>这一年币价跌宕起伏, 感情也是风雨飘摇, 当我又回到起点, 你在哪里呢?</p>
 <p><strong>纵情向前, 既往不恋</strong></p>
@@ -137,7 +179,7 @@
     <link href="http://shooter.gl/live-2015-10-12-this-year-rubyconf/"/>
     <id>http://shooter.gl/live-2015-10-12-this-year-rubyconf/</id>
     <published>2015-10-12T15:09:34.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>千里迢迢从北京到深圳参加2015年的rubyconf, 见到了 rei, 华顺.</p>
 <p>三大版主终于都认识了,</p>
 ]]></content>
@@ -156,7 +198,7 @@
     <link href="http://shooter.gl/live-2015-10-07-have-a-cat/"/>
     <id>http://shooter.gl/live-2015-10-07-have-a-cat/</id>
     <published>2015-10-07T15:03:50.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>从朋友那里领养了一只猫咪, 他嫌猫咪太闹腾, 搅和的他严重的睡眠不足, 哈哈.</p>
 <p>给它取名叫做卢比, 之前想了很多名: 弯弯 弯仔 铁锤妹妹 雪碧 十一 Tom .</p>
 <p>之所以取名叫卢比, 因为隔壁的狗狗叫钢蛋, 如果你看过 <a href="http://movie.douban.com/subject/1303815/" target="_blank" rel="external">你丫闭嘴</a><br>就会明白这里面的梗了.</p>
@@ -177,7 +219,7 @@
     <link href="http://shooter.gl/tech-2015-09-20-batch-rename-file-suffix/"/>
     <id>http://shooter.gl/tech-2015-09-20-batch-rename-file-suffix/</id>
     <published>2015-09-20T02:23:04.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>Linux下查找并批量修改文件扩展名</p>
 <p><a href="http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html" target="_blank" rel="external">http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html</a></p>
 <p><a href="http://www.ahlinux.com/start/cmd/498.html" target="_blank" rel="external">http://www.ahlinux.com/start/cmd/498.html</a></p>
@@ -201,7 +243,7 @@
     <link href="http://shooter.gl/tech-2015-08-28-customize-nginx-header/"/>
     <id>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</id>
     <published>2015-08-28T09:16:11.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK&#10;Cache-Control: no-cache&#10;Pragma: no-cache&#10;Content-Length: 1314&#10;Content-Type: text/html; charset=utf-8&#10;Expires: -1&#10;Server: Microsoft-IIS/7.5&#10;X-AspNet-Version: 4.0.30319&#10;p3p: CP=&#34;CAO PSA OUR&#34;&#10;X-Powered-By: ASP.NET&#10;Date: Fri, 28 Aug 2015 15:42:00 GMT</span><br></pre></td></tr></table></figure>
 <p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
@@ -228,7 +270,7 @@
     <link href="http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/"/>
     <id>http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/</id>
     <published>2015-08-16T05:06:07.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>其实 alias alias_method 已经把我弄晕了.</p>
 <h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
 <p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
@@ -256,7 +298,7 @@
     <link href="http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/"/>
     <id>http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/</id>
     <published>2015-07-25T17:25:48.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
 <h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
 <p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
@@ -278,7 +320,7 @@
     <link href="http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/"/>
     <id>http://shooter.gl/tech-2015-07-23-centOS7-install-rails-env/</id>
     <published>2015-07-23T08:35:48.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
 <h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># centOS&#10;LSB Version:  :core-4.1-amd64:core-4.1-noarch&#10;Distributor ID: CentOS&#10;Description:  CentOS Linux release 7.1.1503 (Core)&#10;Release:  7.1.1503&#10;Codename: Core&#10;&#10;# ubuntu&#10;No LSB modules are available.&#10;Distributor ID: Ubuntu&#10;Description:  Ubuntu 14.04.1 LTS&#10;Release:  14.04&#10;Codename: trusty</span><br></pre></td></tr></table></figure>
@@ -316,7 +358,7 @@
     <link href="http://shooter.gl/live-2015-07-18-Hangzhou-I-come/"/>
     <id>http://shooter.gl/live-2015-07-18-Hangzhou-I-come/</id>
     <published>2015-07-18T01:28:27.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
 <p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
 ]]></content>
@@ -335,7 +377,7 @@
     <link href="http://shooter.gl/live-2015-06-09-leave/"/>
     <id>http://shooter.gl/live-2015-06-09-leave/</id>
     <published>2015-06-09T04:02:38.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
 <p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
 ]]></content>
@@ -354,7 +396,7 @@
     <link href="http://shooter.gl/live-2015-06-07-xun-zhao/"/>
     <id>http://shooter.gl/live-2015-06-07-xun-zhao/</id>
     <published>2015-06-07T02:49:33.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26508228&auto=0&height=66"></iframe>
 
@@ -383,7 +425,7 @@
     <link href="http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/"/>
     <id>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</id>
     <published>2015-05-27T07:00:44.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /spec/spec_helpber.rb</span></span><br><span class="line"><span class="constant">RSpec</span>.configure <span class="keyword">do</span> |config|</span><br><span class="line">  config.mock_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  config.expect_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h2 id="资料">资料</h2><p><a href="http://makandracards.com/makandra/25409-how-to-remove-rspec-old-syntax-deprecation-warnings" target="_blank" rel="external">How to remove RSpec old syntax deprecation warnings</a></p>
 ]]></content>
@@ -402,7 +444,7 @@
     <link href="http://shooter.gl/live-2015-05-16-it-is-been-a-long-time/"/>
     <id>http://shooter.gl/live-2015-05-16-it-is-been-a-long-time/</id>
     <published>2015-05-20T09:01:10.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>好久不见, 此刻让我想起了海桑的诗</p>
 <h3 id="我是你流浪过的一个地方">我是你流浪过的一个地方</h3><p>— 海桑</p>
 <p>爱情扶我上路 然后走开<br>让我一生怀念<br>怀念那一扶的久长<br>和一生的短暂</p>
@@ -425,7 +467,7 @@
     <link href="http://shooter.gl/tech-2015-05-14-scss-use-variable/"/>
     <id>http://shooter.gl/tech-2015-05-14-scss-use-variable/</id>
     <published>2015-05-14T07:33:48.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>生成的css 如下:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(1)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(3)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(5)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -446,7 +488,7 @@
     <link href="http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/"/>
     <id>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</id>
     <published>2015-05-09T06:56:25.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
+    <updated>2016-05-15T07:22:46.000Z</updated>
     <content type="html"><![CDATA[<p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
 <p>在chrome的url输入框 输入以下内容, 在下拉菜单选择 停用(disabled) 就ok了.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chrome://flags/#enhanced-bookmarks-experiment</span><br></pre></td></tr></table></figure>
@@ -458,39 +500,6 @@
     </summary>
     
       <category term="chrome" scheme="http://shooter.gl/tags/chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[升级hexo]]></title>
-    <link href="http://shooter.gl/tech-2015-05-03-upgrade-hexo/"/>
-    <id>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</id>
-    <published>2015-05-03T13:25:55.000Z</published>
-    <updated>2015-12-31T16:02:16.000Z</updated>
-    <content type="html"><![CDATA[<p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0</a>, 从题目上看, 作者也是蛮狠的.</p>
-<p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
-<p>在这里纪下我的升级步骤</p>
-<h4 id="First">First</h4><p>修改 ./package.json</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#10;  &#34;hexo&#34;: &#123;&#10;    &#34;version&#34;: &#34;&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Second">Second</h4><p>安装hexo组件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g&#10;npm install hexo --save</span><br></pre></td></tr></table></figure>
-<p>安装生成器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-index --save&#10;npm install hexo-generator-archive --save&#10;npm install hexo-generator-category --save&#10;npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
-<p>安装server</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
-<h4 id="Third">Third</h4><p>安装部署工具, 由于我用github page, 只用安装hexo-deployer-git</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>升级各种插件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked@0.2 --save&#10;npm install hexo-renderer-stylus@0.2 --save&#10;npm install hexo-generator-feed@1 --save&#10;npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure>
-<p>最后不要忘了这个</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
-<p>不装 ejs 会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">hexo-issues-632</a>描述的问题</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wi]]>
-    </summary>
-    
-      <category term="hexo" scheme="http://shooter.gl/tags/hexo/"/>
     
   </entry>
   
