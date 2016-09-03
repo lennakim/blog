@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/qu-yuan-miao-fu/</loc>
+    <lastmod>2016-09-03T15:22:42.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/vagrant/</loc>
-    <lastmod>2016-08-14T04:26:02.000Z</lastmod>
+    <lastmod>2016-08-14T08:16:16.000Z</lastmod>
   </url>
   
   <url>
@@ -12,12 +17,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-11-06-whenever/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/</loc>
+    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
@@ -157,12 +157,12 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
+    <loc>http://shooter.gl/tech-2013-11-06-whenever/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
+    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
@@ -293,6 +293,11 @@
   
   <url>
     <loc>http://shooter.gl/tech-2015-08-16-rails-alias-method-chain/</loc>
+    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-07-26-rails-start-bind-ip/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
