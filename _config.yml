@@ -79,7 +79,7 @@ disqus_shortname: shooterme
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: modernist_new
+theme: modernist_hero
 exclude_generator:
 
 sitemap:

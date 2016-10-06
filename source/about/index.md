@@ -6,11 +6,11 @@ date: 2015-01-04 17:08:21
 
 ## Contact
 
-mobile: `echo 'MTg2MTI2MjE1NDAK' | base64 -D`
+Mobile: `echo 'MTg2MTI2MjE1NDAK' | base64 -D`
 
 QQ: `echo 'MTQ1ODY0Mzk3NQo=' | base64 -D`
 
-email: liuningtw163.com
+Email: `echo 'bGl1bmluZ3R376O/MTYzLmNvbQo=' | base64 -D`
 
 github: [shooter](https://github.com/shooterman)
 
