@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>分类: ruby | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,47 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>上一篇坑挖了一半，今天一定要把坑挖好。</p>
+<p>继续 <a href="http://www.modrails.com/" target="_blank" rel="external">passenger</a>, <a href="http://wiki.nginx.org/Main" target="_blank" rel="external">nginx</a>,<br> <a href="http://www.mongodb.org/" target="_blank" rel="external">mongodb</a>, <a href="http://redis.io/" target="_blank" rel="external">redis</a>,<br> <a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>  的安装。</p>
+<h4 id="安装Node-js"><strong>安装Node.js</strong></h4><p>配置好ruby on rails 环境后，创建一个rails 项目</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rails new demo&#10; &#8230;&#8230;&#10;$ cd demo&#10;$ rails s</span><br></pre></td></tr></table></figure>
+<p>一般会提示这样的错误，<figure class="highlight"><figcaption><span>not find a JavaScript runtime ...```，</span></figcaption><table><tr><td class="code"><pre><span class="line">&#20855;&#20307;&#35831;&#31227;&#27493; [stackoverflow](http://stackoverflow.com/questions/8059332/could-not-find-a-javascript-runtime-see-https-github-com-sstephenson-execjs-f)&#10;&#10;&#22312;ubuntu&#29615;&#22659;&#19979;&#65292;&#23433;&#35013;node.js&#21363;&#21487;</span><br></pre></td></tr></table></figure></p>
+<p>$ sudo apt-get install nodejs<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#23436;&#25104;&#21518;&#20877;&#27425;&#36816;&#34892;&#39033;&#30446;&#10;&#10;#### **&#23433;&#35013;passenger&#21644;nginx**&#10;&#10;&#23433;&#35013;passenger</span><br></pre></td></tr></table></figure></p>
+<p>$ gem install passenger<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#23433;&#35013;passenger&#30340;nginx&#27169;&#22359;&#65292;nginx&#19968;&#24182;&#23433;&#35013;&#65292;&#38656;&#35201;root&#65292;&#25105;&#20204;&#21487;&#20197;&#29992;rvmsudo</span><br></pre></td></tr></table></figure></p>
+<p>rvmsudo passenger-install-nginx-module</p>
+<h1 id="提示哪种安装模式">提示哪种安装模式</h1><ol>
+<li><p>Yes: download, compile and install Nginx for me. (recommended)</p>
+<h1 id="完全安装">完全安装</h1></li>
+<li><p>No: I want to customize my Nginx installation. (for advanced users)</p>
+<h1 id="自定义安装">自定义安装</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#36873;&#25321;1&#65292;&#22238;&#36710;&#65292;&#36827;&#19968;&#27493;&#25552;&#31034;&#23433;&#35013;&#20301;&#32622;&#65292;&#30452;&#25509;&#22238;&#36710;&#65292;nginx &#23558;&#23433;&#35013;&#22312;&#40664;&#35748;&#20301;&#32622;&#65292;&#21363;/opt/nginx&#12290;&#10;&#28155;&#21152;nginx&#21551;&#21160;&#33050;&#26412;&#65292;&#21442;&#32771;[&#36825;&#37324;](http://wiki.nginx.org/Nginx-init-ubuntu)&#12290;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>$ sudo mv nginx /etc/init.d   # 脚本移动到 /etc/init.d<br>$ sudo chmod +x nginx         # 添加执行权限</p>
+<p>$ sudo /etc/init.d/nginx start</p>
+<h1 id="*_Starting_Nginx_Server…_[_OK_]">* Starting Nginx Server…                   [ OK ]</h1><p>$ sudo /etc/init.d/nginx restart</p>
+<h1 id="*_Stopping_Nginx_Server…_[_OK_]">* Stopping Nginx Server…                   [ OK ]</h1><h1 id="*_Starting_Nginx_Server…_[_OK_]-1">* Starting Nginx Server…                   [ OK ]</h1><p>$ sudo /etc/init.d/nginx stop</p>
+<h1 id="*_Stopping_Nginx_Server…_[_OK_]-1">* Stopping Nginx Server…                   [ OK ]</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#10;**nginx&#30340;&#37197;&#32622;**</span><br></pre></td></tr></table></figure>
+<p>$ sudo vim /opt/nginx/conf/nginx.conf              # 打开配置文件<br>……<br>http {<br>    passenger_root ～/.rvm/gems/ruby-1.9.3-p194/gems/passenger-3.0.15;<br>    passenger_ruby ~/.rvm/wrappers/ruby-1.9.3-p194/ruby;</p>
+<pre><code>include       mime.types;
+default_type  <span class="type">application</span>/octet-stream;
+ ......
+server {
+    listen <span class="number">80</span>;                           <span class="comment">#端口</span>
+    server_name  localhost;              <span class="comment">#域名</span>
+    root ~/www/demo/public;  <span class="comment">#项目public路径</span>
+    passenger_enabled <span class="function_start"><span class="keyword">on</span></span>;
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#10;&#36825;&#26679;&#23601;&#21487;&#20197;&#35775;&#38382; http://localhost &#20102;&#10;&#10;#### **&#23433;&#35013; mongodb**</span><br></pre></td></tr></table></figure></p>
+<p>$ sudo apt-get install mongodb<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#36816;&#34892;</span><br></pre></td></tr></table></figure></p>
+<p>$ mongo<br>MongoDB shell version: 2.0.4<br>connecting to: test<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#10;#### **&#23433;&#35013;redis**&#10;&#19979;&#36733;&#24182;&#23433;&#35013;redis</span><br></pre></td></tr></table></figure></p>
+<p>wget <a href="http://redis.googlecode.com/files/redis-2.4.16.tar.gz" target="_blank" rel="external">http://redis.googlecode.com/files/redis-2.4.16.tar.gz</a><br>tar -zxf redis-2.4.16.tar.gz<br>cd redis-2.4.16<br>make<br>sudo make install<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#### **&#23433;&#35013;mysql**</span><br></pre></td></tr></table></figure></p>
+<p>$ sudo apt-get install mysql-server mysql-client<br>```<br>全都大功告成 ^_^</p>
+<p>PS 发现网页被墙了,ubuntu 也跑不了翻墙，Fuck GFW!</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -115,8 +137,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -126,8 +147,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -157,7 +178,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -167,6 +188,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

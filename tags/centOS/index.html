@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: centOS | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,31 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># centOS&#10;LSB Version:  :core-4.1-amd64:core-4.1-noarch&#10;Distributor ID: CentOS&#10;Description:  CentOS Linux release 7.1.1503 (Core)&#10;Release:  7.1.1503&#10;Codename: Core&#10;&#10;# ubuntu&#10;No LSB modules are available.&#10;Distributor ID: Ubuntu&#10;Description:  Ubuntu 14.04.1 LTS&#10;Release:  14.04&#10;Codename: trusty</span><br></pre></td></tr></table></figure>
+<p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
+<hr>
+<h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
+<p>  在 <strong>ubuntu</strong> 下是交互命令, 会一步步提示你 输入密码, 电话 地址等, 还会创建 home directory, 系统 Shell</p>
+<p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
+<h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
+<h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
+<p>  <strong>centOS</strong><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers&#10;# -r--r-----&#10;&#10;# /etc/sudoers &#22312; root&#29992;&#25143;&#19979; &#27809;&#26377;&#20889;&#26435;&#38480;&#10;&#10;chmod +w /etc/sudoers # &#28155;&#21152;&#20889;&#26435;&#38480;&#10;&#10;sudo vim /etc/sudoers # &#20462;&#25913;&#25991;&#20214;&#10;&#10;# &#25214;&#21040; root ALL=(ALL) ALL, &#22312;&#19979;&#19968;&#34892;&#21152;&#19978;&#10;&#60;username&#62; ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
+<p>  OK, 普通用户也可以之行 sudo 命令了</p>
+<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  ~/.ssh&#10;&#10;vim ~/.ssh/authorized_keys&#10;# &#25226;&#20844;&#38053;&#21152;&#20837;&#21040; authorized_keys &#20013;&#21363;&#21487;</span><br></pre></td></tr></table></figure>
+<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config&#10;&#10;PubkeyAuthentication yes # &#21435;&#25481;&#27880;&#37322;&#10;PasswordAuthentication no # &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;ChallengeResponseAuthentication no #  &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;&#10;# &#37325;&#21551; sshd &#26381;&#21153;&#10;sudo service ssh  restart # ubuntu&#10;sudo service sshd restart # centOS</span><br></pre></td></tr></table></figure>
+<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#23433;&#35013;&#20381;&#36182;&#10;sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel&#10;&#10;# &#23433;&#35013; rvm&#10;curl -L get.rvm.io | bash -s stable&#10;source ~/.bashrc&#10;source ~/.bash_profile&#10;&#10;# &#23433;&#35013; ruby&#10;rvm list known          # &#21015;&#20986;&#24050;&#30693;&#30340; ruby &#29256;&#26412;&#10;rvm install 2.2.2       # &#23433;&#35013; ruby &#29256;&#26412;&#10;rvm use 2.2.0 --default # &#20999;&#25442;&#24182;&#35774;&#32622;&#40664;&#35748;ruby &#29256;&#26412;&#10;&#10;# &#23433;&#35013; bundler rails&#10;gem install -V bundler rails</span><br></pre></td></tr></table></figure>
+<h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
+<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install mysql # &#21482;&#23433;&#35013; mysql-client&#10;&#10;sudo yum install mysql mysql-server # &#23433;&#35013; mysql-client  mysql-server&#10;&#10;sudo  yum install mysql-devel # &#19981;&#23433;&#35013;, gem mysql2 &#26412;&#22320;&#32534;&#35793;&#20986;&#38382;&#39064;</span><br></pre></td></tr></table></figure>
+<p>PS: 在杭州好闷好热啊</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -122,7 +128,25 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，<br>ruby 环境也没有安装。一番捣鼓，步骤如下:</p>
+<p><strong>没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6</strong></p>
+<h3 id="下载源文件">下载源文件</h3><p><a href="http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz" target="_blank" rel="external">ruby-1.9.3-p327</a></p>
+<p><a href="http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz" target="_blank" rel="external">yaml-0.1.4.tar.gz</a></p>
+<p><a href="http://rubygems.org/downloads/bundler-1.2.3.gem" target="_blank" rel="external">bundler-1.2.3</a></p>
+<h3 id="本地服务器">本地服务器</h3><h4 id="打包_rails_app">打包 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bundle package&#10;#&#33509;&#25552;&#31034;&#27809;&#26377;,&#23433;&#35013;bundler&#24182;&#37325;&#22797;&#20197;&#19978;&#27493;&#39588;&#10;$ gem install bundler&#10;$ bundle package # &#23558;&#39033;&#30446;&#25152;&#38656;&#35201;&#30340;gem&#22797;&#21046;&#21040; vendor/cache&#10;$ tar -czf   railsApp.tar.gz   railsApp #&#21387;&#32553;&#25171;&#21253;</span><br></pre></td></tr></table></figure>
+<h3 id="远程服务器">远程服务器</h3><h4 id="首先安装_yaml-0-1-4-tar-gz，再安装ruby"><strong>首先安装 yaml-0.1.4.tar.gz，再安装ruby</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar &#8211;xzvf  yaml-0.1.4.tar.gz&#10;$ ./configure&#10;$ make&#10;$ make install</span><br></pre></td></tr></table></figure>
+<h4 id="安装ruby">安装ruby</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  ruby-1.9.3-p327.tar.gz&#10;$ cd ruby-1.9.3-p327&#10;$ ./configure&#10;$ make&#10;$ make install&#10;$ ruby -v   #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;&#10;$ gem -v    #gem&#24050;&#32463;&#23433;&#35013;</span><br></pre></td></tr></table></figure>
+<h4 id="本地安装bundler">本地安装bundler</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem install  bundler-1.2.3.gem&#10;$ bundle -v  #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;</span><br></pre></td></tr></table></figure>
+<h4 id="部署_rails_app">部署 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  railsApp.tar.gz&#10;$ cd railsApp&#10;$ bundle install --local  #&#26412;&#22320;&#23433;&#35013;gem</span><br></pre></td></tr></table></figure>
+<p><strong>注意修改配置文件</strong></p>
+<pre><code><span class="variable">$ </span>rails s  <span class="comment">#测试运行</span>
+</code></pre><p> <a href="https://gist.github.com/4274057" target="_blank" rel="external">分享在gist上</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -143,8 +167,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -154,8 +177,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -185,7 +208,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -195,6 +218,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

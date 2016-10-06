@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: shell | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,18 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>Linux下查找并批量修改文件扩展名</p>
+<p><a href="http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html" target="_blank" rel="external">http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html</a></p>
+<p><a href="http://www.ahlinux.com/start/cmd/498.html" target="_blank" rel="external">http://www.ahlinux.com/start/cmd/498.html</a></p>
+<p>find ./ -type f -name “*.less” | xargs  rename “s/less/scss/“</p>
+<p>find ./ -type f -name “*.po”  | xargs  -I {} cp {} <new_path> #复制</new_path></p>
+<p><a href="http://bbs.chinaunix.net/thread-525576-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-525576-1-1.html</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -122,7 +115,25 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>最近买了个 <a href="http://zh.wikipedia.org/wiki/Happy_Hacking_Keyboard" target="_blank" rel="external">hhkb</a> 白色无刻, 跟一般的键盘差别太大, 没有方向键, 在shell中移动光标太麻烦.</p>
+<p>shell 有 <strong>editing-mode</strong>, 默认是 emacs-mode, 所以emacs快捷键在shell中生效, 故记下几个emacs快捷键.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+a &#21040;&#34892;&#39318;&#10;ctrl+e &#21040;&#34892;&#23614;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+u &#20174;&#20809;&#26631;&#22788;&#21024;&#38500;&#21040;&#34892;&#39318; #&#22312;zsh&#29615;&#22659;&#19979;&#22833;&#25928;, &#35299;&#20915;&#26041;&#27861;&#24050;&#34917;&#20805;&#10;ctrl+k &#20174;&#20809;&#26631;&#22788;&#21024;&#38500;&#21040;&#34892;&#23614;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+f &#20809;&#26631;&#21069;&#31227;&#10;ctrl+b &#20809;&#26631;&#21518;&#36864;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+p shell&#20013;&#19978;&#19968;&#20010;&#21629;&#20196;, &#25110;&#32773; &#25991;&#26412;&#20013;&#31227;&#21160;&#21040;&#19978;&#19968;&#34892;&#10;ctrl+n shell&#20013;&#19979;&#19968;&#20010;&#21629;&#20196;, &#25110;&#32773; &#25991;&#26412;&#20013;&#31227;&#21160;&#21040;&#19979;&#19968;&#34892;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+r &#24448;&#21518;&#25628;&#32034;&#21382;&#21490;&#21629;&#20196;&#10;ctrl+s &#24448;&#21069;&#25628;&#32034;&#21382;&#21490;&#21629;&#20196;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+d &#21024;&#38500;&#19968;&#20010;&#23383;&#31526;, &#21024;&#38500;&#19968;&#20010;&#23383;&#31526;, &#30456;&#24403;&#20110;&#36890;&#24120;&#30340;Delete&#38190;&#10;ctrl+h &#36864;&#26684;&#21024;&#38500;&#19968;&#20010;&#23383;&#31526;, &#30456;&#24403;&#20110;&#36890;&#24120;&#30340;Backspace&#38190;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ctrl+y &#31896;&#36148;&#10;ctrl+l &#28165;&#29702;&#23631;&#24149;, &#31867;&#20284;clear</span><br></pre></td></tr></table></figure>
+<hr>
+<p>补充: 2015-01-05</p>
+<h3 id="解决_ctrl+u_在zsh环境下失效的问题">解决 ctrl+u 在<a href="http://www.zsh.org/" target="_blank" rel="external">zsh</a>环境下失效的问题</h3><p>按照<a href="http://stackoverflow.com/questions/3483604/which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash" target="_blank" rel="external">which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash</a>,<br>在<code>.zshrc</code> 文件写入 <code>bindkey \^U backward-kill-line</code> 即可.</p>
+<h3 id="设置shell_editing-mode_为_vi-mode">设置shell editing-mode 为 vi-mode</h3><p>在shell中输入 <code>set -o vi</code>, 或者在shell配置文件中写入 <code>set -o vi</code>,<br>按下 Esc, 输入 hjkl 就可以在shell中移动光标了.</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -143,8 +154,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -154,8 +164,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -185,7 +195,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -195,6 +205,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

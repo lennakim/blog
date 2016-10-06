@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: mongoid | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,19 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class User&#10;  include Mongoid::Document&#10;  include Mongoid::Timestamps&#10;&#10;  field :name,   type: String&#10;  field :email,  type: String&#10;  field :gender, type: String&#10;&#10;end&#10;&#10;User.without(:name)&#10;User.without(:name, :gender)&#10;User.only(:name)&#10;User.only(:name, :email)</span><br></pre></td></tr></table></figure>
+<h3 id="aggregation_聚合">aggregation 聚合</h3><h4 id="group">group</h4><p>我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,<br>这样可以使用 mongoDB的 <a href="http://docs.mongodb.org/manual/reference/method/db.collection.group/" target="_blank" rel="external">$group</a> 函数了.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Timestamps</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">added_fans</span><span class="params">(day_num)</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.collection.aggregate(</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$match"</span> =&gt; &#123;</span><br><span class="line">          <span class="string">"followable_type"</span> =&gt; <span class="string">"User"</span>,</span><br><span class="line">           <span class="string">"created_at"</span> =&gt; &#123;</span><br><span class="line">              <span class="string">"$gte"</span> =&gt; yesterday.to_i.days.ago.beginning_of_day, <span class="comment"># 大于等于 昨天的开始时间</span></span><br><span class="line">              <span class="string">"$lte"</span> =&gt; <span class="constant">Date</span>.yesterday.end_of_day <span class="comment"># 小于等于 昨天的结束的时间</span></span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="comment"># 查询条件</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$group"</span> =&gt; &#123;</span><br><span class="line">          <span class="symbol">_id:</span> <span class="string">"$follow_id"</span>, <span class="comment"># 根据 follow_id 分组统计</span></span><br><span class="line">          <span class="symbol">matches:</span> &#123; <span class="string">"$sum"</span> =&gt; <span class="number">1</span> &#125; <span class="comment"># 统计数量</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$sort"</span> =&gt; &#123; <span class="symbol">matches:</span> -<span class="number">1</span> &#125; <span class="comment">#倒序</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$limit"</span> =&gt; <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="map_reduce"><a href="http://mongoid.org/en/mongoid/docs/querying.html#map_reduce" target="_blank" rel="external">map_reduce</a></h4><p>map_reduce</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Band</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">likes_count</span></span></span><br><span class="line">    map = <span class="string">%Q&#123;</span><br><span class="line">      function() &#123;</span><br><span class="line">        emit(this.name, &#123; likes: this.likes &#125;</span>); <span class="comment"># 发送 name 与 likes</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reduce = <span class="string">%Q&#123;</span><br><span class="line">      function(key, values) &#123;</span><br><span class="line">        var result = &#123; likes: 0 &#125;</span>;</span><br><span class="line"></span><br><span class="line">        values.forEach(function(value) &#123;</span><br><span class="line"></span><br><span class="line">          result.likes += value.likes; <span class="comment"># 获得value.likes 并 累加</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result; <span class="comment">#输出结果</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    map_reduce(map, reduce).out(<span class="symbol">inline:</span> <span class="keyword">true</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Band</span>.likes_count</span><br></pre></td></tr></table></figure>
+<p>MapReduce概念可以查看<a href="http://zh.wikipedia.org/zh/MapReduce" target="_blank" rel="external">wiki</a><br>或者<a href="http://www.zhihu.com/question/23345991" target="_blank" rel="external">知乎</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -115,8 +109,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -126,8 +119,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -157,7 +150,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -167,6 +160,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

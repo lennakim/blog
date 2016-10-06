@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -80,6 +62,41 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/">
+  <time datetime="2015-05-27T07:00:44.000Z">
+    2015-05-27
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/">去除rspec should/expect警告</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /spec/spec_helpber.rb</span></span><br><span class="line"><span class="constant">RSpec</span>.configure <span class="keyword">do</span> |config|</span><br><span class="line">  config.mock_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  config.expect_with <span class="symbol">:rspec</span> <span class="keyword">do</span> |c|</span><br><span class="line">    c.syntax = [<span class="symbol">:should</span>, <span class="symbol">:expect</span>]</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="资料">资料</h2><p><a href="http://makandracards.com/makandra/25409-how-to-remove-rspec-old-syntax-deprecation-warnings" target="_blank" rel="external">How to remove RSpec old syntax deprecation warnings</a></p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/live-2015-05-16-it-is-been-a-long-time/">
   <time datetime="2015-05-20T09:01:10.000Z">
     2015-05-20
@@ -92,7 +109,17 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>好久不见, 此刻让我想起了海桑的诗</p>
+<h3 id="我是你流浪过的一个地方">我是你流浪过的一个地方</h3><p>— 海桑</p>
+<p>爱情扶我上路 然后走开<br>让我一生怀念<br>怀念那一扶的久长<br>和一生的短暂</p>
+<p>黑白色的夜里 我想看看月亮<br>我看见月亮很好<br>就象我当初<br>看见你很好一样</p>
+<p><a href="http://7sbqv9.com1.z0.glb.clouddn.com/ou-er-hai-shi-hui-xiang-qi-ni.mp3" target="_blank" rel="external">偶尔还是会想起你</a>, 祝你生日快乐</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -120,7 +147,18 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成的css 如下:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(1)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(3)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(5)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/20121376/1240067" target="_blank" rel="external">use-nth-child-value-as-a-sass-variable</a></p>
+<p><a href="http://stackoverflow.com/a/3462301/1240067" target="_blank" rel="external">select-every-nth-element-in-css</a></p>
+<p><a href="http://sassmeister.com/" target="_blank" rel="external">sass-meister</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -148,7 +186,16 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>chrome的每次升级都猝不及防, 升级到42后, 突然发现chrome的默认的书签管理器很不习惯,<br>没有之前简洁, 操作很繁琐, 我这么懒的人非常不习惯, 搜索下 能不能关掉chrome的书签管理器.</p>
+<p>在chrome的url输入框 输入以下内容, 在下拉菜单选择 停用(disabled) 就ok了.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chrome://flags/#enhanced-bookmarks-experiment</span><br></pre></td></tr></table></figure>
+<p>世界变得跟之前一样安静了.</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -176,7 +223,30 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>最近换了一个Mac pro本子, 把原来的blog项目导入到新本子中, 发现不能run了.<br>到官方代码仓库看了下, 作者已经升级hexo, 现在pro安装的hexo版本比较高.<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0</a>, 从题目上看, 作者也是蛮狠的.</p>
+<p>升级hexo, 请戳 <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
+<p>在这里纪下我的升级步骤</p>
+<h4 id="First">First</h4><p>修改 ./package.json</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#10;  &#34;hexo&#34;: &#123;&#10;    &#34;version&#34;: &#34;&#34;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Second">Second</h4><p>安装hexo组件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g&#10;npm install hexo --save</span><br></pre></td></tr></table></figure>
+<p>安装生成器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-index --save&#10;npm install hexo-generator-archive --save&#10;npm install hexo-generator-category --save&#10;npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
+<p>安装server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+<h4 id="Third">Third</h4><p>安装部署工具, 由于我用github page, 只用安装hexo-deployer-git</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>升级各种插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked@0.2 --save&#10;npm install hexo-renderer-stylus@0.2 --save&#10;npm install hexo-generator-feed@1 --save&#10;npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure>
+<p>最后不要忘了这个</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
+<p>不装 ejs 会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">hexo-issues-632</a>描述的问题</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -204,7 +274,19 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>As it is, the world is big. 这么宏观的主题, hold不住啊. 今天得知上家公司的技术团队辞职了,<br>遂有感而发. 回想去年这个时候, 正是人生巅峰, 公司巅峰, 不提也罢.</p>
+<p>peatio 确实是个 全明星技术团队, 阵容超豪华, 随便拿出一个人都能当CTO, <strong>偶除外</strong>.<br>我属于板凳球员, 要想了解板凳深度, 看我就行了, 所见即所得.<br><strong>即使都是全明星球员, 也不一定能拿总冠军.</strong></p>
+<p>xiaolai 玩法很邪门, 既当投资人, 又是pm, 想法超多, 对产品的热情不持久.<br>学习能力很强, 但感觉是体验生活, 而不是在投资领域卖力气. 对于btc大亨来说, 可能就是要任性吧.</p>
+<p>我在14年底离开, 绝不是提前嗅到btc不景气,原因很多吧.<br>一个比较大的原因: 我自己在那段时间, 心态比较失衡, 感觉不开心了, 所以选择离开了.</p>
+<p>又靠倒了一家公司(虽公司实体还在, 但在我心里已倒下), 我迫切希望入党, 希望组织收留我.</p>
+<p><strong>世界这么大, 祝他们找到新的征程.</strong></p>
+<p>留照以兹纪念<br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/peatio-team.jpg" alt=""></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -232,7 +314,17 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>可能是本人 用GUI比较多的缘故, 对默认的 git diff 形式不太直观.<br>之前用svn的时候 配置过 vimdiff, 所以配置下git的vimdiff.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">git config --global diff.tool vimdiff # &#35774;&#32622;diff&#24037;&#20855;&#20026; vimdiff&#10;&#10;git config --global difftool.prompt false&#10;&#10;git config --global alias.d difftool # &#35774;&#32622;&#21035;&#21517;</span><br></pre></td></tr></table></figure>
+<p>只要输入  <code>git d</code>, 感觉是不是更直观了呢?</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/vimdiff.png" alt=""></p>
+<h3 id="资料">资料</h3><p><a href="http://ccvita.com/445.html" target="_blank" rel="external">更换svn diff为vimdiff</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-vimdiff/" target="_blank" rel="external">Vimdiff 使用</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -260,7 +352,31 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>最近一直在做 api server, 有时候也需要分析手机App的网络请求, 之前在win环境下一直用 fiddler<br>做这样的工作, 然后在 mac下发现了<a href="http://www.charlesproxy.com/" target="_blank" rel="external">Charles</a>, 样子是个花瓶, 不过功能很强大哦.</p>
+<p>说下步骤</p>
+<p>1 确保手机和mac在同一个局域网</p>
+<p>2 设置Charles代理, Proxy -&gt; Proxy Settings, 保持默认即可, 记住端口 8888</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/charles-proxy-settings.png" alt=""></p>
+<p>3 查看mac 本地ip</p>
+  <figure class="highlight"><table><tr><td class="code"><pre><span class="line">ifconfig |grep inet&#10;&#10;  inet6 ::1 prefixlen 128&#10;  inet 127.0.0.1 netmask 0xff000000&#10;  inet6 fe07::1%lo0 prefixlen 64 scopeid 0x1&#10;  inet6 fe07::9e40:8ff:fe9d:2136%en0 prefixlen 64 scopeid 0x4&#10;  inet 192.168.1.109 netmask 0xffffff00 broadcast 192.168.1.205</span><br></pre></td></tr></table></figure>
+<p>  本地 ip地址是  192.168.1.109</p>
+<p>4 设置手机</p>
+<p>设置 -&gt; 无线局域网 -&gt; 点蓝色的info图标, 找到 http 代理</p>
+<p>服务器 输入mac本地ip <code>192.168.1.109</code>, 端口输入 <code>8888</code></p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/ios-proxy.jpg" alt=""></p>
+<p>5 charles 会提示弹窗 , allow 即可.</p>
+<p>在左侧栏, 就可以看到请求的连接了.</p>
+<hr>
+<p>另外 charles 可以模拟网络速度, 很贴心, 通过 Proxy-&gt; Throtting Settings</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/charles-throtting-settings.png" alt=""></p>
+<p>PS 免费版 charles 会有些限制.</p>
+<h3 id="资料">资料</h3><p><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">fiddler</a><br><a href="https://www.wireshark.org/" target="_blank" rel="external">wireshark</a><br><a href="http://www.baidufe.com/item/8a53eea855cb6289993f.html" target="_blank" rel="external">使用charles来抓取手机App的网络包</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -288,7 +404,16 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>今天是清明节, 我没有回到老家, 没有为母亲扫墓, 心里很不舒服.<br>母亲在2011年去世, 一晃已经离开我三年多了.<br>三年前, 我还在为第一份工作奔波, 在我拿到第一份工资之前, 母亲永远离开了我.<br>我感觉到了生命的急促, 转瞬即逝.<br>曾经感到人生忽明忽暗, 没了期盼. 现在我想说: 麻麻, 我很好, 我一直很乖.</p>
+<p>斯人已逝, 言犹在耳, 谢谢母亲.</p>
+<p>附上李志的『<a href="http://music.163.com/#/song?id=5246946" target="_blank" rel="external">妈妈</a>』</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26523123&auto=0&height=66"></iframe>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -316,35 +441,19 @@
   
 
   </header>
-
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
   
-    <article class="post">
-  <header>
+  <div class="entry">
     
-      <div class="icon"></div>
-      <a href="/tech-2015-03-25-disable-unit-testing-generators-in-rails/">
-  <time datetime="2015-03-25T12:13:45.000Z">
-    2015-03-25
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/tech-2015-03-25-disable-unit-testing-generators-in-rails/">rails中禁掉某些生成器</a></h1>
-  
+      <h3 id="querying_查询">querying 查询</h3><p>忽略某些字段的查询用 <code>without</code>, 只查询某些字段可以用 <code>only</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class User&#10;  include Mongoid::Document&#10;  include Mongoid::Timestamps&#10;&#10;  field :name,   type: String&#10;  field :email,  type: String&#10;  field :gender, type: String&#10;&#10;end&#10;&#10;User.without(:name)&#10;User.without(:name, :gender)&#10;User.only(:name)&#10;User.only(:name, :email)</span><br></pre></td></tr></table></figure>
+<h3 id="aggregation_聚合">aggregation 聚合</h3><h4 id="group">group</h4><p>我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,<br>这样可以使用 mongoDB的 <a href="http://docs.mongodb.org/manual/reference/method/db.collection.group/" target="_blank" rel="external">$group</a> 函数了.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Document</span></span><br><span class="line">  <span class="keyword">include</span> <span class="constant">Mongoid::Timestamps</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">added_fans</span><span class="params">(day_num)</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.collection.aggregate(</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$match"</span> =&gt; &#123;</span><br><span class="line">          <span class="string">"followable_type"</span> =&gt; <span class="string">"User"</span>,</span><br><span class="line">           <span class="string">"created_at"</span> =&gt; &#123;</span><br><span class="line">              <span class="string">"$gte"</span> =&gt; yesterday.to_i.days.ago.beginning_of_day, <span class="comment"># 大于等于 昨天的开始时间</span></span><br><span class="line">              <span class="string">"$lte"</span> =&gt; <span class="constant">Date</span>.yesterday.end_of_day <span class="comment"># 小于等于 昨天的结束的时间</span></span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="comment"># 查询条件</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$group"</span> =&gt; &#123;</span><br><span class="line">          <span class="symbol">_id:</span> <span class="string">"$follow_id"</span>, <span class="comment"># 根据 follow_id 分组统计</span></span><br><span class="line">          <span class="symbol">matches:</span> &#123; <span class="string">"$sum"</span> =&gt; <span class="number">1</span> &#125; <span class="comment"># 统计数量</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$sort"</span> =&gt; &#123; <span class="symbol">matches:</span> -<span class="number">1</span> &#125; <span class="comment">#倒序</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"$limit"</span> =&gt; <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="map_reduce"><a href="http://mongoid.org/en/mongoid/docs/querying.html#map_reduce" target="_blank" rel="external">map_reduce</a></h4><p>map_reduce</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Band</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">likes_count</span></span></span><br><span class="line">    map = <span class="string">%Q&#123;</span><br><span class="line">      function() &#123;</span><br><span class="line">        emit(this.name, &#123; likes: this.likes &#125;</span>); <span class="comment"># 发送 name 与 likes</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reduce = <span class="string">%Q&#123;</span><br><span class="line">      function(key, values) &#123;</span><br><span class="line">        var result = &#123; likes: 0 &#125;</span>;</span><br><span class="line"></span><br><span class="line">        values.forEach(function(value) &#123;</span><br><span class="line"></span><br><span class="line">          result.likes += value.likes; <span class="comment"># 获得value.likes 并 累加</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result; <span class="comment">#输出结果</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    map_reduce(map, reduce).out(<span class="symbol">inline:</span> <span class="keyword">true</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Band</span>.likes_count</span><br></pre></td></tr></table></figure>
+<p>MapReduce概念可以查看<a href="http://zh.wikipedia.org/zh/MapReduce" target="_blank" rel="external">wiki</a><br>或者<a href="http://www.zhihu.com/question/23345991" target="_blank" rel="external">知乎</a></p>
 
-  </header>
-
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -369,8 +478,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -380,8 +488,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -411,7 +519,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -421,6 +529,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

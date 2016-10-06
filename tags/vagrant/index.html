@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: vagrant | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,68 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <h3 id="介绍vagrant">介绍vagrant</h3><blockquote>
+<p>Vagrant is a tool for building complete development environments. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases development/production parity, and makes the “works on my machine” excuse a relic of the past.</p>
+</blockquote>
+<p><a href="https://www.vagrantup.com/" target="_blank" rel="external">vagrant</a> 其实是封装了一些命令, 通过命令行的方式管理virtual box镜像,<br>通过vagrant你可以下载/安装镜像, 修改镜像的配置, 比如说设置ip地址, 指定内存大小等.</p>
+<h3 id="视频">视频</h3><p>本人录制了一个视频, 可以先睹为快, <a href="http://7sbqv9.com1.z0.glb.clouddn.com/cgc-20160728_vagrant_cut.mp4" target="_blank" rel="external">vagrant video</a>, 149MB, 8分10秒.</p>
+<h3 id="No-1">No.1</h3><p>根据自己的系统安装 <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a><br>和 <a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="external">vagrant</a></p>
+<h3 id="No-2">No.2</h3><p>测试下 vagrant 是否安装成功 <code>vagrant  -v</code></p>
+<p>安装过程中, <strong>确保VirtualBox一直在运行</strong></p>
+<h3 id="No-3">No.3</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#26032;&#24314;&#19968;&#20010;&#30446;&#24405;&#10;mkdir -p work/vagrant&#10;cd work/vagrant&#10;&#10;# &#25191;&#34892; vagrant init&#10;vagrant init ubuntu/trusty64 #&#29983;&#25104;&#19968;&#20010; Vagrantfile&#25991;&#20214;&#10;&#10;# &#23433;&#35013;box&#25991;&#20214;&#10;vagrant up</span><br></pre></td></tr></table></figure>
+<h3 id="No-4">No.4</h3><p>vagrant up 从远程下载box, <strong>可能需要很长的时间, 可以先把box文件下载下来</strong>.</p>
+<p>在<a href="https://atlas.hashicorp.com/boxes/search" target="_blank" rel="external">这里</a>能找到官网所提供的box,点击进入相应的box中,<br>里面会显示版本号和支持的虚拟机(virtualBox或者vmware_desktop),确认自己想要的版本号和虚拟机后,<br>点击右上角的版本号进入新页面, 在当前地址后添加 <code>/providers/virtualbox.box</code> 可获得virtualbox版本<br>的box下载地址, vmware_desktop版同理.</p>
+<p>然后使用 <code>vagrant box add</code> 命令添加镜像<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vagrant box add &#60;trusty-server-cloudimg-amd64-vagrant-disk.box&#62; --name ubuntu/trusty64</span><br></pre></td></tr></table></figure></p>
+<h3 id="No-5">No.5</h3><p>再执行下 <code>vagrant up</code></p>
+<p>执行  <code>vagrant ssh</code> 进入虚拟机, ssh在windowns系统下 <strong>不生效</strong></p>
+<h3 id="No-6">No.6</h3><p>如果想删除 vagrant box, 执行 <code>vagrant destroy</code></p>
+<h3 id="No-7">No.7</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vagrant up</td>
+<td>启动本地环境</td>
+</tr>
+<tr>
+<td>vagrant halt</td>
+<td>关闭本地环境</td>
+</tr>
+<tr>
+<td>vagrant suspend</td>
+<td>暂停本地环境</td>
+</tr>
+<tr>
+<td>vagrant resume</td>
+<td>恢复本地环境</td>
+</tr>
+<tr>
+<td>vagrant reload</td>
+<td>修改Vagrantfile后, 使之生效(相当于先halt, 再up)</td>
+</tr>
+<tr>
+<td>vagrant ssh</td>
+<td>通过 ssh 登录本地环境所在虚拟机(只在linux unix下起作用)</td>
+</tr>
+<tr>
+<td>vagrant destroy</td>
+<td>彻底移除本地环境</td>
+</tr>
+</tbody>
+</table>
+<h3 id="参考资料">参考资料</h3><p><a href="http://haoduoshipin.com/v/105" target="_blank" rel="external">http://haoduoshipin.com/v/105</a></p>
+<p><a href="https://imququ.com/post/vagrantup.html" target="_blank" rel="external">https://imququ.com/post/vagrantup.html</a></p>
+<p><a href="http://urouge.github.io/how-to-download-vagrant-boxes/" target="_blank" rel="external">http://urouge.github.io/how-to-download-vagrant-boxes/</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -115,8 +158,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -126,8 +168,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -157,7 +199,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -167,6 +209,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

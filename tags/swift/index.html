@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: swift | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,20 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>swift 有一个特别的关键字 — <strong>extension</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
+<p>马上想到的是 ruby monkey-patch</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">seconds</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">minutes</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">days</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">############</span></span><br><span class="line"><span class="number">5</span>.seconds</span><br><span class="line"><span class="number">2</span>.minutes</span><br><span class="line"><span class="number">1</span>.days</span><br></pre></td></tr></table></figure>
+<hr>
+<p>在ios的例子中 <a href="https://github.com/liuningtw/ruby-china_ios/blob/master/ruby-china_ios/ViewControllerExtension.swift" target="_blank" rel="external">ViewControllerExtensions</a> 扩展ViewController, 继承 <strong>UITableViewDataSource</strong> , 并实现 <strong>protocol</strong> ,</p>
+<p>类似ruby中用 module 扩展class.</p>
+<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/tonny_guan/article/details/36198911" target="_blank" rel="external">Swift扩展-Extension</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -122,7 +117,14 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
+<h3 id="参考">参考</h3><p><a href="http://www.swiftmi.com/topic/50.html" target="_blank" rel="external">C#与Swift的函数比较</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -150,7 +152,20 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
+<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>2 当手指离开屏幕的时候 关闭键盘, 需要重写touchesEnded</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;  nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>源码地址 <a href="https://github.com/liuningtw/keyboard-resignFirstResponder/blob/master/keyboard-resignFirstResponder/ViewController.swift" target="_blank" rel="external">ViewController.swift</a></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">import UIKit&#10;&#10;class ViewController: UIViewController &#123;&#10;&#10;  @IBOutlet weak var nameTxt: UITextField! //&#23450;&#20041;&#36755;&#20837;&#26694;&#10;  @IBOutlet weak var resultLab: UILabel! //&#23450;&#20041;&#26174;&#31034;&#26694;&#10;&#10;  override func viewDidLoad() &#123;&#10;    super.viewDidLoad()&#10;    nameTxt.placeholder = &#34;&#37049;&#20521;&#38639;&#34;&#10;  &#125;&#10;&#10;  override func didReceiveMemoryWarning() &#123;&#10;    super.didReceiveMemoryWarning()&#10;  &#125;&#10;&#10;  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;    nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;  &#125;&#10;&#10;  @IBAction func okTapped(sender: AnyObject) &#123;&#10;    nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#10;    resultLab.text = &#34;hi, \(nameTxt.text)&#34;&#10;  &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -178,7 +193,20 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>10-1假期, 闲来无事, 写了个<a href="http://github.com/liuningtw/timerDemo" target="_blank" rel="external">计时器</a>.<br>之前没有 <strong>object-c</strong>, <strong>swift</strong> 经验, 基本是依葫芦画瓢.</p>
+<p><a href="http://swiftist.org/topics/96" target="_blank" rel="external">教程</a>是<a href="http://swiftist.org/~lifedim" target="_blank" rel="external">Jason</a>编写的, 很详细,另外有一个bug, Jason希望大家能发现, 并帮他修复. 感觉这种发现问题的方式很不错丫.</p>
+<p>核心是一个 <strong>CounterViewController.swift</strong> 文件</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;import UIKit&#10;&#10;class CounterViewController: UIViewController &#123;&#10;&#10;    override func viewDidLoad() &#123;&#10;        super.viewDidLoad()&#10;        self.view.backgroundColor = UIColor.whiteColor()&#10;&#10;        setupTimeLabel()&#10;        setuptimeButtons()&#10;        setupActionButtons()&#10;&#10;        remainingSeconds = 0&#10;    &#125;&#10;&#10;    override func didReceiveMemoryWarning() &#123;&#10;        super.didReceiveMemoryWarning()&#10;        // Dispose of any resources that can be recreated.&#10;    &#125;&#10;&#10;    override func viewWillLayoutSubviews() &#123;&#10;        super.viewWillLayoutSubviews()&#10;&#10;        timeLabel!.frame = CGRectMake(10, 40, self.view.bounds.size.width-20, 120)&#10;&#10;        let gap = ( self.view.bounds.size.width - 10*2 - (CGFloat(timeButtons!.count) * 64) ) / CGFloat(timeButtons!.count - 1)&#10;&#10;        for (index, button) in enumerate(timeButtons!) &#123;&#10;            let buttonLeft = 10 + (64 + gap) * CGFloat(index)&#10;&#10;            button.frame = CGRectMake(buttonLeft, self.view.bounds.size.height-120, 64, 44)&#10;        &#125;&#10;&#10;        startStopButton!.frame = CGRectMake(10, self.view.bounds.size.height - 60, self.view.bounds.size.width-20-120, 44)&#10;&#10;        clearButton!.frame = CGRectMake(10+self.view.bounds.size.width-20-100+20, self.view.bounds.size.height-60, 80, 44)&#10;    &#125;&#10;&#10;    ///UI Element&#10;    var timeLabel: UILabel? //&#26174;&#31034;&#21097;&#20313;&#26102;&#38388;&#10;    var timeButtons: [UIButton]? //&#35774;&#32622;&#26102;&#38388;&#30340;&#25353;&#38062;&#25968;&#32452;&#10;    var startStopButton: UIButton? //&#21551;&#21160;/&#20572;&#27490;&#25353;&#38062;&#10;    var clearButton: UIButton? //&#22797;&#20301;&#25353;&#38062;&#10;    let timeButtonInfos = [(&#34;1&#20998;&#34;, 60), (&#34;3&#20998;&#34;, 180), (&#34;5&#20998;&#34;, 300), (&#34;&#31186;&#34;, 1)]&#10;&#10;&#10;    //&#21551;&#21160;&#25110;&#20572;&#27490;&#20498;&#35745;&#26102;&#10;    //&#20351;&#29992;Swift&#30340;&#26041;&#24335;&#26469;&#35299;&#20915;&#29366;&#24577;&#36319;UI&#30340;&#21516;&#27493;&#38382;&#39064;&#65306;&#20351;&#29992;&#23646;&#24615;&#30340;willSet&#25110;didSet&#26041;&#27861;&#10;    var isCounting: Bool = false &#123;&#10;        willSet(newValue) &#123;&#10;            if newValue &#123;&#10;                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: &#34;updateTimer:&#34;, userInfo: nil, repeats: true)&#10;            &#125; else &#123;&#10;                timer?.invalidate()&#10;                timer = nil&#10;            &#125;&#10;&#10;            setSettingButtonsEnabled(!newValue)&#10;        &#125;&#10;    &#125;&#10;&#10;    var timer: NSTimer? // &#35774;&#32622;&#23450;&#26102;&#22120;&#10;&#10;    //&#20351;&#29992;Swift&#30340;&#26041;&#24335;&#26469;&#35299;&#20915;&#29366;&#24577;&#36319;UI&#30340;&#21516;&#27493;&#38382;&#39064;&#65306;&#20351;&#29992;&#23646;&#24615;&#30340;willSet&#25110;didSet&#26041;&#27861;&#10;    var remainingSeconds: Int = 0 &#123;&#10;&#10;        willSet(newSeconds) &#123;&#10;            let mins = newSeconds / 60&#10;            let seconds =  newSeconds % 60&#10;&#10;            timeLabel!.text = NSString(format: &#34;%02d:%02d&#34;, mins, seconds)&#10;&#10;            if newSeconds &#60;= 0 &#123;&#10;                isCounting = false&#10;                startStopButton!.alpha = 0.3&#10;                startStopButton!.enabled = false&#10;            &#125; else&#123;&#10;                startStopButton!.alpha = 1.0&#10;                startStopButton!.enabled = true&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#10;    //UI Controls&#10;&#10;    func setupTimeLabel() &#123;&#10;        timeLabel = UILabel()&#10;        timeLabel!.textColor = UIColor.whiteColor()&#10;        timeLabel!.font = UIFont(name: &#34;Helvetica&#34;, size: 80)&#10;        timeLabel!.backgroundColor = UIColor.blackColor()&#10;        timeLabel!.textAlignment = NSTextAlignment.Center&#10;&#10;        self.view.addSubview(timeLabel!)&#10;    &#125;&#10;&#10;    func setuptimeButtons() &#123;&#10;        var buttons: [UIButton] = []&#10;&#10;        for (index, (title, _)) in enumerate(timeButtonInfos) &#123;&#10;&#10;            let button: UIButton = UIButton()&#10;            button.tag = index //&#20445;&#23384;&#25353;&#38062;&#30340;index&#10;            button.setTitle(&#34;\(title)&#34;, forState: UIControlState.Normal)&#10;&#10;            button.backgroundColor = UIColor.orangeColor()&#10;            button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)&#10;            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Highlighted)&#10;&#10;            button.addTarget(self, action: &#34;timeButtonTapped:&#34;, forControlEvents: UIControlEvents.TouchUpInside)&#10;&#10;            buttons += [button]&#10;            self.view.addSubview(button)&#10;&#10;        &#125;&#10;&#10;        timeButtons = buttons&#10;    &#125;&#10;&#10;    func setupActionButtons() &#123;&#10;        //create start/stop button&#10;&#10;        startStopButton = UIButton()&#10;&#10;        startStopButton!.setTitle(&#34;&#21551;&#21160;/&#20572;&#27490;&#34;, forState: UIControlState.Normal)&#10;&#10;        startStopButton!.backgroundColor = UIColor.redColor()&#10;&#10;        startStopButton!.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)&#10;&#10;        // &#20026;button&#32465;&#23450;TouchUpInside&#20107;&#20214;&#10;        startStopButton!.addTarget(self, action: &#34;startStopButtonTapped:&#34;, forControlEvents: UIControlEvents.TouchUpInside)&#10;&#10;        self.view.addSubview(startStopButton!)&#10;&#10;        /////////////////////clearButton/////////////////////&#10;&#10;        clearButton = UIButton()&#10;&#10;        clearButton!.setTitle(&#34;&#22797;&#20301;&#34;, forState: UIControlState.Normal)&#10;&#10;        clearButton!.backgroundColor = UIColor.redColor()&#10;&#10;        clearButton!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)&#10;&#10;        clearButton!.setTitleColor(UIColor.blackColor(), forState: UIControlState.Highlighted)&#10;&#10;        clearButton!.addTarget(self, action: &#34;clearButtonTapped:&#34;, forControlEvents: UIControlEvents.TouchUpInside)&#10;&#10;        self.view.addSubview(clearButton!)&#10;&#10;    &#125;&#10;&#10;    ///Actions &#38; Callbacks&#10;    func startStopButtonTapped(sender: UIButton) &#123;&#10;        isCounting = !isCounting //&#20999;&#25442;&#20102;isCounting&#30340;&#29366;&#24577;&#10;&#10;        if isCounting &#123;&#10;            createAndFireLocalNotificationAfterSeconds(remainingSeconds)&#10;        &#125; else &#123;&#10;            UIApplication.sharedApplication().cancelAllLocalNotifications()&#10;        &#125;&#10;    &#125;&#10;&#10;    func clearButtonTapped(sender: UIButton) &#123;&#10;        remainingSeconds = 0  //&#22797;&#20301;&#25353;&#38062;&#23558;&#26102;&#38388;&#32622;0&#10;    &#125;&#10;&#10;    //&#32047;&#21152;&#26102;&#38388;&#10;    func timeButtonTapped(sender: UIButton) &#123;&#10;        let (_, seconds) = timeButtonInfos[sender.tag]&#10;        remainingSeconds += seconds&#10;    &#125;&#10;&#10;    func updateTimer(timer: NSTimer) &#123;&#10;        remainingSeconds -= 1&#10;&#10;        // &#24377;&#20986;&#35686;&#21578;&#31383;&#21475;,&#25552;&#31034;&#20498;&#35745;&#26102;&#23436;&#25104;&#10;        if remainingSeconds &#60;= 0 &#123;&#10;            let alert = UIAlertView()&#10;&#10;            alert.title = &#34;&#35745;&#26102;&#23436;&#25104;&#34;&#10;            alert.message = &#34;&#34;&#10;            alert.addButtonWithTitle(&#34;OK&#34;)&#10;            alert.show()&#10;        &#125;&#10;    &#125;&#10;&#10;    ///&#10;&#10;    func setSettingButtonsEnabled(enabled: Bool) &#123;&#10;        for button in timeButtons! &#123;&#10;            button.enabled = enabled&#10;            button.alpha = enabled ? 1.0 : 0.3&#10;        &#125;&#10;&#10;        clearButton!.enabled = enabled&#10;        clearButton!.alpha = enabled ? 1.0 : 0.3&#10;    &#125;&#10;&#10;    //&#27880;&#20876;&#31995;&#32479;&#36890;&#30693;&#10;    func createAndFireLocalNotificationAfterSeconds(seconds: Int) &#123;&#10;&#10;        UIApplication.sharedApplication().cancelAllLocalNotifications()&#10;        let notification = UILocalNotification()&#10;&#10;        let timeIntervalSinceNow = Double(seconds)&#10;&#10;        notification.fireDate = NSDate(timeIntervalSinceNow:timeIntervalSinceNow);&#10;&#10;        notification.timeZone = NSTimeZone.systemTimeZone()&#10;        notification.alertBody = &#34;&#35745;&#26102;&#23436;&#25104;&#65281;&#34;&#10;&#10;        UIApplication.sharedApplication().scheduleLocalNotification(notification)&#10;&#10;    &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>从 simulator上测试, 到真机上运行, 花了很多时间, 要申请开发者, 要 <strong>bundle id</strong>, 下载开发者证书 …<br>各种东西,步骤已经忘了, 现在没时间折腾了.</p>
+<p>效果如下:</p>
+<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/ios-demo-for-swift-001.PNG" alt=""><br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/ios-demo-for-swift-002.PNG" alt=""></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -199,8 +227,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -210,8 +237,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -241,7 +268,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -251,6 +278,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

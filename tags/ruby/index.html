@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!-- google-site-verification -->
-  <meta name="google-site-verification" content="tph-530x0mI2WKprPzR8hLWOBa1cNQNbfaLUV9Qt3VA" />
-  <!-- google-site-verification -->
   
   <title>标签: ruby | Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,19 +28,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33680426-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </head>
 
 <body>
@@ -58,9 +42,7 @@
       
         <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/link">Link</a></li>
-      
-        <li><a href="http://ta.shooter.gl/">Live</a></li>
+        <li><a href="/about">About</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +76,22 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>其实 alias alias_method 已经把我弄晕了.</p>
+<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
+<p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
+<p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
+<p>This is because alias is a keyword and it is lexically scoped. It means it treats self as the value of self at the time the source code was read . In contrast alias_method treats self as the value determined at the run time.</p>
+<h3 id="alias_method_chain">alias_method_chain</h3><p>alias_method_chain 是 <strong>ActiveSupport</strong> 的一个公有实例方法,<br>同样接受两个参数, 可以是符号, 也可以是字符串, 但第1个参数是原始方法,<br>alias_method的第2个参数是原始方法, 晕~.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_with_args</span><span class="params">(*args)</span></span></span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
+<p>其实 alias_method_chain 只是做了个 dsl</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -122,7 +119,16 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  scope <span class="symbol">:recent</span>, -&gt; &#123;order(<span class="symbol">created_at:</span> <span class="symbol">:desc</span>)&#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line"></span><br><span class="line">  inherit_resources</span><br><span class="line"></span><br><span class="line">  protected</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">collection</span></span></span><br><span class="line">    end_of_association_chain.recent.page(params[<span class="symbol">:page</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/questions/21258436/does-kaminari-work-with-inherited-resources" target="_blank" rel="external">Kaminari work with Inherited Resources</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -150,7 +156,20 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>swift 有一个特别的关键字 — <strong>extension</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
+<p>马上想到的是 ruby monkey-patch</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">seconds</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">minutes</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">days</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">############</span></span><br><span class="line"><span class="number">5</span>.seconds</span><br><span class="line"><span class="number">2</span>.minutes</span><br><span class="line"><span class="number">1</span>.days</span><br></pre></td></tr></table></figure>
+<hr>
+<p>在ios的例子中 <a href="https://github.com/liuningtw/ruby-china_ios/blob/master/ruby-china_ios/ViewControllerExtension.swift" target="_blank" rel="external">ViewControllerExtensions</a> 扩展ViewController, 继承 <strong>UITableViewDataSource</strong> , 并实现 <strong>protocol</strong> ,</p>
+<p>类似ruby中用 module 扩展class.</p>
+<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/tonny_guan/article/details/36198911" target="_blank" rel="external">Swift扩展-Extension</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -178,7 +197,14 @@
   
 
   </header>
-
+  
+  <div class="entry">
+    
+      <p><a href="https://github.com/intridea/grape" target="_blank" rel="external">grape</a> 是一个方便创建 REST-like APIs的gem.</p>
+<p>client将一些元数据存在header中, 需要从grape中获取header数据, 得到version版本, 直接上代码.</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_client_version</span></span></span><br><span class="line">  request = <span class="constant">Grape::Request</span>.new(env)</span><br><span class="line">  headers = request.headers</span><br><span class="line">  version = headers[<span class="string">'X-Version'</span>].to_s</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -206,7 +232,25 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p>遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，<br>ruby 环境也没有安装。一番捣鼓，步骤如下:</p>
+<p><strong>没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6</strong></p>
+<h3 id="下载源文件">下载源文件</h3><p><a href="http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz" target="_blank" rel="external">ruby-1.9.3-p327</a></p>
+<p><a href="http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz" target="_blank" rel="external">yaml-0.1.4.tar.gz</a></p>
+<p><a href="http://rubygems.org/downloads/bundler-1.2.3.gem" target="_blank" rel="external">bundler-1.2.3</a></p>
+<h3 id="本地服务器">本地服务器</h3><h4 id="打包_rails_app">打包 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bundle package&#10;#&#33509;&#25552;&#31034;&#27809;&#26377;,&#23433;&#35013;bundler&#24182;&#37325;&#22797;&#20197;&#19978;&#27493;&#39588;&#10;$ gem install bundler&#10;$ bundle package # &#23558;&#39033;&#30446;&#25152;&#38656;&#35201;&#30340;gem&#22797;&#21046;&#21040; vendor/cache&#10;$ tar -czf   railsApp.tar.gz   railsApp #&#21387;&#32553;&#25171;&#21253;</span><br></pre></td></tr></table></figure>
+<h3 id="远程服务器">远程服务器</h3><h4 id="首先安装_yaml-0-1-4-tar-gz，再安装ruby"><strong>首先安装 yaml-0.1.4.tar.gz，再安装ruby</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar &#8211;xzvf  yaml-0.1.4.tar.gz&#10;$ ./configure&#10;$ make&#10;$ make install</span><br></pre></td></tr></table></figure>
+<h4 id="安装ruby">安装ruby</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  ruby-1.9.3-p327.tar.gz&#10;$ cd ruby-1.9.3-p327&#10;$ ./configure&#10;$ make&#10;$ make install&#10;$ ruby -v   #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;&#10;$ gem -v    #gem&#24050;&#32463;&#23433;&#35013;</span><br></pre></td></tr></table></figure>
+<h4 id="本地安装bundler">本地安装bundler</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem install  bundler-1.2.3.gem&#10;$ bundle -v  #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;</span><br></pre></td></tr></table></figure>
+<h4 id="部署_rails_app">部署 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  railsApp.tar.gz&#10;$ cd railsApp&#10;$ bundle install --local  #&#26412;&#22320;&#23433;&#35013;gem</span><br></pre></td></tr></table></figure>
+<p><strong>注意修改配置文件</strong></p>
+<pre><code><span class="variable">$ </span>rails s  <span class="comment">#测试运行</span>
+</code></pre><p> <a href="https://gist.github.com/4274057" target="_blank" rel="external">分享在gist上</a></p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -234,7 +278,32 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p><strong>First Blood</strong>  来些血腥凶残暴力的！<br>这些经常在面试中被提问，内容很多。<br>从面试里单独拿出来，这东西相当于神器级别，必须谨慎对待。</p>
+<p>yield是ruby中一个特殊的关键字，可以调用块方法(block)，而block是ruby闭包的一种，<br>故将三者联系起来，yeild天生就是闭包的小跟班儿。感觉没必要单独讲，不然很割裂的赶脚。</p>
+<h3 id="ruby_闭包_block，Proc，lambda"><strong> ruby 闭包</strong>   block，Proc，lambda</h3><p><strong>block 与 yield</strong><br>block 是最常用到的，有两种形式,{}和do … end。<br>一般单行习惯用{}，多行用do … end，当然这只是习惯。</p>
+<figure class="highlight ruby"><figcaption><span>demo.rb</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_yield</span></span></span><br><span class="line">  <span class="keyword">yield</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test_yield&#123; puts <span class="string">"this is first block."</span> &#125; <span class="comment"># yield可以调用block 即&#123;...&#125;</span></span><br><span class="line"></span><br><span class="line">test_yield <span class="keyword">do</span></span><br><span class="line">  puts <span class="string">"this is second block."</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2_yield</span></span></span><br><span class="line">  <span class="keyword">yield</span>(<span class="string">"shooter"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test2_yield&#123; |var| puts <span class="string">"This args is <span class="subst">#&#123;var&#125;</span>."</span> &#125;</span><br><span class="line"><span class="comment">#传给yield的参数(此处为shooter)即对应了block中的参数(||中的部分)</span></span><br></pre></td></tr></table></figure>
+<p>还可以通过 Kernel#block_given? 方法询问当前的方法调用是否包含块。<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span></span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">yield</span> <span class="keyword">if</span> block_given?</span><br><span class="line">  puts <span class="string">'no block'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test <span class="comment"># =&gt; no block</span></span><br><span class="line">test&#123; puts <span class="string">"Here's a block"</span> &#125; <span class="comment"># =&gt; Here's a block</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Proc对象</strong></p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">plus = <span class="constant">Proc</span>.new &#123; |x| x + <span class="number">1</span> &#125;</span><br><span class="line">puts plus.call(<span class="number">2</span>) <span class="comment"># =&gt;3</span></span><br><span class="line"></span><br><span class="line">subtract = proc &#123; |x| x - <span class="number">1</span> &#125;</span><br><span class="line">puts subtract.call(<span class="number">4</span>) <span class="comment"># =&gt;3</span></span><br></pre></td></tr></table></figure>
+<p>这被称为<strong>延迟执行</strong>(Defferred Evaluation)。</p>
+<p>通过<strong>&amp;操作符</strong>，block 与 Proc对象可以相互转化。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def math_one(a, b, &#38;oper)&#10;  puts yield(a,b)&#10;end&#10;&#10;def math_two(a, b, &#38;oper)&#10;  puts oper.call(a,b)&#10;end&#10;&#10;math_one(2,3) &#123; |x,y| x + y&#125; # =&#62; 2 + 3 = 5&#10;math_two(2,3) &#123; |x,y| x * y&#125; # =&#62; 2 * 3 = 6</span><br></pre></td></tr></table></figure>
+<p>那么这个&amp;起了什么作用？<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_method</span><span class="params">(&amp;code)</span></span></span><br><span class="line">  code</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">p = my_method&#123; |name| <span class="string">"Hello,<span class="subst">#&#123;name&#125;</span>!"</span>&#125;</span><br><span class="line">puts p.<span class="keyword">class</span> <span class="comment"># =&gt; Proc</span></span><br><span class="line">puts p.call(<span class="string">"shooter"</span>) <span class="comment"># =&gt; Hello,shooter!</span></span><br></pre></td></tr></table></figure></p>
+<p>&amp;操作符的真正含义：Proc对象和块之间的切换符号。&amp;code是一个块，code是一个Proc对象。<br>简单的去掉&amp;操作符，我们就能再次得到一个Proc对象。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def proc_to_block(greeting)&#10;  puts &#34;#&#123;greeting&#125;,#&#123;yield&#125;&#34;&#10;end&#10;&#10;my_proc = Proc.new &#123;&#34;shooter!&#34;&#125;&#10;puts my_proc.class&#10;proc_to_block(&#34;Hello&#34;, &#38;my_proc)</span><br></pre></td></tr></table></figure></p>
+<p><strong>lambda函数</strong><br>lambda跟Proc就像两个双胞胎<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">plus = lambda &#123; |x| x + 1 &#125;&#10;puts plus.call(2) # =&#62;3</span><br></pre></td></tr></table></figure></p>
+<p>lambda跟Proc有两个最明显的区别: <br></p>
+<ol>
+<li>lambda检查参数的个数，Proc不会。<br><br>&nbsp;在Proc中，多余的参数被设为nil。但lambda中，Ruby会抛出一个ArgumentError错误。<br></li>
+<li>return不同。<br><br>&nbsp;lambda的return是返回值给方法，方法会继续执行。Proc的return会终止方法并返回得到的值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def proc_return&#10;  Proc.new &#123; return &#34;Proc.new&#34;&#125;.call&#10;  return &#34;proc_return method finished&#34;&#10;end&#10;&#10;def lambda_return&#10;  lambda &#123; return &#34;lambda&#34; &#125;.call&#10;  return &#34;lambda_return method finished&#34;&#10;end&#10;&#10;puts proc_return    # =&#62; Proc.new&#10;puts lambda_return # =&#62; lambda_return method finished</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>看了代码会一目了然。参考了不少资料，就是拼凑的起来的。</p>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -262,7 +331,39 @@
   
 
   </header>
+  
+  <div class="entry">
+    
+      <p> <a href="http://www.ubuntu.com/" target="_blank" rel="external">Ubuntu 12.04</a> 出来有段时间了，一直没有更新，本想从11.10的系统<br> 直接升级，结果脆生生挂掉了，好多东西拿不出来了。杯具，重装吧！</p>
+<p> 主要是 ruby on rails 和它相关联的在 ubuntu 上的安装配置。<br> 包括 <a href="https://rvm.io/" target="_blank" rel="external">rvm</a> , ruby on rails, Sublime Text,<br> <a href="http://www.modrails.com/" target="_blank" rel="external">passenger</a>, <a href="http://wiki.nginx.org/Main" target="_blank" rel="external">nginx</a>,<br> <a href="http://www.mongodb.org/" target="_blank" rel="external">mongodb</a>, <a href="http://redis.io/" target="_blank" rel="external">redis</a> 的安装，<br> 顺便把 <a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 也装上，当作汇总了。</p>
+<h2 id="安装Ubuntu_12-04">安装Ubuntu 12-04</h2><p>首先准备好12.04的 iso 镜像，需要先从官网下载，我是把iso文件写入U盘后安装的。<br>从10.10以后，用 UltraISO 制作出来的 Ubuntu 启动盘会出现无法启动的现象，有人说 ImageWriter 很靠谱，<br>先用了<a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe" target="_blank" rel="external">ImageWriter</a>，<br>不过我的本本提示没有写入权限，所以找到了<a href="https://launchpad.net/win32-image-writer/" target="_blank" rel="external">另一个版本</a>，<br> 顺利写入。然后插上U盘，重启，设置从U盘启动，基本一路 next，结果手欠，装成E文的系统了。</p>
+<h3 id="安装配置">安装配置</h3><h4 id="中文输入"><strong>中文输入</strong></h4><p>12.04 的中文输入是个大问题， 即使能输入中文，在低版本的 Sublime Text 中也不能输入中文，<br>好在 <strong>dev版本在其他输入法下</strong> 已经ok了。</p>
+<h4 id="安装_Ruby_On_Rails"><strong>安装 Ruby On Rails</strong></h4><p>先安装一些 ruby on rails 的依赖包，听前辈们的话不会错。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev</span><br></pre></td></tr></table></figure>
+<p><strong>No.1 安装 RVM</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl -L get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure></p>
+<p> 给 ~/.bashrc (Ubuntu) 加上脚本引用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &#39;[[ -s &#34; HOME/.rvm/scripts/rvm&#34; ]] &#38;&#38; source &#34; HOME/.rvm/scripts/rvm&#34;&#39; &#62;&#62; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p> 然后，重新载入那个文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>测试一下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm -v&#10;rvm 1.15.5 (stable) by Wayne E. Seguin &#60;wayneeseguin@gmail.com&#62;, Michal Papis &#60;mpapis@gmail.com&#62; [https://rvm.io/]</span><br></pre></td></tr></table></figure>
+<p><strong>No.2  用 RVM 安装 Ruby 环境</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm list known #&#26174;&#31034;&#21487;&#20379;&#36873;&#25321;&#30340;&#29256;&#26412;&#10;&#10;[ruby-]1.8.6[-p420]&#10;[ruby-]1.8.7[-p370]&#10;[ruby-]1.9.1[-p431]&#10;[ruby-]1.9.2-p180&#10;[ruby-]1.9.2-p290&#10;[ruby-]1.9.2-p318&#10;[ruby-]1.9.2[-p320]&#10;[ruby-]1.9.2-head&#10;[ruby-]1.9.3-preview1&#10;[ruby-]1.9.3-rc1&#10;[ruby-]1.9.3-p0&#10;[ruby-]1.9.3-p125&#10;[ruby-]1.9.3[-p194]&#10;[ruby-]1.9.3-head&#10;ruby-head&#10;......&#10;&#10;# &#35201;&#23433;&#35013;1.9.3&#65292;&#30452;&#25509;&#10;$ rvm install 1.9.3</span><br></pre></td></tr></table></figure>
+<p>……………… 漫长的的等待 ………………</p>
+<p>Ruby 装好以后，通过 RVM 将指定版本的 Ruby 设置为系统默认版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm  1.9.3 --default</span><br></pre></td></tr></table></figure>
+<p>测试一下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ruby -v&#10;ruby 1.9.3p194 (2012-04-20 revision 35410) [i686-linux]&#10;$ gem -v&#10;1.8.23</span><br></pre></td></tr></table></figure>
+<p><strong>No.3 安装 Rails 环境</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem install bundler rails</span><br></pre></td></tr></table></figure>
+<p>测试一下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bundle -v&#10;Bundler version 1.1.5&#10;$ rails -v&#10;Rails 3.2.8</span><br></pre></td></tr></table></figure>
+<p> ruby on rails 的安装齐活了。</p>
+<h4 id="安装_Sublime_Text"><strong>安装 Sublime Text</strong></h4><p>由于<strong>输入汉字</strong>原因，安装 Sublime Text 的dev版本，就是比较新的。<br>先 google 一下 Sublime Text 的ppa源，好吧，ppa暂且是什么先不管。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:webupd8team/sublime-text-2&#10;$ sudo apt-get update # &#26356;&#26032;&#36719;&#20214;&#28304;&#10;$ sudo apt-get install sublime-text-dev</span><br></pre></td></tr></table></figure>
 
+    
+  </div>
   <footer class="end-sep">
     
       
@@ -283,8 +384,7 @@
 
 </div>
   </div>
-  <footer id="footer">
-    <div class="copyright">
+  <footer id="footer"><div class="copyright">
   
   &copy; 2016 <a href="/">shooter</a>
   
@@ -294,8 +394,8 @@
    | 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
-<div class="clearfix"></div>
-    <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<div class="clearfix"></div></footer>
+  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -325,7 +425,7 @@
 
 <script type="text/javascript">
   (function(){
-    var infos = new Object()
+    var infos = new Object();
 
     infos['qq'] ='1458643975';
     infos['mobile'] ='18612621540';
@@ -335,6 +435,6 @@
   })();
 </script>
 
-  </footer>
+
 </body>
 </html>

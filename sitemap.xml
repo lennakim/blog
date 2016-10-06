@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/my-second-hometown/</loc>
+    <lastmod>2016-10-06T15:54:24.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/about/index.html</loc>
+    <lastmod>2016-10-06T13:33:41.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/qing-shan-rang-zai/</loc>
     <lastmod>2016-09-26T15:15:55.000Z</lastmod>
   </url>
@@ -19,16 +29,6 @@
   <url>
     <loc>http://shooter.gl/the-best-farewell/</loc>
     <lastmod>2016-06-20T13:54:18.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
@@ -307,6 +307,11 @@
   </url>
   
   <url>
+    <loc>http://shooter.gl/tech-2015-05-27-how-to-remove-rspec-old-syntax-deprecation-warnings/</loc>
+    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/cloud9-run-telegram-bot/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
@@ -317,12 +322,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/link/index.html</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/about/index.html</loc>
+    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
