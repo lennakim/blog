@@ -43,9 +43,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -74,15 +74,20 @@
   
   <div class="entry">
     
-      <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定義方法 animation-delay-n</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="variable">$n</span>)&#123;</span></span><br><span class="line">  &amp;<span class="pseudo">:nth-child</span>(#&#123;<span class="variable">$n</span>&#125;)&#123;</span><br><span class="line">    <span class="attribute">animation-delay</span><span class="value">: #&#123;<span class="variable">$n</span>*<span class="number">2</span>&#125;s;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">div</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">1</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">3</span>);</span></span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> animation-delay-seconds</span>(<span class="number">5</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>生成的css 如下:</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(1)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">2s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(3)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">6s</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="pseudo">:nth-child(5)</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">animation-delay</span>:<span class="value"> <span class="number">10s</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/20121376/1240067" target="_blank" rel="external">use-nth-child-value-as-a-sass-variable</a></p>
 <p><a href="http://stackoverflow.com/a/3462301/1240067" target="_blank" rel="external">select-every-nth-element-in-css</a></p>
 <p><a href="http://sassmeister.com/" target="_blank" rel="external">sass-meister</a></p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -116,7 +121,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -143,19 +148,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

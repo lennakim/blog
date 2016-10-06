@@ -47,9 +47,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -78,14 +78,19 @@
   
   <div class="entry">
     
-      <p>如图</p>
+      
+
+      
+        <p>如图</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-----------------------+---------+&#10;| Table                 | MB      |&#10;+-----------------------+---------+&#10;| account_versions      | 2752.97 |&#10;| fund_sources          |    0.20 |&#10;| id_documents          |    0.41 |&#10;| identities            |    1.52 |&#10;| members               |    1.52 |&#10;| orders                | 1355.75 |&#10;| partial_trees         |  671.02 |&#10;| payment_addresses     |    1.88 |&#10;| tips                  |    0.02 |&#10;| tokens                |    2.89 |&#10;| trades                |  229.94 |&#10;| two_factors           |    0.48 |&#10;| versions              |   46.08 |&#10;| withdraws             |    1.52 |&#10;+-----------------------+---------+</span><br></pre></td></tr></table></figure>
 <p>sql语句如下:</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SELECT</span> table_name <span class="keyword">AS</span> <span class="string">"Tables"</span>,</span><br><span class="line"><span class="keyword">round</span>(((data_length + index_length) / <span class="number">1024</span> / <span class="number">1024</span>), <span class="number">2</span>) <span class="string">"Size in MB"</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">TABLES</span></span><br><span class="line"><span class="keyword">WHERE</span> table_schema = <span class="string">"&lt;DB_NAME&gt;"</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> (data_length + index_length) <span class="keyword">DESC</span>;</span></span><br></pre></td></tr></table></figure>
 <p>把 DB_NAME替换成需要查询的数据库名即可, 应该只适用于 Mysql / MariaDB.</p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -119,7 +124,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -146,19 +151,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

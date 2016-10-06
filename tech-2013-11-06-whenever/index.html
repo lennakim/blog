@@ -51,9 +51,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -82,7 +82,10 @@
   
   <div class="entry">
     
-      <p><a href="https://github.com/javan/whenever" target="_blank" rel="external">whenever</a></p>
+      
+
+      
+        <p><a href="https://github.com/javan/whenever" target="_blank" rel="external">whenever</a></p>
 <h3 id="安装_运行">安装 运行</h3><p>1 gem “whenever”, “~&gt; 0.8.4”</p>
 <p>2 在命令行输入 <figure class="highlight"><figcaption><span>.```</span></figcaption><table><tr><td class="code"><pre><span class="line">&#10;&#29983;&#25104;config/schedule.rb&#10;&#10;3 &#32534;&#20889; schedule.rb&#10;&#10;```ruby&#10;env :PATH, ENV[&#39;PATH&#39;]&#10;set :output, &#123;:error =&#62; File.join(Whenever.path, &#34;log&#34;, &#34;cron_err.log&#34;), :standard =&#62;File.join(Whenever.path, &#34;log&#34;, &#34;cron_out.log&#34;)&#125;&#10;set :environment, &#39;development&#39;</span><br></pre></td></tr></table></figure></p>
 <p>4 执行</p>
@@ -105,8 +108,10 @@ crontab -r <span class="comment"># 删除某个用户的cron服务</span>
 <p><a href="http://huacnlee.com/blog/create-rails-task-scheduler-by-rake-and-cronjob/" target="_blank" rel="external">Rake + cronjob 创建计划任务</a></p>
 <p><a href="http://railscasts.com/episodes/164-cron-in-ruby" target="_blank" rel="external">164-cron-in-ruby</a></p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -140,7 +145,7 @@ crontab -r <span class="comment"># 删除某个用户的cron服务</span>
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -167,19 +172,6 @@ crontab -r <span class="comment"># 删除某个用户的cron服务</span>
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

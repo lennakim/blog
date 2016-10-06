@@ -51,9 +51,9 @@ def get_client_version  request = Grape::Request.new(env)  headers = request.hea
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -82,11 +82,16 @@ def get_client_version  request = Grape::Request.new(env)  headers = request.hea
   
   <div class="entry">
     
-      <p><a href="https://github.com/intridea/grape" target="_blank" rel="external">grape</a> 是一个方便创建 REST-like APIs的gem.</p>
+      
+
+      
+        <p><a href="https://github.com/intridea/grape" target="_blank" rel="external">grape</a> 是一个方便创建 REST-like APIs的gem.</p>
 <p>client将一些元数据存在header中, 需要从grape中获取header数据, 得到version版本, 直接上代码.</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_client_version</span></span></span><br><span class="line">  request = <span class="constant">Grape::Request</span>.new(env)</span><br><span class="line">  headers = request.headers</span><br><span class="line">  version = headers[<span class="string">'X-Version'</span>].to_s</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+      
     
   </div>
+
   <footer>
     
       
@@ -120,7 +125,7 @@ def get_client_version  request = Grape::Request.new(env)  headers = request.hea
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -147,19 +152,6 @@ def get_client_version  request = Grape::Request.new(env)  headers = request.hea
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

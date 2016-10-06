@@ -47,9 +47,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -78,7 +78,10 @@
   
   <div class="entry">
     
-      <p>其实 alias alias_method 已经把我弄晕了.</p>
+      
+
+      
+        <p>其实 alias alias_method 已经把我弄晕了.</p>
 <h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
 <p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
 <p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
@@ -89,8 +92,10 @@
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
 <h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -124,7 +129,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -151,19 +156,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

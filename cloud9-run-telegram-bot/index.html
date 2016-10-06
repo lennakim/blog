@@ -47,9 +47,9 @@ Cloud9 是什么呢?Cloud9 provides a development environment in the cloud that 
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -78,7 +78,10 @@ Cloud9 是什么呢?Cloud9 provides a development environment in the cloud that 
   
   <div class="entry">
     
-      <p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 是俄罗斯人开发的一款即时聊天工具, 详细的介绍请看 Rei 的 <a href="http://chloerei.com/2015/02/05/telegram/" target="_blank" rel="external">介绍Telegram</a>.</p>
+      
+
+      
+        <p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 是俄罗斯人开发的一款即时聊天工具, 详细的介绍请看 Rei 的 <a href="http://chloerei.com/2015/02/05/telegram/" target="_blank" rel="external">介绍Telegram</a>.</p>
 <p><a href="https://c9.io/" target="_blank" rel="external">Cloud9</a> 是什么呢?<br>Cloud9 provides a development environment in the cloud that allows developers to get started with coding immediately and collaborate with their peers.</p>
 <h3 id="申请_Telegram_Bot">申请 Telegram Bot</h3><p>添加 机器老爹-<a href="https://telegram.me/BotFather" target="_blank" rel="external">BotFather</a><br>输入指令 <code>/newbot</code>, 选好 <code>name</code> 和 <code>username</code> 之后, 老爹会返回一串 Token:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Use this token to access the HTTP API:&#10;161xxxx:xxxx_xxxx-xxxxxx&#10;&#10;For a description of the Bot API, see this page: https://core.telegram.org/bots/api</span><br></pre></td></tr></table></figure>
@@ -93,8 +96,10 @@ Cloud9 是什么呢?Cloud9 provides a development environment in the cloud that 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.getenv(<span class="string">'IP'</span>)</span><br><span class="line">os.getenv(<span class="string">'PORT'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改Flask</span></span><br><span class="line">app.run(host=os.getenv(<span class="string">'IP'</span>), port=int(os.getenv(<span class="string">'PORT'</span>)))</span><br></pre></td></tr></table></figure>
 <h3 id="享用_Robot">享用 Robot</h3><p>访问 <code>&lt;cloud9-url&gt;/set_webhook</code>, 初始化bot, 添加机器人为好友, 发送 <code>/echo /help /photo</code> 试试哦.</p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -128,7 +133,7 @@ Cloud9 是什么呢?Cloud9 provides a development environment in the cloud that 
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -155,19 +160,6 @@ Cloud9 是什么呢?Cloud9 provides a development environment in the cloud that 
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

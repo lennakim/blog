@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -79,16 +79,14 @@
   
   <div class="entry">
     
-      <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
-<h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
-<p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
-<p>2 修改 default_options</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># /config/boot.rb&#10;module Rails&#10;  class Server&#10;    def default_options&#10;      super.merge(Host: &#39;0.0.0.0&#39;, Port: 3000)&#10;    end&#10;  end&#10;end</span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
-<p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
+      
 
+      
+        <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -119,28 +117,14 @@
   
   <div class="entry">
     
-      <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
-<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># centOS&#10;LSB Version:  :core-4.1-amd64:core-4.1-noarch&#10;Distributor ID: CentOS&#10;Description:  CentOS Linux release 7.1.1503 (Core)&#10;Release:  7.1.1503&#10;Codename: Core&#10;&#10;# ubuntu&#10;No LSB modules are available.&#10;Distributor ID: Ubuntu&#10;Description:  Ubuntu 14.04.1 LTS&#10;Release:  14.04&#10;Codename: trusty</span><br></pre></td></tr></table></figure>
-<p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
-<hr>
-<h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
-<p>  在 <strong>ubuntu</strong> 下是交互命令, 会一步步提示你 输入密码, 电话 地址等, 还会创建 home directory, 系统 Shell</p>
-<p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
-<h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
-<h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
-<p>  <strong>centOS</strong><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers&#10;# -r--r-----&#10;&#10;# /etc/sudoers &#22312; root&#29992;&#25143;&#19979; &#27809;&#26377;&#20889;&#26435;&#38480;&#10;&#10;chmod +w /etc/sudoers # &#28155;&#21152;&#20889;&#26435;&#38480;&#10;&#10;sudo vim /etc/sudoers # &#20462;&#25913;&#25991;&#20214;&#10;&#10;# &#25214;&#21040; root ALL=(ALL) ALL, &#22312;&#19979;&#19968;&#34892;&#21152;&#19978;&#10;&#60;username&#62; ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
-<p>  OK, 普通用户也可以之行 sudo 命令了</p>
-<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  ~/.ssh&#10;&#10;vim ~/.ssh/authorized_keys&#10;# &#25226;&#20844;&#38053;&#21152;&#20837;&#21040; authorized_keys &#20013;&#21363;&#21487;</span><br></pre></td></tr></table></figure>
-<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config&#10;&#10;PubkeyAuthentication yes # &#21435;&#25481;&#27880;&#37322;&#10;PasswordAuthentication no # &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;ChallengeResponseAuthentication no #  &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;&#10;# &#37325;&#21551; sshd &#26381;&#21153;&#10;sudo service ssh  restart # ubuntu&#10;sudo service sshd restart # centOS</span><br></pre></td></tr></table></figure>
-<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#23433;&#35013;&#20381;&#36182;&#10;sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel&#10;&#10;# &#23433;&#35013; rvm&#10;curl -L get.rvm.io | bash -s stable&#10;source ~/.bashrc&#10;source ~/.bash_profile&#10;&#10;# &#23433;&#35013; ruby&#10;rvm list known          # &#21015;&#20986;&#24050;&#30693;&#30340; ruby &#29256;&#26412;&#10;rvm install 2.2.2       # &#23433;&#35013; ruby &#29256;&#26412;&#10;rvm use 2.2.0 --default # &#20999;&#25442;&#24182;&#35774;&#32622;&#40664;&#35748;ruby &#29256;&#26412;&#10;&#10;# &#23433;&#35013; bundler rails&#10;gem install -V bundler rails</span><br></pre></td></tr></table></figure>
-<h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
-<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install mysql # &#21482;&#23433;&#35013; mysql-client&#10;&#10;sudo yum install mysql mysql-server # &#23433;&#35013; mysql-client  mysql-server&#10;&#10;sudo  yum install mysql-devel # &#19981;&#23433;&#35013;, gem mysql2 &#26412;&#22320;&#32534;&#35793;&#20986;&#38382;&#39064;</span><br></pre></td></tr></table></figure>
-<p>PS: 在杭州好闷好热啊</p>
+      
 
+      
+        <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -171,11 +155,14 @@
   
   <div class="entry">
     
-      <p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
-<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
+      
 
+      
+        <p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -207,7 +194,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -234,19 +221,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

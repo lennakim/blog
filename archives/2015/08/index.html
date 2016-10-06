@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -79,20 +79,14 @@
   
   <div class="entry">
     
-      <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK&#10;Cache-Control: no-cache&#10;Pragma: no-cache&#10;Content-Length: 1314&#10;Content-Type: text/html; charset=utf-8&#10;Expires: -1&#10;Server: Microsoft-IIS/7.5&#10;X-AspNet-Version: 4.0.30319&#10;p3p: CP=&#34;CAO PSA OUR&#34;&#10;X-Powered-By: ASP.NET&#10;Date: Fri, 28 Aug 2015 15:42:00 GMT</span><br></pre></td></tr></table></figure>
-<p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
-<p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
-<h3 id="安装_more_set_headers_module">安装 more_set_headers module</h3><p>  <code>sudo apt-get install -y nginx-extras</code>,<br>  会安装 <a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="external">more_set_headers</a> module</p>
-<h3 id="设置_nginx-conf_文件">设置 nginx.conf 文件</h3><p>  <code>sudo vim /etc/nginx/nginx.conf</code>, 打开 nginx.conf<br>  在http 结构体中, 加入以下内容:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">more_set_headers &#39;Server: Microsoft-IIS/7.5&#39;;&#10;more_set_headers &#39;X-AspNet-Version: 4.0.30319&#39;;&#10;more_set_headers &#39;X-Powered-By: ASP.NET&#39;;</span><br></pre></td></tr></table></figure>
-<h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
-<h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
-<h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
-<h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
+      
 
+      
+        <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -123,19 +117,14 @@
   
   <div class="entry">
     
-      <p>其实 alias alias_method 已经把我弄晕了.</p>
-<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
-<p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
-<p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
-<p>This is because alias is a keyword and it is lexically scoped. It means it treats self as the value of self at the time the source code was read . In contrast alias_method treats self as the value determined at the run time.</p>
-<h3 id="alias_method_chain">alias_method_chain</h3><p>alias_method_chain 是 <strong>ActiveSupport</strong> 的一个公有实例方法,<br>同样接受两个参数, 可以是符号, 也可以是字符串, 但第1个参数是原始方法,<br>alias_method的第2个参数是原始方法, 晕~.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_with_args</span><span class="params">(*args)</span></span></span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
-<p>其实 alias_method_chain 只是做了个 dsl</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
+      
 
+      
+        <p>其实 alias alias_method 已经把我弄晕了.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -167,7 +156,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -194,19 +183,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

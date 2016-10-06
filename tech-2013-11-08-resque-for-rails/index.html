@@ -63,9 +63,9 @@ require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro"
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -94,7 +94,10 @@ require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro"
   
   <div class="entry">
     
-      <h3 id="准备">准备</h3><p><a href="https://github.com/resque/resque" target="_blank" rel="external">Resque</a> 依赖 <a href="http://redis.io/" target="_blank" rel="external">Redis</a>，<br>请先安装reids数据库。</p>
+      
+
+      
+        <h3 id="准备">准备</h3><p><a href="https://github.com/resque/resque" target="_blank" rel="external">Resque</a> 依赖 <a href="http://redis.io/" target="_blank" rel="external">Redis</a>，<br>请先安装reids数据库。</p>
 <hr>
 <h3 id="安装Resque">安装Resque</h3><pre><code><span class="title">gem</span> <span class="string">"resque"</span>, <span class="string">"~&gt; 1.25.1"</span>
 </code></pre><p>运行 resque-web 会打开 <a href="http://0.0.0.0:5678/overview" target="_blank" rel="external">http://0.0.0.0:5678/overview</a></p>
@@ -113,8 +116,10 @@ require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro"
 <hr>
 <h3 id="定时队列">定时队列</h3><pre><code>gem <span class="string">"resque-scheduler"</span>, <span class="string">"~&gt; 2.0.1"</span>  :<span class="keyword">require</span> =&gt; <span class="string">"resque_scheduler"</span>
 </code></pre>
+      
     
   </div>
+
   <footer>
     
       
@@ -148,7 +153,7 @@ require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro"
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -175,19 +180,6 @@ require &apos;resque/tasks&apos;task &quot;resque:setup&quot; =&amp;gt; :enviro"
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

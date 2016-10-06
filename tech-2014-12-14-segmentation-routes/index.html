@@ -55,9 +55,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -86,7 +86,10 @@
   
   <div class="entry">
     
-      <p>在rails项目中有一个非常重要的文件 <code>routes.rb</code>, 管理rails的请求路径.<br>在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.</p>
+      
+
+      
+        <p>在rails项目中有一个非常重要的文件 <code>routes.rb</code>, 管理rails的请求路径.<br>在随着项目的膨胀, routes.rb 会越来越大, 分割routes会使目录结构更加清晰.</p>
 <hr>
 <p>1 先在 config 下新建 routes 文件夹,<br>2 然后将routes.rb 拆分放到不同的文件夹内,<br>3 再然后加载拆分后的文件, 有两种方式:</p>
 <h4 id="第一种">第一种</h4><p>在 <code>config/routes.rb</code> 中定义 <code>draw</code> Method:</p>
@@ -96,8 +99,10 @@
 <p>如果你的 routes 非常依赖顺序, 需要逐步加载文件</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 逐个加载</span></span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_01.rb"</span>)</span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_02.rb"</span>)</span><br><span class="line">config.paths.config.routes &lt;&lt; <span class="constant">File</span>.join(<span class="constant">Rails</span>.root, <span class="string">"config/routes/routes_03.rb"</span>)</span><br></pre></td></tr></table></figure>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -131,7 +136,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -158,19 +163,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

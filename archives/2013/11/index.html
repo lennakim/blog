@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -79,73 +79,14 @@
   
   <div class="entry">
     
-      <h2 id="为什幺要关注提交信息">为什幺要关注提交信息</h2><ul>
-<li>加快 Reviewing Code 的过程</li>
-<li>帮助我们写好 release note</li>
-<li>5年后帮你快速想起来某个分支，tag 或者 commit 增加了什么功能，改变了哪些代码</li>
-<li><p>让其他的开发者在运行 <figure class="highlight"><figcaption><span>blame``` 的时候想跪谢</span></figcaption><table><tr><td class="code"><pre><span class="line">* &#24635;&#20043;&#19968;&#20010;&#22909;&#30340;&#25552;&#20132;&#20449;&#24687;&#65292;&#20250;&#24110;&#21161;&#20320;&#25552;&#39640;&#39033;&#30446;&#30340;&#25972;&#20307;&#36136;&#37327;&#10;&#10;##&#22522;&#26412;&#35201;&#27714;&#10;&#10;* &#31532;&#19968;&#34892;&#24212;&#35813;&#23569;&#20110;50&#20010;&#23383;&#12290; **&#38543;&#21518;&#26159;&#19968;&#20010;&#31354;&#34892;** &#31532;&#19968;&#34892;&#39064;&#30446;&#20063;&#21487;&#20197;&#20889;&#25104;&#65306;```Fix issue #8976</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>喜欢用 vim 的哥们把下面这行代码加入 <em>.vimrc</em> 文件中，来检查拼写和自动折行</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autocmd Filetype gitcommit setlocal spell textwidth=72</span><br></pre></td></tr></table></figure>
-<ul>
-<li>永远不在 <figure class="highlight"><figcaption><span>commit``` 上增加 ```-m <msg>``` 或 ```--message=<msg>``` 参数，而单独写提交信息</msg></msg></span></figcaption><table><tr><td class="code"><pre><span class="line">&#10;&#19968;&#20010;&#19981;&#22909;&#30340;&#20363;&#23376; ```git commit -m &#34;Fix login bug&#34;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>一个推荐的 commit message 应该是这样：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Redirect user to the requested page after login&#10;&#10;https://trello.com/path/to/relevant/card&#10;&#10;Users were being redirected to the home page after login, which is less&#10;useful than redirecting to the page they had originally requested before&#10;being redirected to the login form.&#10;&#10;* Store requested path in a session variable&#10;* Redirect to the stored location after successfully logging in the user</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注释最好包含一个连接指向你们项目的 issue/story/card。一个完整的连接比一个 issue numbers 更好</li>
-<li>提交信息中包含一个简短的故事，能让别人更容易理解你的项目</li>
-</ul>
-<h2 id="注释要回答如下信息">注释要回答如下信息</h2><p><strong>为什么这次修改是必要的？</strong></p>
-<p>要告诉 Reviewers，你的提交包含什么改变。让他们更容易审核代码和忽略无关的改变。</p>
-<p><strong>如何解决的问题？</strong></p>
-<p>这可不是说技术细节。看下面的两个例子：</p>
-<figure class="highlight"><figcaption><span>a red/black tree to increase search speed```</span></figcaption><table><tr><td class="code"><pre><span class="line">&#10;```Remove &#60;troublesome gem X&#62;, which was causing &#60;specific description of issue introduced by gem&#62;</span><br></pre></td></tr></table></figure>
-<p>如果你的修改特别明显，就可以忽略这个。</p>
-<p><strong>这些变化可能影响哪些地方？</strong></p>
-<p>这是你最需要回答的问题。因为它会帮你你发现在某个 branch 或 commit 中的做了过多的改动。一个提交尽量只做1，2个变化。</p>
-<p>你的团队应该有一个自己的行为规则，规定每个 commit 和 branch 最多能含有多少个功能修改。</p>
-<h2 id="小提示">小提示</h2><ul>
-<li>使用 <em>fix</em>, <em>add</em>, <em>change</em> 而不是 <em>fixed</em>, <em>added</em>, <em>changed</em></li>
-<li>永远别忘了第2行是空行</li>
-<li>用 <em>Line break</em> 来分割提交信息，让它在某些软件里面更容易读</li>
-</ul>
-<h2 id="例子">例子</h2><pre><code>Fix bug <span class="keyword">where</span> user can't signup.
+      
 
-[Bug <span class="comment">#2873942]</span>
-
-Users were unable <span class="keyword">to</span> register <span class="keyword">if</span> they hadn't visited <span class="keyword">the</span> plans
-<span class="keyword">and</span> pricing page because we expected <span class="keyword">that</span> tracking
-information <span class="keyword">to</span> exist <span class="keyword">for</span> <span class="keyword">the</span> logs we create <span class="keyword">after</span> a user
-signs up.  I fixed this <span class="keyword">by</span> adding a check <span class="keyword">to</span> <span class="keyword">the</span> logger
-<span class="keyword">to</span> ensure <span class="keyword">that</span> <span class="keyword">if</span> <span class="keyword">that</span> information was <span class="keyword">not</span> available
-we weren't trying <span class="keyword">to</span> <span class="command">write</span> <span class="keyword">it</span>.
-</code></pre><p><br></p>
-<pre><code>Redirect user <span class="built_in">to</span> <span class="operator">the</span> requested page <span class="keyword">after</span> login
-
-<span class="keyword">https</span>://trello.com/path/<span class="built_in">to</span>/relevant/card
-
-Users were being redirected <span class="built_in">to</span> <span class="operator">the</span> home page <span class="keyword">after</span> login, which is less
-useful than redirecting <span class="built_in">to</span> <span class="operator">the</span> page they had originally requested <span class="keyword">before</span>
-being redirected <span class="built_in">to</span> <span class="operator">the</span> login form.
-
-* Store requested path <span class="operator">in</span> <span class="operator">a</span> session <span class="built_in">variable</span>
-* Redirect <span class="built_in">to</span> <span class="operator">the</span> stored location <span class="keyword">after</span> successfully logging <span class="operator">in</span> <span class="operator">the</span> user
-</code></pre><h2 id="延伸阅读">延伸阅读</h2><ul>
-<li><a href="http://web-design-weekly.com/blog/2013/09/01/a-better-git-commit/" target="_blank" rel="external">A Note About Git Commit Messages</a></li>
-<li><a href="http://ablogaboutcode.com/2011/03/23/proper-git-commit-messages-and-an-elegant-git-history/" target="_blank" rel="external">Writing good commit messages</a></li>
-<li><a href="https://github.com/erlang/otp/wiki/Writing-good-commit-messages" target="_blank" rel="external">Proper Git Commit Messages and an Elegant Git History</a></li>
-<li><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html" target="_blank" rel="external">A Better Git Commit</a></li>
-<li><a href="http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message" target="_blank" rel="external">5 Useful Tips For A Better Commit Message </a></li>
-<li><a href="http://whatthecommit.com/" target="_blank" rel="external">好玩的提交信息</a></li>
-</ul>
-<hr>
-<h2 id="出处">出处</h2><p>文章由 <strong>Victor</strong> 翻译，并发表在<a href="http://ruby-china.org/topics/15737" target="_blank" rel="external">ruby-china</a>上。<br>本人只是伸手党</p>
-
+      
+        <h2 id="为什幺要关注提交信息">为什幺要关注提交信息</h2><ul>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -176,27 +117,14 @@ being redirected <span class="built_in">to</span> <span class="operator">the</sp
   
   <div class="entry">
     
-      <h3 id="准备">准备</h3><p><a href="https://github.com/resque/resque" target="_blank" rel="external">Resque</a> 依赖 <a href="http://redis.io/" target="_blank" rel="external">Redis</a>，<br>请先安装reids数据库。</p>
-<hr>
-<h3 id="安装Resque">安装Resque</h3><pre><code><span class="title">gem</span> <span class="string">"resque"</span>, <span class="string">"~&gt; 1.25.1"</span>
-</code></pre><p>运行 resque-web 会打开 <a href="http://0.0.0.0:5678/overview" target="_blank" rel="external">http://0.0.0.0:5678/overview</a></p>
-<h5 id="创建Rake">创建Rake</h5><p>lib/tasks/resque.rake</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'resque/tasks'</span></span><br><span class="line"></span><br><span class="line">task <span class="string">"resque:setup"</span> =&gt; <span class="symbol">:environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># task "resque:setup" =&gt; :environment do</span></span><br><span class="line"><span class="comment">#   ENV['QUEUE'] = "*"</span></span><br><span class="line"><span class="comment"># end</span></span><br><span class="line"><span class="comment"># 执行 rake resque:work 会启动所有队列</span></span><br></pre></td></tr></table></figure>
-<h5 id="创建任务">创建任务</h5><p>app/workers/resque_job.rb</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResqueJob</span></span></span><br><span class="line">  <span class="variable">@queue</span> = <span class="symbol">:resque_job</span> <span class="comment">#定义队列名称</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">perform</span><span class="params">(u_name)</span> <span class="comment">#必须定义 执行方法体</span></span></span><br><span class="line">    puts <span class="string">"hello <span class="subst">#&#123;u_name&#125;</span>"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h5 id="启动_queue">启动 queue</h5><p>rake resque:work QUEUE=’*’ #启动所有队列</p>
-<p>rake resque:work QUEUE=’resque_job’ #启动队列名称为resque_job的单个队列</p>
-<h5 id="调用_queue">调用 queue</h5><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="constant">Resque</span>.enqueue(<span class="constant">ResqueJob</span>,<span class="string">"everyone"</span>) <span class="comment">#调用队列</span></span><br></pre></td></tr></table></figure>
-<h4 id="项目中查看resque任务">项目中查看resque任务</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">gem <span class="string">"resque"</span>, <span class="string">"~&gt; 1.25.1"</span>, <span class="symbol">:require</span> =&gt; <span class="string">"resque/server"</span></span><br><span class="line">mount <span class="constant">Resque::Server</span>, <span class="symbol">:at</span> =&gt; <span class="string">"/resque"</span> <span class="comment"># routes.rb</span></span><br></pre></td></tr></table></figure>
-<p>访问 <a href="http://0.0.0.0:3000/resque/overview" target="_blank" rel="external">http://0.0.0.0:3000/resque/overview</a></p>
-<h4 id="限制访问">限制访问</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># config/initializers/resque_auth.rb</span></span><br><span class="line"><span class="constant">Resque::Server</span>.use(<span class="constant">Rack::Auth::Basic</span>) <span class="keyword">do</span> |user, password|</span><br><span class="line">  password == <span class="string">"password"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Redis_命令行">Redis 命令行</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-server #Redis&#26381;&#21153;&#22120;&#30340;daemon&#21551;&#21160;&#31243;&#24207;&#10;&#10;redis-cli #Redis&#21629;&#20196;&#34892;&#25805;&#20316;&#24037;&#20855;&#12290;&#24403;&#28982;&#65292;&#20320;&#20063;&#21487;&#20197;&#29992;telnet&#26681;&#25454;&#20854;&#32431;&#25991;&#26412;&#21327;&#35758;&#26469;&#25805;&#20316;&#10;&#10;redis-benchmark #Redis&#24615;&#33021;&#27979;&#35797;&#24037;&#20855;&#65292;&#27979;&#35797;Redis&#22312;&#20320;&#30340;&#31995;&#32479;&#21450;&#20320;&#30340;&#37197;&#32622;&#19979;&#30340;&#35835;&#20889;&#24615;&#33021;&#10;&#10;redis-stat #Redis&#29366;&#24577;&#26816;&#27979;&#24037;&#20855;&#65292;&#21487;&#20197;&#26816;&#27979;Redis&#24403;&#21069;&#29366;&#24577;&#21442;&#25968;&#21450;&#24310;&#36831;&#29366;&#20917;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="定时队列">定时队列</h3><pre><code>gem <span class="string">"resque-scheduler"</span>, <span class="string">"~&gt; 2.0.1"</span>  :<span class="keyword">require</span> =&gt; <span class="string">"resque_scheduler"</span>
-</code></pre>
+      
+
+      
+        <h3 id="准备">准备</h3><p><a href="https://github.com/resque/resque" target="_blank" rel="external">Resque</a> 依赖 <a href="http://redis.io/" target="_blank" rel="external">Redis</a>，<br>请先安装reids数据库。</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -227,31 +155,14 @@ being redirected <span class="built_in">to</span> <span class="operator">the</sp
   
   <div class="entry">
     
-      <p><a href="https://github.com/javan/whenever" target="_blank" rel="external">whenever</a></p>
-<h3 id="安装_运行">安装 运行</h3><p>1 gem “whenever”, “~&gt; 0.8.4”</p>
-<p>2 在命令行输入 <figure class="highlight"><figcaption><span>.```</span></figcaption><table><tr><td class="code"><pre><span class="line">&#10;&#29983;&#25104;config/schedule.rb&#10;&#10;3 &#32534;&#20889; schedule.rb&#10;&#10;```ruby&#10;env :PATH, ENV[&#39;PATH&#39;]&#10;set :output, &#123;:error =&#62; File.join(Whenever.path, &#34;log&#34;, &#34;cron_err.log&#34;), :standard =&#62;File.join(Whenever.path, &#34;log&#34;, &#34;cron_out.log&#34;)&#125;&#10;set :environment, &#39;development&#39;</span><br></pre></td></tr></table></figure></p>
-<p>4 执行</p>
-<pre><code>whenever <span class="comment">#根据schedule.rb 转换成cron语法, 不会写入crontab文件</span>
+      
 
-whenever --update-crontab <span class="comment">#写入crontab文件</span>
-
-whenever -s <span class="literal">environment</span>=development -w ~/minsheng/config/<span class="keyword">schedule</span>.rb
-
-whenever --help
-</code></pre><h3 id="linux_crontab_命令">linux crontab 命令</h3><pre><code>crontab <span class="operator">-l</span> <span class="comment"># 列出某个用户cron服务的详细内容</span>
-crontab <span class="operator">-e</span> <span class="comment"># 修改</span>
-crontab -r <span class="comment"># 删除某个用户的cron服务</span>
-</code></pre><h3 id="schedule-rb_示例">schedule.rb 示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">every 3.hours do&#10;  runner &#34;MyModel.some_process&#34;&#10;  rake &#34;my:rake:task&#34;&#10;  command &#34;/usr/bin/my_great_command&#34;&#10;end&#10;&#10;every 1.day, :at =&#62; &#39;4:30 am&#39; do&#10;  runner &#34;MyModel.task_to_run_at_four_thirty_in_the_morning&#34;&#10;end&#10;&#10;every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot&#10;  runner &#34;SomeModel.ladeeda&#34;&#10;end&#10;&#10;every :sunday, :at =&#62; &#39;12pm&#39; do # Use any day of the week or :weekend, :weekday&#10;  runner &#34;Task.do_something_great&#34;&#10;end&#10;&#10;every &#39;0 0 27-31 * *&#39; do&#10;  command &#34;echo &#39;you can use raw cron syntax too&#39;&#34;&#10;end&#10;&#10;# run this task only on servers with the :app role in Capistrano&#10;# see Capistrano roles section below&#10;every :day, :at =&#62; &#39;12:20am&#39;, :roles =&#62; [:app] do&#10;  rake &#34;app_server:task&#34;&#10;end</span><br></pre></td></tr></table></figure>
-<h3 id="定义自己的工作类型">定义自己的工作类型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">job_type :awesome, &#39;/usr/local/bin/awesome :task :fun_level&#39;&#10;&#10;every 2.hours do&#10;  awesome &#34;party&#34;, :fun_level =&#62; &#34;extreme&#34;&#10;end</span><br></pre></td></tr></table></figure>
-<h3 id="whenever_默认的工作类型与定义">whenever 默认的工作类型与定义</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">job_type :command, &#34;:task :output&#34;&#10;job_type :rake,    &#34;cd :path &#38;&#38; :environment_variable=:environment bundle exec rake :task --silent :output&#34;&#10;job_type :runner,  &#34;cd :path &#38;&#38; script/rails runner -e :environment &#39;:task&#39; :output&#34;&#10;job_type :script,  &#34;cd :path &#38;&#38; :environment_variable=:environment bundle exec script/:task :output&#34;</span><br></pre></td></tr></table></figure>
-<h3 id="RVM_集成">RVM 集成</h3><p>…</p>
-<h3 id="Capistrano_集成">Capistrano 集成</h3><p>…</p>
-<h3 id="资料">资料</h3><p><a href="http://zh.wikipedia.org/wiki/Cron" target="_blank" rel="external">What is Cron</a></p>
-<p><a href="http://huacnlee.com/blog/create-rails-task-scheduler-by-rake-and-cronjob/" target="_blank" rel="external">Rake + cronjob 创建计划任务</a></p>
-<p><a href="http://railscasts.com/episodes/164-cron-in-ruby" target="_blank" rel="external">164-cron-in-ruby</a></p>
-
+      
+        <p><a href="https://github.com/javan/whenever" target="_blank" rel="external">whenever</a></p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -283,7 +194,7 @@ crontab -r <span class="comment"># 删除某个用户的cron服务</span>
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -310,19 +221,6 @@ crontab -r <span class="comment"># 删除某个用户的cron服务</span>
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

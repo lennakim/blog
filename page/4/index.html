@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -77,10 +77,14 @@
   
   <div class="entry">
     
-      <p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /config/application.rb</span></span><br><span class="line"></span><br><span class="line">config.generators <span class="keyword">do</span> |g|</span><br><span class="line">  g.test_framework  <span class="symbol">:rspec</span>, <span class="symbol">fixture:</span> <span class="keyword">false</span></span><br><span class="line">  g.view_specs      <span class="keyword">false</span></span><br><span class="line">  g.helper_specs    <span class="keyword">false</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+        <p>在用rails创建项目的时候, 有时候有生成一些 help_spec view_spec 文件, 在实际项目中这些文件<br>基本不会用到, 可以禁用某些 generators, 不在生成  help_spec view_spec文件.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -111,13 +115,14 @@
   
   <div class="entry">
     
-      <p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  scope <span class="symbol">:recent</span>, -&gt; &#123;order(<span class="symbol">created_at:</span> <span class="symbol">:desc</span>)&#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></span><br><span class="line"></span><br><span class="line">  inherit_resources</span><br><span class="line"></span><br><span class="line">  protected</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">collection</span></span></span><br><span class="line">    end_of_association_chain.recent.page(params[<span class="symbol">:page</span>])</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/questions/21258436/does-kaminari-work-with-inherited-resources" target="_blank" rel="external">Kaminari work with Inherited Resources</a></p>
+      
 
+      
+        <p><a href="https://github.com/josevalim/inherited_resources" target="_blank" rel="external">inherited_resources</a> 可以为controller 自动添加 action.<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">kaminari</a>是常用的分页插件.<br>inherited_resources 默认的 <code>index action</code> 是没有分页功能的, 这是个灾难, 添加以下代码为 index 实现分页.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -148,15 +153,14 @@
   
   <div class="entry">
     
-      <p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
-<h4 id="Git-Remote">Git-Remote</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git remote add &#60;shortname&#62; &#60;url&#62; #&#26032;&#24314;&#36828;&#31243;&#20179;&#24211;&#10;git remote set-url origin &#60;url&#62;&#10;git remote set-branches [--add] &#60;name&#62; &#60;branch&#62;&#10;git remote set-url [--push] &#60;name&#62; &#60;newurl&#62; [&#60;oldurl&#62;]&#10;git remote set-url --add &#60;name&#62; &#60;newurl&#62;&#10;git remote set-url --delete &#60;name&#62; &#60;url&#62;</span><br></pre></td></tr></table></figure>
-<h4 id="Git-Tag">Git-Tag</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">git tag #&#21015;&#20986;&#26631;&#31614;&#10;&#10;git tag v0.1.2-light &#21019;&#24314;&#36731;&#37327;&#26631;&#31614;&#10;&#10;git tag -a v0.1.2 -m &#34;0.1.2 Version&#34; #&#21019;&#24314;&#38468;&#27880;&#26631;&#31614;&#10;&#10;git push origin v0.1.2 # &#23558;v0.1.2&#26631;&#31614;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git push origin &#8211;tags # &#23558;&#26412;&#22320;&#25152;&#26377;&#26631;&#31614;&#19968;&#27425;&#24615;&#25552;&#20132;&#21040;git&#26381;&#21153;&#22120;&#10;&#10;git tag -d v0.1.2 # &#21024;&#38500;&#26631;&#31614;&#10;&#10;git show v0.1.2  # &#29992;git show&#21629;&#20196;&#21487;&#20197;&#26597;&#30475;&#26631;&#31614;&#30340;&#29256;&#26412;&#20449;&#24687;&#10;&#10;git tag -a v0.1.1 9fbc3d0 # &#32473;&#25351;&#23450;&#30340;commit&#25171;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Update_2015-03-10">Update 2015-03-10</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#31227;&#21160;&#20998;&#25903;&#21040;&#26576;&#20010; commit&#10;git branch -f &#60;branch&#62; &#60;commit&#62;&#10;&#10;# github reset br remote head&#10;git reset --hard origin/&#60;br-name&#62;&#10;&#10;#rename git  branch&#10;git branch -m &#60;oldname&#62; &#60;newname&#62;&#10;&#10;# &#20462;&#25913;&#24403;&#21069;&#20998;&#25903;&#10;git branch -m &#60;newname&#62;</span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2><p><a href="http://blog.csdn.net/wangjia55/article/details/8793577" target="_blank" rel="external">http://blog.csdn.net/wangjia55/article/details/8793577</a><br><a href="http://www.cnblogs.com/wang_yb/p/3867221.html" target="_blank" rel="external">http://www.cnblogs.com/wang_yb/p/3867221.html</a></p>
+      
 
+      
+        <p>remote tag的用法总是记不住, 2015-03-10 有更新</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -187,17 +191,14 @@
   
   <div class="entry">
     
-      <p>swift 有一个特别的关键字 — <strong>extension</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">extension Double&#123;&#10;  var km: Double &#123; return self * 1_000.0 &#125;&#10;  var m:  Double &#123; return self &#125;&#10;  var cm: Double &#123; return self / 100.0 &#125;&#10;  var mm: Double &#123; return self / 1_000.0 &#125;&#10;  var ft: Double &#123; return self / 3.28084 &#125;&#10;&#125;&#10;&#10;let oneInch = 25.4.mm&#10;println(&#34;One inch is \(oneInch) meters&#34;)&#10;&#10;let aMarathon = 42.km + 195.m&#10;println(&#34;Amarathon is \(aMarathon) meters long&#34;)</span><br></pre></td></tr></table></figure>
-<p>马上想到的是 ruby monkey-patch</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">seconds</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">minutes</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">days</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>*<span class="number">60</span>*<span class="number">60</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">############</span></span><br><span class="line"><span class="number">5</span>.seconds</span><br><span class="line"><span class="number">2</span>.minutes</span><br><span class="line"><span class="number">1</span>.days</span><br></pre></td></tr></table></figure>
-<hr>
-<p>在ios的例子中 <a href="https://github.com/liuningtw/ruby-china_ios/blob/master/ruby-china_ios/ViewControllerExtension.swift" target="_blank" rel="external">ViewControllerExtensions</a> 扩展ViewController, 继承 <strong>UITableViewDataSource</strong> , 并实现 <strong>protocol</strong> ,</p>
-<p>类似ruby中用 module 扩展class.</p>
-<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/tonny_guan/article/details/36198911" target="_blank" rel="external">Swift扩展-Extension</a></p>
+      
 
+      
+        <p>swift 有一个特别的关键字 — <strong>extension</strong></p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -228,11 +229,14 @@
   
   <div class="entry">
     
-      <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
-<h3 id="参考">参考</h3><p><a href="http://www.swiftmi.com/topic/50.html" target="_blank" rel="external">C#与Swift的函数比较</a></p>
+      
 
+      
+        <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#10;// &#27809;&#26377;&#36820;&#22238;&#20540;&#30340;&#26080;&#21442;&#20989;&#25968;&#10;func sayHello() &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#36820;&#22238; string &#31867;&#22411;&#10;func sayHello() -&#62; String &#123;&#10;  return &#34;Hi, shooter!&#34;&#10;&#125;&#10;&#10;// &#19968;&#20010;&#21442;&#25968;&#10;func sayHello(name: String) -&#62; String &#123;&#10;  // do something&#10;&#125;&#10;&#10;// &#22810;&#20010;&#21442;&#25968;&#10;func sayHello(name: String, age: Int) -&#62; String &#123;&#10;  return &#34;Hi, \(name), age is \(age)!&#34;&#10;&#125;&#10;&#10;// &#21442;&#25968;&#40664;&#35748;&#20540;&#10;func combineName(firstName: String, lastName: String, separator: String = &#34;-&#34;) &#123;&#10;    return firstName + separator + lastName&#10;&#125;&#10;&#10;// &#21487;&#21464;&#21442;&#25968;&#10;func add(numbers: Int...) -&#62; Int &#123;&#10;  var total = 0&#10;  for i in numbers &#123;&#10;    total += i&#10;  &#125;&#10;&#10;  return total&#10;&#125;&#10;&#10;// &#20989;&#25968;&#21442;&#25968;&#21035;&#21517;&#10;func combineName(firstName first: String, lastName last: String) &#123;&#10;    // accessing the parameters can be done by referencing&#10;    // &#34;first&#34; and &#34;last&#34; respectively&#10;    return first + &#34; &#34; + last;&#10;&#125;&#10;&#10;var fullName = combineName(firstName: &#34;Steve&#34;, lastName: &#34;Wozniak&#34;)</span><br></pre></td></tr></table></figure>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -263,17 +267,14 @@
   
   <div class="entry">
     
-      <p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
-<p>1 输入完成, 点击某个按钮的时候关闭键盘, 只需要在这个按钮事件调用输入框的 resignFirstResponder</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">@IBAction func okTapped(sender: AnyObject) &#123;&#10;  nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>2 当手指离开屏幕的时候 关闭键盘, 需要重写touchesEnded</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;  nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>源码地址 <a href="https://github.com/liuningtw/keyboard-resignFirstResponder/blob/master/keyboard-resignFirstResponder/ViewController.swift" target="_blank" rel="external">ViewController.swift</a></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">import UIKit&#10;&#10;class ViewController: UIViewController &#123;&#10;&#10;  @IBOutlet weak var nameTxt: UITextField! //&#23450;&#20041;&#36755;&#20837;&#26694;&#10;  @IBOutlet weak var resultLab: UILabel! //&#23450;&#20041;&#26174;&#31034;&#26694;&#10;&#10;  override func viewDidLoad() &#123;&#10;    super.viewDidLoad()&#10;    nameTxt.placeholder = &#34;&#37049;&#20521;&#38639;&#34;&#10;  &#125;&#10;&#10;  override func didReceiveMemoryWarning() &#123;&#10;    super.didReceiveMemoryWarning()&#10;  &#125;&#10;&#10;  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) &#123;&#10;    nameTxt.resignFirstResponder() //&#24403;&#25163;&#25351;&#31163;&#24320;&#23631;&#24149; &#20851;&#38381;&#38190;&#30424;&#10;  &#125;&#10;&#10;  @IBAction func okTapped(sender: AnyObject) &#123;&#10;    nameTxt.resignFirstResponder() //&#35302;&#21457;okTapped&#25353;&#38062;&#30340;&#20107;&#20214; &#20851;&#38381;&#38190;&#30424;&#10;&#10;    resultLab.text = &#34;hi, \(nameTxt.text)&#34;&#10;  &#125;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
 
+      
+        <p>ios应用在很多时候需要关闭键盘, 记录2种方式.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -304,16 +305,14 @@
   
   <div class="entry">
     
-      <p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
-<p>2015算是回归年, 回归的一个意思嘛, 见到了很多许久没见的朋友,<br>从北京 -&gt; 秦皇岛 -&gt; 石家庄 -&gt; 老家 -&gt; 北京, 溜达一圈, 每到一个地方,<br>就跟很多年没见的同学 朋友聚了一次, 最久的从06年就没再见过, 最短的从09年也没怎么联系了.</p>
-<p>回归的另一个意思是, 在工作上重新开始, 跨界从零开始学ios,<br>像11年那样, 放弃java, 一头扎进rails, 从一个陌生的领域重新起步.</p>
-<p>中间有个小插曲: 在石家庄的时候, 我看完电影, 钱包被偷了, 身份证 银行卡 信用卡 通通没了.<br>以为本命年的晦气过去了, 结果年来了个神补刀.<br>不得已回老家, 呆了几天, 本打算想去杭州, 结果钱包这事儿一搅和, 不去了.<br>在老家的这几天, 终于下定决心, 去朋友呆的公司工作, 跟他一起从零开始学习ios.</p>
-<hr>
-<h4 id="Update_2015-03-15">Update 2015-03-15</h4><p>在14年除夕这天, 我曾丢钱包的那家影院的老板娘告诉我: 钱包找到了, 钱包卡在了椅子的缝隙里.<br>估计是我不小心, 钱包从口袋里掉了出来, 卡在了这里, 当时在地上找了半天, 徒劳无功, 还以为被人偷走了。<br><strong>太感谢那位老板娘了</strong>.</p>
-<p>回归又多了层含义: 是不是运气开始好转呢?</p>
+      
 
+      
+        <p>自从去年12月底辞职, 休息了很长时间, 今天开始新的工作, 从rails跨界到ios, 从零学习ios.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -344,17 +343,14 @@
   
   <div class="entry">
     
-      <p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.org/wiki/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6" target="_blank" rel="external">燕大</a>, 到了燕大的第一感觉, 这里好大啊, 比清华大多了.<br>peter说: 燕大有5000多亩, 要是夏天来这里, 在校园里骑着自行车, 可劲的骑吧, 骑不出去,<br>而且夏天秦皇岛比北京凉快的多, 很适合骑行. 来的不是时候啊.</p>
-<p>peter家里养了一只猫, 还有一只狗, 猫特别的漂亮, 很傲娇的. 看喵高歌一曲</p>
-<p><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_1.jpg" alt=""><br><img src="http://7sbqv9.com1.z0.glb.clouddn.com/miao_2.jpg" alt=""></p>
-<p>狗呢, 真的是人模狗样, 会打呼噜, 咂巴嘴, 会委屈. 有时候吃饭的时候, 它在饭桌地下, 小呼噜就打起来了,<br>把它弄醒, 眼神懒懒的, 眼皮还泛着一点儿粉红, <strong>这厮投胎前一定是个人.</strong><br>跟我是特别亲, 老是在我脚边晃悠, 咬我的裤子. 早上我还没起来, 它就跑到我跟前,<br>“汪汪” 的叫唤. <strong>可能我上辈子是个狗</strong>, 狗缘不错.<br>听peter说, 这狗是他捡来的, 觉得这狗特别, 就把它养家里了.</p>
-<p>然后, 跟在秦皇岛的童鞋见了一面, 他从09年到秦皇岛上大学, 一直呆到现在.<br>我在北京也呆了这么长的时间, 呆的有些腻了. 我们在星巴克得瑟了一下午, 心情相当不错啊.<br>晚上, 自己看了场电影『博物馆奇妙夜』, 好吧, 以后不看这系列的电影了.<br>这叫<strong>择一座城市, 看一场电影</strong>, 嘿嘿.</p>
-<p>前几天, 朋友们说,北京下雪, 晚上就梦到了北京, <strong>日久他乡是故乡, 梦到了久居的他乡</strong>.<br>这个生活了5年的城市, 当我离开了, 还真有点不习惯.</p>
-<p>01-16从秦皇岛去石家庄看老叔, 好久没看他了. 走之前, 秦皇岛下雪了,<br>薄薄的一层, 踩在雪上, 咯吱咯吱响, 这个冬天终于看到雪了.</p>
-<p>非常感谢 peter跟bill的盛情款待 ^_^</p>
+      
 
+      
+        <p>01-11我从北京去了秦皇岛, 找<a href="https://github.com/happypeter" target="_blank" rel="external">peter</a>散心. peter住在<a href="http://zh.wikipedia.org/wiki/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6" target="_blank" rel="external">燕大</a>, 到了燕大的第一感觉, 这里好大啊, 比清华大多了.<br>peter说: 燕大有5000多亩, 要是夏天来这里, 在校园里骑着自行车, 可劲的骑吧, 骑不出去,<br>而且夏天秦皇岛比北京凉快的多, 很适合骑行. 来的不是时候啊.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -385,28 +381,14 @@
   
   <div class="entry">
     
-      <p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
-<h3 id="小学到高中只顾着学习了,_进了大学以后会怎么样?">小学到高中只顾着学习了, 进了大学以后会怎么样?</h3><p>美国心理学家 埃里克-埃里克森(Erik Erikson) 创造了一套名叫<br>人格的社会心理发展理论(Psychosocial development across the life span),<br>把人这一生的心理发展分为八个阶段，其中每一个阶段都有自己的矛盾和对峙状态,<br>只有矛盾顺利解决, 人的心理才能向下一阶段健康发展.</p>
-<p><strong>题目中问道, 如果小孩从 6 岁至 18 岁,即小学到高中期间,如果除了学业没有思考过其他的问题会在大学面临哪些思想问题.</strong><br>在埃里克森的理论中, 这一段 12 年的时间被划分成了两个心里阶段:<br>其中 <strong>6至12岁, 是勤奋对自卑阶段(Industry vs Inferiority)</strong>;<br><strong>从12岁到18岁, 是同一性对混乱阶段(Identity vs Role Confusion)</strong>.</p>
-<p>这两个阶段, 对于人的心理发展是至关重要的.</p>
-<p>在勤奋对自卑阶段中, 儿童学习各种必要的谋生技能,以及能使他们成为社会生产者所具备的专业技巧.<br>实际上, 一般人6至12岁的时间都是在小学中读过的.<br>如埃里克森所说,<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#20799;&#31461;&#22312;&#36825;&#19968;&#38454;&#27573;&#25152;&#23398;&#30340;&#26368;&#37325;&#35201;&#30340;&#35838;&#31243;&#26159;&#8220;&#20307;&#39564;&#20197;&#31283;&#23450;&#30340;&#27880;&#24847;&#21644;&#23388;&#23388;&#19981;&#20518;&#30340;&#21220;&#22859;&#26469;&#23436;&#25104;&#24037;&#20316;&#30340;&#20048;&#36259;&#8221;.&#10;&#21363;&#21162;&#21147;&#30340;&#23398;&#20064;&#35838;&#26412;&#19978;&#30340;&#30693;&#35782;&#21644;&#23581;&#35797;&#30528;&#24320;&#22987;&#20154;&#38469;&#20132;&#24448;.&#22914;&#26524;&#22312;&#36825;&#19968;&#38454;&#27573;&#21482;&#27880;&#24847;&#23398;&#20064;&#21364;&#19981;&#20851;&#27880;&#20854;&#20182;, &#20250;&#21457;&#29983;&#20160;&#20040;&#20107;&#21602;?</span><br></pre></td></tr></table></figure></p>
-<p>首先, 如果孩子尝试努力,却在成绩和社交上仍然不尽人意,<br>那么他们就会产生一种面对成功人士的自卑感,这种消极情绪会伴随终生;<br>但如果孩子 通过勤奋获得了巨大的成功, 那他们还会面临一种危险, 即过分重视他们的工作能力<br>所带来的地位, 成为工作至上的工作狂, 对这样的人说来,工作就是生活.<br>他们高看工作所能带来的成就,因而会忽视人类生存的其它重要方面, 比如停下来<br>思考生活里细微的小事, 以及给予身边的人爱与温暖.</p>
-<p>用埃里克森的话来说,<br>如果他把工作作为他唯一的义务, 把某种工作作为唯一有价值的标准, 那么他也许<br>会成为一位因循守旧的人, 成为他自己的技术和可能利用他的技术的那些人的毫无思想的奴仆.<br>如果孩子在这一阶段获得的勤奋感胜过自卑感, 他们就会带着获得的能力离开这个阶段.<br><strong>与此同时, 埃里克森还说, 使孩子获得能力的是关爱和温暖, 使孩子获得自卑的是人生中重要人物的冷漠嘲笑.</strong><br>如果如题主所说的喂辣椒让孩子醒来写作业, 明显就是后者的体现啊.</p>
-<p>接下来就是12-18岁的同一性对混乱阶段. 所谓的“同一性”,根据埃里克森的定义,<br><strong>即一种对自身熟悉的感觉,  一种知道个人未来目标的感觉, 一种从他信赖的人们中获得所期待的认可的内在自信.</strong></p>
-<p>简而言之, “同一性”其实就是对自我的一个统一认知, 即完整的 self-indentity.<br>这个认知的来源来自外部环境, 来自周围的人, 来自自己能力的评价,<br>来自对未来的预期, 更重要的是来自自我的内心.<br>有一个答案提到了所谓“中国保安门卫哲学家经典三问”,因为关乎同一性阶段的<br>自我认知 无非就三个问题: “我是谁”“我是什么样的人” “我未来要做什么”</p>
-<p>埃里克森说,这是这一阶段年轻人们主要思考的问题:<br>拥有同一性的自我认知,实际上就是外部对自己的认识和自己对自我的认识相符合;<br>如果不相符,或者对这些问题没有一个清醒的认识,那么青年人很容易就会无法从这一阶段走出,<br>反而陷入一种角色混乱, 也就是很多青年人步入大学之后陷入迷茫期的事实.</p>
-<p>埃里克森接着建议到, 如果青年人在这一阶段陷入了角色混乱,那么他最终很可能选择消极同一性, 借此来抵抗自身的角色混乱.<br>所谓的“消极同一性”, 即一些极端的恶劣行为, 比如正常的学生突然开始翘课,<br>开始抽烟酗酒, 赌博打架, 让人生彻底沉沦.</p>
-<p>对于这种“不成仙便成魔”的心态, 埃里克森的解释是:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#23425;&#21487;&#25104;&#20026;&#19968;&#20010;&#26080;&#21517;&#23567;&#21330;, &#25110;&#32773;&#25104;&#20026;&#33261;&#21517;&#26157;&#33879;&#30340;&#22823;&#20154;&#29289;, &#25110;&#32773;&#25104;&#20026;&#26576;&#20010;&#30340;&#30830;&#24050;&#32463;&#27515;&#20102;&#30340;&#20154;&#8212;&#8212;&#24635;&#20043;,&#23427;&#20204;&#26159;&#32463;&#36807;&#33258;&#30001;&#36873;&#25321;&#30340;&#35282;&#33394;&#8212;&#8212;&#32780;&#19981;&#24895;&#24847;&#25104;&#20026;&#19968;&#20010;&#19981;&#22826;&#35937;&#26679;&#30340;&#20154;.</span><br></pre></td></tr></table></figure>
-<p>很明显,诸多年轻人进入大学阶段突然开始迷茫,找不准生活方向的原因,就是因为对自己没有一个<br>清醒且积极的自我认知,或者理想自我和他人审视的自我出现了偏差,并且陷入了角色混乱.</p>
-<p>如果不给 12-18 岁的年轻人时间让他们好好思考这些问题,他们就不会走出这一阶段, 从而进入了无限延长了的心理的合法延续期,这对于他们的人生是致命的.<br>因为他们轻则在往后的生活里会轻易放弃责任, 重则出现一些极端性的行为.</p>
-<!--
-### PS
-在16岁开始爆发 "我是谁" "我以后要做什么" 的想法, 不知道为什么来的如此激烈, 感觉自己是那么的不可理喻.
-我心有戚戚焉啊.
--->
+      
+
+      
+        <p>转载 <a href="http://daily.zhihu.com/story/4370616" target="_blank" rel="external">知乎日报</a></p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -437,13 +419,14 @@
   
   <div class="entry">
     
-      <p>Mac os 运行一个rails项目, 经常有找不到 mysql socket文件的问题, 在stackoverflow上<br>找到了解决办法 — <a href="http://stackoverflow.com/questions/748478/cannot-find-mysql-sock" target="_blank" rel="external">cannot-find-mysql-sock</a> .</p>
-<p>于是发现一个灰常简单的的命令 <strong>mysql_config —socket</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql_config --socket&#10;&#10;=&#62; /tmp/mysql.sock</span><br></pre></td></tr></table></figure>
-<p>迎刃而解, 只是感觉这个命令太偏门了.</p>
+      
 
+      
+        <p>Mac os 运行一个rails项目, 经常有找不到 mysql socket文件的问题, 在stackoverflow上<br>找到了解决办法 — <a href="http://stackoverflow.com/questions/748478/cannot-find-mysql-sock" target="_blank" rel="external">cannot-find-mysql-sock</a> .</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -479,7 +462,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -506,19 +489,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

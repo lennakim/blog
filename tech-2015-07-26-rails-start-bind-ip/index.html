@@ -51,9 +51,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -82,7 +82,10 @@
   
   <div class="entry">
     
-      <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
+      
+
+      
+        <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
 <h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
 <p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
 <p>2 修改 default_options</p>
@@ -90,8 +93,10 @@
 <h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
 <p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -125,7 +130,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -152,19 +157,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

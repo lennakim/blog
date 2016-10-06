@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -79,22 +79,14 @@
   
   <div class="entry">
     
-      <p>遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，<br>ruby 环境也没有安装。一番捣鼓，步骤如下:</p>
-<p><strong>没有找到离线安装rvm的方法 而且 linux版本为CentOS 5.6</strong></p>
-<h3 id="下载源文件">下载源文件</h3><p><a href="http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz" target="_blank" rel="external">ruby-1.9.3-p327</a></p>
-<p><a href="http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz" target="_blank" rel="external">yaml-0.1.4.tar.gz</a></p>
-<p><a href="http://rubygems.org/downloads/bundler-1.2.3.gem" target="_blank" rel="external">bundler-1.2.3</a></p>
-<h3 id="本地服务器">本地服务器</h3><h4 id="打包_rails_app">打包 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bundle package&#10;#&#33509;&#25552;&#31034;&#27809;&#26377;,&#23433;&#35013;bundler&#24182;&#37325;&#22797;&#20197;&#19978;&#27493;&#39588;&#10;$ gem install bundler&#10;$ bundle package # &#23558;&#39033;&#30446;&#25152;&#38656;&#35201;&#30340;gem&#22797;&#21046;&#21040; vendor/cache&#10;$ tar -czf   railsApp.tar.gz   railsApp #&#21387;&#32553;&#25171;&#21253;</span><br></pre></td></tr></table></figure>
-<h3 id="远程服务器">远程服务器</h3><h4 id="首先安装_yaml-0-1-4-tar-gz，再安装ruby"><strong>首先安装 yaml-0.1.4.tar.gz，再安装ruby</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar &#8211;xzvf  yaml-0.1.4.tar.gz&#10;$ ./configure&#10;$ make&#10;$ make install</span><br></pre></td></tr></table></figure>
-<h4 id="安装ruby">安装ruby</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  ruby-1.9.3-p327.tar.gz&#10;$ cd ruby-1.9.3-p327&#10;$ ./configure&#10;$ make&#10;$ make install&#10;$ ruby -v   #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;&#10;$ gem -v    #gem&#24050;&#32463;&#23433;&#35013;</span><br></pre></td></tr></table></figure>
-<h4 id="本地安装bundler">本地安装bundler</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem install  bundler-1.2.3.gem&#10;$ bundle -v  #&#25552;&#31034;&#21363;&#23433;&#35013;&#25104;&#21151;</span><br></pre></td></tr></table></figure>
-<h4 id="部署_rails_app">部署 rails app</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar  -xzvf  railsApp.tar.gz&#10;$ cd railsApp&#10;$ bundle install --local  #&#26412;&#22320;&#23433;&#35013;gem</span><br></pre></td></tr></table></figure>
-<p><strong>注意修改配置文件</strong></p>
-<pre><code><span class="variable">$ </span>rails s  <span class="comment">#测试运行</span>
-</code></pre><p> <a href="https://gist.github.com/4274057" target="_blank" rel="external">分享在gist上</a></p>
+      
 
+      
+        <p>遇到了这么个小问题，需要把完成的railsApp打包到CentOS上，而且服务器不能联网，<br>ruby 环境也没有安装。一番捣鼓，步骤如下:</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -125,27 +117,14 @@
   
   <div class="entry">
     
-      <p>当我还在2011憧憬2012的时候，它走到了末尾，迎来了2013，时间走的好快。</p>
-<p>~~说好的末日没有来，爱情也木来 ~~</p>
-<p>换了新的工作，换了新的同事。</p>
-<p>自从11年11月份接触ruby，至今也有1年多了。感觉进步不是很快，一直是一个人摸爬滚打，<br>没有真正的引路人。</p>
-<h2 id="To_Do_List">To Do List</h2><h3 id="Rails">Rails</h3><p>Rails测试框架<br>基本定性在已 RSpec+factory_girl为基础的测试框架，以后逐步添加其他gem。<br>测试效率，覆盖率，自动程度，学习难度，这几个方面考虑。</p>
-<h3 id="Git">Git</h3><p>这么潮的版本控制工具，不用实在不是我性格。<br>等比对了Git跟svn的优缺点，我就要转型了。</p>
-<h3 id="论坛">论坛</h3><p>计划推迟了很长时间</p>
-<h3 id="提高英语水平">提高英语水平</h3><p>感觉我的水平就停留在了初中人教版，看这么多文档，费时费力，懂英语会走的更远。</p>
-<h3 id="Python">Python</h3><p>python算是ruby的兄弟语言。虽没有ruby那么灵活，但运行速度快，跨平台性好。<br>GUI方面比ruby强了很多。java语法太琐碎了，概念性的东西一大堆。</p>
-<h3 id="mac_mini">mac mini</h3><p>虽然在ubuntu基本可以胜任，但在GUI方面还是mac支持的不错。<br>公司也不提供工作的电脑，整天扛着笔记本挤地铁，有些痛苦。<br>到时候可以研究下ios，当作副业，开发个app，弄点小钱也不错。</p>
-<h3 id="ruby_on_arduino">ruby on arduino</h3><p>看见别人分享的ppt，感觉很新奇，很潮。<br>软件跟硬件打交道，这是最能直观体现软件价值功能的地方了。</p>
-<p>arduino在<a href="http://arduino.tw/" target="_blank" rel="external">tw</a>很火。</p>
-<p><a href="http://zh.wikipedia.org/wiki/Arduino" target="_blank" rel="external">中文wiki</a></p>
-<p><a href="http://www.arduino.cc/" target="_blank" rel="external">arduino官网</a></p>
-<h3 id="多赚钱">多赚钱</h3><p>money才是王道啊</p>
-<hr>
-<p>补录: 这本是在13年1月1号发出来的，竟然拖到了13年12月21号。</p>
-<p>我在13年12月20号整理了blog，当天晚上外祖父突然去世，愿您安息！</p>
+      
 
+      
+        <p>当我还在2011憧憬2012的时候，它走到了末尾，迎来了2013，时间走的好快。</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -177,7 +156,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -204,19 +183,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

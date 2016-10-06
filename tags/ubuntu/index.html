@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -79,36 +79,14 @@
   
   <div class="entry">
     
-      <p> <a href="http://www.ubuntu.com/" target="_blank" rel="external">Ubuntu 12.04</a> 出来有段时间了，一直没有更新，本想从11.10的系统<br> 直接升级，结果脆生生挂掉了，好多东西拿不出来了。杯具，重装吧！</p>
-<p> 主要是 ruby on rails 和它相关联的在 ubuntu 上的安装配置。<br> 包括 <a href="https://rvm.io/" target="_blank" rel="external">rvm</a> , ruby on rails, Sublime Text,<br> <a href="http://www.modrails.com/" target="_blank" rel="external">passenger</a>, <a href="http://wiki.nginx.org/Main" target="_blank" rel="external">nginx</a>,<br> <a href="http://www.mongodb.org/" target="_blank" rel="external">mongodb</a>, <a href="http://redis.io/" target="_blank" rel="external">redis</a> 的安装，<br> 顺便把 <a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 也装上，当作汇总了。</p>
-<h2 id="安装Ubuntu_12-04">安装Ubuntu 12-04</h2><p>首先准备好12.04的 iso 镜像，需要先从官网下载，我是把iso文件写入U盘后安装的。<br>从10.10以后，用 UltraISO 制作出来的 Ubuntu 启动盘会出现无法启动的现象，有人说 ImageWriter 很靠谱，<br>先用了<a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe" target="_blank" rel="external">ImageWriter</a>，<br>不过我的本本提示没有写入权限，所以找到了<a href="https://launchpad.net/win32-image-writer/" target="_blank" rel="external">另一个版本</a>，<br> 顺利写入。然后插上U盘，重启，设置从U盘启动，基本一路 next，结果手欠，装成E文的系统了。</p>
-<h3 id="安装配置">安装配置</h3><h4 id="中文输入"><strong>中文输入</strong></h4><p>12.04 的中文输入是个大问题， 即使能输入中文，在低版本的 Sublime Text 中也不能输入中文，<br>好在 <strong>dev版本在其他输入法下</strong> 已经ok了。</p>
-<h4 id="安装_Ruby_On_Rails"><strong>安装 Ruby On Rails</strong></h4><p>先安装一些 ruby on rails 的依赖包，听前辈们的话不会错。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev</span><br></pre></td></tr></table></figure>
-<p><strong>No.1 安装 RVM</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl -L get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure></p>
-<p> 给 ~/.bashrc (Ubuntu) 加上脚本引用</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &#39;[[ -s &#34; HOME/.rvm/scripts/rvm&#34; ]] &#38;&#38; source &#34; HOME/.rvm/scripts/rvm&#34;&#39; &#62;&#62; ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p> 然后，重新载入那个文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>测试一下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm -v&#10;rvm 1.15.5 (stable) by Wayne E. Seguin &#60;wayneeseguin@gmail.com&#62;, Michal Papis &#60;mpapis@gmail.com&#62; [https://rvm.io/]</span><br></pre></td></tr></table></figure>
-<p><strong>No.2  用 RVM 安装 Ruby 环境</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm list known #&#26174;&#31034;&#21487;&#20379;&#36873;&#25321;&#30340;&#29256;&#26412;&#10;&#10;[ruby-]1.8.6[-p420]&#10;[ruby-]1.8.7[-p370]&#10;[ruby-]1.9.1[-p431]&#10;[ruby-]1.9.2-p180&#10;[ruby-]1.9.2-p290&#10;[ruby-]1.9.2-p318&#10;[ruby-]1.9.2[-p320]&#10;[ruby-]1.9.2-head&#10;[ruby-]1.9.3-preview1&#10;[ruby-]1.9.3-rc1&#10;[ruby-]1.9.3-p0&#10;[ruby-]1.9.3-p125&#10;[ruby-]1.9.3[-p194]&#10;[ruby-]1.9.3-head&#10;ruby-head&#10;......&#10;&#10;# &#35201;&#23433;&#35013;1.9.3&#65292;&#30452;&#25509;&#10;$ rvm install 1.9.3</span><br></pre></td></tr></table></figure>
-<p>……………… 漫长的的等待 ………………</p>
-<p>Ruby 装好以后，通过 RVM 将指定版本的 Ruby 设置为系统默认版本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ rvm  1.9.3 --default</span><br></pre></td></tr></table></figure>
-<p>测试一下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ruby -v&#10;ruby 1.9.3p194 (2012-04-20 revision 35410) [i686-linux]&#10;$ gem -v&#10;1.8.23</span><br></pre></td></tr></table></figure>
-<p><strong>No.3 安装 Rails 环境</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ gem install bundler rails</span><br></pre></td></tr></table></figure>
-<p>测试一下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bundle -v&#10;Bundler version 1.1.5&#10;$ rails -v&#10;Rails 3.2.8</span><br></pre></td></tr></table></figure>
-<p> ruby on rails 的安装齐活了。</p>
-<h4 id="安装_Sublime_Text"><strong>安装 Sublime Text</strong></h4><p>由于<strong>输入汉字</strong>原因，安装 Sublime Text 的dev版本，就是比较新的。<br>先 google 一下 Sublime Text 的ppa源，好吧，ppa暂且是什么先不管。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:webupd8team/sublime-text-2&#10;$ sudo apt-get update # &#26356;&#26032;&#36719;&#20214;&#28304;&#10;$ sudo apt-get install sublime-text-dev</span><br></pre></td></tr></table></figure>
+      
 
+      
+        <p> <a href="http://www.ubuntu.com/" target="_blank" rel="external">Ubuntu 12.04</a> 出来有段时间了，一直没有更新，本想从11.10的系统<br> 直接升级，结果脆生生挂掉了，好多东西拿不出来了。杯具，重装吧！</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -140,7 +118,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -167,19 +145,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

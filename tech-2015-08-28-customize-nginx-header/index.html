@@ -47,9 +47,9 @@ HTTP/1.1 200 OK&amp;#10;Cache-Control: no-cache&amp;#10;Pragma: no-cache&amp;#10
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -78,7 +78,10 @@ HTTP/1.1 200 OK&amp;#10;Cache-Control: no-cache&amp;#10;Pragma: no-cache&amp;#10
   
   <div class="entry">
     
-      <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+      
+
+      
+        <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK&#10;Cache-Control: no-cache&#10;Pragma: no-cache&#10;Content-Length: 1314&#10;Content-Type: text/html; charset=utf-8&#10;Expires: -1&#10;Server: Microsoft-IIS/7.5&#10;X-AspNet-Version: 4.0.30319&#10;p3p: CP=&#34;CAO PSA OUR&#34;&#10;X-Powered-By: ASP.NET&#10;Date: Fri, 28 Aug 2015 15:42:00 GMT</span><br></pre></td></tr></table></figure>
 <p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
 <p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
@@ -90,8 +93,10 @@ HTTP/1.1 200 OK&amp;#10;Cache-Control: no-cache&amp;#10;Pragma: no-cache&amp;#10
 <h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
 <h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
 
+      
     
   </div>
+
   <footer>
     
       
@@ -125,7 +130,7 @@ HTTP/1.1 200 OK&amp;#10;Cache-Control: no-cache&amp;#10;Pragma: no-cache&amp;#10
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -152,19 +157,6 @@ HTTP/1.1 200 OK&amp;#10;Cache-Control: no-cache&amp;#10;Pragma: no-cache&amp;#10
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>

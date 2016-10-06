@@ -40,9 +40,9 @@
   <nav class="nav">
     <ul>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
       
       
         <li><a href="/atom.xml">RSS</a></li>
@@ -77,11 +77,14 @@
   
   <div class="entry">
     
-      <p>千里迢迢从北京到深圳参加2015年的rubyconf, 见到了 rei, 华顺.</p>
-<p>三大版主终于都认识了,</p>
+      
 
+      
+        <p>千里迢迢从北京到深圳参加2015年的rubyconf, 见到了 rei, 华顺.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -112,13 +115,14 @@
   
   <div class="entry">
     
-      <p>从朋友那里领养了一只猫咪, 他嫌猫咪太闹腾, 搅和的他严重的睡眠不足, 哈哈.</p>
-<p>给它取名叫做卢比, 之前想了很多名: 弯弯 弯仔 铁锤妹妹 雪碧 十一 Tom .</p>
-<p>之所以取名叫卢比, 因为隔壁的狗狗叫钢蛋, 如果你看过 <a href="http://movie.douban.com/subject/1303815/" target="_blank" rel="external">你丫闭嘴</a><br>就会明白这里面的梗了.</p>
-<p>其实我挺喜欢喊他雪碧, 还给它想了一个别称 [碧池], 不知道可乐可还好么?</p>
+      
 
+      
+        <p>从朋友那里领养了一只猫咪, 他嫌猫咪太闹腾, 搅和的他严重的睡眠不足, 哈哈.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -149,15 +153,14 @@
   
   <div class="entry">
     
-      <p>Linux下查找并批量修改文件扩展名</p>
-<p><a href="http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html" target="_blank" rel="external">http://www.cnblogs.com/knows/archive/2013/01/02/2842489.html</a></p>
-<p><a href="http://www.ahlinux.com/start/cmd/498.html" target="_blank" rel="external">http://www.ahlinux.com/start/cmd/498.html</a></p>
-<p>find ./ -type f -name “*.less” | xargs  rename “s/less/scss/“</p>
-<p>find ./ -type f -name “*.po”  | xargs  -I {} cp {} <new_path> #复制</new_path></p>
-<p><a href="http://bbs.chinaunix.net/thread-525576-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-525576-1-1.html</a></p>
+      
 
+      
+        <p>Linux下查找并批量修改文件扩展名</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -188,20 +191,14 @@
   
   <div class="entry">
     
-      <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK&#10;Cache-Control: no-cache&#10;Pragma: no-cache&#10;Content-Length: 1314&#10;Content-Type: text/html; charset=utf-8&#10;Expires: -1&#10;Server: Microsoft-IIS/7.5&#10;X-AspNet-Version: 4.0.30319&#10;p3p: CP=&#34;CAO PSA OUR&#34;&#10;X-Powered-By: ASP.NET&#10;Date: Fri, 28 Aug 2015 15:42:00 GMT</span><br></pre></td></tr></table></figure>
-<p>ruby-china 是用 asp.net 写的?!, 绝不可能吧, 其实这只是用了一个障眼法.</p>
-<p>下面马上解密, 前提系统是 ubuntu, 并且已经安装 nginx</p>
-<h3 id="安装_more_set_headers_module">安装 more_set_headers module</h3><p>  <code>sudo apt-get install -y nginx-extras</code>,<br>  会安装 <a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="external">more_set_headers</a> module</p>
-<h3 id="设置_nginx-conf_文件">设置 nginx.conf 文件</h3><p>  <code>sudo vim /etc/nginx/nginx.conf</code>, 打开 nginx.conf<br>  在http 结构体中, 加入以下内容:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">more_set_headers &#39;Server: Microsoft-IIS/7.5&#39;;&#10;more_set_headers &#39;X-AspNet-Version: 4.0.30319&#39;;&#10;more_set_headers &#39;X-Powered-By: ASP.NET&#39;;</span><br></pre></td></tr></table></figure>
-<h3 id="重启_nginx">重启 nginx</h3><p>  <code>sudo service nginx restart</code></p>
-<h3 id="测试">测试</h3><p>  curl -I <url>, 看到输出的内容, 已经大功告成.</url></p>
-<h3 id="好处">好处</h3><p>  隐藏真正的 http server, 可以迷惑下菜鸟黑客.</p>
-<h3 id="PS">PS</h3><p>  原稿写于 2015-06-01, 今天是中元节, 即所谓的鬼节, 没有回老家尽份孝心, 斯人已逝,言犹在耳.</p>
+      
 
+      
+        <p>当你运行 <code>curl -I ruby-china.com</code> 查看返回结果</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -232,19 +229,14 @@
   
   <div class="entry">
     
-      <p>其实 alias alias_method 已经把我弄晕了.</p>
-<h3 id="先说_alias_alias_method">先说 alias alias_method</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"user name is Johnnie Walker"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"user mobile is 186-1111-1111"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">add_alias</span></span></span><br><span class="line">    <span class="keyword">alias</span> alias_mobile mobile</span><br><span class="line">    alias_method <span class="symbol">:alias_name</span>, <span class="symbol">:name</span></span><br><span class="line">    <span class="comment"># 另一种写法</span></span><br><span class="line">    <span class="comment"># alias :alias_mobile :mobile</span></span><br><span class="line">    <span class="comment"># alias_method 'alias_name', 'name'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Developer</span> <span class="inheritance">&lt; <span class="parent">User</span></span></span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">name</span></span></span><br><span class="line">    puts <span class="string">"developer name is Linus Torvalds"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">mobile</span></span></span><br><span class="line">    puts <span class="string">"developer mobile is 186-9999-9999"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  add_alias</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">user = <span class="constant">User</span>.new</span><br><span class="line">dev = <span class="constant">Developer</span>.new</span><br><span class="line"></span><br><span class="line">dev.alias_mobile  <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">user.alias_mobile <span class="comment"># =&gt; user mobile is 186-1111-1111</span></span><br><span class="line">puts <span class="string">"-"</span> * <span class="number">20</span></span><br><span class="line">dev.alias_name  <span class="comment"># =&gt; developer name is Linus Torvalds</span></span><br><span class="line">user.alias_name <span class="comment"># =&gt; user name is Johnnie Walker</span></span><br></pre></td></tr></table></figure>
-<p>语法层面的差异可以忽略,  new_name old_name 的顺序总是弄混.</p>
-<p>在继承关系中, alias_name 的内容被重写, alias_mobile并没有.</p>
-<p>This is because alias is a keyword and it is lexically scoped. It means it treats self as the value of self at the time the source code was read . In contrast alias_method treats self as the value determined at the run time.</p>
-<h3 id="alias_method_chain">alias_method_chain</h3><p>alias_method_chain 是 <strong>ActiveSupport</strong> 的一个公有实例方法,<br>同样接受两个参数, 可以是符号, 也可以是字符串, 但第1个参数是原始方法,<br>alias_method的第2个参数是原始方法, 晕~.</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="inheritance">&lt; <span class="parent">ActiveRecord::Base</span></span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="inheritance">&lt;</span><span class="inheritance">&lt; <span class="parent">self</span></span></span></span><br><span class="line">    <span class="comment">#先将find方法别名</span></span><br><span class="line">    <span class="keyword">alias</span> find_without_args find</span><br><span class="line"></span><br><span class="line">    <span class="comment">#再定义find args 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_with_args</span><span class="params">(*args)</span></span></span><br><span class="line">      p <span class="string">"调用find之前"</span></span><br><span class="line">      find_without_args</span><br><span class="line">      <span class="comment"># 调用find_without_args 其实就是find方法</span></span><br><span class="line">      p <span class="string">"调用find之后"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">alias</span> find find_with_args</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="constant">Car</span>.find(<span class="symbol">:mustang</span>)</span><br><span class="line"><span class="comment">#实际调用find_with_args, 在find_with_args方法中,</span></span><br><span class="line"><span class="comment">#又再调用了find_without_args, 也就是原生的find方法了.</span></span><br></pre></td></tr></table></figure>
-<p>其实 alias_method_chain 只是做了个 dsl</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">alias_method_chain <span class="symbol">:find</span>, <span class="symbol">:args</span></span><br><span class="line"><span class="comment">#相当于</span></span><br><span class="line"><span class="keyword">alias</span> find_with_args find</span><br><span class="line"><span class="keyword">alias</span> find find_without_args</span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://erniemiller.org/2014/10/23/in-defense-of-alias/" target="_blank" rel="external">In Defense of Alias</a><br><a href="http://blog.bigbinary.com/2012/01/08/alias-vs-alias-method.html" target="_blank" rel="external">alias vs alias_method</a><br><a href="http://zires.info/2010/12/rails-alias_method_chain-rails3/" target="_blank" rel="external">rails alias_method_chain rails3</a><br><a href="http://stackoverflow.com/questions/4763121/should-i-use-alias-or-alias-method" target="_blank" rel="external">Should I use alias or alias_method</a></p>
+      
 
+      
+        <p>其实 alias alias_method 已经把我弄晕了.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -275,16 +267,14 @@
   
   <div class="entry">
     
-      <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
-<h3 id="解决">解决</h3><p>1 在启动 rails 的时候 绑定ip</p>
-<p>  <code>rails s -b 0.0.0.0</code><br>  可以给这条命令指定一个 alias,<br>  <code>alias rsb=&quot;rails s -b 0.0.0.0&quot;</code></p>
-<p>2 修改 default_options</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># /config/boot.rb&#10;module Rails&#10;  class Server&#10;    def default_options&#10;      super.merge(Host: &#39;0.0.0.0&#39;, Port: 3000)&#10;    end&#10;  end&#10;end</span><br></pre></td></tr></table></figure>
-<h3 id="资料">资料</h3><p><a href="http://stackoverflow.com/a/29562898/1240067" target="_blank" rel="external">How to change the default binding ip of Rails 4.2 development server</a></p>
-<p><a href="https://fullstacknotes.com/make-rails-4-2-listen-to-all-interface/" target="_blank" rel="external">Make Rails 4.2 server listens to all interfaces</a></p>
+      
 
+      
+        <p>Rails 在升级到4.2后, 使用 <code>rails s</code> 运行程序后, 不再监听 0.0.0.0 端口.<br>导致 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>, <a href="http://127.0.0.1:3000" target="_blank" rel="external">http://127.0.0.1:3000</a> 可以正常访问,<br>当使用 <a href="http://192.168.1.xx:3000/" target="_blank" rel="external">http://192.168.1.xx:3000/</a> 的时候, 访问不到 rails 程序.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -315,28 +305,14 @@
   
   <div class="entry">
     
-      <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
-<h2 id="基本命令">基本命令</h2><p><code>lsb_release -a</code> 显示系统的详细信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># centOS&#10;LSB Version:  :core-4.1-amd64:core-4.1-noarch&#10;Distributor ID: CentOS&#10;Description:  CentOS Linux release 7.1.1503 (Core)&#10;Release:  7.1.1503&#10;Codename: Core&#10;&#10;# ubuntu&#10;No LSB modules are available.&#10;Distributor ID: Ubuntu&#10;Description:  Ubuntu 14.04.1 LTS&#10;Release:  14.04&#10;Codename: trusty</span><br></pre></td></tr></table></figure>
-<p><code>yum</code> 是centOS的包管理工具 , 比 ubuntu的 <code>apt-get</code> 简洁多了.</p>
-<hr>
-<h2 id="配置环境">配置环境</h2><h3 id="添加普通用户">添加普通用户</h3><p>  <code>sudo adduser &lt;username&gt;</code></p>
-<p>  在 <strong>ubuntu</strong> 下是交互命令, 会一步步提示你 输入密码, 电话 地址等, 还会创建 home directory, 系统 Shell</p>
-<p>  在 <strong>centOS</strong> 下, 没什么反应.</p>
-<h3 id="创建用户密码">创建用户密码</h3><p>  既然 centOS 没反应, 使用 <code>sudo passd &lt;username&gt;</code> 创建密码, 在密码存在的情况下, 可以修改密码</p>
-<h3 id="赋予普通用户_sudo_权限">赋予普通用户 sudo 权限</h3><p>  <strong>ubuntu</strong><br>  <code>sudo usermod -a -G sudo &lt;username&gt;</code></p>
-<p>  <strong>centOS</strong><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ll /etc/sudoers&#10;# -r--r-----&#10;&#10;# /etc/sudoers &#22312; root&#29992;&#25143;&#19979; &#27809;&#26377;&#20889;&#26435;&#38480;&#10;&#10;chmod +w /etc/sudoers # &#28155;&#21152;&#20889;&#26435;&#38480;&#10;&#10;sudo vim /etc/sudoers # &#20462;&#25913;&#25991;&#20214;&#10;&#10;# &#25214;&#21040; root ALL=(ALL) ALL, &#22312;&#19979;&#19968;&#34892;&#21152;&#19978;&#10;&#60;username&#62; ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
-<p>  OK, 普通用户也可以之行 sudo 命令了</p>
-<h3 id="ssh登录">ssh登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  ~/.ssh&#10;&#10;vim ~/.ssh/authorized_keys&#10;# &#25226;&#20844;&#38053;&#21152;&#20837;&#21040; authorized_keys &#20013;&#21363;&#21487;</span><br></pre></td></tr></table></figure>
-<h3 id="关闭_ssh_密码登录">关闭 ssh 密码登录</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/ssh_config&#10;&#10;PubkeyAuthentication yes # &#21435;&#25481;&#27880;&#37322;&#10;PasswordAuthentication no # &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;ChallengeResponseAuthentication no #  &#21435;&#25481;&#27880;&#37322;, yes &#25913;&#25104; no&#10;&#10;# &#37325;&#21551; sshd &#26381;&#21153;&#10;sudo service ssh  restart # ubuntu&#10;sudo service sshd restart # centOS</span><br></pre></td></tr></table></figure>
-<h3 id="安装_rails">安装 rails</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># &#23433;&#35013;&#20381;&#36182;&#10;sudo yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel&#10;&#10;# &#23433;&#35013; rvm&#10;curl -L get.rvm.io | bash -s stable&#10;source ~/.bashrc&#10;source ~/.bash_profile&#10;&#10;# &#23433;&#35013; ruby&#10;rvm list known          # &#21015;&#20986;&#24050;&#30693;&#30340; ruby &#29256;&#26412;&#10;rvm install 2.2.2       # &#23433;&#35013; ruby &#29256;&#26412;&#10;rvm use 2.2.0 --default # &#20999;&#25442;&#24182;&#35774;&#32622;&#40664;&#35748;ruby &#29256;&#26412;&#10;&#10;# &#23433;&#35013; bundler rails&#10;gem install -V bundler rails</span><br></pre></td></tr></table></figure>
-<h3 id="安装_nodejs">安装 nodejs</h3><p>  <code>sudo yum install nodejs</code></p>
-<h3 id="安装_nginx">安装 nginx</h3>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="安装_mysql">安装 mysql</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install mysql # &#21482;&#23433;&#35013; mysql-client&#10;&#10;sudo yum install mysql mysql-server # &#23433;&#35013; mysql-client  mysql-server&#10;&#10;sudo  yum install mysql-devel # &#19981;&#23433;&#35013;, gem mysql2 &#26412;&#22320;&#32534;&#35793;&#20986;&#38382;&#39064;</span><br></pre></td></tr></table></figure>
-<p>PS: 在杭州好闷好热啊</p>
+      
 
+      
+        <p>最近使用 centOS系统安装rails环境, 相较与我经常用的ubuntu, 有很多区别.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -367,11 +343,14 @@
   
   <div class="entry">
     
-      <p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
-<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
+      
 
+      
+        <p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -402,11 +381,14 @@
   
   <div class="entry">
     
-      <p>选择从卡拉丁离职, 心力交瘁</p>
-<p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
+      
 
+      
+        <p>选择从卡拉丁离职, 心力交瘁</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -437,22 +419,14 @@
   
   <div class="entry">
     
-      <p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26508228&auto=0&height=66"></iframe>
+      
 
-<hr>
-<p>我在恶心的世界里，寻找一个像你的人<br>在每个想你的夏天里，等另一种感情</p>
-<p>我在失败的生活里，寻找一个爱我的人<br>我的悲伤，浪漫和幻想，不对她说起</p>
-<p>我再也不会把自己，愚蠢的交给过去<br>我的生活和我的想法，从此相隔了万里</p>
-<p><strong>我整夜整夜地失眠，不是为了和谁再相见</strong><br><strong>曾经爱你的每一条街，是我新鲜生活的起点</strong></p>
-<p>我在陌生的感动里，寻找一个像你的人<br>就算像过去一样被误解，不快乐又如何</p>
-<p>我在干裂的春天里，寻找一个平凡的人<br>她的善良，甜蜜和阳光，陪伴我自己</p>
-<p>我再也不会把自己，彻底的交给一个人<br>我的理想就像这黑夜，一分一秒的断裂</p>
-<p><strong>我一天一天地发呆，不是为了酝酿些什么</strong><br><strong>真情早已经被他们毁灭，还有什么不能去拒绝</strong></p>
-<p><strong>是否你也在沉默里，寻找一个像我的人</strong><br><strong>在每个想我的季节里，和他们在一起</strong></p>
-
+      
+        <p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
+      
     
   </div>
+
   <footer class="end-sep">
     
       
@@ -488,7 +462,7 @@
   Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
@@ -515,19 +489,6 @@
     $('.fancybox').fancybox();
   })(jQuery);
 </script>
-
-<script type="text/javascript">
-  (function(){
-    var infos = new Object();
-
-    infos['qq'] ='1458643975';
-    infos['mobile'] ='18612621540';
-    infos['extend'] ='\\u90b9\\u5029\\u96ef';
-
-    console.log(infos);
-  })();
-</script>
-
 
 </body>
 </html>
