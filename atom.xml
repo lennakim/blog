@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2016-10-06T16:33:22.000Z</updated>
+  <updated>2016-10-15T16:29:43.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[江西之旅]]></title>
+    <link href="http://shooter.gl/jiang-xi/"/>
+    <id>http://shooter.gl/jiang-xi/</id>
+    <published>2016-10-15T15:10:29.000Z</published>
+    <updated>2016-10-15T16:29:43.000Z</updated>
+    <content type="html"><![CDATA[<p>10月9号, 我从北京到了南昌, 离第一次去南昌, 有两年之隔.</p>
+<a id="more"></a>
+<p>我跟一个江西朋友住在了南昌的青年旅舍,他在南昌上学并工作,待了大概有4-5年.<br>我们先去了八一广场, 感受下革命的熊熊烈火, 广场上有阵阵桂花香飘进鼻子里, 特别的香甜.<br>然后晚上去红谷滩, 找另一个朋友大吃了一顿. 吃完饭回来, 我俩儿就在绳金塔附近乱逛.<br>回到旅馆,我们就合计着怎么去庐山.</p>
+<p>我们第二天到了九江, 然后在火车站认识了一个拉客的大叔, 就在庐山住, 顺其自然的通过大叔, 订到了旅馆.<br>庐山其实在山顶有个镇, 叫牯岭镇, 人口有1.5万, 不过这个镇跟杨德昌的电影没什么关系.<br>去庐山的 <strong>第一天</strong>, 我们先去了花径, <strong>如琴湖</strong>, 景色美如画, 让我这个从小生活的北方的娃就想住在这里不走了, 不虚此行.</p>
+<p><img src="/images/lu-shan.jpg" alt="如琴湖"><br>紧接着, 去了美庐, 参观了毛泽东居住过的别墅, 白居易草堂, 还有一些地质博物馆 …<br>在天快黑的时候, 看了三宝树, 其实就是三颗古树, 其中两颗是柳杉,大概有600年, 剩下一颗是银杏, 大概有1600年.</p>
+<p>去庐山的 <strong>第二天</strong>, 我们早上5点半出发, 先去含鄱口, 看日出.<br>然后爬五老峰, 其实就是5个比较高的山峰, 这段其实没多少可说的, 无非怪石嶙峋.<br>爬完五老峰, 我们参观 <strong>三叠泉</strong> , 有这么个说法: “不看三叠泉, 不算庐山客”, 这段景色让人大饱眼福.</p>
+<blockquote>
+<blockquote>
+<p>三叠泉被誉为 “庐山第一奇观”, 由大月山/五老峰的涧水汇合, 从大月山流出,<br>经过五老峰背, 由北崖悬口注入大盘石上, 又飞泻到二级大盘石, 再喷洒至三级盘石, 形成三叠, 故名;<br>势如奔马,声若洪钟,总落差155米. 瀑布分三叠, 各异其趣, 古人描绘曰:”上级如飘云拖练, 中级如碎石摧冰,下级如玉龙走潭.”</p>
+</blockquote>
+</blockquote>
+<p>不过李白的名句 “日照香炉生紫烟, 遥看瀑布挂前川”, 说的并不是三叠泉, 三叠泉直到宋代才被一个樵夫发现.<br>这两天的庐山之行安排的满满的, 然后我们回到了南昌的青旅.</p>
+<p>朋友做飞机回北京工作, 我就续租了一个床位, 然后看见了一个黑人老外, 我就跟老外叔叔聊上了天.<br>他叫rice, 美国人, 下飞机后就被人偷走了手机, 我晚上和他一起吃的黄焖鸡米饭, 最起码不太辣.<br>晚上睡觉的时候, 有个哥们呼噜一刻不停, 更有意思的是, 我上铺的哥们, 貌似在撸管,<br>这2个人给我持续的震感, 妙不可言, 白天就出了可爱的黑眼圈.</p>
+<p>今天, 跟之前请客的朋友, 去了艾溪湖湿地, 骑着自行车, 那种惬意的感觉, 让我很安静.</p>
+<p>有人问我, 为什么来到江西旅游, 有个很主要的原因, 就是朋友在这里; 另外, 这是她生活过的地方.<br>如果当初有机会选,我想我会留在南昌, 在某个地方开始或结束, 也是很好的结果.</p>
+<p>我在这里呆了大概7天, 想想也是该离开了, 下次再到这里, 不知道是什么时候.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>10月9号, 我从北京到了南昌, 离第一次去南昌, 有两年之隔.</p>]]>
+    
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[我的第二故乡]]></title>
@@ -518,35 +550,6 @@
     <![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
 <p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
 ]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[寻找]]></title>
-    <link href="http://shooter.gl/live-2015-06-07-xun-zhao/"/>
-    <id>http://shooter.gl/live-2015-06-07-xun-zhao/</id>
-    <published>2015-06-07T02:49:33.000Z</published>
-    <updated>2016-05-15T07:22:46.000Z</updated>
-    <content type="html"><![CDATA[<p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26508228&auto=0&height=66"></iframe>
-
-<hr>
-<p>我在恶心的世界里，寻找一个像你的人<br>在每个想你的夏天里，等另一种感情</p>
-<p>我在失败的生活里，寻找一个爱我的人<br>我的悲伤，浪漫和幻想，不对她说起</p>
-<p>我再也不会把自己，愚蠢的交给过去<br>我的生活和我的想法，从此相隔了万里</p>
-<p><strong>我整夜整夜地失眠，不是为了和谁再相见</strong><br><strong>曾经爱你的每一条街，是我新鲜生活的起点</strong></p>
-<p>我在陌生的感动里，寻找一个像你的人<br>就算像过去一样被误解，不快乐又如何</p>
-<p>我在干裂的春天里，寻找一个平凡的人<br>她的善良，甜蜜和阳光，陪伴我自己</p>
-<p>我再也不会把自己，彻底的交给一个人<br>我的理想就像这黑夜，一分一秒的断裂</p>
-<p><strong>我一天一天地发呆，不是为了酝酿些什么</strong><br><strong>真情早已经被他们毁灭，还有什么不能去拒绝</strong></p>
-<p><strong>是否你也在沉默里，寻找一个像我的人</strong><br><strong>在每个想我的季节里，和他们在一起</strong></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>听<a href="http://music.163.com/#/artist/desc?id=3681" target="_blank" rel="external">李志</a>的这首歌, 有种大姨夫汹涌而来的感觉</p>
-<iframe frameborder="no]]>
     </summary>
     
       <category term="live" scheme="http://shooter.gl/categories/live/"/>

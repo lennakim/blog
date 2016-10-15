@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/jiang-xi/</loc>
+    <lastmod>2016-10-15T16:29:43.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/my-second-hometown/</loc>
     <lastmod>2016-10-06T16:33:22.000Z</lastmod>
   </url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://shooter.gl/the-best-farewell/</loc>
     <lastmod>2016-06-20T13:54:18.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-14-scss-use-variable/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
@@ -162,12 +162,12 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
+    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
+    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
@@ -312,6 +312,11 @@
   </url>
   
   <url>
+    <loc>http://shooter.gl/tech-2015-05-14-scss-use-variable/</loc>
+    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/cloud9-run-telegram-bot/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
@@ -322,7 +327,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-01-03-centos-offline-install-ruby-environment/</loc>
+    <loc>http://shooter.gl/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
