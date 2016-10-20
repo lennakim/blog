@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shooter.gl/yichun/</loc>
+    <lastmod>2016-10-20T06:10:38.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/wuhan/</loc>
+    <lastmod>2016-10-20T03:10:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/jiang-xi/</loc>
     <lastmod>2016-10-15T16:29:43.000Z</lastmod>
   </url>
@@ -34,16 +44,6 @@
   <url>
     <loc>http://shooter.gl/the-best-farewell/</loc>
     <lastmod>2016-06-20T13:54:18.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</loc>
-    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
@@ -167,12 +167,12 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
+    <loc>http://shooter.gl/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2012-09-15-the-ruby-syntax-yield-and-closure/</loc>
+    <loc>http://shooter.gl/tech-2015-08-28-customize-nginx-header/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   
@@ -317,6 +317,16 @@
   </url>
   
   <url>
+    <loc>http://shooter.gl/tech-2015-05-09-how-to-disable-chromes-new-bookmark-manager/</loc>
+    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shooter.gl/tech-2015-05-03-upgrade-hexo/</loc>
+    <lastmod>2016-05-15T07:22:46.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://shooter.gl/cloud9-run-telegram-bot/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
@@ -327,7 +337,7 @@
   </url>
   
   <url>
-    <loc>http://shooter.gl/tech-2013-01-01-goodbye-2012-hello-2013/</loc>
+    <loc>http://shooter.gl/tech-2012-09-15-the-ruby-syntax-yield-and-closure/</loc>
     <lastmod>2016-05-15T07:22:46.000Z</lastmod>
   </url>
   

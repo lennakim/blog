@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am shooter]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shooter.gl/"/>
-  <updated>2016-10-15T16:29:43.000Z</updated>
+  <updated>2016-10-20T03:10:31.000Z</updated>
   <id>http://shooter.gl/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[武汉之旅]]></title>
+    <link href="http://shooter.gl/wuhan/"/>
+    <id>http://shooter.gl/wuhan/</id>
+    <published>2016-10-20T03:09:23.000Z</published>
+    <updated>2016-10-20T03:10:31.000Z</updated>
+    <content type="html"><![CDATA[<p>武汉</p>
+<a id="more"></a>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>武汉</p>]]>
+    
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[宜春]]></title>
+    <link href="http://shooter.gl/yichun/"/>
+    <id>http://shooter.gl/yichun/</id>
+    <published>2016-10-16T06:06:51.000Z</published>
+    <updated>2016-10-20T06:10:38.000Z</updated>
+    <content type="html"><![CDATA[<p>宜春是我终于到达了的一座城市</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>宜春是我终于到达了的一座城市</p>
+]]>
+    </summary>
+    
+      <category term="live" scheme="http://shooter.gl/categories/live/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[江西之旅]]></title>
@@ -515,44 +550,6 @@
       <category term="centOS" scheme="http://shooter.gl/tags/centOS/"/>
     
       <category term="rails" scheme="http://shooter.gl/tags/rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[杭州, 我来了]]></title>
-    <link href="http://shooter.gl/live-2015-07-18-Hangzhou-I-come/"/>
-    <id>http://shooter.gl/live-2015-07-18-Hangzhou-I-come/</id>
-    <published>2015-07-18T01:28:27.000Z</published>
-    <updated>2016-05-15T07:22:46.000Z</updated>
-    <content type="html"><![CDATA[<p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
-<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>杭州, 到哪里都透着一份文艺, 轻风水软, 红粉窟, 英雄冢.</p>
-<p>2015-08-16, 凌晨一点执笔, 思绪杂乱, 后续填坑.</p>
-]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[选择离开]]></title>
-    <link href="http://shooter.gl/live-2015-06-09-leave/"/>
-    <id>http://shooter.gl/live-2015-06-09-leave/</id>
-    <published>2015-06-09T04:02:38.000Z</published>
-    <updated>2016-05-15T07:22:46.000Z</updated>
-    <content type="html"><![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
-<p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>选择从卡拉丁离职, 心力交瘁</p>
-<p>“世界这么大, 我想去看看”, 这句话留给自己了.</p>
-]]>
-    </summary>
-    
-      <category term="live" scheme="http://shooter.gl/categories/live/"/>
     
   </entry>
   
