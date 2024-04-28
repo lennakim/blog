@@ -1,4 +1,1 @@
-Shooter Blog
-====
-
-www.shooter.gl
+Blog

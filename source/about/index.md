@@ -2,19 +2,11 @@ title: About
 date: 2015-01-04 17:08:21
 ---
 
-2011年11月, 接触rails
+2011 年 11 月，接触 rails
 
 ## Contact
 
-Mobile: `echo 'MTg2MTI2MjE1NDAK' | base64 -D`
-
-QQ: `echo 'MTQ1ODY0Mzk3NQo=' | base64 -D`
-
-Email: `echo 'bGl1bmluZ3R376O/MTYzLmNvbQo=' | base64 -D`
-
-github: [shooter](https://github.com/shooterman)
-
-weibo:  [liuningtw](http://www.weibo.com/liuningtw)
+github: [shooter](https://github.com/lennakim)
 
 ```
                    _ooOoo_
