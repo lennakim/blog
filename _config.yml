@@ -8,12 +8,12 @@ subtitle: I am lennakim
 description: 禦風而行 世而譽之而不加勸 世而非之而不加沮
 author: lennakim
 email: lennakim@ssh.com
-language: zh-CN
-timezone: ''
+language: en
+timezone: 'Asia/Singapore'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://lennakim.github.io
+url: https://lennakim.github.io/blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -55,7 +55,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 15
   order_by: -date
 
 # Category & Tag
