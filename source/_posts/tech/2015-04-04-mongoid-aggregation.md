@@ -3,11 +3,11 @@ date: 2015-04-04 18:32:21
 tags: [mongoid, aggregation, mapreduce]
 ---
 
-### querying 查询
+## querying 查询
 
 忽略某些字段的查询用 `without`, 只查询某些字段可以用 `only`.
 
-```
+```ruby
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -15,7 +15,6 @@ class User
   field :name,   type: String
   field :email,  type: String
   field :gender, type: String
-
 end
 
 User.without(:name)
@@ -25,11 +24,12 @@ User.only(:name, :email)
 
 ```
 
-### aggregation 聚合
+## aggregation 聚合
 
-#### group
-我们有时需要 类似sql的group功能 , mongoid 提供了对mongoDB aggregate的支持,
-这样可以使用 mongoDB的 [$group](http://docs.mongodb.org/manual/reference/method/db.collection.group/) 函数了.
+### group
+
+我们有时需要 类似 sql 的 group 功能 , mongoid 提供了对 mongoDB aggregate 的支持，
+这样可以使用 mongoDB 的 [$group](http://docs.mongodb.org/manual/reference/method/db.collection.group/) 函数了。
 
 
 ``` ruby
@@ -68,7 +68,7 @@ end
 
 ```
 
-#### [map_reduce](http://mongoid.org/en/mongoid/docs/querying.html#map_reduce)
+### [map_reduce](http://mongoid.org/en/mongoid/docs/querying.html#map_reduce)
 
 map_reduce
 
@@ -88,7 +88,7 @@ class Band
 
         values.forEach(function(value) {
 
-          result.likes += value.likes; # 获得value.likes 并 累加
+          result.likes += value.likes; # 获得 value.likes 并 累加
 
         });
 
@@ -104,5 +104,5 @@ Band.likes_count
 
 ```
 
-MapReduce概念可以查看[wiki](http://zh.wikipedia.org/zh/MapReduce)
+MapReduce 概念可以查看[wiki](http://zh.wikipedia.org/zh/MapReduce)
 或者[知乎](http://www.zhihu.com/question/23345991)

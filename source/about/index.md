@@ -6,7 +6,7 @@ date: 2015-01-04 17:08:21
 
 ## Contact
 
-github: [shooter](https://github.com/lennakim)
+github: [lennakim](https://github.com/lennakim)
 
 ```
                    _ooOoo_

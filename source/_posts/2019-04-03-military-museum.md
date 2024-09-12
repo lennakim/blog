@@ -21,7 +21,7 @@ categories: live
 
 轰 6 的型号有这么多：甲、乙、丙、丁、Ⅰ、F、H、M、G、K、J。轰 6-k 是目前最先进的型号，网友有这些段子：轰 6 改的连亲妈 (图 -16) 都认不出来了，轰 6 你要慢点改，26 个英文字母都快不够用了。
 
-###东风型快递
+## 东风型快递
 
 >![东风 1 号](https://upload-images.jianshu.io/upload_images/47789-f8e73abb700e87a2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -46,7 +46,7 @@ categories: live
 
 AK47、RPG 火箭筒、107 火 被称为“世界游击战三大神器”，就是因为：丧心病狂，简单上手，低成本，高杀伤，猛糙快。犹如 PHP 一样，非常适合草根创业。
 
-### 坦克
+## 坦克
 
 >![T62 与潘兴坦克](https://upload-images.jianshu.io/upload_images/47789-647c43afec50b19c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
