@@ -4,7 +4,7 @@ date: 2019-04-03 00:32:29
 categories: live
 ---
 
->![军事博物馆](https://upload-images.jianshu.io/upload_images/47789-2106a4c4ad0928a9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![军事博物馆](/images/military-museum.jpg)
 
 昨天调了一天的 DNS 协议，发送是成功的，解析总是失败，脑壳儿疼，就想出去逛逛。突然想起来，我来北京这么长时间从没去过[军博](http://www.jb.mil.cn)，天安门、故宫、国博去了好几次，去北京西站前一站就是军事博物馆站，就单单漏了军博，我伪军迷的身份马上暴露了，线上门票预约，反正也不花钱，明天走起。
 
@@ -15,32 +15,32 @@ categories: live
 
 由门进入大厅，看到的是毛爷爷塑像，穿过大厅，就看到硕大的飞机.....的菊花，还有 2 个快递神器——东风导弹。
 
->![老式轰 6](https://upload-images.jianshu.io/upload_images/47789-7a10aaada3de1818.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![老式轰 6](/images/h6.jpg)
 
 轰 -6 是种花家装备的中型后掠翼喷气式战略轰炸机，也是种花家现役唯一的战略轰炸机，改自老大哥前苏联的图 -16，1968 年首飞。轰 -6 如雷贯耳，我却没见过真家伙，这个头跟身边的一比才知道有多大，机身长 34.8m，翼展 33m，载员 6 名，不愧是轰炸机，个头真飙，身边的飞机都是小弟弟。
 
 轰 6 的型号有这么多：甲、乙、丙、丁、Ⅰ、F、H、M、G、K、J。轰 6-k 是目前最先进的型号，网友有这些段子：轰 6 改的连亲妈 (图 -16) 都认不出来了，轰 6 你要慢点改，26 个英文字母都快不够用了。
 
-## 东风型快递
+## 东风快递
 
->![东风 1 号](https://upload-images.jianshu.io/upload_images/47789-f8e73abb700e87a2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![东风 1 号](/images/dongfeng1.jpg)
 
->![东风 2 号](https://upload-images.jianshu.io/upload_images/47789-7bf0471f5420ea3a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![东风 2 号](/images/dongfeng2.jpg)
 
 当年沙特了花 35 亿美元从种花家买了 36 枚东风 3，
 这在当时是绝无先例的，兔子是什么都敢卖啊，你敢死，我就敢埋。
 
 ## 镇远锚
 
-> ![镇远锚](https://upload-images.jianshu.io/upload_images/47789-0e315ebe53d1bad6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![镇远锚](/images/zhenyuan1.jpg)
 
-> ![镇远锚](https://upload-images.jianshu.io/upload_images/47789-2996bd3f0cbfb8f5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![镇远锚](/images/zhenyuan2.jpg)
 
 学过历史的人都不会陌生，朕的大清亡了，多的不说了，都是泪。
 
 ## 游击神器
 
->![107 火箭炮](https://upload-images.jianshu.io/upload_images/47789-346158f16ffbead2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![107 火箭炮](/images/107.jpg)
 
 63 式 107 火箭炮身形小巧，可以利用车拉或者马驮甚至是人力搬运都不在话下，还非常易于隐蔽，再加上其操纵简单维护方便，价格低廉，战斗可靠性高等特点，这款武器在中东、非洲等战乱频发的地区非常受非常受游击部队欢迎，甚至可以把炮管绑在骆驼的背上，完成点火、射击。
 
@@ -48,7 +48,7 @@ AK47、RPG 火箭筒、107 火 被称为“世界游击战三大神器”，就�
 
 ## 坦克
 
->![T62 与潘兴坦克](https://upload-images.jianshu.io/upload_images/47789-647c43afec50b19c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![T62 与潘兴坦克](/images/t62-pan.jpg)
 
 左边的坦克是苏联老大哥的 T62，在珍宝岛冲突中缴获的，
 右边的坦克是老美的 M26 潘兴，在朝鲜战争缴获的，

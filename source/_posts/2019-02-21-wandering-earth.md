@@ -4,7 +4,7 @@ date: 2019-02-21 23:48:15
 categories: live
 ---
 
-> ![](https://upload-images.jianshu.io/upload_images/47789-53b8af7ba01ba4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![](/images/wanderingearth.jpg)
 
 原文：https://gofatherhood.com/2019/02/movie-review-the-wandering-earth/
 

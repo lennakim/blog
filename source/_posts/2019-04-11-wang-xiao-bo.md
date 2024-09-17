@@ -4,7 +4,7 @@ date: 2019-04-11 19:16:39
 categories: live
 ---
 
->![](https://upload-images.jianshu.io/upload_images/47789-abf19fdd49f6cb4b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>![](/images/wangxiaobo.jpg)
 
 波什、吉诺比利、韦德、诺维斯基这个月都相继退役了，今天阿桑奇被警察从厄瓜多尔大使给馆抬出来了，这里炸，那里着火，沃日，人间四月天。
 
